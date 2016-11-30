@@ -1,0 +1,392 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans helvet
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Modelo estocástico híbrido baseado em redes neurais não-tradicionais
+\end_layout
+
+\begin_layout Author
+- 
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Aluno
+\series default
+: Edson Francisco Luque Mamani
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Motivação
+\end_layout
+
+\begin_layout Standard
+Na teoria da probabilidade um Processo Estocástico se define como um conjunto
+ de modelos que permitem o estudo de problemas com componentes aleatórias.
+ Muitos problemas reais como previsão têm características não lineares e
+ complexas, por vezes caótica, a fim de modelar o comportamento destes fenômenos
+, realizar uma aproximação linear pode gerar um modelo ineficiente 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LUNA2006"
+
+\end_inset
+
+.
+ Ao observar esse tipo de fenômenos com características aleatórias por um
+ período de tempo, consegue-se obter uma trajetória do processo observado.
+ Ao realizar a mesma observação em um período de tempo diferente é possível
+ obter outra trajetória, diferente da primeira.
+ Um processo estocástico corresponde ao conjunto de todas as possíveis trajetóri
+as que podem ser observadas desse fenômeno.
+ Cada trajetória observada é chamada de série temporal.
+ Portanto, uma série temporal é considerada uma realização de um processo
+ estocástico.
+\end_layout
+
+\begin_layout Standard
+A análise das séries temporais pode ser realizada por meio de modelos autorregre
+ssivos
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
+
+\end_inset
+
+ dentro do qual destaca o modelo
+\series bold
+ PAR
+\series default
+(p)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "maceira2"
+
+\end_inset
+
+.
+ No entanto, estes modelos são estatísticos e lineares, o que significa
+ que a sua aplicação em séries temporais de comportamento caótico (como
+ as series hidrológicas) não pode capturar as características reais da série
+ e portanto pode gerar resultados inconsistentes.
+\end_layout
+
+\begin_layout Standard
+Entre as metodologias que tentam modelar problemas complexos não-lineares
+ nos últimos anos as Redes Neurais Artificiais(
+\series bold
+RNA
+\series default
+) destacam-se como métodos de aprendizado de máquina.(
+\begin_inset CommandInset citation
+LatexCommand citep
+key "WRCR:WRCR11667"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cunge75"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-9-111-2005"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Na verdade, as 
+\series bold
+RNA's
+\series default
+ do tipo feedforward na maioria das pesquisas e aplicações em modelos de
+ previsão têm sido amplamente utilizados em contraste com as Redes Recorrentes
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ As 
+\series bold
+RNA's 
+\series default
+recorrentes são capazes de representar mapas não-lineares dinâmicos comumente
+ encontrados nas tarefas de previsão de séries temporais
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
+
+\end_inset
+
+.
+ Estudos sobre o desempenho deste tipo de redes neurais apresentam um desempenho
+ melhor do que as 
+\series bold
+RNA's
+\series default
+ feedforward em praticamente todos os testes
+\begin_inset CommandInset citation
+LatexCommand citep
+key "6327793"
+
+\end_inset
+
+.
+ Mas a principal razão para a preferência pela utilização das 
+\series bold
+RNA's
+\series default
+ feedforward sobre 
+\series bold
+as RNA's
+\series default
+ recorrentes é que a recorrência em rede neurais gera maior complexidade,
+ especialmente no processo de treinamento da rede neural.
+\end_layout
+
+\begin_layout Standard
+Isso motivou a elaboração de um modelo de processo estocástico utilizando
+ Redes Neuronales Artificiales Recorrentes a fim de tomar ventagem das suas
+ características acima mencionadas.
+ Para tornar isso possível uma abordagem recentemente introduzido chamado
+ Reservoir Computing (
+\series bold
+RC
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+ vai ser utilizado.
+ O Reservoir Computing é uma abordagem de treino que está emergindo como
+ simples e rápido em comparação com outras abordagens utilizadas nas 
+\series bold
+RNA's 
+\series default
+recorrentes tradicionais, tudo isto a fim de reduzir a complexidade e aproveitar
+ a sua capacidade comproabada para representar melhor as características
+ das série temporais(hidrologicas).
+\end_layout
+
+\begin_layout Standard
+Além disso, como parte do nosso modelo proposto será considerada um componente
+ não-determinístico representando o ruído aleatório com uma distribuição
+ normal, isso a fim de ter em conta a incerteza que normalmente afeta processos
+ naturais
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Awchi"
+
+\end_inset
+
+.
+ Sendo este o nosso modelo uma nova proposta na literatura.
+\end_layout
+
+\begin_layout Standard
+Escolheu-se, como estudo de caso, aplicar o modelo proposto no tratamento
+ de afluências mensais sob o contexto do sistema hidrológico brasileiro.
+\end_layout
+
+\begin_layout Section
+Objetivo
+\end_layout
+
+\begin_layout Standard
+Propor um modelo de processo estocástico para a geração de séries temporais
+ sintéticas, igualmente prováveis à série histórica(previsão), utilizando
+ técnicas de inteligência artificial relativamente novas
+\series bold
+ como Echo State Network (ESN) 
+\series default
+e um ruído aleatório com base na incerteza que normalmente afeta tipos de
+ problemas, como por exemplo os problemas que envolvem fenômenos climatológicos,
+ económicos, hidrológicos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sloppy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "hc-en"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

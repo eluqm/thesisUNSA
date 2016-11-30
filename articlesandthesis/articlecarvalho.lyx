@@ -1,0 +1,782 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\lang spanish
+Stochastic generation and forecasting of monthly hydrometeorological data
+ based on non-traditional neural network
+\end_layout
+
+\begin_layout Abstract
+en recumens ...en ingles ...sdfs s sdfsd ssdut tu may 
+\lang spanish
+Las investigaciones en recursos hídricos pueden involucrar generación de
+ datos y/o pronóstico no solo de variables hidrológicas sino de otras variables
+ derivadas que permitan reducir perdidas de tipo económicas y sociales,
+ dimensionando y escenificando el impacto de una sequía, inundación y principalm
+ente la demanda poblacional.
+ Por lo tanto, la búsqueda de un diseño óptimo en un proyecto de gestión
+ del agua frecuentemente involucra encontrar un método o técnica que genere
+ largas secuencias de las caracteristicas de los flujos(caudales) en este
+ caso de un río en cuestión.
+ Estas secuencias consideradas como series temporales pueden ser usadas
+ para analizar y optimizar el desempeño del proyecto diseñado.
+ Con el fin de cubrir esos requerimientos, este trabajo tiene como objetivo
+ la elaboración de un modelo híbrido de proceso estocástico para ser aplicado
+ em problemas que envuelven fenómenos de comportamiento estocástico y de
+ características periódicas (caudales) en sus propiedades probabilísticas
+ como média, varianza, etc.
+ Para esto, serán usados dos componentes, el primero, un tipo de red neuronal
+ recurrente recientemente introducido en la literatura y conceptualmente
+ simple denominado 
+\series bold
+ESN
+\series default
+(echo state network) como el componente determinístico, una característica
+ interesante de 
+\series bold
+ESN
+\series default
+ es que a partir de ciertas propiedades algebraicas, entrenar solamente
+ la salida de la red es a menudo suficiente para alcanzar una performance
+ excelente en aplicaciones prcticas.
+ El segundo, es un componente aleatorio que incorpora al modelo la incertidumbre
+ asociada a los procesos hidrologicos.
+\end_layout
+
+\begin_layout Section
+
+\lang spanish
+Introduction
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+In probability theory an stochastic process is defined as a set of models
+ that allow the study of problems with random components.
+ By observing phenomenon with random characteristics for a period of time,
+ it is possible to obtain a trajectory of the observed process.
+ When carrying out the same observation in a different period of time it
+ is possible to obtain another trajectory, different from the first one.
+ A stochastic process corresponds to the set of all possible trajectories
+ that can be observed of this phenomenon.
+ Each observed trajectory is called a time serie.
+ Therefore, time serie is considered a realization of stochastic process.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Natural phenomena such as precipitation and streamflow discharge have nonlinear,
+ sometimes complex and chaotic characteristics, in order to model the behavior
+ of these phenomena, initially linear approximation was used
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOXANDJenKys"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LUNA2006"
+
+\end_inset
+
+.
+ Afterwards were developed methods using self-correcting models 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+ such as the PAR(p) model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maceira2"
+
+\end_inset
+
+.
+ However, these models are statistical and linear, which means that their
+ application in time series of chaotic behavior such as hydrometeorological
+ series, can not capture the actual characteristics of these series and
+ therefore sometimes is found to be inadequate
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Raman95multivariatemodelling"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Among approaches that attempt to model complex non-linear behavior, the
+ Artificial Neural Networks (
+\series bold
+AN
+\series default
+N) are highlighted as machine learning methods in recent years, which may
+ be adequate to deal with such problems.
+ In fact, the
+\series bold
+ ANNs
+\series default
+ feedforward have been widely used in most research and applications in
+ forecasting models in contrast to Recurrent Neural Networks(
+\series bold
+RNN
+\series default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ The RNNs are able to represent dynamic non-linear maps commonly found in
+ time series forecasting tasks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+.
+ Studies about performance in forecasting of the recurrent neural network
+ demostrate that they are better than their peers ANN in virtually all tests
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6327793"
+
+\end_inset
+
+.
+ However, the main reason to prefer to use the feedforward neural networks
+ over recurrent neural networks is that the second generates greater complexity,
+ especially in the neural network training process.
+ This motived the development of a stochastic process model using Recurrent
+ Artificial Neural Networks in order to take advantage of its aforementioned
+ characteristics.
+ this was possible using an approach called Reservoir Computing (RC)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Reservoir Computing is a training approach that is emerging as simple and
+ fast compared to other approaches used in traditional recurrent ANNs, all
+ in order to reduce complexity and leverage its proven ability to represents
+ time series characteristics better.
+ In addition, as part of our proposed model will be considered a non-determinist
+ic component representing noise with a normal distribution in order to take
+ into account the uncertainty that normally affects natural processes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+.
+ Being our model a new proposal in the literature.
+ Finally, as a case study, it was chosen to apply the proposed model on
+ well-known Model Parameter Estimation Experiment (MOPEX) data set
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Duan20063"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+History and developments
+\end_layout
+
+\begin_layout Standard
+The nonstationary nature of the precipitation and streamflow time series
+ is considered one of the most important difficulties to forecast
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+.
+ Initial auto-regressive models, as well as models based on Box & Jenkis
+ methodology were used in forecasting problems, for example in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Peng2010"
+
+\end_inset
+
+ they shows that there is no evidence that multivariate AR(1) models are
+ inadecuate as predictors.
+ Studies such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JAWR:JAWR70A"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas"
+
+\end_inset
+
+ describe mathematical models, which can reproduce special characteristics
+ such as periodicity and consider the effects of linear correlation.
+ In fact, the non-deterministics concept considered as part of our model
+ was based on Thomas and Fierinig, work.
+ All these studies propose that natural behavior of times series can be
+ simulated by a simple linear relationship with previous data.
+ 
+\end_layout
+
+\begin_layout Standard
+The problem with previous models is that tasks like forecasting are naturally
+ dynamics.
+ For this reason artificial intelligence methods have been appearing as
+ alternatives with good performance as predictors of time series.
+ Works suchs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WRCR:WRCR9735"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WRCR:WRCR11667"
+
+\end_inset
+
+
+\lang spanish
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+
+\lang american
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-20-1405-2016"
+
+\end_inset
+
+ used Artificial Neural Networks (ANN) as forecasting models.
+ The Recurrent Neural Networks demostrated better capacity than ANN feeddorward
+ due their structure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, which allow a more parsimonious modeling of dynamic properties.
+ However, it was also demostrated that the recurrence present in its structure
+ can cause increce of training conplexity and subsequently cause problems
+ of convergence 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1"
+
+\end_inset
+
+.
+ By 2000 the concept of Reservoir Computing (RC) was introduced.
+ Reservoir Computing is a training approach that can be remarkably simpler
+ and faster than those traditional applied in RNN, according to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+ few applications of RC in hydrometereology have been made: in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+, the most popular reservoir computing model named echo state networks(ESN)
+ was used with a bayesian regularization for forecast short-term energy
+ production of small hydroelectric plants, results indicate that the proposed
+ model surpasses both RNN's feedforward and ESN in its simple version.
+ Similar works such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Coulibaly201076"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Abrahart201276"
+
+\end_inset
+
+ used ESN to forecast monthly water levels for the four Great Lakes of North
+ America, the authors demostrated the good performance of ESN networks and
+ attributed it to their highly non-linear and dynamic structure.
+ The echo state network are found to be valid alternatives to traditional
+ recurrent ANNs in water inflow, for exampel in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+ where the performance of ESN is compared with SONARX
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371335"
+
+\end_inset
+
+, RBF networks and ANFIS model
+\begin_inset CommandInset citation
+LatexCommand cite
+key "256541"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+ where the predictive capacity of ESN models are evaluated on a variety
+ of large-scale basins.
+ Experiments are carried out by comparing three different ESN variations
+ with two RNN models feedforward.
+ In addition, several aspects of ESN's design are investigated in order
+ to optimize hydrologically relevant information.
+ Only 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+ presents a hybrid system as our model proposal, this study consider two
+ components; A deterministic (Recurrent ANN using ESN) and non-deterministic
+ component ( random noise), in order to take advantage that a hybrid system
+ can provide us in forecasting task.
+\end_layout
+
+\begin_layout Standard
+Section 3 briefly reviews feedforward and traditional recurrent ANN models
+ and their training methods, after which a short introduction to RC is given.
+ Section 4 presents the data set and model settings used in this work.
+ The results of these experiments are presented and discussed in Sect.
+ 5, and finally conclusions are drawn in Sect.
+ 6.
+\end_layout
+
+\begin_layout Section
+Recurrent Neural Networks 
+\end_layout
+
+\begin_layout Standard
+Recurrent neural networks (RNNs) are a subclass of ANNs represented by cyclic
+ graph in its structure.
+ These directed cycles accumulate previous activity that allows the network
+ to store an internal state and consequently process sequences of inputs
+ in order to perform temporal tasks, by this reason there is no need to
+ feed the network with history of previous inputs and outputs like in Time-Delay
+ Neural Network 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kuna2015"
+
+\end_inset
+
+.
+ Therefore, prediction of future process output can be described as: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Output_{t+1}\cong Forecasting\left(RNNstate,Input_{t},Output_{t}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:elmanandwilliam"
+
+\end_inset
+
+ b) and a) show the two types of traditional recurrent ANN models , the
+ Elman recurrent network 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Elman90findingstructure"
+
+\end_inset
+
+ and the Willians- Zipser fully recurrent network 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams:1989:LAC:1351124.1351135"
+
+\end_inset
+
+.
+ Both networks have cyclical connections in their structure, in a) the input
+ conects directly to all neurons include output one, hidden and output neurons
+ are fully interconnected.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/RNNewilliamandelman.pdf
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:elmanandwilliam"
+
+\end_inset
+
+(b) Elman recurrent ANN.
+ a) William-zipser fully recurrent ANN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Training Algorithms
+\end_layout
+
+\begin_layout Standard
+Supervised training is probably the most common approach used among the
+ current types of neural network systems, in order to adjust the network
+ weight matrix 
+\series bold
+W,
+\series default
+ samples with inputs and outputs are used in the network for later optimisation
+ algorithms attempt to minimise ouptput error.
+ A well known training method is the standard backpropagation algorithm
+ (BP)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rumelhart:1986:PDP:104279"
+
+\end_inset
+
+, which is a kind of gradient descent technique where local minimum is approache
+d by changing weights along the direction of negative error gradient.
+ The objective function E(W) is calculated after BP applies an update to
+ the weights in the network;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle\omega_{ji}=-\eta\frac{\partial E}{\partial\omega_{ji}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\eta$
+\end_inset
+
+ is constant positive value called learning rate.
+ Previous weigth change called momentum rate 
+\begin_inset Formula $\beta$
+\end_inset
+
+ can be added to the current weight change, this often speeds up the learning
+ process
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sutskever2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle\omega_{ji}^{'}=\beta\triangle\omega_{ji}-\eta\frac{\partial E}{\partial\omega_{ji}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weigth updates can be performed in online mode or based on the mean error
+ over all training data, that is called batch mode.
+ Beside more sophisticated alternatives to the BP algorithm, such as the
+ Levenberg-Marquardt(LM) have been found faster convergence algorithm
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-9-111-2005"
+
+\end_inset
+
+.
+ In this algorithm the weight update is obtained by the following equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\varDelta\omega=-\left[H+\mu I\right]^{-1}J^{T}\rho
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is a learning rate, 
+\series bold
+J 
+\series default
+the jacobian matrix, which contains the first derivatives of the network
+ error with respect to the weights and biases, and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is a vector of network errors.
+ Finally, 
+\series bold
+H 
+\series default
+an aproximation of the Hessian matrix.
+\end_layout
+
+\begin_layout Section*
+Recurrent ANN training
+\end_layout
+
+\begin_layout Standard
+Standard BP algorithm is not suited for networks with cycles in them.
+ Nonetheless, applynig some artifices we can see a RNN like a feedforward
+ network by unfolding the RNN network in time as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:unfold"
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/RNNunfoldprocess.pdf
+	lyxscale 30
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:unfold"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

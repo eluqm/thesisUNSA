@@ -57,7 +57,7 @@ theorems-std
 \use_package stmaryrd 0
 \use_package undertilde 0
 \cite_engine natbib
-\cite_engine_type numerical
+\cite_engine_type authoryear
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -122,7 +122,7 @@ Universidad Nacional San Agustin – UNSA
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace vfill
 \end_inset
 
 
@@ -280,28 +280,28 @@ Por otra parte, actualmente se han estado desarrollando modelos basados
  El tipo de redes neuronales que presenta un notable desempeño en el área
  de hidrología según (
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "LukoseviciusJaeger09"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Coulibaly201076"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "chang:chang2002"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Chiang2004297"
 
 \end_inset
@@ -363,14 +363,14 @@ Por otra parte, las series hidrológicas temporales mensuales tienen como
  característica un comportamiento periódico que se manifiesta en sus propiedades
  como la média, varianza, asimetría y estructura de autocorrelación (
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Thomas"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "maceira"
 
 \end_inset
@@ -403,8 +403,8 @@ key "maceira2"
 \end_layout
 
 \begin_layout Standard
-Entre las metodologías que intentar modelar problemas complejos no lineales
- en los últimos años las Redes Neuronales Artificiales(
+Entre las metodologias que intentar modelar problemas complejos no lineales
+ en los ultimos años las Redes Neuronales Artificiales(
 \series bold
 RNA
 \series default
@@ -433,17 +433,17 @@ caja negra
 
  
 \series default
-implícito que presentan tiene observaciones planteadas con respecto a su
+implicito que presentan tiene observaciones planteadas con respecto a su
  fiabilidad y validez como modelos hidrológicos(
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Cunge75"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "hess-9-111-2005"
 
 \end_inset
@@ -555,7 +555,7 @@ key "Awchi"
 \end_inset
 
 .
- Siendo asi nuestro modelo una propuesta novedosa en la literatura.
+ Siendo asi nuestro modelo hibrido una propuesta novedosa en la literatura.
  
 \end_layout
 
@@ -671,7 +671,7 @@ Establecer las conclusiones, contribuciones, limitaciones, y trabajo futuro
 \end_layout
 
 \begin_layout Section
-Antecedentes y/o Estado del Arte
+Trabajos Relacionados
 \end_layout
 
 \begin_layout Standard
@@ -995,7 +995,7 @@ key "JAWR:JAWR70A"
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Thomas"
 
 \end_inset
@@ -1041,35 +1041,35 @@ RNA
 ) que han ido creciendo como alternativas y presentando un buen desempeño
  en la predicción de series temporales de variables hidrológicas(
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "WRCR:WRCR9735"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "WRCR:WRCR11667"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "Awchi"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "hess-20-1405-2016"
 
 \end_inset
@@ -1142,14 +1142,14 @@ RNA's
 \series default
  recurrentes tradicionales(
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "1"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "LukoseviciusJaeger09"
 
 \end_inset
@@ -1438,7 +1438,7 @@ y finalmente un componente no determinístico representado por un ruido aleatori
 \end_layout
 
 \begin_layout Section
-Plan experimental y Diseño de Investigación
+Diseño de Investigación
 \end_layout
 
 \begin_layout Subsection
@@ -1520,21 +1520,21 @@ Tiempo de ejecución
 Se medirá la média, desviación estándar, asimetría para todos los experimentos
  de los modelos a comparar (
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
 
 \end_inset
 
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "4371334"
 
 \end_inset
 
 ,
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "en81012228"
 
 \end_inset
@@ -1624,7 +1624,7 @@ sloppy
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "references/refs"
-options "hc-en"
+options "hc-de"
 
 \end_inset
 
