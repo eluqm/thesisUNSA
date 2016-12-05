@@ -232,7 +232,7 @@ key "6327793"
 
 .
  However, the main reason to prefer to use the feedforward neural networks
- over recurrent neural networks is that the second generates greater complexity,
+ over recurrent neural networks is that the later generates greater complexity,
  especially in the neural network training process.
  This motived the development of a stochastic process model using Recurrent
  Artificial Neural Networks in order to take advantage of its aforementioned
@@ -260,8 +260,8 @@ key "Awchi"
 
 .
  Being our model a new proposal in the literature.
- Finally, as a case study, it was chosen to apply the proposed model on
- well-known Model Parameter Estimation Experiment (MOPEX) data set
+ Finally, as a case study, it was chosen to apply this model on well-known
+ Model Parameter Estimation Experiment (MOPEX) data set
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Duan20063"
@@ -301,8 +301,8 @@ key "Peng2010"
 
 \end_inset
 
- they shows that there is no evidence that multivariate AR(1) models are
- inadecuate as predictors.
+ the author shows that there is no evidence that multivariate AR(1) models
+ are inadecuate as predictors.
  Studies such as 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -320,7 +320,14 @@ key "Thomas"
  describe mathematical models, which can reproduce special characteristics
  such as periodicity and consider the effects of linear correlation.
  In fact, the non-deterministics concept considered as part of our model
- was based on Thomas and Fierinig, work.
+ was based on Thomas and Fierinig work
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas"
+
+\end_inset
+
+.
  All these studies propose that natural behavior of times series can be
  simulated by a simple linear relationship with previous data.
  
@@ -602,7 +609,7 @@ Supervised training is probably the most common approach used among the
 W,
 \series default
  samples with inputs and outputs are used in the network for later optimisation
- algorithms attempt to minimise ouptput error.
+ algorithms attempt to minimise output error.
  A well known training method is the standard backpropagation algorithm
  (BP)
 \begin_inset CommandInset citation
@@ -722,6 +729,32 @@ reference "fig:unfold"
 
 \end_inset
 
+, where the recurrent network is just a layered net that keeps reusing the
+ same weigths, we assume a time delay of 1 in using each connection, creating
+ an equivalent feedforward network
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams90anefficient"
+
+\end_inset
+
+, this extension of the BP method is called backpropagation through time(BPTT).
+ in BPTT the number of networks copies is equal to time step 
+\series bold
+T.
+ 
+\series default
+It would be impractical in online manner, since its memory footprint grows
+ linearly with time.
+ Therefore, the network unfoldig is limited to a chosen truncation depth
+ to keep the method feasible
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+.
  
 \begin_inset Float figure
 wide false
@@ -750,7 +783,7 @@ name "fig:unfold"
 
 \end_inset
 
-
+recurrent network unfolded in time.
 \end_layout
 
 \end_inset
@@ -765,6 +798,962 @@ name "fig:unfold"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+More sofisticated methods were developed to overcome limitatitons of BPTT,
+ for example Real-Time Recurrent Learning
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams:1989:LAC:1351124.1351135"
+
+\end_inset
+
+, Clockwork Recurrent Network (CW-RNN) that splits hidden layer into M modules
+ running at different clocks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kuna2015"
+
+\end_inset
+
+ and the extended Kalman filter(EKF) method, which each time estimates optimal
+ weights, given a series of observed ouputs, for details see
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sum:1998:EKF:296468.296482"
+
+\end_inset
+
+.
+ However, even the methods such the later, suffers from shortcomings related
+ with model complexity and optimisation (gradient)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, i.e., many updates may be necessary it could be computationally expensive,
+ the gradient information might becomes useless by weight updates procedure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "doya1992bifurcations"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Echo State Network
+\end_layout
+
+\begin_layout Standard
+Echo state network(ESN) is a reservoir computing model has been introduced
+ by Jaeger
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+ in order to addresing the dificulties in RNN training.
+ Basically ESN is a clever way to train a RNN where a "reservoir" of hidden
+ units are sparsely connected to each other and the inputs are connected
+ to this reservoir, the hidden conections are not trained, they are randomly
+ initialized.
+ The state of the dynamical reservoir is called "echo states", these states
+ can be undertood as an "echo" generated by the input history.
+ The output layer is connected to the hidden reservoir
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Echo-State-Network"
+
+\end_inset
+
+.
+ The interesting property of ESNs is that while the recurrent topology has
+ fixed connections, only the linear readout is trained and extracts the
+ desired response from the reservoir’s state.
+ The idea behind this is that the reservoir contains a representation of
+ current and historical system dynamics that is rich enough to enable the
+ readout to learn the functional dependence between inputs and outputs
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ESNstructure.pdf
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Echo-State-Network"
+
+\end_inset
+
+Echo State Network
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to the notation used in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+ the activation of the internal echo states is updated follow the equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x\left(n+1\right)=f\left(\mathbf{W}^{in}u\left(n\right)+\mathbf{W}x\left(n\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where
+\series bold
+ 
+\begin_inset Formula $u(n)$
+\end_inset
+
+
+\series default
+ is the input signal
+\series bold
+, 
+\series default
+
+\begin_inset Formula $\mathbf{W}^{in}$
+\end_inset
+
+ are the weights between the input and the internal states
+\series bold
+, W 
+\series default
+is the recurrent connection weight matrix, and 
+\begin_inset Formula $x(n)$
+\end_inset
+
+ is the echo state vector.
+ Finally, 
+\begin_inset Formula $f$
+\end_inset
+
+ is the activation function of internal units(linear or hyperbolic tangent
+ function).
+ 
+\end_layout
+
+\begin_layout Standard
+The "echo state property" is a condition needed to scale the reservoir weight
+ matrix W, this condition asserts that recurrent network states are strongly
+ coupled with the input history, this is defined in term of the spectral
+ radius ( largest absolute eigenvalue of W) 
+\begin_inset Formula $\rho$
+\end_inset
+
+(W)<1, this condition is generally satisfied 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jaeger78"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The optimal output weights 
+\begin_inset Formula $W^{out}$
+\end_inset
+
+ for the output connections can be found by multiplying the pseudo inverse
+ with the target output 
+\begin_inset Formula $Y^{target}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W^{out}=Y^{target}X^{+}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $X$
+\end_inset
+
+ is the collected states matrix of the ESN, this matrix contains the activation
+ of the reservoir for each training input:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X^{+}=\left(XX^{T}\right)^{-1}X^{T}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The output 
+\begin_inset Formula $y(n)$
+\end_inset
+
+ is then computed with equation :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y(n)=W^{out}x(n)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hidrometereological data generation using ESN-RNN with random component
+\end_layout
+
+\begin_layout Standard
+The proposed model is a mixed stochastic deterministic model for hydrological
+ synthetic data generation, in terms of monthly series of 
+\lang spanish
+precipitation and streamflow discharge
+\lang american
+ using ESN-RNN.
+ The model consists of two components; the first component is the stochastic
+ part of Thomas-Fiering model
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas"
+
+\end_inset
+
+, 
+\begin_inset Formula $T_{v,t+1}$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{v,t+1}=\epsilon_{v,t}S_{t+1}\sqrt{1-r_{t}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where, 
+\begin_inset Formula $\epsilon_{v,t}$
+\end_inset
+
+ is a random normal deviate with zero mean and unit variance, 
+\begin_inset Formula $s_{t+1}$
+\end_inset
+
+ represents the standard deviation of the normalized and standardized precipitat
+ion and discharge in the 
+\begin_inset Formula $t+1^{th}$
+\end_inset
+
+months and 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+ the correlation coefficient between data in the 
+\begin_inset Formula $t^{th}$
+\end_inset
+
+and 
+\begin_inset Formula $\left(t+1\right)^{th}$
+\end_inset
+
+months.
+\end_layout
+
+\begin_layout Standard
+The second component 
+\begin_inset Formula $E_{v,t}$
+\end_inset
+
+ is the deterministic component which is represented by the ESN-RNN architecture.
+ The model can be resumed as the sum of both components above:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H_{v,t}=f(E_{v,t}+T_{v,t})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{v,t}$
+\end_inset
+
+ is the synthetic value obtained by our model.
+ The function 
+\begin_inset Formula $f$
+\end_inset
+
+ is the inverse of preprocessing transformations defined in equations 10
+ and 12: 
+\end_layout
+
+\begin_layout Subsubsection*
+Data preprocessing input and output 
+\end_layout
+
+\begin_layout Standard
+In probability theory and statistical applied to hydrologic time series
+ a basic assumption is which the variables, have to be normally distributed.
+ Therefore, a transformation is required if time series do not meet this
+ basic assumption.
+ The operation needed is called seasonal standardization or deseasonalizing
+ (normally distributed variables with zero-mean and unit standad deviation)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The series of MOPEX data set for the period of january, 1948 to 2000 from
+ 4 river basins (see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:riverbasin"
+
+\end_inset
+
+)were employed in this study.
+ They needed a transformation to reduce their biased skewness, the skewness
+ coefficient observerd was reduced using log-transformation written as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c_{t}=\frac{a}{g_{t}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $H_{v,t}$
+\end_inset
+
+ is monthly observed data for month 
+\begin_inset Formula $t(t=1,….,12)$
+\end_inset
+
+ and year 
+\begin_inset Formula $v(ν=1,….,N)$
+\end_inset
+
+, 
+\begin_inset Formula $N$
+\end_inset
+
+ is number of years of record of the series, 
+\begin_inset Formula $\bar{H_{t}}$
+\end_inset
+
+ is monthly average inflow for month 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ is a constant, for this study the value adopted was 0.8 resulted by trial
+ and error data test, 
+\begin_inset Formula $g_{t}$
+\end_inset
+
+ is the skewness coefficient for the set 
+\begin_inset Formula $H_{1,t},H_{2,t},...,H_{N,t}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{v,t}$
+\end_inset
+
+ are the normalized data, for year 
+\begin_inset Formula $v$
+\end_inset
+
+ and month 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The data used by stochastic component (Thomas-Fiering model) were standardized
+ in monthly basis through:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y_{v,t}=\frac{X_{v,t}-\bar{X_{t}}}{S_{t}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y_{v,t}$
+\end_inset
+
+ is standardized value for month 
+\begin_inset Formula $t$
+\end_inset
+
+ and year 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\bar{X}_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{t}$
+\end_inset
+
+ are mean and standard deviation for month 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Area(km2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bluestone
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Amite 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:riverbasin"
+
+\end_inset
+
+characteristic of four Mopex river basins
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Neural network architectures
+\end_layout
+
+\begin_layout Standard
+The performance of this approach is compared with three models, two based
+ on feedforward ANN and once statistical model such as Thomas and Fiering,
+ usually the models mentioned above require previous measured samples which
+ must be considered as input data, Therefore, the first model (ANN-1) generates
+ hidrological data for the present month using the data of past month, the
+ second model (ANN-2) use two previous months in order generates data for
+ present month.
+ 
+\end_layout
+
+\begin_layout Standard
+A three-layer feedforward architecture is adopted in ANN-1 and ANN-2, and
+ tan-sigmoid functions were used as activation function for which output
+ falls in the range of [-1, +1].
+ The number of hidden layer nodes was decided by trial and error procedure.
+ 
+\end_layout
+
+\begin_layout Standard
+Since feedback connections in the ESN-RNN architecture develop a type of
+ internal memory, it is not necessary an input signal before further processing.
+ Was considerated the input and bias fully connected to the reservoir, The
+ weights of the input to reservoir connection were randomly selected from
+ a uniform distribution where 
+\series bold
+
+\begin_inset Formula $W^{in}$
+\end_inset
+
+
+\series default
+ 
+\begin_inset Formula $\in$
+\end_inset
+
+ [−0.1,0.1].
+ All other connection weights were selected from a normal distribution.
+ A sparsely and randomly connected reservoir was used.
+\end_layout
+
+\begin_layout Standard
+The number of the internal units of the reservoir and the spectral radious
+ of the reservoir weights are important settings for a RC model
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ By this reason a respectively training performance study for each 4 river
+ basin over values of spectral radious from 0.1 to 0.9 and the size of reservoir
+ was made, see figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN-training-performance"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Applications/loadforecastingUSP-UNSA/training.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ESN-training-performance"
+
+\end_inset
+
+ESN training performance (averaged over 10 runs) over a range of values
+ for the reservoir size (y-axis) and spectral radius (x-axis).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN-training-performance"
+
+\end_inset
+
+ we can see that the bigger size of reservoirs generate lower performance
+ in training ESN-RNN for the 4 basins selected, each river basin was assigned
+ with specific reservoir size and spectral radious, because their characteristic
+s and dynamic nature are different.
+ 
+\end_layout
+
+\begin_layout Subsection
+Evaluation of the Performance of Models
+\end_layout
+
+\begin_layout Standard
+In this study, 200 syntetics series were generated with length of 24 months
+ (2 years), The data were split up into training (1948–1999), and test (2000–200
+2).
+ The performance of the forecasting models was evaluated according to 4
+ (four) error criteria:Normalized Root Mean Square Error (NRMSE), Mean Absolute
+ Error (MAD), and Mean Percentual Error (MPE), as follows:
+\end_layout
+
+\begin_layout Standard
+Different sizes of reservoir (number of hidden neurons) are used to test
+ the performance of ESN.
+ It was observed that in ESN many datasets are trained in only few minutes
+ or even seconds (see Figure (6)).
+ Thus, the convergence of training in ESN is much faster than other RNN.
+ Table (2) compares the results of all sensor datasets using ESN with the
+ other recurrent neural networks techniques used in time series prediction.
+\end_layout
+
+\begin_layout Section
+Results and Discussion
+\end_layout
+
+\begin_layout Section
+Conclusions
 \end_layout
 
 \begin_layout Standard

@@ -102,8 +102,8 @@
      fit-margin-bottom="0"
      inkscape:window-width="1430"
      inkscape:window-height="776"
-     inkscape:window-x="142"
-     inkscape:window-y="66"
+     inkscape:window-x="441"
+     inkscape:window-y="161"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -113,7 +113,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
