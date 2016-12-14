@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass IEEEtran
 \begin_preamble
 
@@ -14,16 +12,16 @@
 \language_package default
 \inputencoding default
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -82,43 +80,40 @@ Stochastic generation and forecasting of monthly hydrometeorological data
 \end_layout
 
 \begin_layout Abstract
-
-\end_layout
-
-\begin_layout Abstract
-
+en recumens ...en ingles ...sdfs s sdfsd ssdut tu may 
 \lang spanish
-Research on water resources may involve data generation and forecasting
- not only of the hydrological variables but also other derived variables
- that allow reduce economic and social losses.
- Therefore, an optimal design in a water management project frequently involves
- finding methods or techniques that generate long sequences of hydrological
- data.
- These sequences considered as time series can be used to analyze and optimize
- the performance of the project designed.
- In order to cover these requirements this work presents a new model of
- stochastic process applied in problems that involve phenomena of stochastic
- behavior and periodic characteristics.
- Two components were used, the first one, a type of recurrent neural network
- relatively recent introduced in the literature and conceptually simple
- called ESN (echo state network) as the deterministic component, an interesting
- feature of ESN is that from certain algebraic properties, training only
- the output of the network is often sufficient to achieve excellent performance
- in practical applications.
- The second part of the model incorporates the uncertainty associated with
- hydrological processes, the model is finally called ESN-RNN.
- This model was calibrated with series of monthly discharge data of four
- different river basins from Mopex data set.
- Finally, a comparison was made between the performance of the ESN-RNN based
- model results, the results of the 
-\lang american
-two feedforward neural networks ANN-1, ANN-2 using one and two past months
- respectively and 
-\lang spanish
-Thomas–Fiering model.
- The results show that ESN-RNN represents a promising modeling alternative
- for simulation purposes, with interesting potential in the context of hydromete
-reological resources systems.
+Las investigaciones en recursos hídricos pueden involucrar generación de
+ datos y/o pronóstico no solo de variables hidrológicas sino de otras variables
+ derivadas que permitan reducir perdidas de tipo económicas y sociales,
+ dimensionando y escenificando el impacto de una sequía, inundación y principalm
+ente la demanda poblacional.
+ Por lo tanto, la búsqueda de un diseño óptimo en un proyecto de gestión
+ del agua frecuentemente involucra encontrar un método o técnica que genere
+ largas secuencias de las caracteristicas de los flujos(caudales) en este
+ caso de un río en cuestión.
+ Estas secuencias consideradas como series temporales pueden ser usadas
+ para analizar y optimizar el desempeño del proyecto diseñado.
+ Con el fin de cubrir esos requerimientos, este trabajo tiene como objetivo
+ la elaboración de un modelo híbrido de proceso estocástico para ser aplicado
+ em problemas que envuelven fenómenos de comportamiento estocástico y de
+ características periódicas (caudales) en sus propiedades probabilísticas
+ como média, varianza, etc.
+ Para esto, serán usados dos componentes, el primero, un tipo de red neuronal
+ recurrente recientemente introducido en la literatura y conceptualmente
+ simple denominado 
+\series bold
+ESN
+\series default
+(echo state network) como el componente determinístico, una característica
+ interesante de 
+\series bold
+ESN
+\series default
+ es que a partir de ciertas propiedades algebraicas, entrenar solamente
+ la salida de la red es a menudo suficiente para alcanzar una performance
+ excelente en aplicaciones prcticas.
+ El segundo, es un componente aleatorio que incorpora al modelo la incertidumbre
+ asociada a los procesos hidrologicos.
 \end_layout
 
 \begin_layout Section
@@ -147,8 +142,8 @@ In probability theory an stochastic process is defined as a set of models
 
 \lang spanish
 Natural phenomena such as precipitation and streamflow discharge have nonlinear,
- complex and chaotic characteristics, in order to model the behavior of
- these phenomena, initially linear approximation was used
+ sometimes complex and chaotic characteristics, in order to model the behavior
+ of these phenomena, initially linear approximation was used
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
@@ -418,7 +413,7 @@ key "en81012228"
 
 \end_inset
 
-, the most popular reservoir computing model named echo state networks (ESN)
+, the most popular reservoir computing model named echo state networks(ESN)
  was used with a bayesian regularization for forecast short-term energy
  production of small hydroelectric plants, results indicate that the proposed
  model surpasses both RNN's feedforward and ESN in its simple version.
@@ -488,13 +483,12 @@ key "en81012228"
 \end_layout
 
 \begin_layout Standard
-Section 3 and 4 briefly reviews feedforward and traditional recurrent ANN
- models and their training methods, after which a short introduction to
- RC is given and ESN is described more detailed.
- Section 5 presents the proposal model used in this work.
- The results of some experiments are presented and discussed in Sect.
- 6, and finally conclusions are drawn in Sect.
- 7.
+Section 3 briefly reviews feedforward and traditional recurrent ANN models
+ and their training methods, after which a short introduction to RC is given.
+ Section 4 presents the data set and model settings used in this work.
+ The results of these experiments are presented and discussed in Sect.
+ 5, and finally conclusions are drawn in Sect.
+ 6.
 \end_layout
 
 \begin_layout Section
@@ -517,10 +511,6 @@ key "Kuna2015"
 
 .
  Therefore, prediction of future process output can be described as: 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -861,7 +851,7 @@ Echo State Network
 
 \begin_layout Standard
 Echo state network(ESN) is a reservoir computing model has been introduced
- by Jaeger 
+ by Jaeger
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
@@ -875,7 +865,7 @@ key "LukoseviciusJaeger09"
  initialized.
  The state of the dynamical reservoir is called "echo states", these states
  can be undertood as an "echo" generated by the input history.
- The output layer is connected to the hidden reservoir 
+ The output layer is connected to the hidden reservoir
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Echo-State-Network"
@@ -1336,6 +1326,257 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Area(km2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bluestone
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Amite 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1354,254 +1595,6 @@ characteristic of four Mopex river basins
 \end_layout
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="5">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="1cm">
-<column alignment="center" valignment="top" width="1cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Mopex id
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-River
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Area(km2)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Mean Annual precip(mm)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Mean Annual discharge(mm)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3179000
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Bluestone
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1020
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1018
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-421
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3364000
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-East Fork White
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4421
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-855
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-376
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3054500
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Tygart Valley
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2372
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1166
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-745
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1541500
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Clearfield Creek
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2170
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-827
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-179
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
 
 \end_layout
 
@@ -1628,11 +1621,7 @@ The performance of this approach is compared with three models, two based
 \begin_layout Standard
 A three-layer feedforward architecture is adopted in ANN-1 and ANN-2, and
  tan-sigmoid functions were used as activation function for which output
- falls in the range of 
-\begin_inset Formula $\left[-1,+1\right]$
-\end_inset
-
-.
+ falls in the range of [-1, +1].
  The number of hidden layer nodes was decided by trial and error procedure.
  
 \end_layout
@@ -1654,18 +1643,14 @@ Since feedback connections in the ESN-RNN architecture develop a type of
 \begin_inset Formula $\in$
 \end_inset
 
- 
-\begin_inset Formula $\left[-0.1,0.1\right]$
-\end_inset
-
-.
+ [−0.1,0.1].
  All other connection weights were selected from a normal distribution.
  A sparsely and randomly connected reservoir was used.
 \end_layout
 
 \begin_layout Standard
 The number of the internal units of the reservoir and the spectral radious
- of the reservoir weights are important settings for a ESN model
+ of the reservoir weights are important settings for a RC model
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
@@ -1675,7 +1660,7 @@ key "LukoseviciusJaeger09"
 .
  By this reason a respectively training performance study for each 4 river
  basin over values of spectral radious from 0.1 to 0.9 and the size of reservoir
- was made, see Figure 
+ was made, see figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ESN-training-performance"
@@ -1692,6 +1677,16 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Applications/loadforecastingUSP-UNSA/training.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1701,21 +1696,9 @@ name "fig:ESN-training-performance"
 
 \end_inset
 
-4 rivers ESN training performance, Rmse (y-axis) vs Reservoir size(x-axis),
- all over a range of values for the spectral radius from 0.1 to 0.9 (over
- 5 runs).
+ESN training performance (averaged over 10 runs) over a range of values
+ for the reservoir size (y-axis) and spectral radius (x-axis).
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/esntraining.pdf
-	scale 40
 
 \end_inset
 
@@ -1737,9 +1720,8 @@ reference "fig:ESN-training-performance"
 
  we can see that the bigger size of reservoirs generate lower performance
  in training ESN-RNN for the 4 basins selected, each river basin was assigned
- with specific reservoir size(red points) and spectral radious(highlighted
- in blue), this is because the characteristics and dynamic nature of the
- river are different.
+ with specific reservoir size and spectral radious, because their characteristic
+s and dynamic nature are different.
  
 \end_layout
 
@@ -1749,1174 +1731,29 @@ Evaluation of the Performance of Models
 
 \begin_layout Standard
 In this study, 200 syntetics series were generated with length of 24 months
- (2 years), The data were split up into training (1948–1999), and test (1998–200
-0).
- The performance of the forecasting models was evaluated according to three
- error criteria: Normalized Root Mean Square Error (NRMSE), Mean Absolute
- Error (MAD), and Mean Percentage Error (MPE).
+ (2 years), The data were split up into training (1948–1999), and test (2000–200
+2).
+ The performance of the forecasting models was evaluated according to 4
+ (four) error criteria:Normalized Root Mean Square Error (NRMSE), Mean Absolute
+ Error (MAD), and Mean Percentual Error (MPE), as follows:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:bluestone"
-
-\end_inset
-
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of Bluestone river
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/tygarsintetic.pdf
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:tygersintetic"
-
-\end_inset
-
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of Tygar Valley river
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/bluestone.pdf
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:eastforwhite"
-
-\end_inset
-
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of East Fork White river
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/eastforwhite.pdf
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+Different sizes of reservoir (number of hidden neurons) are used to test
+ the performance of ESN.
+ It was observed that in ESN many datasets are trained in only few minutes
+ or even seconds (see Figure (6)).
+ Thus, the convergence of training in ESN is much faster than other RNN.
+ Table (2) compares the results of all sensor datasets using ESN with the
+ other recurrent neural networks techniques used in time series prediction.
 \end_layout
 
 \begin_layout Section
 Results and Discussion
 \end_layout
 
-\begin_layout Standard
-The models used here were trained and adjusted: ANN1, ANN2, Thomas-Fiering
- and ESN-RNN.
- During both the training and testing periods of the ESN, the entries of
- 
-\series bold
-W
-\series default
- were scaled with different espectral values for the 4 river basins see
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ESN-training-performance"
-
-\end_inset
-
-.
- In order to avoid an initial contamination, we have disregarded first responses
-(states) of reservoir.
- The number of hidden layer processing elements was defined as N1 = 17,
- N2= 20,N3 = 22, N4= 25, which presented best results for each 4 river basins,
- see red points in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ESN-training-performance"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-We note that ESN states have a wide dynamic range in this problem, when
- it would be necessary to cover the feature space during the whole training
- period.
- Those variety ESN states represent a set of functional bases constructed
- dynamically by the input, while the readout simply projects the desired
- response onto this representation space.
- 
-\end_layout
-
-\begin_layout Standard
-We can see, at Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:bluestone"
-
-\end_inset
-
-, 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tygersintetic"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:eastforwhite"
-
-\end_inset
-
-, the result of the generate synthetic data by ESN-RNN and Thomas fiering
- models, of discharge for 3 river basins respectively.
- The blue line refers to the observed measures of this time series, and
- the black lines refers to the “forecasted” series of streamflow discharge(mm)
- to the period of 1998-2000.
- 
-\end_layout
-
-\begin_layout Standard
-Based on section a.1, b.1 of Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:bluestone"
-
-\end_inset
-
-, 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tygersintetic"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:eastforwhite"
-
-\end_inset
-
-, we can say the predictor model was able to learn and capture most of the
- behavior variability present on this time series, lower variability, indicate
- that the training had a desired effect in order capture the dynamic of
- hidrological series.
- which seems but is not a easy task for any predictor.
- The ESN-RNN predictor presented good results.
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:error"
-
-\end_inset
-
- shows the forecasting errors obtained by the models used and compared in
- this paper: ESN-RNN, ANN-1,ANN-2 and Thomas -Fiering.
- We can see that ESN-RNN, and models based on no-recurrent neural networks(ANN-1
- and ANN-2) performed better than Thomas-Fiering model, which is a pure
- stochastic model.
- In addition, we note that ANN-1 and ANN-2 models presented practically
- the same performance.
- Moreover, the ESN-RNN model performed few better than all other models,
- even though it presents a significantly simpler, and faster, training algorithm.
- This fact prove how powerful and promising is this approach.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:error"
-
-\end_inset
-
- Forescasting error for 4 Mopex river basins 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="5">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ID River
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Models
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-NRMSE
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-MAD
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-MPE(%)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3054500
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ESN-RNN
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.67
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.91
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-296.91
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.72
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.02
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-356.34
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.70
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.05
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-330.23
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Thomas-Fiering 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.78
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.14
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-402.00
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3364000
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ESN-RNN
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.15
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.54
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-91.93
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.34
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.61
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-93.56
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.20
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.59
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-93.24
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Thomas-Fiering 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1.32
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.62
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-95.89
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3179000
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ESN-RNN
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.62
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.56
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-169.79
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.75
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.66
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-180.56
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.80
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.70
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-195.43
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Thomas-Fiering 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.83
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.79
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-257.58
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1541500
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ESN-RNN
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.70
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.51
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-92.15
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.80
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.59
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-111.13
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ANN-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.79
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.65
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-109.98
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Thomas-Fiering 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.95
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.65
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-126.37
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Conclusions
-\end_layout
-
-\begin_layout Standard
-A model is proposed as an alternative and effective tool for generation
- of monthly hydrological streamflow series.
- The model consists basically of a deterministic component defined in terms
- of a Recurrent neural network trained wit ESN in addition to a stochastic
- component which includes a white noise module.
- Historical monthly data were used to train and test the ability of the
- model for streamflow data generation and forecasting.
- 
-\end_layout
-
-\begin_layout Standard
-This study presents a type of recurrent neural network called Echo State
- Network (ESN), which possesses a highly interconnected and recurrent topology.
- The ESN has two interesting properties: one is that only the readout is
- trained, whereas the recurrent topology has fixed connection weights; and
- another one is that ESN has internal built-in memory resulting from the
- feedback connections, it is not necessary to embed the input signal before
- further processing.
- Here, the ESN is used to forecast streamflow.
- A database of average monthly streaming inflows of project Mopex was used
- as source of training and test data.
-\end_layout
-
-\begin_layout Standard
-For comparison, the Thomas-Fiering model was applied.
- The proposed hybrid model is also tested using two neural networks architecture
-s, the first architecture (ANN-1) utilizes one previous month’s streamflow,
- and the second (ANN-2) utilizes two previous months, in order to get the
- output of the model which is the next month.
- The results show that the our model demonstrates a little better in performance
- compared to ANN-1, ANN-2 and Thomas-Fiering models.
- In addition the results also revealed that the proposed model performs
- little better comparing with the pure stochastic Thomas-Fiering Model,
- The syntetic series produced by the Recurrent NN (ESN), they present low
- variability and outliers in contrast with Thomas-Fiering Model, indicating
- that the use of Recurrent NN features had the desired effect.
- It can be concluded that the proposed model is a promising alternative
- to be considered for more applications, competing with other linear pure
- stochastic autoregressive, traditional neural networks models.
- Without forgetting to mention that the specific architecture of ESN models
- overcomes several important drawbacks to traditional recurrent methods.
- This approach can lead to more accurate, reliable, and realistic models.
 \end_layout
 
 \begin_layout Standard
