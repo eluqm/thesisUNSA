@@ -1,0 +1,2467 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\begin_preamble
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  linkcolor    = ., %Colour of internal links
+  citecolor   = blue %Colour of citations
+}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "citecolor=blue"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Time Series for the Real Time Hydrological Forecasting: A systematic literature
+ review
+\end_layout
+
+\begin_layout Abstract
+The wide use of hydrological time series data has initiated a great deal
+ of research and development attempts in the field of data mining.
+ Trend, pattern, simulation, similarity measures indexing, segmentation,
+ visualization and forecasting carried out by the researchers with the implicit
+ mining from the historical observed data.
+ The systematic literature review of the existing hydrological parameter
+ forecast research are explored to identify the present circumstances in
+ hydrological forecasting techniques and its concerned issues.
+\end_layout
+
+\begin_layout Abstract
+Method: We used the standard systematic literature review method employing
+ a manual search of journals and conference proceedings.
+\end_layout
+
+\begin_layout Abstract
+Result: Of 14 relevant studies meeting the exclusion and inclusion criteria
+ set out in the review protocol.
+ The selected elements have been classified according to the approach/techniques
+ they describe.
+\end_layout
+
+\begin_layout Abstract
+Conclusions: Asian researchers, particularly India laboratories appear to
+ be the leading exponents of hidrological topics.
+ We observed that there are very few mathematical/ computational models
+ available to predict 
+\emph on
+real time
+\emph default
+ hydrological forecast objectives.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Forecasts are essential to allow sufficient time for various departments
+ to develop plans for future development.
+ Forecasting problems use either time series data that is a collection of
+ data recorded over a period of time(weekly, monthly, quarterly, or yearly).
+ There are several application domains of data mining with time series data,
+ being that one important application domain weather forecast.
+ Intelligent forecasting models have achieved better results than traditional
+ statistical methods.
+ Although the literature describes these methods are better, we can still
+ improve the results in terms of accuracy in addition to other factors.
+ 
+\end_layout
+
+\begin_layout Standard
+Recent publications which have highlighted hydrological parameter prediction
+ have been examined in this paper.
+ For this purpose, we reviewed the current status of the use of techniques
+ for time series weather forecast, along with the latest trends in the use
+ of data mining for time series forecasting since 2005 using a secondary
+ study.
+ We describe our methodology in Section 2 and present our results in Section
+ 3.
+ In Section 4 we answer our 4 major research questions.
+ We present our conclusions in Section 5.
+\end_layout
+
+\begin_layout Section
+Method
+\end_layout
+
+\begin_layout Standard
+This study has been undertaken as a systematic literature review(SLR) based
+ on the original guidelines as proposed by Kitchenham 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kitchenham2004procedure"
+
+\end_inset
+
+.
+ In this case the goal of the review is to assess the techniques for hidrologica
+l time series forecasting, so this study is categorised as a secondary literatur
+e review.
+ The steps in the systematic literature review method are documented below.
+\end_layout
+
+\begin_layout Subsection
+Research questions 
+\end_layout
+
+\begin_layout Standard
+The research questions addressed by this study are: 
+\end_layout
+
+\begin_layout Itemize
+RQ1.
+ How much hydrological parameters forecasting activity has there been since
+ 2005? 
+\end_layout
+
+\begin_layout Itemize
+RQ2.
+ What models are being addressed? 
+\end_layout
+
+\begin_layout Itemize
+RQ3.
+ Who is leading hydrological forecasting research? 
+\end_layout
+
+\begin_layout Itemize
+RQ4.
+ What are the limitations of current research?
+\end_layout
+
+\begin_layout Standard
+In order to address RQ1, we identified the number of papers published per
+ year, the journal/conferences that published them.
+ With respect to RQ2, we considered the scope of the study (i.e.
+ whether it looked at research trends, or whether it addressed a technology-cent
+red research question) and the computer science topic area.
+ With respect to RQ3, we considered individual researchers, the organisation
+ to which researchers were affiliated and the country in which the organisation
+ is situated.
+ With respect to limitations of models (RQ4) we considered the quality of
+ studies/models appropriate, if not, is it improving?.
+\end_layout
+
+\begin_layout Subsection
+Search process 
+\end_layout
+
+\begin_layout Standard
+The search process was a manual search of specific conference proceedings,
+ journal papers and digital libraries since 2005.
+ The digital libraries and journals selected are shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Selected-journals-and"
+
+\end_inset
+
+.
+ The journals were selected because they were known to include either empirical
+ studies or literature surveys, and to have been used as sources for other
+ systematic literature reviews related to hidrological time series.
+\end_layout
+
+\begin_layout Standard
+Each journal and conference proceedings was reviewed and the papers that
+ addressed literature surveys of any type were identified as potentially
+ relevant.
+ We searched the specific journal or conference applied the detailed inclusion
+ and exclusion criteria to the relevant papers (see the following Section).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Selected-journals-and"
+
+\end_inset
+
+Selected journals and open libraries.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "lightgray"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acronym
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ACM Digital Library
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ACM-DL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scientific Electronic Library Online
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SciELO
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEEE Xplore Digital Library
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEE-XDL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Computer Science Bibliography
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DBLP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Biblioteca Digital Brasileña de Computación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BDBComp
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hydrology and Earth System Sciences 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HESS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+American Geophysical Union
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AGU
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Springer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Springer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\end_layout
+
+\begin_layout Subsection
+Inclusion and exclusion criteria
+\end_layout
+
+\begin_layout Standard
+The keywords used as search strings were: 
+\emph on
+Water Inflow, Forecasting, Hydrological data, Times Series.
+ 
+\emph default
+Subsequently, reviewed articles on the following topics, published between
+ Jan 1st 2005 and June 30th 2016, were included: 
+\end_layout
+
+\begin_layout Itemize
+Studies must have been published in conferences, workshops and journals.
+\end_layout
+
+\begin_layout Itemize
+Studies must be written in English, Portuguese or Spanish.
+\end_layout
+
+\begin_layout Itemize
+Studies must be available on the web.
+\end_layout
+
+\begin_layout Itemize
+Studies should have some of the search strings in their title, abstract
+ / keywords or keywords.
+\end_layout
+
+\begin_layout Itemize
+Studies must present a proposal for one or more forecasting models.
+ 
+\end_layout
+
+\begin_layout Standard
+Articles on the following topics were excluded:
+\end_layout
+
+\begin_layout Itemize
+Informal literature surveys (no defined research questions; no defined search
+ process; no defined data extraction process).
+\end_layout
+
+\begin_layout Itemize
+Duplicate reports of the same study (when several reports of a study exist
+ in different journals the most complete version of the study was included
+ in the review).
+\end_layout
+
+\begin_layout Subsection
+Data collection 
+\end_layout
+
+\begin_layout Standard
+The data extracted from each study were: 
+\end_layout
+
+\begin_layout Itemize
+The source (journal or conference) and full reference.
+ 
+\end_layout
+
+\begin_layout Itemize
+Scope of models (Research trends or specific technologies).
+ 
+\end_layout
+
+\begin_layout Itemize
+The author(s) and their institution and the country where it is situated.
+ 
+\end_layout
+
+\begin_layout Itemize
+Summary of the study including the main research questions and the answers.
+ 
+\end_layout
+
+\begin_layout Itemize
+Research question/issue.
+ 
+\end_layout
+
+\begin_layout Itemize
+Quality evaluation.
+ 
+\end_layout
+
+\begin_layout Subsection
+Data analysis
+\end_layout
+
+\begin_layout Standard
+The data was tabulated to show: 
+\end_layout
+
+\begin_layout Itemize
+The number of papers published per year and their source (addressing RQ1).
+ 
+\end_layout
+
+\begin_layout Itemize
+The number of studies in each major category (Approaches) i.e.
+ research trends or technology questions (addressing RQ2 and RQ4).
+\end_layout
+
+\begin_layout Itemize
+The scope of forecasting hidrological data (addressing RQ2 and RQ4).
+\end_layout
+
+\begin_layout Itemize
+The affiliations of the authors and their institutions (addressing RQ3).
+\end_layout
+
+\begin_layout Section
+Results 
+\end_layout
+
+\begin_layout Standard
+This section summarizes the results of the study.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Selected-journals-and-1"
+
+\end_inset
+
+ shows the results of the search procedure.
+ Based on the aforementioned criteria the search process found 50 studies
+ published between 2005 and 2016.
+ These studies were selected for further analysis.
+ After reading the summary and conclusions, 14 studies meet the exclusion
+ and inclusion criteria set out in the review protocol.
+ In the next section, we will make a brief description of the first selected
+ elements that have been classified according to the approach they describe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Selected-journals-and-1"
+
+\end_inset
+
+Selected Studies in Forecasting Hidrological Time Series.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "170col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "lightgray"
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="6">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell mroffset="3cm" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Author
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Date
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hidrological forecasting
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Approach
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Article type
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Purviya R.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Purviya2014ApplicationOC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clustering
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SLR
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Guo, et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "guo2014use"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Metereological Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clustering
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Chakraborty, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chakraborty"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall and Runoff
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Boudaghpour, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Boudaghpour"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Suspended Solids and Sediments
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NN1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aranildo et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lima2016forecasting"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Streamflow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Neural Networks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NN2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sun, Y.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-20-1405-2016"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Groundwater
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Neural Networks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conference
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NN3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gang et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power Productio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Neural Networks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SVM1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wang W.C.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wang2013improved"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall and Runoff
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Support Vector Machine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SVM2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Torabi et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "torabi2012data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Support Vector Machine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Symposium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WNN1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wei, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wei2013wavelet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+River Flows
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wavelets and Neural Networks 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WNN2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ramana et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ramana2013monthly"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wavelets and Neural Networks 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Symposium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AG1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aziz K.
+ Rai S.
+ and Rahman 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Aziz"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2015
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Flood
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Genetic Algorithm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Journal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AG2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Patil et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "patil2012study"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2012
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall and Runoff
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Genetic Algorithm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Symposium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FZ1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alvisi et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "alvisi2006water"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2006
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rainfall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fuzzy Logic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Symposium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modeling based on Clustering Approach 
+\end_layout
+
+\begin_layout Standard
+Currently, the main applications of cluster algorithms in hydrological forecasti
+ng include rainfall monitoring, flood forecasting, and water quality monitoring,
+ inflow and outflow calculation.
+ The main clustering methods contain k-means method, hierarchical method,
+ Similarity search, SOM method and FCM method.
+ Purviya R.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Purviya2014ApplicationOC"
+
+\end_inset
+
+ described clustering can be done by the different number of algorithms
+ such as hierarchical, partitioning, grid and density based algorithms.
+ Guo, et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "guo2014use"
+
+\end_inset
+
+ presents a partial supervised model of fuzzy clustering iteration.
+ The forecasting model is distinct in mathematic and physical conception,
+ and is of good dispersion.
+ Costa.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "costa2011clustering"
+
+\end_inset
+
+ intends to classify the water quality monitoring sites into spatial homogeneous
+ groups, based on the dissolved oxygen concentration.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+There seems to be an increased interest in time series clustering as part
+ of the effort in temporal data mining research.
+ Clustering is necessary when no labeled data are available regardless of
+ whether the data are binary, categorical, numerical, interval, ordinal,
+ relational, textual, spatial, temporal, spatio-temporal, image, multimedia,
+ or mixtures of the above data types.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At present, the clustering methods in this field contain the k-means, hierarchic
+al method, SOM method and FCM method.
+ In view of the clustering algorithms, k-means and hierarchical methods
+ are widely used in hydrological applications mentioned above for their
+ typicality and distinct advantages.
+\end_layout
+
+\begin_layout Subsection
+Modeling based on Regression Approach
+\end_layout
+
+\begin_layout Standard
+Adequate literature is available on stochastic modeling.
+ Generally, the rainfall-runoff forecasting model needs to fullfill four
+ principles: parsimony, modesty, accuracy and testability.
+\end_layout
+
+\begin_layout Standard
+Wang, Wen-Chuan, et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wang2009294"
+
+\end_inset
+
+ autoregressive moving-average (ARMA) models, artificial neural networks
+ (ANNs) approaches, adaptive neural-based fuzzy inference system (ANFIS)
+ techniques, genetic programming (GP) models and support vector machine
+ (SVM) method are presented by authors to examined the long-term observations
+ of monthly river flow discharges.
+ Boudaghpour, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Boudaghpour"
+
+\end_inset
+
+ and Musa, J.
+ J.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Musa"
+
+\end_inset
+
+, explain the stochastic AR (1) and AR (2) models which used for the case
+ study of TSS in Lighvan Chia basin.
+ They further coupled four autoregressive moving average models including,
+ ARMA (1,1), ARMA (2,2), ARMA (1,2) and ARMA (2,1).
+\end_layout
+
+\begin_layout Standard
+Tesfaye, Y.
+ G.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tesfaye"
+
+\end_inset
+
+ introduced the model which have developed based on a periodic autoregressive
+ moving average (PARMA).
+ The purpose is to capture the seasonal variations in river flow statistics.
+ Toth, E.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Toth2000132"
+
+\end_inset
+
+ in their study only rainfall depths is used as only input data by which
+ they tried to compares the accuracy of the short-term rainfall forecasts.
+ ARMA models, ANN, and the non-parametric nearest-neighbours method techniques
+ are used for developing model on the Apennines Mountains, Italy.
+ The results indicate ANN techniques are mere accurate than the ARMA and
+ nearest-neighbours method.
+ 
+\end_layout
+
+\begin_layout Standard
+Chakraborty, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chakraborty"
+
+\end_inset
+
+ conducted a study to develop a stochastic time series model, capable of
+ prediction of rainfall and runoff in India.
+ They were tried Autoregressive (AR) models of order 0,1 and 2.
+\end_layout
+
+\begin_layout Subsection
+Modeling based on ANN approach
+\end_layout
+
+\begin_layout Standard
+The ANN models have been used because of its ability to model both linear
+ and nonlinear systems without the need to make any assumptions like most
+ traditional statistical approaches.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Edossa2010,Abhishek,yadav2013forecasting,kumarasiri2008performance"
+
+\end_inset
+
+ have been modelled a nonlinear stream flow forecasting technique along
+ with ANN for study the drought and anual rainfall forecasting.
+ 
+\end_layout
+
+\begin_layout Standard
+Adamowski, J.
+ and Karapataki, C.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Adamowski"
+
+\end_inset
+
+ compared three different type artificial neural network and multiple linear
+ regression model for peak weekly water demand forecasting.
+\end_layout
+
+\begin_layout Standard
+Mittal et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mittal2012dual"
+
+\end_inset
+
+ proposed a Dual Artificial Neural Network, to improve the model performance
+ in terms of extreme values.
+ Papers such as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sarkar2012artificial,wu2005artificial"
+
+\end_inset
+
+ examined the study to model the event based rainfall runoff process.
+ A case study has been done to develop event based rainfall runoff model
+ for the basin to simulate the runoff.
+ Obtained result demonstrates that ANN model are able to provide a good
+ simulation for event based forecasting.
+\end_layout
+
+\begin_layout Standard
+Sharda et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sharda2006modeling"
+
+\end_inset
+
+ analyzed three hilly micro watersheds to assess the impact of morphological
+ characteristics on water flow.
+ To predict runoff and base flow, a artificial intelligence model is developed
+ using multivariate adaptive regression splines method.
+\end_layout
+
+\begin_layout Standard
+In Aranildo et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lima2016forecasting"
+
+\end_inset
+
+ an online sequential extreme learning machine (OSELM) – is automatically
+ updated inexpensively as new data arrive (and the new data can then be
+ discarded) was applied to forecast daily streamflow at two small watersheds
+ in British Columbia, Canada, at lead times of 1–3 days.
+\end_layout
+
+\begin_layout Standard
+The nonstationary nature of the precipitation and streamflow time series
+ is considered one of the most important difficulties to forecast
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+.
+ Studies such as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "WRCR:WRCR11667,lcdcampos,hess-20-1405-2016"
+
+\end_inset
+
+ used Artificial Neural Networks (ANN) as forecasting models.
+ The Recurrent Neural Networks demostrated better capacity than ANN feeddorward
+ due their structure 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013,LukoseviciusJaeger09"
+
+\end_inset
+
+, which allow a more parsimonious modeling of dynamic properties.
+ However, it was also demostrated that the recurrence present in its structure
+ can cause increce of training conplexity and subsequently cause problems
+ of convergence 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1"
+
+\end_inset
+
+.
+ By 2000 the concept of Reservoir Computing (RC) was introduced.
+ Reservoir Computing is a training approach that can be remarkably simpler
+ and faster than those traditional applied in RNN, according to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+ few applications of RC in hydrometereology have been made; for example,
+ in Gang et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+, the most popular reservoir computing model named echo state networks (ESN)
+ was used with a bayesian regularization for forecast short-term energy
+ production of small hydroelectric plants, results indicate that the proposed
+ model surpasses both RNN's feedforward and ESN in its simple version.
+ Similar studies such as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Coulibaly201076,Abrahart201276"
+
+\end_inset
+
+ used ESN to forecast monthly water levels for the four Great Lakes of North
+ America, the authors demostrated the good performance of ESN networks and
+ attributed it to their highly non-linear and dynamic structure.
+ The echo state network are found to be valid alternatives to traditional
+ recurrent ANNs in water inflow, for example in R.
+ Sacchi et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+ where the performance of ESN is compared with SONARX
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371335"
+
+\end_inset
+
+, RBF networks and ANFIS model
+\begin_inset CommandInset citation
+LatexCommand cite
+key "256541"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+ where the predictive capacity of ESN models are evaluated on a variety
+ of large-scale basins.
+ Experiments are carried out by comparing three different ESN variations
+ with two RNN models feedforward.
+ In addition, several aspects of ESN's design are investigated in order
+ to optimize hydrologically relevant information.
+\end_layout
+
+\begin_layout Subsection
+Modeling based on Wavelet ANN approach
+\end_layout
+
+\begin_layout Standard
+This technique is largely applied to times series analysis of non-stationary
+ signals, this provides an interpretation of the series structure and extracts
+ the significant information about its history.
+ The set of studies carried out by Adamowski, J.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "adamowski2010development,adamowski2012comparison,belayneh2012standard,adamowski2011wavelet"
+
+\end_inset
+
+ proposed methods, for flow, drought forecasting based on coupling discrete
+ wavelet transforms (WA) and artificial neural networks (ANN) techniques.
+ 
+\end_layout
+
+\begin_layout Standard
+Studies such as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ramana2013monthly,partal2009prediction,guimaraes2014daily"
+
+\end_inset
+
+ combined the wavelet technique with Artificial Neural Network (ANN) for
+ rainfall, precipitation and streamflow forecasting.
+\end_layout
+
+\begin_layout Standard
+The hybrid approaches were carried out by Campisi-Pinto, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "campisi2012forecasting"
+
+\end_inset
+
+ and Wei, S.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wei2013wavelet"
+
+\end_inset
+
+, both present the combination of wavelet-denoising and back-propagation
+ artificial neural networks (ANNs) for forecasting.
+ The second proposed to combine discrete wavelet multi-resolution decomposition
+ and a back propagation (BP) feed-forward multilayer perceptron artificial
+ neural network.
+ The comparison shows that WNN hybrid model perform better than the single
+ ANN model.
+\end_layout
+
+\begin_layout Subsection
+Modeling based on Support Vector Machine approach
+\end_layout
+
+\begin_layout Standard
+Support vector machine (SVM) are a set of uniquely related supervised learning
+ concepts used for classification and regression task 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "botsis2011rainfall"
+
+\end_inset
+
+, its various approaches are discussed here.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "espinoza2005load,torabi2012data"
+
+\end_inset
+
+ Neural Network and SVM are adapted in a novel manner.
+ The main advantage of this approach is that the structure of the network
+ can be obtained objectively.
+\end_layout
+
+\begin_layout Standard
+Novel regression approaches are presented by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lai2010comparison,yi2011new"
+
+\end_inset
+
+, the former presents the Rough Margin Support Vector Regression (RMSVR)
+ network to adopt the concept of rough sets to construct the model obtained
+ by SVR and fine tune it with a robust learning algorithm.
+ 
+\end_layout
+
+\begin_layout Standard
+Lin, Y.J.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lin2006using"
+
+\end_inset
+
+ a clustering based Short Term Load Forecasting (STLF) using SVM.
+ The forecasting is performed for the 48 half hourly loads of the next day.
+\end_layout
+
+\begin_layout Standard
+Misra et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "misra2009application,mishra2013pattern,mishra2014efficient,mishra2015discovering"
+
+\end_inset
+
+ used SVM to simulate runoff and sediment yield from watersheds.
+ They have simulated daily, weekly, and monthly runoff and sediment yield
+ from an Indian watershed.
+\end_layout
+
+\begin_layout Standard
+Xian and Zeng 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "xian2008novel"
+
+\end_inset
+
+ presented a two-phase, efficient, and fair evaluation method for DRMs (digital
+ right management system) basing on SVM.
+\end_layout
+
+\begin_layout Standard
+Wang W.C.
+ et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wang2013improved"
+
+\end_inset
+
+ described empirical mode decomposition (EEMD), for decomposing annual rainfall
+ series in a rainfall-runoff model based on SVM.
+ Finally, the study of Wei L.H.
+ and Billings A.S.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wei2006long"
+
+\end_inset
+
+ proposed the long term prediction of non-linear dynamical time series,
+ based on multiresolution wavelet models, from historically observed data
+ sets.
+\end_layout
+
+\begin_layout Subsection
+Modeling based on Genetic Algorithms, Fuzzy Logic approach
+\end_layout
+
+\begin_layout Standard
+Wang et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mutao2007intelligent"
+
+\end_inset
+
+ presented a SVM model with chaotic genetic algorithm (CGA) as a promising
+ method for hydrological prediction.
+ Patil et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "patil2012study"
+
+\end_inset
+
+ compared the ANN, fuzzy logic and genetic algorithms for rainfall- runoff
+ modeling.
+ Banik et.
+ al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "banik2009forecasting"
+
+\end_inset
+
+ present efficient model based on Fuzzy logic System for the prediction
+ of monthly monsoon rainfall for a number of stations.
+ Forecasting models on the basis of fuzzy logic and ANN such as, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "alvisi2006water,shirke2012artificial,Aziz"
+
+\end_inset
+
+ are presented in data driven water level.
+ The analyses are made with great attention to the reliability and accuracy
+ of each model for water level forecasting.
+ These models is known as Neuro-Fuzzy model for flood monitoring and control
+ system.
+\end_layout
+
+\begin_layout Section
+Discussion 
+\end_layout
+
+\begin_layout Standard
+We discuss the answers to our research questions.
+ 
+\end_layout
+
+\begin_layout Subsection
+How much hydrological parameters forecasting activity has there been since
+ 2005? 
+\end_layout
+
+\begin_layout Standard
+Overall, we identified 14 relevant studies in the sources that we searched,
+ considering the date of their publication as import factor, as shown in
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Selected-journals-and-1"
+
+\end_inset
+
+.
+ One study was classified as SLR and 13 studies were classified as journal,
+ proceding and conference document.
+ All studies addressed different research approaches such as, Clustering
+ ,Neural networks, SVM, Regression, Fuzzy logic.
+ Thus, we selected 2 or more studies for each of these approaches and recent
+ year of publication.
+ Initially, we were surprised that have been used the automated search of
+ ACM Computer Surveys using the ACM digital library, found low rate of SLRs
+ on the topic of forecasting hidrological data.
+ However, the lack of SLRs may be because, journals have significant publication
+ lag.
+\end_layout
+
+\begin_layout Subsection
+What models are being addressed? 
+\end_layout
+
+\begin_layout Standard
+In terms of hydrology area, 7 articles are related to forecasting Rainfall
+ and Runoff problems.
+ With respect to the techniques applied, three were related to Neural Networks
+ research.
+ 2 related to Support Vector Machine estimation, in addition, the two studies
+ that included regression methods.
+ 2 articles related to clustering experiments.
+ 1 articles related to fuzzy logic.
+ Finally, we found articles 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "alvisi2006water,campisi2012forecasting,wei2013wavelet"
+
+\end_inset
+
+ that describing hybrid approaches with trend to use Neural Networks approach
+ in conjunction with some of the approaches aforementioned(SVM, Clustering,
+ AG, Fuzzy Logic).
+ We may assert that neural networks and its derivatives currently they are
+ being addressed by most of researchers in forecasting hydrological time
+ series.
+ 
+\end_layout
+
+\begin_layout Subsection
+Who is leading hydrological forecasting research?
+\end_layout
+
+\begin_layout Standard
+Overall, the set of studies are dominated by Asian researchers who have
+ been involved in 11 of the studies.
+ The research who contributed to more than two studies, Mishra, Satanand,
+ is affiliated to CSIR-Advanced Material Process Research Institute in India.
+ Only few studies had North American and European authors.
+\end_layout
+
+\begin_layout Subsection
+What are the limitations of current research?
+\end_layout
+
+\begin_layout Standard
+The mapping studies(high quality) has the potential to radically change
+ the nature of forecasting hidrological data.
+ Mapping studies can highlight areas where there is a large amount of research
+ that would benefit from more detailed SLRs and areas where there is little
+ research that require more theoretical and empirical research.
+ Thus, instead of every researcher undertaking their own research from scratch,
+ a broad mapping study provides a common starting point for many researchers
+ and many research initiatives.
+ Relatively few SLRs have assessed the quality of the primary studies included
+ in the review.
+ This is acceptable in the context of studies of research trends but is
+ more problematic for reviews that attempt to evaluate technologies.
+ This is an issue where there needs to be improvement, since forecasting
+ hydrological data is meant to impact practice not just academia.
+ 
+\end_layout
+
+\begin_layout Section
+Conclusions 
+\end_layout
+
+\begin_layout Standard
+This review suggests that the Asian research laboratories, currently to
+ leading in terms of forecast hidrological data.
+ 
+\end_layout
+
+\begin_layout Standard
+The SLRs studies provides the references needed to initiate research programmes
+ based of categorised research papers.
+ 
+\end_layout
+
+\begin_layout Standard
+The results in this study suggest that the current output of the articles
+ selected is strongly supported by Asian researchers.
+ However, if hydrological forecast is to have a serious impact on engineering,
+ statistic and computer science research and practice, it is important that
+ researchers in other areas of the world take an increased interest in a
+ formal models to forecasting, particularly, South America, because of its
+ emerging in computer science research.
+ 
+\end_layout
+
+\begin_layout Standard
+This study suffers from a number of limitations; in particular, we have
+ restricted ourselves to a manual search of international journals and conferenc
+es.
+ We plan to extend this study by undertaking a broader automated search
+ for other SLRs over the same time period.
+ This has the joint aim of extending the generality of this study and investigat
+ing a number of issues associated with hydrological forecast topics.
+\end_layout
+
+\begin_layout Standard
+From the brief descriptions of the selected studies, we observed that there
+ are very few mathematical and computational models available to predict
+ 
+\emph on
+real time
+\emph default
+ hydrological forecast objectives.
+\end_layout
+
+\begin_layout Standard
+Based on the literature review, it is find out that data based in artificial
+ intelligence models like ANN; SVM are an alternative method particularly
+ useful for runoff forecasting.
+ There are several potential directions for future research such as the
+ emerge deep learning concept.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refsrevsys"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
