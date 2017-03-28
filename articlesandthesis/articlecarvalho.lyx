@@ -88,16 +88,17 @@ Stochastic generation and forecasting of monthly hydrometeorological data
 \begin_layout Abstract
 
 \lang spanish
-Research on water resources may involve data generation and forecasting
- not only of the hydrological variables but also other derived variables
- that allow reduce economic and social losses.
- Therefore, an optimal design in a water management project frequently involves
- finding methods or techniques that generate long sequences of hydrological
+The benefits of well-informed water management systems are related to the
+ forecasting skills of hydrological variables.
+ These benefits can be reflected in reducing economic and social losses
+ to come.
+ Therefore, the optimal design of water management projects frequently involves
+ finding the methods or techniques that generate long sequences of hydrological
  data.
  These sequences considered as time series can be used to analyze and optimize
  the performance of the project designed.
- In order to cover these requirements this work presents a new model of
- stochastic process applied in problems that involve phenomena of stochastic
+ In order to cover these requirements, this work presents a new model of
+ the stochastic process applied in problems that involve phenomena of stochastic
  behavior and periodic characteristics.
  Two components were used, the first one, a type of recurrent neural network
  relatively recent introduced in the literature and conceptually simple
@@ -110,15 +111,11 @@ Research on water resources may involve data generation and forecasting
  This model was calibrated with series of monthly discharge data of four
  different river basins from Mopex data set.
  Finally, a comparison was made between the performance of the ESN-RNN based
- model results, the results of the 
-\lang american
-two feedforward neural networks ANN-1, ANN-2 using one and two past months
- respectively and 
-\lang spanish
-Thomas–Fiering model.
- The results show that ESN-RNN represents a promising modeling alternative
+ model results, the results of the two feedforward neural networks ANN-1,
+ ANN-2 using one and two past months respectively and Thomas–Fiering model.
+ The results show that the ESN-RNN model represents a promising alternative
  for simulation purposes, with interesting potential in the context of hydromete
-reological resources systems.
+orological resources.
 \end_layout
 
 \begin_layout Section
