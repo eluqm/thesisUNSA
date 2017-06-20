@@ -14,6 +14,18 @@
   linkcolor    = ., %Colour of internal links
   citecolor   = blue %Colour of citations
 }
+\author{
+    Edson F. Luque Mamani\\
+CLEI,2017\\
+    University of San Agustin-University of Sao Paulo\\	
+    edluquem@gmail.com\\	
+  \and
+    José Herrera Quispe\\
+CLEI,2017\\
+    University of San Agustin\\
+    jherreraq@unsa.edu.pe
+    
+}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false

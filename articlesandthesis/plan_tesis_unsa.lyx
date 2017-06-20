@@ -1,0 +1,917 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Plan de Tesis: 
+\emph on
+Modelo estocástico basado en redes neurales no tradicionales aplicada a
+ la generación de caudales mensuales caso: cuenca del rio Chilli, Arequipa
+\emph default
+ 
+\end_layout
+
+\begin_layout Author
+
+\series bold
+Autor-Alumno
+\series default
+: Edson Francisco Luque Mamani
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Planteamiento del problema
+\end_layout
+
+\begin_layout Subsection
+Descripción de la Realidad Problemática 
+\end_layout
+
+\begin_layout Standard
+Según 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "autodema"
+
+\end_inset
+
+ dentro de los problemas identificados en la región de Arequipa se encontraron
+ una ineficiente y desintegrada gestión del recurso hídrico en la Cuenca
+ del Río Chili, generando baja disponibilidad del recurso.
+ Se atribuye a este tipo de problemas de gestión como causantes de pérdidas
+ físicas, económicas, sociales y ambientales.
+ 
+\end_layout
+
+\begin_layout Subsection
+Delimitación del Problema
+\end_layout
+
+\begin_layout Standard
+Existen limitaciones por el uso de modelos tradicionales en la operación
+ de la oferta de agua.
+ Según 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SIGIRHUNSA"
+
+\end_inset
+
+ podemos definir los siguientes problemas:
+\end_layout
+
+\begin_layout Itemize
+La operación y control en el manejo de la oferta del agua.
+\end_layout
+
+\begin_layout Itemize
+La operación de embalses con métodos tradicionales.
+\end_layout
+
+\begin_layout Itemize
+La Pérdida de agua de riego hasta en un 50% por ineficiencia en uso y distribuci
+ón 3.80% de terrenos productivos tiene rendimiento bajo, debido a una mala
+ distribución del recurso hídrico.
+\end_layout
+
+\begin_layout Subsection
+Formulación del Problema
+\end_layout
+
+\begin_layout Standard
+Por lo tanto la necesidad de modelos eficientes y efectivos en la generación
+ de escenarios de predicción basados en variables hidrológicas es una realidad.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, actualmente se han estado desarrollando modelos basados
+ en conceptos de inteligencia artificial como las Redes Neuronales Artificiales
+ que permiten representar tareas de naturaleza dinámica (predicción de variables
+ hidrológicas) con mejor desempeño que los modelos lineales.
+ El tipo de redes neuronales que presenta un notable desempeño en el área
+ de hidrología según (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Coulibaly201076"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chang:chang2002"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Chiang2004297"
+
+\end_inset
+
+) son las llamadas Redes Neuronales Recurrentes, que debido a su estructura
+ de conexiones cíclicas permite un modelado más parsimonioso de propiedades
+ dinámicas.
+ Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
+o en la complejidad de entrenamiento y posteriormente ocasionar problemas
+ de convergencia
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Objetivo de la investigación
+\end_layout
+
+\begin_layout Subsection
+Objetivo General
+\end_layout
+
+\begin_layout Standard
+Proponer un modelo de Proceso Estocástico para la generación de series temporale
+s hidrológicas mediante el uso de técnicas de inteligencia artificial relativame
+nte novedosas como 
+\series bold
+ESN 
+\series default
+y un ruido aleatorio basado en la incertidumbre que afecta típicamente procesos
+ hidrológicos.
+\end_layout
+
+\begin_layout Subsection
+Objetivos Específicos
+\end_layout
+
+\begin_layout Itemize
+Estudio de los modelos lineales, entre los cuales destacamos el modelo de
+ Thomas Fiering 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Thomas"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+La revisión bibliográfica de modelos basados en aprendizaje de maquina:
+ Redes Neuronales feedforward y Redes Neuronales Recurrentes.
+\end_layout
+
+\begin_layout Itemize
+Aplicación del modelo propuesto en la generación y predicción de series
+ temporales para un caso de estudio basado en variables hidrológicas (Caudales,
+ Evaporación, Precipitación) en la cuenca del Chili, en tres estaciones
+ de medición: el Pañe, Aguada blanca y el Frayle.
+\end_layout
+
+\begin_layout Itemize
+Evaluación del modelo propuesto en contraste con los modelos Estocásticos
+ Neuronal de, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "4371334"
+
+\end_inset
+
+y 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "en81012228"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Análisis detallado de la média, desviación estándar, asimetría como parametros
+ utilizados para evaluar el modelo propuesto en contraste con los modelos
+ anteriormente mencionados.
+\end_layout
+
+\begin_layout Itemize
+Comprobar si nuestro modelo basado en ESN puede ser considerado como una
+ alternativa válida a las redes neuronales feedforward tradicional y recurrentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+La evaluación de nuestro modelo en una gama de fenómenos no lineales de
+ comportamiento estocástico no hidrológicos(carga eléctrica por ejemplo).
+\end_layout
+
+\begin_layout Itemize
+Establecer las conclusiones, contribuciones, limitaciones, y trabajo futuro
+ del modelo.
+\end_layout
+
+\begin_layout Section
+Hipótesis de la investigación
+\end_layout
+
+\begin_layout Standard
+El modelo de proceso estocástico propuesto será capaz de modelar con mayor
+ precisión problemas del mundo real como la predicción de variables hidrológicas.
+ Fundamentado en el uso de nuevos métodos en la literatura para asi reducir
+ la complejidad de su construcción.
+\end_layout
+
+\begin_layout Section
+Variables e Indicadores
+\end_layout
+
+\begin_layout Subsubsection
+Variable Independiente
+\end_layout
+
+\begin_layout Standard
+Modelo híbrido de proceso estocástico aplicado a predicción de variables
+ hidrológicas como caudales, precipitación y evaporación.
+\end_layout
+
+\begin_layout Subsubsection
+Variables Dependientes
+\end_layout
+
+\begin_layout Itemize
+Predicción 
+\end_layout
+
+\begin_layout Itemize
+Precisión 
+\end_layout
+
+\begin_layout Itemize
+Complejidad en la estructura del modelo 
+\end_layout
+
+\begin_layout Itemize
+Tiempo de ejecución 
+\end_layout
+
+\begin_layout Standard
+Se medirá la média, desviación estándar, asimetría para todos los experimentos
+ de los modelos a comparar (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371334"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+) para establecer las conclusiones,contribuciones, limitaciones, y trabajo
+ futuro del modelo.
+ 
+\end_layout
+
+\begin_layout Section
+Viabilidad de la investigación 
+\end_layout
+
+\begin_layout Subsection
+Viabilidad técnica
+\end_layout
+
+\begin_layout Subsubsection
+Lenguaje y herramientas a utilizar.
+ 
+\end_layout
+
+\begin_layout Standard
+El nuevo modelo estocástico se desarrollará mediante el uso de herramientas
+ como python, matlab.
+ El código fuente de nuestro proyecto puede ser encontrado en nuestro repositori
+o de Github
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/eluqm/loadforecastingUSP-UNSA
+\end_layout
+
+\end_inset
+
+, donde puede ser descargado gratuitamente para su estudio o expansión.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Hardware 
+\end_layout
+
+\begin_layout Standard
+Actualmente se cuenta con equipos computacionales que tienen la capacidad
+ suficiente como para soportar la ejecución de los procesos que implica
+ la utilización del modelo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Viabilidad operativa
+\end_layout
+
+\begin_layout Standard
+A las entidades que va dirigido el modelo como 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "autodema"
+
+\end_inset
+
+, pueden implementarlo como parte de un sistema mas grande.
+ de gerenciamiento de recursos hidricos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SIGIRHUNSA"
+
+\end_inset
+
+, este modelo podrá ser comparable con metodos estadísticos tradicionales
+ y de apredizaje de maquina.
+\end_layout
+
+\begin_layout Subsection
+Viabilidad económica
+\end_layout
+
+\begin_layout Standard
+Este proyecto de tesis es financiado por El Consejo Nacional de Ciencia,
+ Tecnología e Innovación Tecnológica (CONCYTEC), Cienciactiva y la Universidad
+ Nacional San Agustín de Arequipa (UNSA), mediante Convenio Marco de Cooperación
+ Interinstitucional.
+\end_layout
+
+\begin_layout Section
+Justificación
+\end_layout
+
+\begin_layout Standard
+El desarrollo de modelos de pronóstico preciso y fiable de los caudales
+ de los ríos sigue siendo una de las tareas más importantes y difíciles
+ en la hidrología 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ Problemas reales como pronóstico presentan características complejas de
+ tipo no lineal y algunas veces de comportamiento caótico, con el fin de
+ modelar el comportamiento de este tipo de fenómenos, realizar una aproximación
+ lineal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+ puede generar un modelo poco eficiente 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LUNA2006"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, las series hidrológicas temporales mensuales tienen como
+ característica un comportamiento periódico que se manifiesta en sus propiedades
+ como la média, varianza, asimetría y estructura de autocorrelación (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Thomas"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "maceira"
+
+\end_inset
+
+).
+ El análisis de este tipo de series puede realizarse mediante el uso de
+ modelos autoregresivos dentro de los cuales destaca el modelo 
+\series bold
+PAR
+\series default
+(p)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "maceira2"
+
+\end_inset
+
+.
+ Sin embargo, estos modelos son estadísticos y lineales, eso implica que
+ su aplicación en series hidrológicas temporales (de comportamiento caótico)
+ puede no capturar las características reales de las series y por lo tanto
+ generar resultados inconsistentes.
+\end_layout
+
+\begin_layout Standard
+Entre las metodologias que intentar modelar problemas complejos no lineales
+ en los ultimos años las Redes Neuronales Artificiales(
+\series bold
+RNA
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "WRCR:WRCR11667"
+
+\end_inset
+
+ destacan como métodos de aprendizaje de maquina.
+ Aunque muchos investigadores de 
+\series bold
+RNA's
+\series default
+ sugieren un buen desempeño de estas técnicas.
+ El comportamiento de 
+\series bold
+
+\begin_inset Quotes fld
+\end_inset
+
+caja negra
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\series default
+implicito que presentan tiene observaciones planteadas con respecto a su
+ fiabilidad y validez como modelos hidrológicos(
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cunge75"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hess-9-111-2005"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+De hecho, las 
+\series bold
+RNA's
+\series default
+ de tipo feedforward en la mayoría de investigaciones y aplicaciones sobre
+ modelos de predicción hidrológicos han sido ampliamente usadas en contraste
+ con las 
+\series bold
+RNA's
+\series default
+ Recurrentes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ Las 
+\series bold
+RNA's 
+\series default
+recurrentes son capaces de representar mapas dinámicos no lineales comúnmente
+ encontradas en las tareas de predicción de series temporales.
+ Estudios sobre el desempeño de este tipo de redes neuronales demuestran
+ un mejor desempeño que sus similares
+\series bold
+ RNA's 
+\series default
+feedforward en prácticamente todas las pruebas, ademas del menor número
+ de neuronas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "6327793"
+
+\end_inset
+
+ usadas.
+ Pero, la principal razón de la preferencia en el uso de 
+\series bold
+RNA's
+\series default
+ feedforward sobre 
+\series bold
+RNA's
+\series default
+ recurrentes es que la recurrencia en redes neuronales ocasiona mayor complejida
+d sobre todo en el proceso de entrenamiento de la 
+\series bold
+red neuronal
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Importancia
+\end_layout
+
+\begin_layout Standard
+Lo anterior mencionado motivó en este proyecto la elaboración de un modelo
+ híbrido de proceso estocástico utilizando Redes Neuronales Artificiales
+ Recurrentes con el fin de aprovechar las características ya mencionadas
+ de este tipo de redes.
+ Para esto se aplicará un enfoque recientemente introducido denominado Reservoir
+ Computing (
+\series bold
+RC
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Reservoir Computing es un enfoque de entrenamiento que se perfila como
+ simple y rápido en comparación a otros enfoques usados en 
+\series bold
+RNA's 
+\series default
+recurrentes tradicionales, todo esto con el fin de reducir su complejidad
+ y aprovechar la capacidad comproabada de representar mejor las características
+ de las series.
+ 
+\end_layout
+
+\begin_layout Standard
+Además, como parte de nuestra propuesta de modelo se considerará un componente
+ no determinista que representa un ruido aleatorio con distribución normal,
+ esto con el fin de tener en cuenta la incertidumbre que afecta típicamente
+ procesos hidrológico 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Awchi"
+
+\end_inset
+
+.
+ Siendo asi nuestro modelo hibrido una propuesta novedosa en la literatura.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente el uso de este modelo puede ser aplicado en la solución de problemas
+ de la región de arequipa que involucran fenómenos climatológicos como predicció
+n de caudales, precipitación, temperatura e incluso de tipo económico como
+ precios de acciones entre otros.
+\end_layout
+
+\begin_layout Section
+Limitaciones de la investigación
+\end_layout
+
+\begin_layout Itemize
+La falta de actualización de los registros de datos hidrologicos en el área.
+ 
+\end_layout
+
+\begin_layout Itemize
+Banco de datos probablemente incompletos y no actualizados, de las entidades
+ dedicadas al rubro.
+ 
+\end_layout
+
+\begin_layout Itemize
+El período de tiempo de recolección de la información comprende los años
+ 1970-2010.
+ 
+\end_layout
+
+\begin_layout Section
+Tipo y Nivel de la Investigación
+\end_layout
+
+\begin_layout Standard
+Corresponde al tipo experimental por que está limitado a temas en los cuales
+ el investigador puede manipular la situación, en nuestro caso podemos manipular
+ el modelo que estamos estudiando y proponiendo.
+ La ejecución de otro experimento, es relativamente barato sólo depende
+ de ciclos y tiempo.
+\end_layout
+
+\begin_layout Section
+Método y Diseño de la investigación
+\end_layout
+
+\begin_layout Standard
+Es cuantitativo porque se expresará numéricamente; analítico, ya que demuestra
+ una relación entre los parametros de diseño de modelos neuronales y el
+ efecto en su capacidad de predicción; es retrospectivo, debido a que tomará
+ datos de años anteriores; longitudinal porque medirá mas de dos veces la
+ variable; experimental porque se manipulará variables; y de estadística
+ descriptiva, ya que utilizará la média, desviación estándar, asimetría
+ para todos los experimentos de las series de tiempo generadas por los modelos
+ a comparar (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371334"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+) para establecer las conclusiones,contribuciones, limitaciones, y trabajo
+ futuro del modelo.
+ 
+\end_layout
+
+\begin_layout Section
+Técnicas e Instrumentos de Recolección de Información
+\end_layout
+
+\begin_layout Subsection
+Técnicas
+\end_layout
+
+\begin_layout Standard
+Recolección de registros históricos denominadas series temporales que se
+ encuentren disponibles en base de datos/servicios web de las entidades
+ relacionadas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "autodema"
+
+\end_inset
+
+ a la manipulación de variables hidrológicas en la región de estudio.
+ 
+\end_layout
+
+\begin_layout Subsection
+Unidad de Medición
+\end_layout
+
+\begin_layout Standard
+metros cúbicos por segundo 
+\begin_inset Formula $m^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cobertura de estudio
+\end_layout
+
+\begin_layout Subsection
+Población y Muestra 
+\end_layout
+
+\begin_layout Standard
+La subcuenca del río Chili o sistema chili regulado comprende sitios en
+ los cuales se encuentran obras de regulación y trasbase(embalses Aguada
+ Blanca, el Fraile, El Pañe) y los lugares de aprovechamiento de recurso
+ hídrico.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se tomará como muestra y entrada de nuestro modelo los registros
+ históricos de estaciones de mediciones reales: como el 
+\series bold
+Pañe
+\series default
+(Operada por Autodema) y 
+\series bold
+Frayle
+\series default
+(ubicada en el cauce del río Blanco).
+ 
+\end_layout
+
+\begin_layout Standard
+Estos registros comprenderán una muestra entre los años 1970 hasta 2010.
+\end_layout
+
+\begin_layout Section
+Impacto de los Resultados 
+\end_layout
+
+\begin_layout Standard
+Se puede usar el nuevo modelo como complemento en las tareas de análisis
+ de escenarios junto a los modelos tradicionales, por su sencillez esto
+ permitirá a un administrador/tomador de decisión elegir técnicas apropiadas
+ de previsión, que finalmente puedan evitar perdidas económicas y sociales
+ (Construcción de defensas rivereñas para evitar inundaciones, implantación
+ de políticas de consumo de agua para mejorar la disponibilidad del recurso
+ hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
+te).
+\end_layout
+
+\begin_layout Section
+Estructura tentativa del Informe Final
+\end_layout
+
+\begin_layout Subsubsection
+Introducción
+\end_layout
+
+\begin_layout Subsubsection
+Fundamentos Teóricos
+\end_layout
+
+\begin_layout Subsubsection
+Propuesta de Modelo
+\end_layout
+
+\begin_layout Subsubsection
+Propuesta de Modelo para el tratamiento de Series de tiempo Hidrológicas
+\end_layout
+
+\begin_layout Subsubsection
+Experimentos
+\end_layout
+
+\begin_layout Subsubsection
+Caso de Estudio:RIo Chili
+\end_layout
+
+\begin_layout Subsubsection
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "hc-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

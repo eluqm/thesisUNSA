@@ -7,6 +7,18 @@
 \textclass IEEEtran
 \begin_preamble
 
+\author{
+    Edson F. Luque Mamani\\
+CLEI,2017\\
+    University of San Agustin-University of Sao Paulo\\	
+    edluquem@gmail.com\\	
+  \and
+    José Herrera Quispe\\
+CLEI,2017\\
+    University of San Agustin\\
+    jherreraq@unsa.edu.pe
+    
+}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -116,6 +128,12 @@ The benefits of well-informed water management systems are related to the
  The results show that the ESN-RNN model represents a promising alternative
  for simulation purposes, with interesting potential in the context of hydromete
 orological resources.
+\end_layout
+
+\begin_layout Keywords
+
+\lang spanish
+Echo state, forecasting, RNN.
 \end_layout
 
 \begin_layout Section

@@ -4,9 +4,12 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass article
+\textclass extbook
 \begin_preamble
 \usepackage{array}
+\usepackage{amsmath}
+\usepackage{algorithm,algpseudocode}
+
 \renewcommand{\arraystretch}{1.5}
 
 \usepackage{tocloft}
@@ -79,6 +82,7 @@ theorems-std
 \papercolumns 1
 \papersides 2
 \paperpagestyle headings
+\listings_params "frame=tb"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -130,7 +134,7 @@ Universidad Nacional San Agustin – UNSA
 
 \end_layout
 
-\begin_layout Abstract
+\begin_layout Standard
 Las investigaciones en recursos hídricos pueden involucrar generación de
  datos y/o pronóstico no solo de variables hidrológicas sino de otras variables
  derivadas que permitan reducir perdidas de tipo económicas y sociales,
@@ -166,16 +170,15 @@ ESN
  
 \end_layout
 
-\begin_layout Abstract
+\begin_layout Standard
 Finalmente nuestro modelo será validado en el ámbito de la cuenca del Chili-Areq
-uipa y comparado con otros modelos en la literatura, aplicadolo a la generación
- de escenarios climáticos los cuales capturan el comportamiento de la serie
- historica para generar series temporales sintéticas, igualmente probables
- a la serie historica.
+uipa y comparado con otros modelos en la literatura, rel comportamiento
+ de la serie historica para generar series temporales sintéticas, igualmente
+ probables a la serie historica.
  
 \end_layout
 
-\begin_layout Abstract
+\begin_layout Standard
 
 \series bold
 Palabras Clave:
@@ -219,6 +222,91 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Introducción
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/Introduccion.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Marco Teórico
+\end_layout
+
+\begin_layout Standard
+A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGORITHMS ON THE TASK
+ OF PREDICTING EVENT TIMING
+\end_layout
+
+\begin_layout Chapter
+Estado del Arte
+\end_layout
+
+\begin_layout Standard
+A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGOR
+\begin_inset Formula $\theta$
+\end_inset
+
+ITHMS ON THE TASK OF PREDICTING EVENT TIMING
+\end_layout
+
+\begin_layout Chapter
+Propuesta
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/metologia.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Experimentos
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/experiments.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish-mexico
+UN ESTUDIO PRELIMINAR SUGIERE QUE SE DEBEN DESCONECTAR LAS CONEXIONES DE
+ RETROALIMENTACIÓN POR QUE ENTORPECEN EL DESEMPEÑO, LA ARQUITECTURA SERÍA
+ COMO LA IMAGEN ...
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish-mexico
+We have used two different data sets.
+ The first data set represents exact laboratory measurements.
+ This data set was composed of a time sequence of 1 000 samples of laser
+ fluctuations data, and the quality of prediction was measured by an error
+ of prediction in the next 100 steps.
+\end_layout
+
+\begin_layout Chapter
+Conclusión
 \end_layout
 
 \begin_layout Section
