@@ -1758,6 +1758,13 @@ Con el fin de encontrar una buena configuración de ESN para nuestro modelo,
 
 \begin_layout Subsubsection
 Optimización aleatoria
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Optimización-aleatoria"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

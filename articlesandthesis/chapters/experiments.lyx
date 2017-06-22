@@ -95,7 +95,7 @@ Echo State
 \begin_layout Section
 
 \lang spanish-mexico
-Usando Bases Ortonormales como pesos
+Usando Bases Ortonormales como Matriz de Conectividad
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Usando-Bases-Ortonormales"
@@ -144,8 +144,9 @@ key "Candes"
 \end_inset
 
 .
- Por lo tanto, una base ortonormal como la matriz de pesos podría dar mejores
- resultados que usar una simple matriz esparsa de pesos aleatorios.
+ Por lo tanto, una base ortonormal como la matriz de conectividad podría
+ dar mejores resultados que usar una simple matriz de conectividad esparsa
+ de pesos aleatorios.
  
 \end_layout
 
@@ -181,7 +182,7 @@ key "Duan20063"
 
 \lang english
 ).
- Los resultados los veremos acontinuación.
+ Los resultados obtenidos se muestran acontinuación.
  
 \end_layout
 
@@ -368,8 +369,8 @@ Probabilidad de encontrar una red RNN-echo con un NRMSE
 \begin_inset Formula $<P$
 \end_inset
 
- cuando se utiliza una matriz de peso ortonormal para series de tiempo hidrológi
-cas, en función de la conectividad y el tamaño de su reservorio.
+ cuando se utiliza una matriz de conectividad ortonormal para series de
+ tiempo hidrológicas, en función de la conectividad y el tamaño de su reservorio.
 \end_layout
 
 \end_inset
@@ -665,8 +666,8 @@ Resultados de prueba
 \end_layout
 
 \begin_layout Standard
-Vemos que la conectividad es crítica para encontrar una buena RNN-echo para
- predecir con mayor precisión valores futuros.
+Comprobamos que la conectividad es crítica para encontrar una buena RNN-echo
+ para predecir con mayor precisión valores futuros.
  En contraste con resultados previos como los de 
 \lang spanish-mexico
 
@@ -691,15 +692,14 @@ key "Koryakin201235"
  lineal), no necesitamos establecer el radio espectral, no necesitamos escalar
  los pesos de la matriz, ni siquiera los pesos de entrada.
  Simplemente establecimos el vector de entrada y generamos una matriz ortonormal
- con pesos de una distribución uniforme entre 0 y 1.
- Para ello utilizamos la función 
+ con pesos de una distribución uniforme entre 0 y 1
 \emph on
-orth
+.
+ 
 \emph default
- de 
+En la siguiente sección estudiaremos parámetros como el tamaño del reservorio
+ y el radio espectral de una RNN-esn
 \emph on
-Matlab
-\emph default
 .
 \end_layout
 
@@ -734,12 +734,490 @@ Probabilidad de encontrar una red RNN-echo con un NRMSE
 \begin_inset Formula $<P$
 \end_inset
 
- cuando se utiliza una matriz de peso esparsa aleatoria para series de tiempo
- hidrológicas, en función de la conectividad y el tamaño de su reservorio.
+ cuando se utiliza una matriz de conectividad esparsa aleatoria para series
+ de tiempo hidrológicas, en función de la conectividad y el tamaño de su
+ reservorio.
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Estimación de parámetros para generar escenarios Hidrológicos 
+\end_layout
+
+\begin_layout Standard
+Para poder generar escenarios de variables hidrometereológicas, los parámetros
+ de nuestro modelo que corresponden al número de unidades internas del reservori
+o y el radio espectral de la matriz de conectividad (vea Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Usando-Bases-Ortonormales"
+
+\end_inset
+
+), son parámetros importantes relacionados a las propiedades de ESN.
+ Por esta razón un estudio de desempeño de RNN-ESN para cada serie histórica
+ sobre los valores del radio espectral (desde 0.1 hasta 0.9) y el tamaño del
+ reservorio (10 a 70) fue llevado a cabo.
+\end_layout
+
+\begin_layout Subsection
+Preprocesamiento de datos, entradas y salidas 
+\end_layout
+
+\begin_layout Standard
+Nuestro estudio toma en consideración un supuesto básico en la teoría de
+ probabilidades y estadística aplicada a series temporales hidrológicas,
+ donde las variables tienen que ser distribuidas normalmente.
+ Por lo tanto, se requiere una transformación si las series temporales no
+ cumplen con este supuesto básico.
+ La operación que se necesita es denominada estandarización estacional
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+averiguar si realmente se llama así
+\end_layout
+
+\end_inset
+
+ (variables normalmente distribuidas con media cero y desviación estándar
+ uno) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Awchi"
+
+\end_inset
+
+.
+ Por otro lado, con el fin de desarrollar esquemas de estimación del radio
+ espectral y tamaño del reservorio en nuestro modelo se determinó usar series
+ temporales apropiadas como las de 
+\series bold
+MOPEX
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Datos de prueba
+\end_layout
+
+\begin_layout Standard
+Estos datos están disponibles gratuitamente a través de un sitio web
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.nws.noaa.gov/ohd/mopex/mo_datasets.htm
+\end_layout
+
+\end_inset
+
+ a la comunidad científica para la investigación de modelos hidrológicas
+ globales.
+ 
+\series bold
+MOPEX 
+\series default
+fue presentado por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Duan20063"
+
+\end_inset
+
+ e incluye un conjunto de datos con la precipitación mensual, evaporación
+ potencial y caudal(descarga) de las cuencas en la zona Este de los Estados
+ Unidos, entre enero de 1948 hasta 2000.
+ Se decidió adoptar los registros históricos de 4 cuencas específicas.
+ La Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:mopex_basin"
+
+\end_inset
+
+ proporciona las características geográficas, hidrometeorológicas y superficiale
+s de estas cuencas.
+ La asimetría de los registros de caudal se expone en la última columna.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\lang american
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="6">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="2.6cm">
+<column alignment="center" valignment="top" width="2.6cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Mopex id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cuenca
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Area(km2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Media Anual Caudal(mm)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coef.
+ Asimetría
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+3364000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+East Fork White
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+4421
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+376
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.857748 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+1541500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Clearfield Creek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+2170
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+179
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+3054500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Tygart Valley
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+2372
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+745
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.858691 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+3179000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+Bluestone
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+1020
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang american
+421
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.65 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:mopex_basin"
+
+\end_inset
+
+Resumen de las cuencas hidrográficas en MOPEX y sus características.
+ Los valores altos de asimetría indican la ocurrencia de eventos de caudal
+ extremadamente altos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -749,7 +1227,298 @@ Probabilidad de encontrar una red RNN-echo con un NRMSE
 \end_layout
 
 \begin_layout Standard
+Se halló mediante una pequeña inspección sobre el conjunto de datos de las
+ 4 cuencas, que se necesitaba una transformación para reducir el coeficiente
+ de asimetría, esto fue posible usando la transformación logarítmica escrita
+ como:
+\end_layout
 
+\begin_layout Standard
+
+\lang american
+\begin_inset Formula 
+\begin{equation}
+Y_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)\label{eq:logtrans}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang american
+\begin_inset Formula 
+\begin{equation}
+c_{t}=\frac{a}{g_{t}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{v,t}$
+\end_inset
+
+, son datos mensuales observados para el mes 
+\begin_inset Formula $t(t=1,\ldots,12)$
+\end_inset
+
+ y el año 
+\begin_inset Formula $v(v=1,\ldots,N)$
+\end_inset
+
+, 
+\begin_inset Formula $N$
+\end_inset
+
+ es el número de años de registros de la serie.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\overline{H_{t}}$
+\end_inset
+
+, es el caudal medio mensual para el mes 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a$
+\end_inset
+
+ es una constante (para este estudio el valor adoptado fue 
+\begin_inset Formula $0.8$
+\end_inset
+
+ mediante ensayo y error).
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{t}$
+\end_inset
+
+, es el coeficiente de asimetría para el 
+\begin_inset Formula $H_{1,t},H_{2,t},...,H_{N,t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y_{v,t}$
+\end_inset
+
+, son los datos normalizados para mes 
+\begin_inset Formula $t$
+\end_inset
+
+ en el año 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Configuración de entrenamiento
+\end_layout
+
+\begin_layout Standard
+No se usaron conexiones de retroalimentación desde las unidades de salida
+ hasta el reservorio, ya que esto parecía deteriorar el rendimiento de nuestra
+ red RNN-echo.
+ Los pesos de las conexiones de entrada al reservorio determinan la intensidad
+ con que un reservorio es excitado por la entrada, y por lo tanto el grado
+ de no linealidad de su respuesta.
+ Aquí, todos los pesos de conexión se obtuvieron de una distribución normal.
+ 
+\end_layout
+
+\begin_layout Standard
+Seguimos la práctica común de usar un reservorio escasamente y aleatoriamente
+ conectado, permitiendo que aproximadamente el 20% de todas las conexiones
+ estén activas, basados en los resultados de la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Usando-Bases-Ortonormales"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las conexiones de salida de la red fueron entrenadas en modo batch por métodos
+ de Regresión contraída y Pseudoinversa de Moore-Penrose.
+ A menos que se indique lo contrario, todas las estadísticas resumidas presentad
+as en la Tabla ...
+ se basan en 10 repeticiones de entrenamiento independientes, con el fin
+ de reflejar adecuadamente los efectos de la aleatoriedad en la inicialización
+ y/o entrenamiento de los valores de conectividad del modelo (Optimización
+ aleatoria descrita en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Optimización-aleatoria"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tamaño del reservorio determina en gran medida la capacidad de una red
+ de aprender dinámicas complejas con una precisión razonable.
+ Además, el radio espectral de los pesos del reservorio controla su dinámica
+ y por lo tanto es un escenario importante para un modelo basado en 
+\emph on
+Reservoir Computing
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+ muestra el desempeño de entrenamiento, sobre un rango de valores para ambos
+ parámetros.
+ Para hacer esto posible los registros historícos de las 4 cuencas se dividieron
+ en períodos de entrenamiento (1979-1998) y prueba (1999-2000).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/trainingMOPEXcolormap.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+Performance de entrenamiento de un red ESN para las 4 cuencas, promediado
+ en 10 repeticiones, en un rango de valores para el tamaño del reservorio
+ (eje x) y el radio espectral (eje y).
+ Los tonos más claros representan un alto NRMSE, los tonos más oscuros un
+ bajo NRMSE.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+CONSLUSION....SECCCION
+\end_layout
+
+\begin_layout Standard
+No obstante, en los experimentos llevados a cabo, se consideró usar series
+ temporales sin transformacion logaritmica, con el fin de poder 
+\end_layout
+
+\begin_layout Standard
+La inclusión de una dinámica más lenta en el reservorio utilizando neuronas
+ integradoras con fugas podría ser beneficiosa para un modelo de RC RR,
+ considerando la amplia gama de escalas de tiempo en las que tienen lugar
+ los procesos hidrológicos.
+ Sin embargo, los resultados del modelo LESN-L (ver Figuras 4 a 7) muestran
+ que las neuronas integradoras con fugas no consiguen aumentar significativament
+e el contenido informativo del reservorio.
+ En cambio, el modelo simplemente termina con un diferente equilibrio entre
+ CE, CElog y MSDE, en comparación con el modelo LESN.
+\end_layout
+
+\begin_layout Standard
+En este estudio, se generaron 200 series sintéticas con una duración de
+ 24 meses (2 años), Los datos se dividieron en formación (1948-1999) y prueba
+ (1998-2000).
+ El rendimiento de los modelos de predicción se evaluó de acuerdo con criterio
+ de error: error cuadrático promedio (NRMSE) normalizado.
+\end_layout
+
+\begin_layout Standard
+A partir de la Figura 4 podemos ver que el tamaño más grande de los embalses
+ genera un menor rendimiento en el entrenamiento de ESN-RNN para las 4 cuencas
+ seleccionadas, cada cuenca fue asignada con el tamaño específico del reservorio
+ (puntos rojos) y radiales espectrales (destacados en azul) Porque las caracterí
+sticas y la naturaleza dinámica del río son diferentes.
 \end_layout
 
 \end_body
