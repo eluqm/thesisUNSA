@@ -1,15 +1,10 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
-\textclass extbook
+\textclass article
 \begin_preamble
 \usepackage{array}
-\usepackage{amsmath}
-\usepackage{algorithm,algpseudocode}
-
 \renewcommand{\arraystretch}{1.5}
 
 \usepackage{tocloft}
@@ -31,16 +26,16 @@ theorems-std
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "helvet" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans helvet
+\font_typewriter default
+\font_math auto
 \font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -82,7 +77,6 @@ theorems-std
 \papercolumns 1
 \papersides 2
 \paperpagestyle headings
-\listings_params "frame=tb"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -94,7 +88,7 @@ theorems-std
 
 \begin_layout Title
 Modelo estocástico basado en redes neurales no tradicionales aplicada a
- la generación de caudales mensuales caso: cuenca del Rio Chilli, Arequipa
+ la generación de caudales mensuales caso: cuenca del rio chilli, Arequipa
  
 \end_layout
 
@@ -134,7 +128,7 @@ Universidad Nacional San Agustin – UNSA
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Abstract
 Las investigaciones en recursos hídricos pueden involucrar generación de
  datos y/o pronóstico no solo de variables hidrológicas sino de otras variables
  derivadas que permitan reducir perdidas de tipo económicas y sociales,
@@ -142,49 +136,50 @@ Las investigaciones en recursos hídricos pueden involucrar generación de
 ente la demanda poblacional.
  Por lo tanto, la búsqueda de un diseño óptimo en un proyecto de gestión
  del agua frecuentemente involucra encontrar un método o técnica que genere
- largas secuencias de las características de los flujos(caudales) en este
+ largas secuencias de las caracteristicas de los flujos(caudales) en este
  caso de un río en cuestión.
  Estas secuencias consideradas como series temporales pueden ser usadas
  para analizar y optimizar el desempeño del proyecto diseñado.
  Con el fin de cubrir esos requerimientos, este trabajo tiene como objetivo
  la elaboración de un modelo híbrido de proceso estocástico para ser aplicado
- en problemas que envuelven fenómenos de comportamiento estocástico y de
+ em problemas que envuelven fenómenos de comportamiento estocástico y de
  características periódicas (caudales) en sus propiedades probabilísticas
- como media, varianza, etc.
+ como média, varianza, etc.
  Para esto, serán usados dos componentes, el primero, un tipo de red neuronal
  recurrente recientemente introducido en la literatura y conceptualmente
  simple denominado 
 \series bold
 ESN
 \series default
-(echo state network) como el componente determinista, una característica
+(echo state network) como el componente determinístico, una característica
  interesante de 
 \series bold
 ESN
 \series default
  es que a partir de ciertas propiedades algebraicas, entrenar solamente
- la salida de la red es a menudo suficiente para alcanzar una desempeño
+ la salida de la red es a menudo suficiente para alcanzar una performance
  excelente en aplicaciones prácticas.
  El segundo, es un componente aleatorio que incorpora al modelo la incertidumbre
  asociada a los procesos hidrológicos.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Abstract
 Finalmente nuestro modelo será validado en el ámbito de la cuenca del Chili-Areq
-uipa y comparado con otros modelos en la literatura, el comportamiento de
- la serie histórica para generar series temporales sintéticas, igualmente
- probables a la serie histórica.
+uipa y comparado con otros modelos en la literatura, aplicadolo a la generación
+ de escenarios climáticos los cuales capturan el comportamiento de la serie
+ historica para generar series temporales sintéticas, igualmente probables
+ a la serie historica.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Abstract
 
 \series bold
 Palabras Clave:
 \series default
- Hidrológicas, Caudal, ESN, Optimización, Determinista, Series Temporales,Redes
- Neuronales, Estocástico, Sistema Dinámico.
+ Hidrológicas, Caudal, ESN, Optimización, Determinístico, Series Temporales,Rede
+s Neuronales, Estocástico, Sistema Dinámico.
 \end_layout
 
 \begin_layout Standard
@@ -224,142 +219,351 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Chapter
-Introducción
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/Introduccion.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Marco Teórico
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Marco-Teórico"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/marcoteorico.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGORITHMS ON THE TASK
- OF PREDICTING EVENT TIMING
-\end_layout
-
-\begin_layout Standard
-HYDROLOGIC MODELS (Lärobok i Avrinningsmodeller) (edition 2002) Chong-yu
-\end_layout
-
-\begin_layout Chapter
-Estado del Arte
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Estado-del-Arte"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGOR
-\begin_inset Formula $\theta$
-\end_inset
-
-ITHMS ON THE TASK OF PREDICTING EVENT TIMING
-\end_layout
-
-\begin_layout Chapter
-Propuesta
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Propuesta"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/metologia.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Experimentos
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Experimentos"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "chapters/experiments.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-UN ESTUDIO PRELIMINAR SUGIERE QUE SE DEBEN DESCONECTAR LAS CONEXIONES DE
- RETROALIMENTACIÓN POR QUE ENTORPECEN EL DESEMPEÑO, LA ARQUITECTURA SERÍA
- COMO LA IMAGEN ...
-\end_layout
-
-\begin_layout Standard
-We have used two different data sets.
- The first data set represents exact laboratory measurements.
- This data set was composed of a time sequence of 1 000 samples of laser
- fluctuations data, and the quality of prediction was measured by an error
- of prediction in the next 100 steps.
-\end_layout
-
-\begin_layout Chapter
-Conclusión
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:Conclusión"
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Definición del problema
 \end_layout
 
+\begin_layout Standard
+Según 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "autodema"
+
+\end_inset
+
+ dentro de los problemas identificados en la región de Arequipa se encontraron
+ una ineficiente y desintegrada gestión del recurso hídrico en la Cuenca
+ del Río Chili, generando baja disponibilidad del recurso.
+ Se atribuye a este tipo de problemas de gestión como causantes de pérdidas
+ físicas, económicas, sociales y ambientales.
+ 
+\end_layout
+
+\begin_layout Standard
+Existen limitaciones por el uso de modelos tradicionales en la operación
+ de la oferta de agua.
+ Según 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SIGIRHUNSA"
+
+\end_inset
+
+ podemos definir los siguientes problemas:
+\end_layout
+
+\begin_layout Itemize
+La operación y control en el manejo de la oferta del agua.
+\end_layout
+
+\begin_layout Itemize
+La operación de embalses con métodos tradicionales.
+\end_layout
+
+\begin_layout Itemize
+La Pérdida de agua de riego hasta en un 50% por ineficiencia en uso y distribuci
+ón 3.80% de terrenos productivos tiene rendimiento bajo, debido a una mala
+ distribución del recurso hídrico.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto la necesidad de modelos eficientes y efectivos en la generación
+ de escenarios de predicción basados en variables hidrológicas es una realidad.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, actualmente se han estado desarrollando modelos basados
+ en conceptos de inteligencia artificial como las Redes Neuronales Artificiales
+ que permiten representar tareas de naturaleza dinámica (predicción de variables
+ hidrológicas) con mejor desempeño que los modelos lineales.
+ El tipo de redes neuronales que presenta un notable desempeño en el área
+ de hidrología según (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Coulibaly201076"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chang:chang2002"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Chiang2004297"
+
+\end_inset
+
+) son las llamadas Redes Neuronales Recurrentes, que debido a su estructura
+ de conexiones cíclicas permite un modelado más parsimonioso de propiedades
+ dinámicas.
+ Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
+o en la complejidad de entrenamiento y posteriormente ocasionar problemas
+ de convergencia
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ 
+\end_layout
+
 \begin_layout Section
 Justificación
+\end_layout
+
+\begin_layout Standard
+El desarrollo de modelos de pronóstico preciso y fiable de los caudales
+ de los ríos sigue siendo una de las tareas más importantes y difíciles
+ en la hidrología 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ Problemas reales como pronóstico presentan características complejas de
+ tipo no lineal y algunas veces de comportamiento caótico, con el fin de
+ modelar el comportamiento de este tipo de fenómenos, realizar una aproximación
+ lineal 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+ puede generar un modelo poco eficiente 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LUNA2006"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, las series hidrológicas temporales mensuales tienen como
+ característica un comportamiento periódico que se manifiesta en sus propiedades
+ como la média, varianza, asimetría y estructura de autocorrelación (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Thomas"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "maceira"
+
+\end_inset
+
+).
+ El análisis de este tipo de series puede realizarse mediante el uso de
+ modelos autoregresivos
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
+
+\end_inset
+
+ dentro de los cuales destaca el modelo 
+\series bold
+PAR
+\series default
+(p)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "maceira2"
+
+\end_inset
+
+.
+ Sin embargo, estos modelos son estadísticos y lineales, eso implica que
+ su aplicación en series hidrológicas temporales (de comportamiento caótico)
+ puede no capturar las características reales de las series y por lo tanto
+ generar resultados inconsistentes.
+\end_layout
+
+\begin_layout Standard
+Entre las metodologias que intentar modelar problemas complejos no lineales
+ en los ultimos años las Redes Neuronales Artificiales(
+\series bold
+RNA
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "WRCR:WRCR11667"
+
+\end_inset
+
+ destacan como métodos de aprendizaje de maquina.
+ Aunque muchos investigadores de 
+\series bold
+RNA's
+\series default
+ sugieren un buen desempeño de estas técnicas.
+ El comportamiento de 
+\series bold
+
+\begin_inset Quotes fld
+\end_inset
+
+caja negra
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\series default
+implicito que presentan tiene observaciones planteadas con respecto a su
+ fiabilidad y validez como modelos hidrológicos(
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Cunge75"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hess-9-111-2005"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+De hecho, las 
+\series bold
+RNA's
+\series default
+ de tipo feedforward en la mayoría de investigaciones y aplicaciones sobre
+ modelos de predicción hidrológicos han sido ampliamente usadas en contraste
+ con las 
+\series bold
+RNA's
+\series default
+ Recurrentes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ Las 
+\series bold
+RNA's 
+\series default
+recurrentes son capaces de representar mapas dinámicos no lineales comúnmente
+ encontradas en las tareas de predicción de series temporales 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
+
+\end_inset
+
+.
+ Estudios sobre el desempeño de este tipo de redes neuronales demuestran
+ un mejor desempeño que sus similares
+\series bold
+ RNA's 
+\series default
+feedforward en prácticamente todas las pruebas, ademas del menor número
+ de neuronas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "6327793"
+
+\end_inset
+
+ usadas.
+ Pero, la principal razón de la preferencia en el uso de 
+\series bold
+RNA's
+\series default
+ feedforward sobre 
+\series bold
+RNA's
+\series default
+ recurrentes es que la recurrencia en redes neuronales ocasiona mayor complejida
+d sobre todo en el proceso de entrenamiento de la 
+\series bold
+red neuronal
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Lo anterior mencionado motivó en este proyecto la elaboración de un modelo
+ híbrido de proceso estocástico utilizando Redes Neuronales Artificiales
+ Recurrentes con el fin de aprovechar las características ya mencionadas
+ de este tipo de redes.
+ Para esto se aplicará un enfoque recientemente introducido denominado Reservoir
+ Computing (
+\series bold
+RC
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Reservoir Computing es un enfoque de entrenamiento que se perfila como
+ simple y rápido en comparación a otros enfoques usados en 
+\series bold
+RNA's 
+\series default
+recurrentes tradicionales, todo esto con el fin de reducir su complejidad
+ y aprovechar la capacidad comproabada de representar mejor las características
+ de las series.
+ 
+\end_layout
+
+\begin_layout Standard
+Además, como parte de nuestra propuesta de modelo se considerará un componente
+ no determinista que representa un ruido aleatorio con distribución normal,
+ esto con el fin de tener en cuenta la incertidumbre que afecta típicamente
+ procesos hidrológico 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Awchi"
+
+\end_inset
+
+.
+ Siendo asi nuestro modelo hibrido una propuesta novedosa en la literatura.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente el uso de este modelo puede ser aplicado en la solución de problemas
+ de la región de arequipa que involucran fenómenos climatológicos como caudales,
+ precipitación, temperatura e incluso de tipo económico como precios de
+ acciones entre otros.
 \end_layout
 
 \begin_layout Section
@@ -379,7 +583,14 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-
+Proponer un modelo de Proceso Estocástico para la generación de series temporale
+s hidrológicas mediante el uso de técnicas de inteligencia artificial relativame
+nte novedosas como 
+\series bold
+ESN 
+\series default
+y un ruido aleatorio basado en la incertidumbre que afecta típicamente procesos
+ hidrológicos.
 \end_layout
 
 \begin_layout Subsection
@@ -415,8 +626,8 @@ Aplicación del modelo propuesto en la generación y predicción de series
 Evaluación del modelo propuesto en contraste con los modelos Estocásticos
  Neuronal de 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "lcdcampos"
+LatexCommand citep
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
 
 \end_inset
 
@@ -427,7 +638,7 @@ key "4371334"
 
 \end_inset
 
- y 
+y 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "en81012228"
@@ -464,10 +675,10 @@ Trabajos Relacionados
 \end_layout
 
 \begin_layout Standard
-En esta sección presentamos el mapeo sistemático realizado incluyendo también
- actividades de planificación de la revisión y la estrategia para investigar,
- catalogar y clasificar los trabajos recientes relacionados con predicción
- de series temporales.
+En esta sección presentamos el mapeamento sistemático realizado incluyendo
+ también actividades de planificación de la revisión y la estrategia para
+ investigar, catalogar y clasificar los trabajos recientes relacionados
+ con predicción de series temporales.
  
 \end_layout
 
@@ -502,66 +713,104 @@ echo state network
 El método utilizado para la recolección de fuentes primarias incluye la
  realización de búsquedas en bibliotecas digitales como ACM Digital Library
  
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://dl.acm.org/
 \end_layout
 
 \end_inset
 
+
+\lang spanish
 , IEEE Xplore Digital 
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://ieeexplore.ieee.org/
 \end_layout
 
 \end_inset
 
+
+\lang spanish
 , SciELO(Scientific Electronic Library Online) 
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://www.scielo.org/
 \end_layout
 
 \end_inset
 
-, DBLP(Computer Science Bibliography)
+,
+\lang spanish
+ DBLP(Computer Science Bibliography)
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://dblp.uni-trier.de/
 \end_layout
 
 \end_inset
 
-, BDBComp (Biblioteca Digital Brasileña de Computación) 
+,
+\lang spanish
+ BDBComp (Biblioteca Digital Brasileña de Computación) 
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://www.lbd.dcc.ufmg.br/bdbcomp/
 \end_layout
 
 \end_inset
 
-, Google Academy( Académicos), Springer 
+,
+\lang spanish
+ Google Academy( Académicos), Springer 
+\lang brazilian
+
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://www.springer.com/gp/
 \end_layout
 
 \end_inset
 
+
+\lang spanish
 , Hydrology and Earth System Sciences 
+\lang brazilian
+
 \begin_inset Foot
 status open
 
@@ -576,6 +825,8 @@ http://www.hydrology-and-earth-system-sciences.net/
 status open
 
 \begin_layout Plain Layout
+
+\lang brazilian
 http://onlinelibrary.wiley.com/
 \end_layout
 
@@ -585,34 +836,48 @@ http://onlinelibrary.wiley.com/
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Los criterios de inclusión de los estudios se presentan a continuación:
  
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Los estudios deben haber sido publicados en las conferencias, workshops
  y revistas.
  
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Los estudios deben ser escritos en Inglés, portugués o español.
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Los estudios deben estar disponibles en la web.
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Los estudios deben tener algunas de las cadenas de búsqueda en su título,
  resumen/ abstract o palabras clave.
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Los estudios deben presentar la propuesta de uno o más modelos de predicción.
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 En base a los criterios mencionados el proceso de búsqueda encontró 50 estudios
  publicados entre 2005 y 2015.
  Estos estudios fueron seleccionados para su posterior análisis.
@@ -623,15 +888,21 @@ En base a los criterios mencionados el proceso de búsqueda encontró 50 estudio
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 En la siguiente sección, se describirán los elementos seleccionados y se
  compara estos con nuestra propuesta.
 \end_layout
 
 \begin_layout Subsection
+
+\lang brazilian
 Enfoques Clásicos 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Actualmente en la literatura existen muchos modelos para la generación y
  previsión de variables hidrológicas (caudales, precipitacion y evaporacion)
  en una determinada zona.
@@ -640,31 +911,45 @@ Actualmente en la literatura existen muchos modelos para la generación y
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Estos modelos pueden usar las siguientes técnicas:
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Regresión lineal simple 
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Regresión lineal multiple 
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Modelos Autorregresivos (AR) 
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Modelos de Medias Móviles (ARMA) 
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Modelos de Medias Móviles con variable exógena ARMA y ARMAX con parametros
  periódicos
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 En todos estos modelos, la relación lineal entre las variables hidrológicas
  relevantes es asumida pero no siempre da los mejores resultados, y en algunos
  casos es inadecuado
@@ -681,6 +966,8 @@ key "Raman95multivariatemodelling"
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Por otro lado, los resultados de los modelos estocásticos de caudales pueden
  mejorar la precisión de la estimación del diseño de la capacidad de los
  embalses.
@@ -697,6 +984,8 @@ key "WRCR:WRCR8709"
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Estudios iniciales como (
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -726,15 +1015,21 @@ key "Thomas"
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Todos estos estudios proponen que caudales pueden ser simulados mediante
  una relación lineal simple con caudales previos.
 \end_layout
 
 \begin_layout Subsection
+
+\lang brazilian
 Enfoques de aprendizaje automático (Machine learning)
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 El problema con los modelos anteriores es que tareas como predicción son
  tareas de naturaleza dinámica.
  Por esta razón se buscaron alternativas en la literatura como los métodos
@@ -794,6 +1089,8 @@ feedforward.
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Por otra parte, las 
 \series bold
 RNA's 
@@ -826,6 +1123,8 @@ key "LukoseviciusJaeger09"
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Como una alternativa a estos problemas presentes en 
 \series bold
 RNA's 
@@ -860,6 +1159,8 @@ key "LukoseviciusJaeger09"
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Pocas aplicaciones de 
 \series bold
 RC
@@ -875,6 +1176,8 @@ key "hess-17-253-2013"
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 En 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -916,6 +1219,8 @@ ESN
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 En 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -971,6 +1276,8 @@ feedforward y son competitivos con el estado del arte de las
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Otro ejemplo del uso de métodos de 
 \series bold
 Reservoir Computing 
@@ -1002,6 +1309,8 @@ Bayesiano durante un intervalo de tiempos de pronóstico.
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 El trabajo anterior fue discutido y posteriormente ampliado en el 2012 por
  
 \begin_inset CommandInset citation
@@ -1020,6 +1329,8 @@ en predicción puede ser atribuída a su estructura altamente no lineal y
 \end_layout
 
 \begin_layout Itemize
+
+\lang brazilian
 Finalmente en 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1088,6 +1399,8 @@ se desempeñó significativamente mejor que SONARX, y ligeramente mejor que
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Podemos apreciar en la literatura que los modelos que usan el concepto de
  
 \series bold
@@ -1289,48 +1602,6 @@ Se puede usar el nuevo modelo como complemento en las tareas de análisis
  de políticas de consumo de agua para mejorar la disponibilidad del recurso
  hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
 te).
-\end_layout
-
-\begin_layout Section
-imagenes 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /home/edson/Pictures/colormapsTYGERtrainingESN.pdf
-	display false
-	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

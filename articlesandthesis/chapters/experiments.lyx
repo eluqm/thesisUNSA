@@ -7,7 +7,7 @@
 \textclass extbook
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish-mexico
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language swedish
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -81,9 +81,8 @@ reference "sec:Usando-Bases-Ortonormales"
 
 \end_inset
 
- describe el análisis 
-\lang spanish-mexico
-de conectividad y su impacto en el desempeño de las Redes 
+ describe el análisis de conectividad y su impacto en el desempeño de las
+ Redes 
 \emph on
 Echo State
 \emph default
@@ -93,8 +92,6 @@ Echo State
 \end_layout
 
 \begin_layout Section
-
-\lang spanish-mexico
 Usando Bases Ortonormales como Matriz de Conectividad
 \begin_inset CommandInset label
 LatexCommand label
@@ -106,8 +103,6 @@ name "sec:Usando-Bases-Ortonormales"
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish-mexico
 Trabajos como los de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -128,14 +123,11 @@ key "Koryakin201235"
 \emph default
  funcionan como una clase de base dinámica para la señal original descomponiendo
 la en subcomponentes, utilizando una base que maximiza la diferencia entre
- ellos
-\lang english
-, esto basado en un enfoque que tiene su base teórica en el campo conocido
- como 
+ ellos, esto basado en un enfoque que tiene su base teórica en el campo
+ conocido como 
 \emph on
 Compressed Sensing
 \emph default
-\lang spanish-mexico
 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -152,16 +144,12 @@ key "Candes"
 
 \begin_layout Standard
 A pesar de que los experimentos realizados por 
-\lang spanish-mexico
-
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Koryakin201235"
 
 \end_inset
 
-
-\lang english
  son de los primeros estudios en la literatura sobre RNN-
 \emph on
 echo que utilizan bases ortonormales como parámetro de conectividad
@@ -170,17 +158,13 @@ echo que utilizan bases ortonormales como parámetro de conectividad
  Esos experimentos no fueron realizados sobre series temporales de tipo
  hidrológicas.
  Bajo esa premisa, en este trabajo se realizaron experimentos con este tipo
- de series temporales(
-\lang spanish-mexico
-MOPEX 
+ de series temporales(MOPEX 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Duan20063"
 
 \end_inset
 
-
-\lang english
 ).
  Los resultados obtenidos se muestran acontinuación.
  
@@ -190,14 +174,11 @@ key "Duan20063"
 El objetivo en estos experimentos era ver cuál es la diferencia entre una
  matriz de pesos ortonormal y una matriz esparsa de pesos aleatorios en
  el desempeño de la RNN-echo.
- Para eso, se realizó una serie de 16 experimentos sobre los datos 
-\lang spanish-mexico
-de series hidrológicas temporales
-\lang english
-, para cada valor de conectividad, que va de 0 a 1 en incrementos de 0,01,
- luego se calculó la probabilidad de que la RNN-echo diera un error, como
- la relación entre el número de veces que ese error (RMSE) fue menor que
- un cierto umbral (como por ejemplo 
+ Para eso, se realizó una serie de 16 experimentos sobre los datos de series
+ hidrológicas temporales, para cada valor de conectividad, que va de 0 a
+ 1 en incrementos de 0,01, luego se calculó la probabilidad de que la RNN-echo
+ diera un error, como la relación entre el número de veces que ese error
+ (RMSE) fue menor que un cierto umbral (como por ejemplo 
 \begin_inset Formula $P=8.5\times10^{-1}$
 \end_inset
 
@@ -227,8 +208,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/orth_vs_sparse.pdf
-	lyxscale 25
-	scale 25
+	lyxscale 40
+	scale 40
 
 \end_inset
 
@@ -285,11 +266,11 @@ reference "fig:Probabilidad-de-sparsa"
 \end_inset
 
  en función de la conectividad para una matriz ortonormal de pesos y una
- matriz sparsa respectivamente.
+ matriz esparsa respectivamente.
 \end_layout
 
 \begin_layout Standard
-A continuación, realizó una prueba 
+A continuación, se realizó una prueba 
 \begin_inset Formula $t$
 \end_inset
 
@@ -369,8 +350,8 @@ Probabilidad de encontrar una red RNN-echo con un NRMSE
 \begin_inset Formula $<P$
 \end_inset
 
- cuando se utiliza una matriz de conectividad ortonormal para series de
- tiempo hidrológicas, en función de la conectividad y el tamaño de su reservorio.
+ cuando se utiliza una matriz de conectividad ortonormal para series temporales
+ hidrológicas, en función de la conectividad y el tamaño de su reservorio.
 \end_layout
 
 \end_inset
@@ -412,10 +393,10 @@ Vemos que los
 \end_inset
 
 .
- Por lo tanto, el uso de matrices ortonormales en series de características
- hidrológicas no presenta mejoras en el rendimiento de las redes RNN-echo,
- basado en lo anterior decidimos utilizar una topología de matriz esparsa
- aleatoria para nuestros siguientes experimentos.
+ Por lo tanto, el uso de matrices ortonormales en series temporales hidrológicas
+ no presenta mejoras en el rendimiento de las redes RNN-echo, basado en
+ lo anterior decidimos utilizar una topología de matriz esparsa aleatoria
+ para nuestros siguientes experimentos.
  
 \end_layout
 
@@ -648,7 +629,7 @@ Resultados de prueba
 \end_inset
 
  usando una matriz ortogonal y matriz esparsa aleatoria como topología del
- reservorio de una RNN-echo.
+ reservorio de una red RNN-echo.
 \end_layout
 
 \end_inset
@@ -666,11 +647,9 @@ Resultados de prueba
 \end_layout
 
 \begin_layout Standard
-Comprobamos que la conectividad es crítica para encontrar una buena RNN-echo
- para predecir con mayor precisión valores futuros.
- En contraste con resultados previos como los de 
-\lang spanish-mexico
-
+Comprobamos que la conectividad es crítica para encontrar una buena red
+ RNN-echo para predecir con mayor precisión valores futuros.
+ En contraste con los resultados previos como los de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Millea2014"
@@ -684,10 +663,9 @@ key "Koryakin201235"
 
 \end_inset
 
-
-\lang english
-, no se detectó que una topologia de matriz ortonormal tenga mejor o igual
- desempeño, que una de matriz aleatoria.
+, en este trabajo no se detectó que una topologia de red con una matriz
+ de conectividad ortonormal tenga mejor o igual desempeño, que una matriz
+ de conectividad aleatoria.
  Cuando usamos matrices de peso ortonormal (y una función de activación
  lineal), no necesitamos establecer el radio espectral, no necesitamos escalar
  los pesos de la matriz, ni siquiera los pesos de entrada.
@@ -735,7 +713,7 @@ Probabilidad de encontrar una red RNN-echo con un NRMSE
 \end_inset
 
  cuando se utiliza una matriz de conectividad esparsa aleatoria para series
- de tiempo hidrológicas, en función de la conectividad y el tamaño de su
+ temporales hidrológicas, en función de la conectividad y el tamaño de su
  reservorio.
 \end_layout
 
@@ -754,9 +732,9 @@ Estimación de parámetros para generar escenarios Hidrológicos
 \end_layout
 
 \begin_layout Standard
-Para poder generar escenarios de variables hidrometereológicas, los parámetros
- de nuestro modelo que corresponden al número de unidades internas del reservori
-o y el radio espectral de la matriz de conectividad (vea Sección 
+Para generar escenarios de variables hidrometereológicas como caudal, los
+ parámetros de nuestro modelo como el número de unidades internas del reservorio
+ y el radio espectral de la matriz de conectividad (vea Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Usando-Bases-Ortonormales"
@@ -1334,22 +1312,33 @@ Donde:
 \end_layout
 
 \begin_layout Subsection
-Configuración de entrenamiento
+Configuración de aprendizaje de la red RNN-echo
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Configuración-de-aprendizaje"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 No se usaron conexiones de retroalimentación desde las unidades de salida
- hasta el reservorio, ya que esto parecía deteriorar el rendimiento de nuestra
- red RNN-echo.
- Los pesos de las conexiones de entrada al reservorio determinan la intensidad
- con que un reservorio es excitado por la entrada, y por lo tanto el grado
+ hasta el reservorio, su uso generó un rendimiento menor de nuestra red
+ RNN-ESN.
+ 
+\end_layout
+
+\begin_layout Standard
+Los pesos de las conexiones entre la entrada y el reservorio determinan
+ la intensidad con que un reservorio es excitado, y por lo tanto el grado
  de no linealidad de su respuesta.
  Aquí, todos los pesos de conexión se obtuvieron de una distribución normal.
  
 \end_layout
 
 \begin_layout Standard
-Seguimos la práctica común de usar un reservorio escasamente y aleatoriamente
+Seguimos una práctica común de usar un reservorio escasa y aleatoriamente
  conectado, permitiendo que aproximadamente el 20% de todas las conexiones
  estén activas, basados en los resultados de la sección 
 \begin_inset CommandInset ref
@@ -1362,78 +1351,37 @@ reference "sec:Usando-Bases-Ortonormales"
 \end_layout
 
 \begin_layout Standard
-Las conexiones de salida de la red fueron entrenadas en modo batch por métodos
- de Regresión contraída y Pseudoinversa de Moore-Penrose.
+Los pesos de las conexiones entre el reservorio y la capa de salida de red
+ fueron ajustados en modo 
+\emph on
+batch 
+\emph default
+por los métodos: Regresión Ridge y Pseudoinversa de Moore-Penrose.
  A menos que se indique lo contrario, todas las estadísticas resumidas presentad
-as en la Tabla ...
+as en la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trainingTable"
+
+\end_inset
+
  se basan en 10 repeticiones de entrenamiento independientes, con el fin
  de reflejar adecuadamente los efectos de la aleatoriedad en la inicialización
- y/o entrenamiento de los valores de conectividad del modelo (Optimización
- aleatoria descrita en la sección 
+ y/o ajuste de los valores de conectividad del modelo
+\series bold
+.
+ 
+\series default
+Para este fin, usamos el algoritmo de Optimización Aleatoria descrita en
+ la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Optimización-aleatoria"
 
 \end_inset
 
-).
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El tamaño del reservorio determina en gran medida la capacidad de una red
- de aprender dinámicas complejas con una precisión razonable.
- Además, el radio espectral de los pesos del reservorio controla su dinámica
- y por lo tanto es un escenario importante para un modelo basado en 
-\emph on
-Reservoir Computing
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "LukoseviciusJaeger09"
-
-\end_inset
-
 .
- La Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Performance-de-entrenamiento"
-
-\end_inset
-
- muestra el desempeño de entrenamiento, sobre un rango de valores para ambos
- parámetros.
- Para hacer esto posible los registros historícos de las 4 cuencas se dividieron
- en períodos de entrenamiento (1979-1998) y prueba (1999-2000).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1463,11 +1411,1243 @@ name "fig:Performance-de-entrenamiento"
 
 \end_inset
 
-Performance de entrenamiento de un red ESN para las 4 cuencas, promediado
- en 10 repeticiones, en un rango de valores para el tamaño del reservorio
- (eje x) y el radio espectral (eje y).
+Mapas de calor que representan el NRMSE promediado en 10 repeticiones, en
+ un rango de valores para el tamaño del reservorio (eje x) y el radio espectral
+ (eje y).
+ Corresponde a las 4 cuencas de MOPEX(
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+East Fork White, Clearfield, Tygart Valley, Bluestone
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish-mexico
+).
  Los tonos más claros representan un alto NRMSE, los tonos más oscuros un
  bajo NRMSE.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+ muestra el desempeño de aprendizaje, sobre un rango de valores para ambos
+ parámetros como el tamaño del reservorio y radio espectral.
+ Para tal los registros históricos de 4 cuencas se dividieron en períodos
+ de aprendizaje (1979-1996) y prueba (1997-2000).
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+ podemos ver que a mayor tamaño de los reservorios se genera un mayor valor
+ de NRMSE.
+ Cada cuenca fue asignada con un tamaño de reservorio y radio espectral
+ específico (la región mas oscura en los mapas de calor).
+ Esto se interpreta como la diferencia que existe entre las características
+ y la naturaleza dinámica de cada cuenca (vea la Tabla).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Propiedades de Reservorio
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID Cuencas (MOPEX)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tamaño de Reservorio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radio Espectral
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:config_RNN_ESN"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede ver en la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trainingTable"
+
+\end_inset
+
+, las distintas configuraciones de red y su respectivo NRMSE, como resultado
+ de ejecutar el algoritmo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:parametros"
+
+\end_inset
+
+.
+ Esas configuraciones pueden ser: el método de aprendizaje (Ridge o Pseudo-inver
+sa), el tipo de Neuronas usadas en el reservorio (tanh o leaky) y la Normalizaci
+ón de los datos de entrada.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="7">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2.5cm">
+<column alignment="left" valignment="middle" width="2.8cm">
+<column alignment="center" valignment="middle" width="2.3cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ID Cuencas (MOPEX) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Configuración de Red
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo de Neuronas en el Reservorio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Método de aprendizaje
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reducción de Asimetría (input)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NRMSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NRMSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NRMSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NRMSE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Tangente hiperbólica(tanh)
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regresión 
+\emph on
+Ridge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8341
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7783
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.8013
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7436
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8591
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9447
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9559
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9415
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pseudo-inversa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+0.8201
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+0.7613
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+0.8057
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+0.7258
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8618
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.96
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9279
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Leaky-integrator
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Regresión 
+\emph on
+Ridge
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8328
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.771
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.7972
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7443
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8581
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9448
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9562
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9429
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pseudo-inversa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8242
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7719
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7982
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7323
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8639
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9453
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.959
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9327
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:trainingTable"
+
+\end_inset
+
+Valores NRMSE para las distintas configuraciones de la red RNN-ESN, sobre
+ series temporales hidrológicas de 4 cuencas MOPEX.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las neuronas 
+\emph on
+Leaky-integrator 
+\emph default
+intentan dotar de una dinámica más lenta al reservorio
+\emph on
+, 
+\emph default
+considerando la amplia gama de escalas de tiempo en las que tienen lugar
+ los procesos hidrológicos (meses, años, días).
+ Sin embargo, se puede ver que en la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trainingTable"
+
+\end_inset
+
+ estas neuronas no consiguen aumentar significativamente el contenido informativ
+o del reservorio (menor NRMSE), en contraste con las neuronas 
+\emph on
+tanh
+\emph default
+.
+ El método de aprendizaje de matriz pseudo-inversa también no logra aumentar
+ dicho contenido, en contraste con el método de regresión 
+\emph on
+Ridge
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de los datos de la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trainingTable"
+
+\end_inset
+
+, se evidencia que las configuraciones de red óptimas (con menor NRMSE)
+ para las 4 cuencas tienden a ser similares.
+\end_layout
+
+\begin_layout Standard
+La siguiente sección presenta y evalúa los resultados alcanzados en la generació
+n de escenarios sintéticos después del proceso de aprendizaje de red RNN-ESN,
+ cuando aplicamos nuestro modelo en las 4 series temporales de MOPEX.
+\end_layout
+
+\begin_layout Section
+Generación de escenarios sintéticos
+\end_layout
+
+\begin_layout Standard
+Una vez seleccionada la configuración de las redes RNN-ESN (ver Tablas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:config_RNN_ESN"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trainingTable"
+
+\end_inset
+
+) nuestro modelo ya puede ser utilizado para generar escenarios sintéticos
+ de variables Hidrológicas.
+\end_layout
+
+\begin_layout Standard
+En esta sección, son presentados y validados los resultados obtenidos al
+ aplicar nuestra propuesta, para generar escenarios sintéticos de pronóstico
+ usando las series temporales de MOPEX.
+ Estos resultados son comparados con los resultados de los modelo, PEN,
+ Thomas Fiering, Anfis.
+ Todos estos modelos fueron implementados utilizando MATLAB versión R2015b.
+\end_layout
+
+\begin_layout Subsection
+Análisis de escenarios sintéticos
+\end_layout
+
+\begin_layout Standard
+El análisis de los escenarios sintéticos generados por cada modelo se realizó
+ tomando en cuenta 4 horizontes de planeamiento divididos en etapas mensuales.
+ Fueron generados 150 escenarios de 12, 24, 36, 48 meses para cada una de
+ las 4 cuencas MOPEX.
+ La configuración de validación se puede ver en la Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Configuración-de-aprendizaje"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis de Adherencia
+\end_layout
+
+\begin_layout Standard
+El objetivo de esta sección es analizar la calidad de los escenarios obtenidos
+ mediante los test estadísticos (test presentado en la sección ___).
+ A fin de verificar si las series sintéticas son igualmente probables a
+ la serie histórica de MOPEX.
+\end_layout
+
+\begin_layout Standard
+Se aplicó el test-t para validar si la media de los escenarios es estadísticamen
+te igual a la media del histórico.
+ El análisis fue basada en los 
+\emph on
+p-values
+\emph default
+ obtenidos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1485,40 +2665,29 @@ Performance de entrenamiento de un red ESN para las 4 cuencas, promediado
 \end_layout
 
 \begin_layout Standard
-CONSLUSION....SECCCION
-\end_layout
-
-\begin_layout Standard
-No obstante, en los experimentos llevados a cabo, se consideró usar series
- temporales sin transformacion logaritmica, con el fin de poder 
-\end_layout
-
-\begin_layout Standard
-La inclusión de una dinámica más lenta en el reservorio utilizando neuronas
- integradoras con fugas podría ser beneficiosa para un modelo de RC RR,
- considerando la amplia gama de escalas de tiempo en las que tienen lugar
- los procesos hidrológicos.
- Sin embargo, los resultados del modelo LESN-L (ver Figuras 4 a 7) muestran
- que las neuronas integradoras con fugas no consiguen aumentar significativament
-e el contenido informativo del reservorio.
- En cambio, el modelo simplemente termina con un diferente equilibrio entre
- CE, CElog y MSDE, en comparación con el modelo LESN.
-\end_layout
-
-\begin_layout Standard
 En este estudio, se generaron 200 series sintéticas con una duración de
- 24 meses (2 años), Los datos se dividieron en formación (1948-1999) y prueba
- (1998-2000).
+ 24 meses (2 años), Los datos se dividieron en: entrenamiento (1948-1996)
+ y prueba (1997-2000).
  El rendimiento de los modelos de predicción se evaluó de acuerdo con criterio
  de error: error cuadrático promedio (NRMSE) normalizado.
 \end_layout
 
 \begin_layout Standard
-A partir de la Figura 4 podemos ver que el tamaño más grande de los embalses
- genera un menor rendimiento en el entrenamiento de ESN-RNN para las 4 cuencas
- seleccionadas, cada cuenca fue asignada con el tamaño específico del reservorio
- (puntos rojos) y radiales espectrales (destacados en azul) Porque las caracterí
-sticas y la naturaleza dinámica del río son diferentes.
+El tamaño del reservorio determina en gran medida la capacidad de una red
+ de aprender dinámicas complejas con una precisión razonable.
+ Además, el radio espectral de los pesos del reservorio controla su dinámica
+ y por lo tanto es un escenario importante para un modelo basado en 
+\emph on
+Reservoir Computing
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

@@ -1,0 +1,3532 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage{algorithm,algpseudocode}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Procesos estocásticos 
+\end_layout
+
+\begin_layout Standard
+Por lo general, se representa un Proceso Estocástico(PE) por 
+\begin_inset Formula $\left\{ Z\left(t\right):t\in T\right\} $
+\end_inset
+
+ donde 
+\begin_inset Formula $t$
+\end_inset
+
+ representa el instante de tiempo, 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ es una variable aleatoria llamada estado del proceso en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+ y 
+\begin_inset Formula $T$
+\end_inset
+
+ es el conjunto de índices denominado espacio paramétrico de PE.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, un PE es un modelo matemático caracterizado por una colección
+ de variables aleatorias ordenadas, en el tiempo y en el espacio, y definidas
+ en un conjunto, continuo o discreto, que describe la evolución de algún
+ fenómeno con características aleatorias 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Muller"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Si el conjunto 
+\begin_inset Formula $T$
+\end_inset
+
+ es un intervalo finito o infinito de números reales, se dice que 
+\begin_inset Formula $\left\{ Z\left(t\right):t\in T\right\} $
+\end_inset
+
+ es un proceso continuo.
+ Por otra parte, si 
+\begin_inset Formula $T$
+\end_inset
+
+ es un conjunto finito o contable, como por ejemplo 
+\begin_inset Formula $T=\left\{ 1,2,3,\ldots\right\} $
+\end_inset
+
+o 
+\begin_inset Formula $T=\left\{ 1,9,43,279\right\} $
+\end_inset
+
+, se dice que PE es un proceso discreto 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+.
+ El espacio de estados de un PE es el conjunto de todos los posibles valores
+ de variables 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+, que también puede ser discreto o continuo.
+ La combinación de los posibles valores de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $T$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ y 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ de conduce a cuatro clases de proceso estocástico 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El concepto de proceso estocástico proporciona el análisis probabilístico
+ de series temporales.
+ Así, una serie temporal puede ser considerada una realización de un PE,
+ esto es, una posible trayectoria del proceso.
+ Por lo tanto, PE es un proceso generador de datos cuya serie temporal es
+ una realización muestral entre todas las series posibles a ser generadas
+ por este modelo.
+ Por ejemplo, nosotros podemos considerar el siguiente proceso estocástico
+ definido como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{t}=Z_{t-1}+a_{t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde podemos asumir que 
+\begin_inset Formula $Z_{0}=0$
+\end_inset
+
+, y 
+\begin_inset Formula $a_{t}$
+\end_inset
+
+ es una variable independiente e idénticamente distribuida 
+\begin_inset Formula $N\left(0,\sigma^{2}\right)$
+\end_inset
+
+.
+ Este proceso es conocido como a 
+\series bold
+camino aleatorio 
+\series default
+(vea Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Randomwalk"
+
+\end_inset
+
+).
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/ramdom_walk.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Randomwalk"
+
+\end_inset
+
+Proceso estocástico de camino aleatorio, se muestra 200 realizaciones de
+ este proceso
+\series bold
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fin de obtener un modelo adecuado para una serie temporal, se necesita
+ de una secuencia de estudio de la misma.
+ Donde dado un PE (fenómeno real) se obtiene una serie temporal (muestra
+ finita de observaciones equidistantes en el tiempo) y a través del análisis
+ de series temporales (estudio de la muestra) se identifica un modelo cuyo
+ objetivo es inferir sobre el comportamiento de la realidad.
+ A partir de la expresión matemática de ese modelo, se pueden obtener las
+ fórmulas para sus momentos como media, varianza, entre otros.
+ Por lo tanto, una manera de describir un PE es a través de los momentos
+ de las variables aleatorias, en especial, la media, la varianza y autocovarianz
+a del proceso 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+.
+ La media y la varianza de un PE discreto son funciones de instante de tiempo
+ 
+\begin_inset Formula $t$
+\end_inset
+
+, definidas, respectivamente, por las ecuaciones 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:media"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:varianza"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mu\left(t\right)=E\left[Z\left(t\right)\right]\label{eq:media}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma^{2}\left(t\right)=Var\left[Z\left(t\right)\right]=E\left\{ \left[Z\left(t\right)-\mu\left(t\right)\right]^{2}\right\} \label{eq:varianza}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siendo 
+\begin_inset Formula $E\left[\bullet\right]$
+\end_inset
+
+, el valor esperado y 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+el estado del proceso en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ La autocovarianza de un PE discreto es una función definida, entre los
+ instantes 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\gamma\left(t_{1},t_{2}\right)=Cov\left[Z\left(t_{1}\right),Z\left(t_{2}\right)\right]=E\left\{ \left[Z\left(t_{1}\right)-\mu\left(t_{1}\right)\right]\cdot\left[Z\left(t_{2}\right)-\mu\left(t_{2}\right)\right]\right\} \label{eq:autocovarianza}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto es, la autocovarancia de un PE discreto es sólo la covarianza entre
+ instantes de tiempo diferentes.
+ Por lo tanto, la varianza del PE es sólo un caso particular de la autocovarianc
+ia, donde 
+\begin_inset Formula $t_{1}=t_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los momentos de orden más alto se pueden definir de manera similar, pero
+ son poco usados en la práctica.
+ Las definiciones de los momentos para un PE continuo son análogas a las
+ de un PE discreto.
+\end_layout
+
+\begin_layout Standard
+Estas características de procesos estocásticos están íntimamente ligadas
+ a la noción de estacionariedad de un proceso 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+.
+ Se dice que un proceso es estacionario si no hay cambios en sus características
+, es decir, si es invariante en relación al tiempo.
+ Según la estacionariedad, un proceso puede clasificarse en:
+\end_layout
+
+\begin_layout Subsection
+Proceso Estrictamente Estacionario
+\end_layout
+
+\begin_layout Standard
+Cuando sus estadísticas no son afectadas por variaciones debido a la selección
+ del origen del tiempo, osea, la distribución de probabilidad conjunta no
+ cambia al desplazar el tiempo o el espacio.
+ De esta forma, la distribución de probabilidad conjunta 
+\begin_inset Formula $P\left\{ Z\left(t_{1}\right)=z_{1},Z\left(t_{2}\right)=z_{2},\ldots,Z\left(t_{n}\right)=z_{n}\right\} $
+\end_inset
+
+ es la misma que 
+\begin_inset Formula $P\left\{ Z\left(t_{1}+k\right)=z_{1},Z\left(t_{2}+k\right)=z_{2},\ldots,Z\left(t_{n}+k\right)=z_{n}\right\} $
+\end_inset
+
+, para cualquier 
+\begin_inset Formula $t_{i},k$
+\end_inset
+
+ e n.
+ La media e la varianza son constantes para todo instante de tiempo 
+\begin_inset Formula $t\in T$
+\end_inset
+
+ y la función de autocovarianza solo depende del desplazamiento 
+\begin_inset Formula $t_{i+k}-t_{i}$
+\end_inset
+
+.
+ La media del proceso esta dada por la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mediaseasonal"
+
+\end_inset
+
+ y la autocovarianza de retraso 
+\begin_inset Formula $k$
+\end_inset
+
+ puede ser escrita como la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:autocovarianzak"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mu\left(t\right)=E\left[Z\left(t\right)\right]=E\left[Z\left(t+k\right)\right]\label{eq:mediaseasonal}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\gamma\left(k\right)=E\left\{ \left[Z\left(t\right)-\mu\right]\cdot\left[Z\left(t+k\right)-\mu\right]\right\} \label{eq:autocovarianzak}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto cuando 
+\begin_inset Formula $k=0$
+\end_inset
+
+, se tiene la varianza constante del proceso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\sigma^{2}=\gamma\left(0\right)=E\left\{ \left[Z\left(t\right)-\mu\right]^{2}\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proceso Débilmente Estacionario
+\end_layout
+
+\begin_layout Standard
+La condición de estacionariedad es mas débil porque se impone condiciones
+ solamente sobre los dos primeros momentos, que no garantizan condiciones
+ sobre la estacionariedad de la función de probabilidad.
+ Por lo tanto, la media del proceso es constante y su autocovarianza depende
+ sólo de 
+\begin_inset Formula $k=t_{i+k}-t_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En la práctica, son 3 los tipos de series temporales: aquellas con propiedades
+ de estacionariedad en periodos largos(estrictamente estacionarias); las
+ que poseen estacionariedad en periodos cortos(débilmente estacionarias)
+ y finalmente aquellas que no son estacionarias(sus propiedades están cambiando
+ con el tiempo).
+ Algunos métodos estadísticos tratan la no-estacionariedad de series temporales,
+ mediante técnicas que filtran la parte no-estacionaria, trabajando solamente
+ con la parte estacionaria 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Muller"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Existen algunos procesos estocásticos que son muy usados en la especificación
+ de modelos para series temporales, y son usados en la construcción de procesos
+ mas complicados, un ejemplo de esos PE básicos es el ruido blanco o secuencia
+ aleatoria.
+\end_layout
+
+\begin_layout Section
+Ruido Blanco
+\end_layout
+
+\begin_layout Standard
+Un PE discreto es llamado ruido blanco si es un proceso puramente aleatorio,
+ es decir, si los 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ constituyen una secuencia de variables aleatorias independientes e idénticament
+e distribuidas.
+ 
+\end_layout
+
+\begin_layout Standard
+Un ruido blanco tiene la media, varianza constante y la función de auto-correlac
+ión nula en todos los retrasos 
+\begin_inset Formula $k$
+\end_inset
+
+, es decir son totalmente descorrelacionadas.
+ Presentan distribución normal de media cero y de desviación 1, 
+\begin_inset Formula $Z\left(t\right)\sim N\left(0,1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los procesos de ruido blanco aparecen en la construcción de otros procesos
+ mas complejos, como, por ejemplo los modelos de Box y Jenkins 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+.
+ Estos modelos tienen como propósito que los datos de series de tiempo puedan
+ usarse en pronóstico.
+ Es decir, el uso de las observaciones de una serie de tiempo disponible
+ en el momento 
+\begin_inset Formula $t$
+\end_inset
+
+ Para predecir su valor en el tiempo 
+\begin_inset Formula $t+l$
+\end_inset
+
+; Donde 
+\begin_inset Formula $l$
+\end_inset
+
+ se denomina horizonte de previsión o tiempo de avance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "DouglasBook"
+
+\end_inset
+
+.
+ El horizonte de previsión es el número de etapas de tiempo en el futuro
+ para las cuales las previsiones deben producirse.
+\end_layout
+
+\begin_layout Standard
+Un método de pronóstico es un procedimiento que calcula 
+\begin_inset Formula $\widehat{Z}\left(t\right)$
+\end_inset
+
+, para el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+ a partir de valores pasados( 
+\begin_inset Formula $Z\left(t-1\right),Z\left(t-2\right),Z\left(t-3\right),\ldots$
+\end_inset
+
+).
+ Se han propuesto numerosos algoritmos de aprendizaje de máquina y estadísticos.
+ Los modelos estadísticos estándar son los más predominantes en la literatura
+ seguida por los modelos de redes neuronales artificiales de aprendizaje
+ automático (ANNs).
+\end_layout
+
+\begin_layout Section
+Modelos Estadísticos
+\end_layout
+
+\begin_layout Standard
+Esta sección cubre algunos algoritmos comunes utilizados para la predicción
+ de series de tiempo en estadística.
+ El campo de predicción ha sido influenciado, durante mucho tiempo, por
+ métodos estadísticos lineales tales como el modelo auto-regresivo (AR),
+ el modelo de media móvil (MA) y los modelos híbridos que derivan de ellos
+ como ARMA (media móvil auto-regresiva), ARIMA (Media móvil integrada auto-regre
+siva) y SARIMA (ARIMA estacional).
+\end_layout
+
+\begin_layout Section
+Modelos Auto-Regresivos(AR)
+\end_layout
+
+\begin_layout Standard
+En el proceso auto-regresivo, una variable de salida 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+, depende linealmente de sus propios valores anteriores 
+\begin_inset Formula $\left(Z\left(t-1\right),Z\left(t-2\right),\ldots,Z\left(t-p\right)\right)$
+\end_inset
+
+, y algún ruido blanco 
+\begin_inset Formula $\varepsilon_{t}$
+\end_inset
+
+.
+ Por definición, se dice que un proceso 
+\begin_inset Formula $\left\{ Z\left(t\right)\right\} $
+\end_inset
+
+, es un proceso auto-regresivo de orden 
+\begin_inset Formula $p$
+\end_inset
+
+ denotado como AR(p) si 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+, puede ser descrito por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\phi_{1}\cdot Z\left(t-1\right)+\phi_{2}\cdot Z\left(t-2\right)+\ldots+\phi_{p}\cdot Z\left(t-p\right)+\varepsilon_{t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dónde 
+\begin_inset Formula $\varepsilon_{t}$
+\end_inset
+
+, es el ruido blanco con media cero y varianza finita fija 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+[2], y 
+\begin_inset Formula $\phi_{1},\ldots\phi_{p}$
+\end_inset
+
+, son los parámetros del modelo.
+ El orden 
+\begin_inset Formula $p$
+\end_inset
+
+ del modelo determina el número de observaciones pasadas utilizadas para
+ predecir el valor actual.
+ El ejemplo más simple de un proceso AR es el caso de primer orden, denotado
+ como AR(1), dado por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\phi_{1}\cdot Z\left(t-1\right)+\varepsilon_{t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el caso multivariable donde hay múltiples observaciones para cada paso
+ de tiempo, podemos considerar un modelo auto-regresivo multivariante o
+ un vector auto-regresivo (VAR).
+ Considere M series temporales generadas a partir de M variables, un modelo
+ VAR (p) se define por la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\sum_{k=1}^{p}A_{k}\cdot\overline{Z}\left(t-k\right)+\overline{\varepsilon}_{t}\label{eq:VAR}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\overline{Z}\left(t\right)=\left[Z^{\left(1\right)}\left(t\right),Z^{\left(2\right)}\left(t\right),\ldots,Z^{\left(M\right)}\left(t\right)\right]^{T}$
+\end_inset
+
+, es un vector columna M-dimensional de serie temporal al índice 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Cada 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+, es una matriz M-por-M de parámetros donde 
+\begin_inset Formula $\phi_{i,j}^{k}$
+\end_inset
+
+, es el elemento en la posición 
+\begin_inset Formula $(i,j)$
+\end_inset
+
+ en la matriz 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+, y 
+\begin_inset Formula $\overline{\varepsilon}_{t}=\left[\varepsilon_{t}^{(1)},\ldots\varepsilon_{t}^{(M)}\right]^{T}$
+\end_inset
+
+, es un vector columna de ruidos blancos.
+\end_layout
+
+\begin_layout Standard
+La ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:VAR"
+
+\end_inset
+
+ puede ser reescrito de la forma: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left[\begin{array}{c}
+Z^{1}(t)\\
+\vdots\\
+Z^{M}\left(t\right)
+\end{array}\right]=\sum_{k=1}^{p}\left[\begin{array}{ccc}
+\phi_{1,1}^{(k)} & \cdots & \phi_{1,M}^{(k)}\\
+\vdots & \ddots & \vdots\\
+\phi_{M,1}^{(k)} & \cdots & \phi_{M,M}^{(k)}
+\end{array}\right]\cdot\left[\begin{array}{c}
+Z^{1}(t-1)\\
+\vdots\\
+Z^{M}\left(t-1\right)
+\end{array}\right]+\left[\begin{array}{c}
+\varepsilon_{t}^{(1)}\\
+\vdots\\
+\varepsilon_{t}^{(M)}
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modelo de Medias Móviles(MA)
+\end_layout
+
+\begin_layout Standard
+Supongamos que 
+\begin_inset Formula $\left\{ \varepsilon_{t}\right\} $
+\end_inset
+
+ es un proceso puramente aleatorio con una media de cero y una varianza
+ 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+, entonces se dice que un proceso 
+\begin_inset Formula $\left\{ Z\left(t\right)\right\} $
+\end_inset
+
+, es un proceso de media móvil de orden 
+\begin_inset Formula $q$
+\end_inset
+
+ denotado MA(q), si 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+, puede ser expresado por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\varepsilon_{t}+\theta_{1}\cdot\varepsilon_{t-1}+\theta_{2}\cdot\varepsilon_{t-2}+\ldots+\theta_{q}\cdot\varepsilon_{t-q}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\theta_{1},\theta_{2},\ldots\theta_{q}$
+\end_inset
+
+, son parámetros del modelo [2][11].
+\end_layout
+
+\begin_layout Standard
+La media móvil también describe un método en el que la siguiente muestra
+ depende de la suma ponderada de las entradas pasadas o presentes de una
+ serie temporal exógena 
+\begin_inset Formula $\left\{ X\left(t\right)\right\} $
+\end_inset
+
+, de 
+\begin_inset Formula $N$
+\end_inset
+
+ dimensiones descritas en la ecuación
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:MA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\theta_{0}\cdot X\left(t\right)+\theta_{1}\cdot X\left(t-1\right)+\theta_{2}\cdot X\left(t-2\right)+\ldots+\theta_{q}\cdot X\left(t-q\right)\label{eq:MA}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar al modelo AR(p), en el caso de series temporales múltiples, un modelo
+ multivariado de MA(q) de dimensión M puede escribirse como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\sum_{k=1}^{q}B_{k}\cdot\overline{X}\left(t-k\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\overline{X_{t}}$
+\end_inset
+
+ es una serie de tiempo exógena N-dimensional y 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+, es una M-por-N matriz de parámetros.
+\end_layout
+
+\begin_layout Section
+Modelo Autorregresivo de Media Móvil ARMA(p,q)
+\end_layout
+
+\begin_layout Standard
+El modelo ARMA es uno de los más utilizados ya que combina las ventajas
+ de los modelos AR(p) auto-regresivo y MA(q).
+ El modelo ARMA fue originalmente propuesto en 1951 por Peter Whittle en
+ su tesis "
+\emph on
+Hypothesis testing in time series analysis
+\emph default
+" y fue adaptado por George E.
+ P.
+ Box y Gwilym Jenkins en 1971 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+.
+ Un modelo ARMA (p, q) de orden (p, q) se define por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\phi_{1}\cdot Z\left(t-1\right)+\ldots+\phi_{p}\cdot Z\left(t-p\right)+\varepsilon_{t}+\theta_{1}\cdot\varepsilon_{t-1}+\ldots+\theta_{q}\cdot\varepsilon_{t-q}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ es la serie original y 
+\begin_inset Formula $\varepsilon_{t}$
+\end_inset
+
+, es una serie de errores aleatorios desconocidos que se supone siguen una
+ distribución de probabilidad normal.
+ La versión multivariable del modelo ARMA se llama auto-regresivo vectorial
+ de media móvil (VARMA) que es dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z\left(t\right)=\sum_{k=1}^{p}A_{k}\cdot\overline{Z}\left(t-k\right)+\sum_{k=1}^{q}B_{k}\cdot\overline{X}\left(t-k\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ es la salida, 
+\begin_inset Formula $\overline{Z}\left(t-k\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $\overline{X}\left(t-k\right)$
+\end_inset
+
+, son respectivamente las variables de salidas pasadas y las variables pasadas
+ de variables exógenas.
+ 
+\begin_inset Formula $A_{k}$
+\end_inset
+
+ y 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+, son M-por-M y M-por-N las matrices de parámetros respectivamente.
+\end_layout
+
+\begin_layout Section
+Modelo Autorregresivo Integrado de Media Móvil(ARIMA)
+\end_layout
+
+\begin_layout Standard
+Los modelos definidos anteriormente como AR, MA, y ARMA se utilizan en el
+ análisis de series de tiempo estacionario [14].
+ En la práctica, la mayoría de las series de tiempo son no estacionarias,
+ por lo que para adaptarse a los modelos estacionarios, es indispensable
+ deshacerse de las fuentes no estacionarias de variación[2].
+ Una solución a esto, fue introducida por Box y Jenkins
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BOXANDJenKys"
+
+\end_inset
+
+, el modelo ARIMA que generalmente supera esta limitación mediante la introducci
+ón de un proceso de diferenciación que transforma efectivamente los datos
+ no estacionarios en estacionarios [2][17].
+ Esto se hace restando la observación en el periodo actual de la observación
+ anterior.
+ Por ejemplo, una diferenciación de primer orden se realiza reemplazando
+ 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ por 
+\begin_inset Formula $Z^{'}\left(t\right)=Z\left(t\right)-Z\left(t-1\right)$
+\end_inset
+
+.
+ Por lo tanto, el modelo ARIMA se denomina ARMA "Integrado" debido al modelo
+ estacionario que se ajusta a los datos diferenciados que tienen que sumarse
+ o integrarse para proporcionar un modelo para los datos originales no estaciona
+rios.
+ La forma general del proceso ARIMA(p,d,q) se describe como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z^{'}\left(t\right)=\nabla^{k}Z\left(t\right)=\phi_{1}\cdot Z^{'}\left(t-1\right)+\ldots+\phi_{p}\cdot Z^{'}\left(t-p\right)+\varepsilon_{t}+\theta_{1}\cdot\varepsilon_{t-1}+\ldots+\theta_{q}\cdot\varepsilon_{t-q}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde los parámetros p, d y q son números enteros no negativos que se refieren
+ al orden de la parte autorregresiva, el grado de primera diferenciación
+ implicada y el orden de la parte media móvil respectivamente.
+ Esta capacidad para hacer frente al proceso no estacionario ha convertido
+ el modelo ARIMA en uno de los enfoques más populares y ampliamente utilizados
+ en la predicción de series temporales[14].
+\end_layout
+
+\begin_layout Section
+Modelo SARIMA(ARIMA estacional)
+\end_layout
+
+\begin_layout Standard
+SARIMA [2] es una extensión del modelo ARIMA.
+ Se utiliza cuando los datos presentan una característica periódica que
+ se debe conocer de antemano.
+ Por ejemplo, el componente estacional que repite todas las observaciones
+ 
+\begin_inset Formula $s$
+\end_inset
+
+ puede ser mensual 
+\begin_inset Formula $S=12$
+\end_inset
+
+,(12 en 1 año) o trimestral 
+\begin_inset Formula $S=4$
+\end_inset
+
+, (4 en 1 año).
+ El modelo SARIMA se denomina normalmente ARIMA 
+\begin_inset Formula $(p,d,q)X(P,D,Q)_{s}$
+\end_inset
+
+, donde P = número de términos estacionales autorregresivos (SAR), D = número
+ de diferencias estacionales, Q = número de términos de media móvil estacional
+ (SMA).
+\end_layout
+
+\begin_layout Standard
+En general la metodología para el ajuste de modelos estocásticos de la familia
+ ARIMA a series temporales, sugerida por BOX & Jenkis, puede ser extendida
+ para otros modelos como los de la familia PAR(p)[37].
+ Esta metodología esta compuesta por 3 etapas:
+\end_layout
+
+\begin_layout Itemize
+Identificación del modelo: Escoger el orden del modelo, en el modelo autorregres
+ivo consiste en determinar el vector 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Estimación del modelo: Obtener estimativas para los parámetros del modelo.
+\end_layout
+
+\begin_layout Itemize
+Verificación del modelo: Verificar mediante test estadísticos si el modelo
+ seleccionado es adecuado.
+ Si es capaz de generar ruidos blancos después de la aplicación del filtro
+ auto-regresivo.
+\end_layout
+
+\begin_layout Standard
+Si el modelo estimado se considera adecuado, esto significa que es capaz
+ de generar series sintéticas, igualmente probables a la serie histórica
+ [39luciana].
+\end_layout
+
+\begin_layout Section
+Test de Hipótesis
+\end_layout
+
+\begin_layout Standard
+Esta hipótesis estadística corresponde a una suposición que se hace en relación
+ con un valor de un parámetro poblacional o una afirmación dada sobre la
+ naturaleza de la población [17luciana].
+\end_layout
+
+\begin_layout Standard
+En la prueba se consideran dos hipótesis:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $H_{0}$
+\end_inset
+
+: Hipótesis Nula - es la hipótesis a ser probada.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $H_{a}$
+\end_inset
+
+: Hipótesis Alternativa - es la hipótesis que rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La realización de la prueba consiste en aceptar una de las hipótesis.
+ Los posibles resultados de una prueba de hipótesis son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $H_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aceptar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rechazar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verdadero 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correcto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Tipo I, Falso Positivo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Falso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Tipo II, Falso Negativo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Correcto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:H0Ha"
+
+\end_inset
+
+Resultados de un Test de hipótesis, los dos errores que pueden ser cometidos
+ al realizar un Test de hipótesis son: Rechazar la hipótesis 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, cuando tal hipótesis es verdadera(error tipo I), No rechazar la hipótesis
+ 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, cuando tal hipótesis es falsa(error tipo II).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una parte importante de la prueba de hipótesis es controlar la probabilidad
+ de cometer los errores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha=p\left(rechazar\,H_{0}\mid H_{0}\,es\,verdadero\right)-probabilidad\,de\,error\,tipo\,I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta=p\left(no\,rechazar\,H_{0}\mid H_{0}\,es\,falso\right)-probabilidad\,de\,error\,tipo\,II$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una situación ideal es aquella donde ambas probabilidades 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ y 
+\begin_inset Formula $\beta$
+\end_inset
+
+ son próximas a cero, entre tanto, a medida que disminuye 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, la probabilidad de 
+\begin_inset Formula $\beta$
+\end_inset
+
+ tiende a aumentar.
+\end_layout
+
+\begin_layout Standard
+Se da el nombre de nivel de significación del test a la probabilidad 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ del error del tipo I.
+ Por convención, se acostumbra utilizar un nivel de significación del 
+\begin_inset Formula $5\%$
+\end_inset
+
+, pero cualquier valor entre 0 y 1 puede ser utilizado.
+ Normalmente, los métodos emplean una Test estadístico de prueba y una distribuc
+ión de muestreo.
+ El Test puede ser una media, una proporción, diferencia entre las medias,
+ z-score, entre otros, calculada a partir de los datos de la muestra.
+ La elección de Test depende del modelo de probabilidad elegido y de las
+ hipótesis de la prueba.
+ Si la probabilidad estadística del Test es inferior al nivel de significación
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, la hipótesis nula 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ es rechazada.
+ Se calcula también la probabilidad de obtener un test estadístico, como
+ mínimo tan significativo en cuanto a lo que fue efectivamente observado
+ en la muestra, suponiendo que la hipótesis nula es verdadera.
+ A esta probabilidad se le da el nombre de p-valor.
+ La interpretación directa es que si el p-valor es inferior al nivel de
+ significación exigido, entonces se dice que la hipótesis nula es rechazada
+ al nivel de significación determinado.
+\end_layout
+
+\begin_layout Subsection
+Pruebas de bondad de Ajuste
+\end_layout
+
+\begin_layout Standard
+Las pruebas de ajuste son instrumentos de la matemática estadística (corresponde
+n a una clase de Test de hipótesis) para determinar si una muestra se adhiere
+ o no a un determinado modelo distributivo, es decir, para saber cuál es
+ el modelo que describe el comportamiento probabilístico de la muestra dada[48lu
+cia].
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan las pruebas de bondad de ajuste elegidas para
+ ser utilizadas en ese trabajo.
+ Estas pruebas son muy utilizadas en la comparación de muestras y sus modelos
+ distributivos, que serán útiles para validar el modelo de esta tesis.
+\end_layout
+
+\begin_layout Subsubsection
+Test 
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para saber si una muestra es diferente de otra, se debe comparar varianzas
+ y medias de las muestras.
+ estas deben ser estadísticamente iguales, no se deben diferenciar significativa
+mente.
+ La comparación directa de las muestras no es adecuada, pues es necesario
+ considerar la dispersión de estas medidas[11luciana].
+ Por lo tanto, es preciso establecer se hay desvío significativo entre las
+ varianzas y medias de las dos muestras.
+ 
+\end_layout
+
+\begin_layout Standard
+Dada dos muestras 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, la primera con 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+y la segunda con 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+observaciones, el test trabaja con las siguientes hipótesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:\overline{X}_{1}-\overline{X}_{2}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{a}:\overline{X}_{1}-\overline{X}_{2}\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $\overline{X}_{1}$
+\end_inset
+
+es la media de la muestra 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+y 
+\begin_inset Formula $\overline{X}_{2}$
+\end_inset
+
+la media de la muestra.
+ Considerando 
+\begin_inset Formula $s_{1}^{2}$
+\end_inset
+
+y 
+\begin_inset Formula $s_{2}^{2}$
+\end_inset
+
+, como las varianzas de las muestras 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+, el parámetro 
+\begin_inset Formula $t$
+\end_inset
+
+ es determinado por la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:t-two"
+
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{equation}
+t=\frac{\left|\overline{X}_{1}-\overline{X}_{2}\right|}{\sqrt{\frac{s_{1}^{2}}{n_{1}}+\frac{s_{2}^{2}}{n_{2}}}}\label{eq:t-two}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el uso de test de significación,la distribución de la estadística del
+ test es aproximada por una distribución 
+\emph on
+t-Student
+\emph default
+[luciana].
+\end_layout
+
+\begin_layout Standard
+El análisis de este test puede basarse en el p-valor, que impide rechazar
+ 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+en el caso que su valor este encima del nivel de significación 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (probabilidad de cometer el error de tipo I).
+\end_layout
+
+\begin_layout Subsubsection
+Test de Kolmogorov-Smirnov
+\end_layout
+
+\begin_layout Standard
+Kolmogorov-Smirnov(K-S) es un test de bondad de ajuste no paramétrico
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+procedimientos matemáticos para evaluar la hipótesis estadística no haciendo
+ suposiciones sobre las distribuciones de probabilidad de las variables
+ a ser evaluadas
+\end_layout
+
+\end_inset
+
+[17luciana], que compara si dos distribuciones de probabilidad difieren
+ o si una distribución de probabilidad difiere de la distribución en hipótesis,
+ en base a muestras finitas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+´ E um teste para ser usado com vari´ aveis de distribui¸ao cont´ınua e
+ n˜ c˜ ao com vari´ aveis aleat´ orias discretas [42].
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función de distribución acumulada empírica 
+\begin_inset Formula $F_{n}$
+\end_inset
+
+de una muestra de 
+\begin_inset Formula $n$
+\end_inset
+
+ observaciones 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+es dada por la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:acumuladaKS"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{n}\left(x\right)=\frac{1}{n}\cdot\sum_{i=1}^{n}I_{X_{i}\leq x}\label{eq:acumuladaKS}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $x$
+\end_inset
+
+ es una variable aleatoria.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I_{X_{i}\leq x}=\begin{cases}
+1 & si\,X_{i}\leq x\\
+0 & caso\,contrario
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La estadística del Test (ecuaciones 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ks-SIMPLE"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ks-doble"
+
+\end_inset
+
+)[42luciana] está basada en la diferencia absoluta mayor entre la función
+ de distribución acumulada 
+\begin_inset Formula $F_{n}\left(x\right)$
+\end_inset
+
+, de las dos muestras, con 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+observaciones respectivamente o la diferencia entre 
+\begin_inset Formula $F_{n}\left(x\right)$
+\end_inset
+
+ de una muestra y la función de distribución en hipótesis 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D_{n}=sup_{x}\left|F_{n}\left(x\right)-F\left(x\right)\right|\label{eq:Ks-SIMPLE}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D_{n1,n2}=sup_{x}\left|F_{n1}\left(x\right)-F_{n2}\left(x\right)\right|\label{eq:Ks-doble}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las hipótesis de Test son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{0}:$
+\end_inset
+
+ las distribuciones del Test son idénticas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{a}:$
+\end_inset
+
+las distribuciones del Test no son idénticas
+\end_layout
+
+\begin_layout Standard
+La conclusión del Test consiste en rechazar 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+al nivel de significación 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ si la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:satisfaccionKS"
+
+\end_inset
+
+ es satisfecha.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cc}
+\sqrt{n}\cdot D_{n}>K_{\alpha} & Test\,de\,una\,muestra\\
+\sqrt{\frac{n_{1}\cdot n_{2}}{n_{1}+n_{2}}}>K_{\alpha} & Test\,de\,dos\,muestras
+\end{array}\label{eq:satisfaccionKS}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $K_{\alpha}$
+\end_inset
+
+representa el límite de la región de aceptación de 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+, pues la proporción de valores menores o iguales que 
+\begin_inset Formula $K_{\alpha}$
+\end_inset
+
+es dada por: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(K\leq K_{\alpha}\right)=1-\alpha
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Evaluación de modelos estadísticos de predicción 
+\end_layout
+
+\begin_layout Standard
+En las secciones anteriores, los datos se dividen a menudo en dos conjuntos
+ [16].
+ El primer conjunto, para estimar los parámetros del modelo.
+ El segundo conjunto, se denomina conjunto de pruebas que contiene datos
+ no vistos por el modelo que se utiliza para estimar las predicciones utilizando
+ los parámetros antes calculados.
+ 
+\end_layout
+
+\begin_layout Standard
+El conjunto de pruebas nos da una manera de probar el modelo en datos que
+ no estaban disponibles para el modelo cuando se calcularon los parámetros
+ por primera vez.
+ A partir de esto, podemos ver el desempeño cuando el modelo realiza la
+ predicción de otros datos para los cuales sabemos el resultado real con
+ el fin de comparar esto con el resultado previsto.
+ 
+\end_layout
+
+\begin_layout Standard
+Para identificar la capacidad de las predicciones de nuestro modelo, a continuac
+ión se presentan las medidas de precisión de pronóstico que serán útiles
+ para validar el modelo de esta tesis.
+ 
+\end_layout
+
+\begin_layout Standard
+Las medidas más utilizadas son el Error Medio Cuadrático (MSE), el Error
+ Medio Absoluto (MAE), Raíz del Error Medio Cuadrático (RMSE) y Error Porcentual
+ Absoluto Medio (MAPE).
+ En la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:accura-table"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+El error de predicción es definido como 
+\begin_inset Formula $e_{t}=y_{t}-\widehat{y}_{t}$
+\end_inset
+
+, y 
+\begin_inset Formula $p_{t}=\sum_{t=1}^{n}\left|y_{t}-\widehat{y}_{t}/y_{t}\right|\cdot100$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ [18] a continuación se presenta una lista de las medidas de exactitud de
+ las predicciones de uso común.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medida
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nombre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ecuación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Medio Cuadrático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=media\left(e_{t}^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Medio Absoluto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=media\left(\left|e_{t}\right|\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RMSE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raíz del Error Medio Cuadrático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=\sqrt{MSE}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAPE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error Porcentual Absoluto Medio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $=media\left(\left|p_{t}\right|\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:accura-table"
+
+\end_inset
+
+Las medidas de precisión utilizadas con frecuencia de acuerdo a [18], no
+ pueden ser usadas para hacer comparaciones entre series que están en diferentes
+ escalas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todas las métricas anteriores pueden ser usadas sobre series temporales
+ de distinta naturaleza, pero, en este trabajo necesitamos también evaluar
+ el poder de predicción de un modelo hidrológico, para esto, decidimos utilizar
+ el índice de eficiencia de 
+\series bold
+Nash-Sutcliffe
+\series default
+[ref], ampliamente usado en el campo de la hidrología[].
+ Esta medida es definida como: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E=1-\frac{\sum_{t=1}^{n}\left(y_{t}-\widehat{y}_{t}\right)^{2}}{\sum_{t=1}^{n}\left(\widehat{y}_{t}-\overline{y}_{t}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $\overline{y}_{t}$
+\end_inset
+
+es la media de las observaciones, e 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+, es el valor producido por el modelo, 
+\begin_inset Formula $\widehat{y}_{t}$
+\end_inset
+
+, es el valor real observado en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La eficiencia de 
+\series bold
+Nash-Sutcliffe
+\series default
+ puede variar de 
+\begin_inset Formula $-\infty$
+\end_inset
+
+ a 1.
+ Una eficiencia de 1 
+\begin_inset Formula $(E=1)$
+\end_inset
+
+ corresponde a una correspondencia perfecta modelada con los datos observados.
+ Una eficiencia de 0 
+\begin_inset Formula $(E=0)$
+\end_inset
+
+ indica que las predicciones del modelo son tan precisas como la media de
+ los datos observados, mientras que una eficiencia menor que cero 
+\begin_inset Formula $(E<0)$
+\end_inset
+
+ ocurre cuando la media observada es un mejor predictor que el modelo ó
+ en otras palabras, cuando la varianza residual (descrita por el numerador
+ en la expresión anterior) es mayor que la varianza de datos (descrita por
+ el denominador).
+ Esencialmente, cuanto más cerca la eficiencia del modelo es 1, más preciso
+ es el modelo.
+ Este método se puede utilizar para describir la precisión predictiva de
+ otros modelos.
+ Por ejemplo, la eficiencia de 
+\series bold
+Nash-Sutcliffe
+\series default
+ ha sido reportada en la literatura para modelos de simulaciones de descarga,
+ y simulación de constituyentes de la calidad del agua como sedimento, nitrógeno
+ y carga de fósforo
+\begin_inset CommandInset citation
+LatexCommand citep
+key "moriasi2007model"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Modelos De Aprendizaje De Maquina
+\end_layout
+
+\begin_layout Subsection
+Redes Neuronales
+\end_layout
+
+\begin_layout Standard
+Según Haykin en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+, son modelos computacionales no-lineales, inspirados en la estructura paralela
+ del cerebro humano.
+ Desde un punto de vista práctico, son sólo un sistema paralelo computacional
+ que consiste en muchos elementos de procesamiento conectados entre sí de
+ una manera específica con el fin de realizar una tarea particular
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vasighi"
+
+\end_inset
+
+.
+ A continuación se describen los conceptos que vale la pena diferenciar:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Redes Neuronales(NNs),
+\series default
+ son redes de neuronas, por ejemplo, como los encontrados en los cerebros
+ reales.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Neuronas Artificiales,
+\series default
+ son aproximaciones brutas de las neuronas encontradas en el cerebro.
+ Pueden ser dispositivos físicos, o construcciones puramente matemáticas.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Redes Neuronales Artificiales(ANNs),
+\series default
+ son redes de neuronas y, por lo tanto, constituyen aproximaciones brutas
+ a algunas partes del cerebro.
+ Pueden ser dispositivos físicos, o simulados en ordenadores.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Inspiración Biológica
+\end_layout
+
+\begin_layout Standard
+El sistema nervioso humano se puede dividir en tres etapas que pueden representa
+rse en forma de diagrama de bloques como en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BIologicalflow"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/biologicalflow.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BIologicalflow"
+
+\end_inset
+
+El sistema nervioso humano donde los receptores recogen información del
+ medio ambiente(los fotones en la retina).
+ Seguidamente, los efectores generan interacciones con el medio ambiente(activar
+ los músculos).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Naturalmente, en este trabajo nos ocuparemos principalmente de la red neuronal
+ que se encuentra en el medio del diagrama (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BIologicalflow"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+El cerebro contiene estructuras anatómicas a gran y pequeña escala y diferentes
+ funciones que tienen lugar en niveles superiores e inferiores.
+ Hay una jerarquía de niveles de organización: 
+\end_layout
+
+\begin_layout Enumerate
+Moléculas e Iones 
+\end_layout
+
+\begin_layout Enumerate
+Sinapsis 
+\end_layout
+
+\begin_layout Enumerate
+Microcircuitos neuronales 
+\end_layout
+
+\begin_layout Enumerate
+Árboles dendríticos 
+\end_layout
+
+\begin_layout Enumerate
+Neuronas 
+\end_layout
+
+\begin_layout Enumerate
+Circuitos locales 
+\end_layout
+
+\begin_layout Enumerate
+Circuitos interregionales 
+\end_layout
+
+\begin_layout Enumerate
+Sistema nervioso central 
+\end_layout
+
+\begin_layout Standard
+Las ANNs que estudiamos son aproximaciones de los niveles 5 y 6.
+ La neuronas artificiales están inspirados en las neuronas biológicas, cuyo
+ esquemas es representado de manera simplificada en la Figura().
+ Como se puede observar, una neurona biológica está formada por: un cuerpo
+ celular o la suma que contiene el núcleo de la célula; diversas dendritas,
+ a través de los cuales se reciben los impulsos electrónicos; y un axón,
+ a través del cual se envían impulsos eléctricos.
+ Las interconexiones entre neuronas se efectúan a través de sinapsis, puntos
+ de contacto (controlados por impulsos eléctricos y por reacciones químicas
+ debidas a las sustancias llamadas neurotransmisores) entre dendritas y
+ axones, formando una red de transmisión de información 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se considera que el aprendizaje ocurre justamente en las sinapsis, en las
+ conexiones 
+\emph on
+axón-sinapsis-dendritas
+\emph default
+, donde ocurre la traducción de la señal que pasa por el axón de una neurona
+ y que puede excitar (o inhibir) la neurona siguiente.
+ El cerebro humano posee cerca de 
+\begin_inset Formula $10^{11}$
+\end_inset
+
+ neuronas y el número de sinapsis y es de más de 
+\begin_inset Formula $10^{14}$
+\end_inset
+
+, posibilitando la formación de interconexiones muy complejas que permiten
+ un procesamiento altamente paralelo.
+\end_layout
+
+\begin_layout Subsection
+Aplicación de Redes Neuronales en Series Temporales
+\end_layout
+
+\begin_layout Standard
+Redes Neurais Nao Recorrentes (sem memoria) ou Feedforward:
+\end_layout
+
+\begin_layout Standard
+Redes Neurais Recorrentes: 
+\end_layout
+
+\begin_layout Subsection
+Procedimientos de entrenamiento
+\end_layout
+
+\begin_layout Standard
+Treinamento Supervisionado:
+\end_layout
+
+\begin_layout Standard
+Treinamento Nao Supervisionado:
+\end_layout
+
+\begin_layout Section
+
+\emph on
+Reservoir Computing
+\emph default
+ y Redes 
+\emph on
+Echo State
+\end_layout
+
+\begin_layout Standard
+El aprendizaje de máquina fue dominado en buena parte de su historia por
+ los modelos feedforward y las redes bayesianas.
+ Sin embargo, cuando se trata de una dinámica temporal intrínseca, es necesario
+ realizar una adaptación, una simplificación o una elección de modelo específico
+ de modo que el tiempo se represente de alguna manera esos modelos no-temporales.
+ Algunos enfoques temporales de las redes neuronales incluyen: redes neuronales
+ con retrasos
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Waibel"
+
+\end_inset
+
+ y redes neuronales recurrentes(RNN)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Millea2014"
+
+\end_inset
+
+(entre las que también se incluyen las redes con memoria a largo plazo(LSTM)
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hochreiter"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+En general los más poderosos han demostrado ser las redes neuronales recurrentes
+(RNN), aún cuando posean un tipo de problema diferente, a saber, como su
+ enfoque de aprendizaje.
+ Hasta hace poco, el entrenamiento de RNN se realizaba mediante retro-propagació
+n(backpropagation) a través del tiempo (lo que en realidad significaba desplegar
+ la red en el tiempo, construyendo así una red mucho más grande y realizando
+ retro-procesamiento en esta nueva red).
+ Sin embargo, además del hecho de que este proceso es muy lento, no siempre
+ garantiza una buena solución, debido al problema de la desaparición del
+ gradiente(Vanishing gradient problem)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hammer_tutorial:perspectives"
+
+\end_inset
+
+.
+ Un enfoque relativamente nuevo para entrenar redes neuronales recurrentes
+ es el enfoque de 
+\emph on
+Reservoir Computing
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Millea2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+Reservoir Computing(RC)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Reservoir Computing
+\emph default
+(RC) es un 
+\emph on
+framework
+\emph default
+ novedoso para diseñar y entrenar redes neuronales recurrentes
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Su arquitectura y diseño relativamente simple, hace que esta clase de redes
+ neuronales sea particularmente atractiva en comparación con otros tipos
+ de redes, especialmente teniendo en cuenta la fase de entrenamiento que
+ casi siempre consiste en algún enfoque lineal, como regresión lineal, matriz
+ pseudo inversa u otros métodos simples.
+ Se utiliza una metodología de ensayo y error para encontrar una buena red
+ que se inicializa de manera aleatoria, para una serie temporal o conjunto
+ de datos específicos.
+ En general, estas redes y las máquinas de estado líquido o 
+\emph on
+Liquid State Machines
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Maass:2002:RCW:639717.639718"
+
+\end_inset
+
+ se utilizan para la clasificación de patrones, la extracción de características
+ dinámicas, la predicción de series de tiempo, etc.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Maass"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+Liquid State Machines(LSM)
+\end_layout
+
+\begin_layout Standard
+Son un tipo de redes neuronales recurrentes que forman parte del paradigma
+ de 
+\emph on
+Reservoir Computing
+\emph default
+, desarrollados por Maass en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Maass:2002:RCW:639717.639718"
+
+\end_inset
+
+.
+ Este es el enfoque computacional de la neurociencia para 
+\series bold
+RC
+\series default
+.
+ 
+\emph on
+Liquid State Machines
+\emph default
+ transforma las entradas variables en el tiempo(las series de tiempo) en
+ patrones espacio-temporales.
+ 
+\series bold
+LSM 
+\series default
+se formuló al principio como una micro-columna cortical y desde entonces,
+ se ha estudiado extensamente tanto en el campo de la Inteligencia Artificial
+ como también en el campo de la Neurociencia Computacional.
+ Este sencillo esquema de aprendizaje se ha combinado muy recientemente
+ con un nuevo y muy interesante enfoque de (aprendizaje por refuerzo) que
+ impulsa el aprendizaje local de las neuronas internas, siendo así cada
+ vez más biológicamente plausible 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Legenstein"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Redes
+\emph on
+ Echo State(ESN)
+\end_layout
+
+\begin_layout Standard
+Como se mencionó anteriormente, la red ESN fue desarrollada por Jaeger en
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaeger2001a,Jaeger78"
+
+\end_inset
+
+, independiente del modelo LSMs propuesto por Maass.
+ Se podría decir que se trata de un enfoque de RC.
+ La red ESN utiliza neuronas de valor real (normalmente con valores entre
+ -1 y 1).
+ De lo contrario, el procedimiento de entrenamiento sería similar a los
+ LSM.
+ 
+\end_layout
+
+\begin_layout Subsection
+Dinámica una Red ESN
+\end_layout
+
+\begin_layout Standard
+La red ESN es un tipo de red recurrente que tiene un coste computacional
+ muy bajo para la fase de entrenamiento.
+ Sus pesos internos se fijan aleatoriamente al comienzo del experimento
+ y luego se entrena solamente los pesos de salida (
+\emph on
+read-out
+\emph default
+), usando algún tipo de técnica de ajuste lineal (también se puede usar
+ una técnica no lineal que generalmente mejora el rendimiento) de manera
+ que la suma de todas las neuronas, multiplicada cada una por su peso de
+ salida, coincida con el valor de la serie de tiempo deseado.
+ La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN_SIMPLE"
+
+\end_inset
+
+ muestra la arquitectura de una red ESN simple.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/ESN_simple.pdf
+	lyxscale 300
+	scale 150
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ESN_SIMPLE"
+
+\end_inset
+
+La arquitectura de red ESN básica utilizada en este trabajo.
+ Las flechas sombreadas indican las conexiones que están entrenadas con
+ el enfoque de "
+\series bold
+echo state network
+\series default
+" (en otros enfoques, todas las conexiones pueden ser entrenadas).
+ Las conexiones internas recurrentes dentro del reservorio(zona gris) permanecen
+ fijas durante todo el proceso de entrenamiento y validación.
+ Fuente:
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaeger2001a"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primera vista puede parecer sorprendente que una RNN con conexiones aleatorias
+ pueda ser efectiva, pero los parámetros aleatorios han sido exitosos en
+ varios dominios.
+ Por ejemplo, se han utilizado proyecciones aleatorias en el aprendizaje
+ mecánico y la reducción de la dimensionalidad 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Datar:2004:LHS:997817.997857"
+
+\end_inset
+
+, y más recientemente, se ha demostrado que los pesos aleatorios son eficaces
+ para redes neuronales convolucionales en problemas con datos de entrenamiento
+ muy limitados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jarret,Saxe_551"
+
+\end_inset
+
+.
+ Por lo tanto, no debería sorprender que las conexiones al azar sean efectivas
+ al menos en algunas situaciones.
+\end_layout
+
+\begin_layout Standard
+Aunque ESN no resuelve el problema de entrenar RNN en su totalidad, su funcionam
+iento impresionante sugiere que una inicialización basada en ESN podría
+ ser acertada.
+ Esto es confirmado por los resultados de 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ilya"
+
+\end_inset
+
+ en su trabajo de tesis.
+\end_layout
+
+\begin_layout Standard
+Ahora procederemos a dar la descripción formal de la red ESN.
+\end_layout
+
+\begin_layout Subsubsection
+Entrenamiento De Una Red ESN
+\end_layout
+
+\begin_layout Standard
+El paradigma RC evita las deficiencias de entrenamiento (gradiente descendente)
+ en RNN, creando una RNN aleatoria que permanece sin cambios durante todo
+ el entrenamiento.
+ Esta RNN se llama 
+\begin_inset Quotes sld
+\end_inset
+
+Reservorio
+\begin_inset Quotes srd
+\end_inset
+
+, que se excita pasivamente por la señal de entrada y mantiene en su estado
+ una transformación no lineal del historial de entrada.
+ La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RC_VS_RNN_training"
+
+\end_inset
+
+ contrasta gráficamente los métodos previos de entrenamiento RNN con el
+ enfoque ESN.
+\end_layout
+
+\begin_layout Standard
+La ecuación principal de ESN, donde no usamos ninguna entrada, sino sólo
+ la realimentación de salida, es: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t+1)=f(W\text{·}x(t)+W^{fb}\text{·}y(t))
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O alternativamente, con entradas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t+1)=f(W^{in}\text{·}u(t)+W\text{·}x(t)+W^{fb}\text{·}y(t))
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ es el vector que contiene todos los estados del reservorio en el tiempo
+ 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $W$
+\end_inset
+
+ es la matriz del reservorio, donde cada entrada 
+\begin_inset Formula $W_{ij}$
+\end_inset
+
+ corresponde a la conexión entre la neurona 
+\begin_inset Formula $i$
+\end_inset
+
+ y 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $W^{fb}$
+\end_inset
+
+ es la matriz del vector de realimentación, 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ es la salida en el tiempo 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ En la segunda versión de la ecuación vemos 
+\begin_inset Formula $u(t)$
+\end_inset
+
+ multiplicada por el vector de entrada 
+\begin_inset Formula $W^{in}$
+\end_inset
+
+.
+ Esta ecuación representa la fase inicial de la red, donde la salida realmente
+ funciona como entrada, impulsando la dinámica de la red.
+ La función 
+\begin_inset Formula $f$
+\end_inset
+
+ se elige generalmente para ser la tangente hiperbólica para las neuronas
+ internas 
+\begin_inset Formula $(tanh)$
+\end_inset
+
+ y la función de identidad para la neurona de salida.En el algoritmo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:training_ESN"
+
+\end_inset
+
+ se resume como es realizado el entrenamiento de una red ESN.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Entrenamiento ESN}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$i 
+\backslash
+gets historicalSequence_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$j 
+\backslash
+gets reservoir_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$M 
+\backslash
+gets array(i,j)$}  
+\backslash
+Comment{Matriz de estado} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$Forgetpoints 
+\backslash
+gets Z$} 
+\backslash
+Comment{numero de pasos iniciales a descartar} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{$t 
+\backslash
+le ejemplos_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+If{$t 
+\backslash
+le Forgetpoints$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$M(t,:)
+\backslash
+gets x(t)$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:training_ESN"
+
+\end_inset
+
+Algoritmo estándar de entrenamiento de una red ESN, los estados se recogen
+ en una matriz M que tiene en cada fila el vector de estado 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ y en cada columna las neuronas del reservorio.
+ Por lo tanto, M es una matriz de: dimensión de ejemplos(filas) por la dimensión
+ del reservorio(columnas).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cabe mencionar que los estados iniciales de la red se descartan al construir
+ la matriz M con el propósito de limpiar los estados iniciales, que son
+ usualmente 
+\begin_inset Formula $[0,0...0]_{N_{x}}$
+\end_inset
+
+, con 
+\begin_inset Formula $N_{x}=reservoir_{size}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/trainingESN.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RC_VS_RNN_training"
+
+\end_inset
+
+A) Los métodos tradicionales de entrenamiento de RNN basados en gradientes,
+ estos adaptan todos los pesos de conexión (flechas sombreadas), incluidos
+ los pesos de entrada para el Reservorio, conexiones internas y del Reservorio
+ para salida.
+ B) En el paradigma RC, sólo se adaptan los pesos entre el Reservorio y
+ la salida.
+ Fuente: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aprendizaje De Una Red ESN
+\end_layout
+
+\begin_layout Standard
+La capa de salida lineal de una red ESN se define como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y\left(n\right)=W_{out}\left[1;u\left(n\right);x\left(n\right)\right]\label{eq:readoutequation-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $y\left(n\right)\in R^{N_{y}}$
+\end_inset
+
+, es el vector de salida con dimensión 
+\begin_inset Formula $N_{y}$
+\end_inset
+
+de la red, 
+\begin_inset Formula $W_{out}\in R^{N_{y}\times\left(1+N_{u}+N_{x}\right)}$
+\end_inset
+
+,es la matriz de pesos de salida y 
+\begin_inset Formula $\left[.;.;.\right]$
+\end_inset
+
+ significa una concatenación de vector vertical (o matriz).
+ Ahora obtener la matriz 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, cuya i-ésima columna contiene los pesos de salida de todas las unidades
+ de red a la i-ésima unidad de salida.
+ Para esto podemos usar procedimientos de álgebra lineal como la pseudo-inversa
+ o regresion 
+\emph on
+Ridge
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaeger2001a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Moore-Penrose pseudo-inversa
+\end_layout
+
+\begin_layout Standard
+Después de obtener los estados 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ en todos los intervalos de tiempo, el procedimiento de aprendizaje usual
+ se realiza mediante una operación pseudo-inversa simple:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{out}=pinv(M)∗T\label{eq:pinv}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, es el vector de pesos de salida, y 
+\begin_inset Formula $T$
+\end_inset
+
+, es el vector de valores esperados (Un vector 
+\begin_inset Formula $1\times m$
+\end_inset
+
+, donde 
+\begin_inset Formula $m$
+\end_inset
+
+ es el tamaño de la secuencia de entrenamiento, la secuencia donde se conoce
+ la entrada, pero no se calcula).
+ Por lo tanto, tenemos un conjunto de 
+\begin_inset Formula $m$
+\end_inset
+
+ ecuaciones con 
+\begin_inset Formula $n$
+\end_inset
+
+ incógnitas, donde 
+\begin_inset Formula $n$
+\end_inset
+
+ es el número de neuronas el tamaño y las entradas de 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+ son las respectivas ponderaciones de los estados de las neuronas.
+ La Pseudo-inversa, o Pseudo-inversa de Moore-Penrose, es una generalización
+ de una matriz inversa, pero para matrices que no son rectangulares.
+ Sea 
+\begin_inset Formula $A$
+\end_inset
+
+ una matriz 
+\begin_inset Formula $m\times n$
+\end_inset
+
+, entonces la inversa de Moore-Penrose es única, denotamos 
+\begin_inset Formula $A*$
+\end_inset
+
+, tiene el tamaño 
+\begin_inset Formula $n×m$
+\end_inset
+
+ y satisface las cuatro condiciones siguientes:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+AA*A=A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+A*AA*=A*
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(A*A\right)^{T}=A*A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(AA*\right)^{T}=AA*
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Regresión Ridge 
+\end_layout
+
+\begin_layout Standard
+En este método la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:readoutequation-1-1"
+
+\end_inset
+
+ se puede escribir en una notación matricial como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y=W_{out}X\label{eq:Ridgeequation-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $Y\in R^{N_{y}\times T}$
+\end_inset
+
+, es 
+\begin_inset Formula $y\left(n\right)$
+\end_inset
+
+, y 
+\begin_inset Formula $X\in R^{\left(1+N_{u}+N_{x}\right)\times T}$
+\end_inset
+
+ es 
+\begin_inset Formula $\left[1\colon u\left(n\right)\colon x\left(n\right)\right]$
+\end_inset
+
+, todas estas matrices fueron producidas presentando al reservorio las 
+\begin_inset Formula $u\left(n\right)$
+\end_inset
+
+ entradas, ambas matrices son la concatenación de los vectores columna horizonta
+lmente durante el período de entrenamiento 
+\begin_inset Formula $n=1,\ldots,T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Encontrar los pesos óptimos, que minimizan el error al cuadrado entre 
+\begin_inset Formula $y\left(n\right)$
+\end_inset
+
+ y 
+\begin_inset Formula $y^{target}\left(n\right)$
+\end_inset
+
+, equivale a resolver un sistema de ecuaciones lineales típicamente sobre-determ
+inado.
+ El sistema está sobre-determinado, porque típicamente 
+\begin_inset Formula $T\gg1+N_{u}+N_{x}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Existen maneras estándar bien conocidas de resolver la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ridgeequation-1-1"
+
+\end_inset
+
+, probablemente la solución más universal y estable para 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ridgeequation-1-1"
+
+\end_inset
+
+ en este contexto es la regresión Ridge, también conocida como regresión
+ con regularización de Tikhonov:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{out}=Y^{target}X^{T}\left(XX^{T}+\beta I\right)^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ es un coeficiente de regularización , e 
+\begin_inset Formula $I$
+\end_inset
+
+ es la matriz de identidad.
+\end_layout
+
+\begin_layout Standard
+Nosotros mostramos sólo dos de los métodos que pueden ser usados para resolver
+ la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Ridgeequation-1-1"
+
+\end_inset
+
+, aunque el último no sea muy trivial es preferido de usar.
+ A continuación, se validarán los valores de salida de la red, usando la
+ matriz ajustada 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Validaciones De Una Red ESN
+\end_layout
+
+\begin_layout Standard
+En esta etapa, la red se ejecuta sobre los datos de prueba, donde los estados
+ de las neuronas en el tiempo 
+\begin_inset Formula $t=0$
+\end_inset
+
+ en la fase de validación son estados de las neuronas en el tiempo 
+\begin_inset Formula $t=m$
+\end_inset
+
+ en la fase de aprendizaje.
+ La diferencia ahora es que la salida es calculada por la red usando los
+ pesos de 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, por lo que no se conoce anteriormente estos valores.
+ Las ecuaciones para la fase de validación son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\widehat{y}(t)=f^{out}\left(x\left(t\right)*W^{out}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x\left(t+1\right)=f\left(W\cdot x\left(t\right)+W^{fb}\cdot\widehat{y}\left(t\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $\widehat{y}$
+\end_inset
+
+ es la salida después del cálculo pseudo-inverso.
+ Es común usar una función de salida de identidad, sin embargo en la ecuación
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pinv"
+
+\end_inset
+
+, se puede aplicar alguna transformación no lineal, como por ejemplo 
+\begin_inset Formula $tanh$
+\end_inset
+
+.
+ También al calcular los pesos de lectura (
+\begin_inset Formula $W_{out}$
+\end_inset
+
+) podríamos usar una técnica no lineal, como un perceptron, o una 
+\emph on
+SVM
+\emph default
+, o regresión Ridge, pero discutiremos sobre esto en más detalle más adelante.
+ Finalmente, para evaluar la red ESN, usualmente calculamos el Error Cuadrado
+ Medio Normalizado (NRMSE) que es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+NRMSE=\sqrt{\frac{\parallel\widehat{y}-y\parallel{}^{2}}{m*\sigma_{y}^{2}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde, 
+\begin_inset Formula $\sigma_{y}^{2}$
+\end_inset
+
+ es la varianza de la salida deseada 
+\begin_inset Formula $y$
+\end_inset
+
+, 
+\begin_inset Formula $m$
+\end_inset
+
+ es la secuencia de validación, 
+\begin_inset Formula $y$
+\end_inset
+
+, es la salida esperada, 
+\begin_inset Formula $\widehat{y}$
+\end_inset
+
+ es la salida calculada por la red ESN después del proceso de aprendizaje.
+\end_layout
+
+\begin_layout Section
+Consideraciones Finales
+\end_layout
+
+\end_body
+\end_document

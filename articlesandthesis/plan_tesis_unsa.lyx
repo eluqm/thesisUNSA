@@ -92,7 +92,7 @@ theorems-std
 Plan de Tesis: 
 \emph on
 Modelo estocástico basado en redes neurales no tradicionales aplicada a
- la generación de caudales mensuales caso: cuenca del rio Chilli, Arequipa
+ la generación de caudales mensuales caso: cuenca del río Chilli, Arequipa
 \emph default
  
 \end_layout
@@ -202,18 +202,19 @@ Formulación del Problema
 \end_layout
 
 \begin_layout Standard
-Por lo tanto la necesidad de modelos eficientes y efectivos en la generación
- de escenarios de predicción basados en variables hidrológicas es una realidad.
+Cada vez es más difícil ignorar la necesidad de modelos eficientes y efectivos
+ en la generación de escenarios de predicción basados en variables hidrológicas.
  
 \end_layout
 
 \begin_layout Standard
-Por otra parte, actualmente se han estado desarrollando modelos basados
- en conceptos de inteligencia artificial como las Redes Neuronales Artificiales
- que permiten representar tareas de naturaleza dinámica (predicción de variables
- hidrológicas) con mejor desempeño que los modelos lineales.
- El tipo de redes neuronales que presenta un notable desempeño en el área
- de hidrología según (
+Por otra parte, los recientes desarrollos en el campo de inteligencia artificial
+ han estimulado el desarrollo de modelos basados en conceptos como las Redes
+ Neuronales Artificiales que permiten representar tareas de naturaleza dinámica
+ (predicción de variables hidrológicas) con mejor desempeño que los modelos
+ lineales tradicionales.
+ Estudios previos han demostrado que el tipo de redes neuronales que presenta
+ un notable desempeño en el área de hidrología según 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "LukoseviciusJaeger09"
@@ -234,14 +235,14 @@ key "chang:chang2002"
 
 \end_inset
 
-, 
+ y 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Chiang2004297"
 
 \end_inset
 
-) son las llamadas Redes Neuronales Recurrentes, que debido a su estructura
+, son las denominadas Redes Neuronales Recurrentes, debido a su estructura
  de conexiones cíclicas permite un modelado más parsimonioso de propiedades
  dinámicas.
  Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
@@ -254,6 +255,15 @@ key "LukoseviciusJaeger09"
 \end_inset
 
 .
+ Debido a lo anterior mencionado, esta investigación representa un intento
+ de responder a la siguiente pregunta: ¿Puede ser considerada como alternativa
+ válida un modelo de generación de escenarios para predicción de variables
+ hidrológicas basado en Redes Neuronales Recurrentes, usando nuevos métodos
+ como 
+\series bold
+ESN
+\series default
+ para reducir la complejidad en su construcción?.
  
 \end_layout
 
@@ -281,7 +291,7 @@ Objetivos Específicos
 \end_layout
 
 \begin_layout Itemize
-Estudio de los modelos lineales, entre los cuales destacamos el modelo de
+Estudiar los modelos lineales, entre los cuales destacamos el modelo de
  Thomas Fiering 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -294,27 +304,39 @@ key "Thomas"
 \end_layout
 
 \begin_layout Itemize
-La revisión bibliográfica de modelos basados en aprendizaje de maquina:
- Redes Neuronales feedforward y Redes Neuronales Recurrentes.
+Revisar la literatura de los distintos modelos basados en aprendizaje de
+ maquina como: Redes Neuronales feedforward, Redes Neuronales Recurrentes,
+ el enfoque 
+\series bold
+Reservoir Computing
+\series default
+ y redes ANFIS.
 \end_layout
 
 \begin_layout Itemize
-Aplicación del modelo propuesto en la generación y predicción de series
- temporales para un caso de estudio basado en variables hidrológicas (Caudales,
- Evaporación, Precipitación) en la cuenca del Chili, en tres estaciones
- de medición: el Pañe, Aguada blanca y el Frayle.
+Aplicar el modelo propuesto en la generación y predicción de series temporales
+ para un caso de estudio basado en variables hidrológicas (Caudales, Evaporación
+, Precipitación) en la cuenca del Chili, en tres estaciones de medición:
+ el Pañe, Aguada blanca y el Frayle.
 \end_layout
 
 \begin_layout Itemize
-Evaluación del modelo propuesto en contraste con los modelos Estocásticos
- Neuronal de, 
+Evaluar el modelo propuesto en comparación con los modelos: Estocásticos
+ Neuronal(PEN) de, 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "4371334"
 
 \end_inset
 
-y 
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Thomas"
+
+\end_inset
+
+ y 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "en81012228"
@@ -325,20 +347,15 @@ key "en81012228"
 \end_layout
 
 \begin_layout Itemize
-Análisis detallado de la média, desviación estándar, asimetría como parametros
- utilizados para evaluar el modelo propuesto en contraste con los modelos
- anteriormente mencionados.
+Analizar la media, desviación estándar, asimetría como parámetros utilizados
+ para evaluar el modelo propuesto en comparación con los modelos anteriormente
+ mencionados.
 \end_layout
 
 \begin_layout Itemize
 Comprobar si nuestro modelo basado en ESN puede ser considerado como una
  alternativa válida a las redes neuronales feedforward tradicional y recurrentes.
  
-\end_layout
-
-\begin_layout Itemize
-La evaluación de nuestro modelo en una gama de fenómenos no lineales de
- comportamiento estocástico no hidrológicos(carga eléctrica por ejemplo).
 \end_layout
 
 \begin_layout Itemize
@@ -353,7 +370,7 @@ Hipótesis de la investigación
 \begin_layout Standard
 El modelo de proceso estocástico propuesto será capaz de modelar con mayor
  precisión problemas del mundo real como la predicción de variables hidrológicas.
- Fundamentado en el uso de nuevos métodos en la literatura para asi reducir
+ Fundamentado en el uso de nuevos métodos en la literatura para así reducir
  la complejidad de su construcción.
 \end_layout
 
@@ -391,7 +408,7 @@ Tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-Se medirá la média, desviación estándar, asimetría para todos los experimentos
+Se medirá la media, desviación estándar, asimetría para todos los experimentos
  de los modelos a comparar (
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -466,16 +483,16 @@ key "autodema"
 
 \end_inset
 
-, pueden implementarlo como parte de un sistema mas grande.
- de gerenciamiento de recursos hidricos 
+, pueden implementarlo como parte de un sistema más complejo de gerencia
+ de recursos hídricos 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "SIGIRHUNSA"
 
 \end_inset
 
-, este modelo podrá ser comparable con metodos estadísticos tradicionales
- y de apredizaje de maquina.
+, este modelo podrá ser comparable con métodos estadísticos tradicionales
+ y de aprendizaje de maquina.
 \end_layout
 
 \begin_layout Subsection
@@ -485,8 +502,17 @@ Viabilidad económica
 \begin_layout Standard
 Este proyecto de tesis es financiado por El Consejo Nacional de Ciencia,
  Tecnología e Innovación Tecnológica (CONCYTEC), Cienciactiva y la Universidad
- Nacional San Agustín de Arequipa (UNSA), mediante Convenio Marco de Cooperación
+ Nacional San Agustín de Arequipa(UNSA), mediante Convenio Marco de Cooperación
  Interinstitucional.
+ La programación técnica y financiera puede verse en mas detalle en la sección
+ Apéndice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Apéndice"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -528,7 +554,7 @@ key "LUNA2006"
 \begin_layout Standard
 Por otra parte, las series hidrológicas temporales mensuales tienen como
  característica un comportamiento periódico que se manifiesta en sus propiedades
- como la média, varianza, asimetría y estructura de autocorrelación (
+ como la media, varianza, asimetría y estructura de auto-correlación (
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Thomas"
@@ -544,7 +570,7 @@ key "maceira"
 
 ).
  El análisis de este tipo de series puede realizarse mediante el uso de
- modelos autoregresivos dentro de los cuales destaca el modelo 
+ modelos auto-regresivos dentro de los cuales destaca el modelo 
 \series bold
 PAR
 \series default
@@ -563,8 +589,8 @@ key "maceira2"
 \end_layout
 
 \begin_layout Standard
-Entre las metodologias que intentar modelar problemas complejos no lineales
- en los ultimos años las Redes Neuronales Artificiales(
+Entre las metodologías que intentar modelar problemas complejos no lineales
+ en los últimos años las Redes Neuronales Artificiales(
 \series bold
 RNA
 \series default
@@ -593,7 +619,7 @@ caja negra
 
  
 \series default
-implicito que presentan tiene observaciones planteadas con respecto a su
+implícito que presentan tiene observaciones planteadas con respecto a su
  fiabilidad y validez como modelos hidrológicos(
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -641,7 +667,7 @@ recurrentes son capaces de representar mapas dinámicos no lineales comúnmente
 \series bold
  RNA's 
 \series default
-feedforward en prácticamente todas las pruebas, ademas del menor número
+feedforward en prácticamente todas las pruebas, además del menor número
  de neuronas 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -672,10 +698,10 @@ Importancia
 \end_layout
 
 \begin_layout Standard
-Lo anterior mencionado motivó en este proyecto la elaboración de un modelo
- híbrido de proceso estocástico utilizando Redes Neuronales Artificiales
- Recurrentes con el fin de aprovechar las características ya mencionadas
- de este tipo de redes.
+Lo anterior motivó en este proyecto la elaboración de un modelo híbrido
+ de proceso estocástico utilizando Redes Neuronales Artificiales Recurrentes
+ con el fin de aprovechar las características ya mencionadas de este tipo
+ de redes.
  Para esto se aplicará un enfoque recientemente introducido denominado Reservoir
  Computing (
 \series bold
@@ -695,30 +721,30 @@ key "LukoseviciusJaeger09"
 RNA's 
 \series default
 recurrentes tradicionales, todo esto con el fin de reducir su complejidad
- y aprovechar la capacidad comproabada de representar mejor las características
+ y aprovechar la capacidad comprobada de representar mejor las características
  de las series.
  
 \end_layout
 
 \begin_layout Standard
 Además, como parte de nuestra propuesta de modelo se considerará un componente
- no determinista que representa un ruido aleatorio con distribución normal,
- esto con el fin de tener en cuenta la incertidumbre que afecta típicamente
- procesos hidrológico 
+ no determinista que representa un ruido aleatorio con distribución normal(la
+ parte estocástica del modelo de Thomas-Fiering
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Awchi"
 
 \end_inset
 
-.
- Siendo asi nuestro modelo hibrido una propuesta novedosa en la literatura.
+), esto con el fin de tener en cuenta la incertidumbre que afecta típicamente
+ procesos hidrológico.
+ Siendo así nuestro modelo híbrido, una propuesta novedosa en la literatura.
  
 \end_layout
 
 \begin_layout Standard
 Finalmente el uso de este modelo puede ser aplicado en la solución de problemas
- de la región de arequipa que involucran fenómenos climatológicos como predicció
+ de la región de Arequipa que involucran fenómenos climatológicos como predicció
 n de caudales, precipitación, temperatura e incluso de tipo económico como
  precios de acciones entre otros.
 \end_layout
@@ -728,7 +754,7 @@ Limitaciones de la investigación
 \end_layout
 
 \begin_layout Itemize
-La falta de actualización de los registros de datos hidrologicos en el área.
+La falta de actualización de los registros de datos hidrológicos en el área.
  
 \end_layout
 
@@ -740,7 +766,7 @@ Banco de datos probablemente incompletos y no actualizados, de las entidades
 
 \begin_layout Itemize
 El período de tiempo de recolección de la información comprende los años
- 1970-2010.
+ 1970-2000.
  
 \end_layout
 
@@ -749,11 +775,49 @@ Tipo y Nivel de la Investigación
 \end_layout
 
 \begin_layout Standard
-Corresponde al tipo experimental por que está limitado a temas en los cuales
- el investigador puede manipular la situación, en nuestro caso podemos manipular
- el modelo que estamos estudiando y proponiendo.
- La ejecución de otro experimento, es relativamente barato sólo depende
- de ciclos y tiempo.
+Posteriormente al haber revisado la literatura existente sobre el tema,
+ es momento de visualizar el alcance del estudio que se efectuará.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta tesis, se realizará una investigación 
+\series bold
+exploratoria
+\series default
+ y 
+\series bold
+experimental
+\series default
+, por que en primera instancia, no existen antecedentes de un modelo estocástico
+ similar, en la literatura que combine las siguientes técnicas:
+\end_layout
+
+\begin_layout Itemize
+Entrenamiento de redes neuronales recurrentes basado en ESN.
+ 
+\end_layout
+
+\begin_layout Itemize
+El modelo de Thomas & Fiering, en específico, su componente estocástico.
+\end_layout
+
+\begin_layout Standard
+Así mismo se busca manipular este modelo estocástico, modificando sus parámetros
+(redes neuronales) y el horizonte de predicción, con el fin de comparar
+ nuestra propuesta con los modelos existentes en la literatura, en las mismas
+ condiciones y con los mismos datos.
+ La ejecución de otro nuevo experimento, es relativamente barato y sólo
+ depende de ciclos y tiempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta investigación tiene como objetivo proponer un nuevo modelo de proceso
+ estocástico, identificando en su desarrollo variables o conceptos que pueden
+ ser usados en otras investigaciones, como por ejemplo, parámetros y distintas
+ configuraciones de una red neuronal ESN usando series de tiempo hidrológicas.
+ 
 \end_layout
 
 \begin_layout Section
@@ -761,12 +825,15 @@ Método y Diseño de la investigación
 \end_layout
 
 \begin_layout Standard
-Es cuantitativo porque se expresará numéricamente; analítico, ya que demuestra
- una relación entre los parametros de diseño de modelos neuronales y el
- efecto en su capacidad de predicción; es retrospectivo, debido a que tomará
- datos de años anteriores; longitudinal porque medirá mas de dos veces la
- variable; experimental porque se manipulará variables; y de estadística
- descriptiva, ya que utilizará la média, desviación estándar, asimetría
+EL enfoque de nuestra investigación es 
+\series bold
+cuantitativo.
+
+\series default
+ Por esta razón es necesario realizar una investigación experimental donde
+ se manipulará variables independientes.
+ Se usará estadística descriptiva para el análisis de resultados.
+ Se utilizarán indicadores como la media, desviación estándar, asimetría
  para todos los experimentos de las series de tiempo generadas por los modelos
  a comparar (
 \begin_inset CommandInset citation
@@ -782,9 +849,48 @@ key "en81012228"
 
 \end_inset
 
-) para establecer las conclusiones,contribuciones, limitaciones, y trabajo
- futuro del modelo.
+).
+ Así como medidas de bondad de ajuste, con el objetivo de comprobar si las
+ series generadas son igualmente probables a la serie histórica.
+ Para finalmente establecer las conclusiones,contribuciones, limitaciones,
+ y trabajo futuro del modelo.
  
+\end_layout
+
+\begin_layout Standard
+Se pretende realizar una investigación 
+\series bold
+longitudinal, retrospectivo
+\series default
+ debido a que estas investigaciones recolectan datos en distintos momentos
+ y tiempo.
+ Se tomará datos de años anteriores(Las series temporales hidrológicas comprende
+n los años 1970 hasta 2000, en intervalos mensuales).
+\end_layout
+
+\begin_layout Standard
+Como ya se había mencionado antes, esta investigación es exploratoria.
+ De igual forma es el diseño, el cual es un diseño longitudinal exploratorio,
+ que se aplica generalmente a propuestas nuevas.
+ Este tipo de diseño se utiliza dentro del enfoque cualitativo.
+\end_layout
+
+\begin_layout Standard
+También se hará un
+\series bold
+ 
+\series default
+diseño
+\series bold
+ analítico, descriptivo
+\series default
+, pues se pretende demostrar una relación entre los parámetros del diseño
+ de modelos neuronales(distribución de pesos, tipo conectividad, número
+ de neuronas internas) y el efecto de estos, en su capacidad de predicción
+ de la red neuronal.
+ Por esta razón este diseño, es el mas adecuado pues estos presentan un
+ panorama del estado de uno o mas parámetros.
+  
 \end_layout
 
 \begin_layout Section
@@ -796,29 +902,96 @@ Técnicas
 \end_layout
 
 \begin_layout Standard
-Recolección de registros históricos denominadas series temporales que se
- encuentren disponibles en base de datos/servicios web de las entidades
- relacionadas 
+Las informaciones de tipo secundaria necesarias para validar nuestro modelo
+ estocástico se dividen en :
+\end_layout
+
+\begin_layout Itemize
+La información de series temporales procedentes de 
+\series bold
+MOPEX
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+http://www.nws.noaa.gov/ohd/mopex/mo_datasets.htm
+\end_layout
+
+\end_inset
+
+.
+
+\series default
+ MOPEX es una base de datos hidrometeorológicos consistentes e históricos
+ ampliamente usado por la comunidad científica, contiene información de
+ unas 200 cuencas hidrográficas de escala intermedia (500 - 10 000 km2)
+ de una amplia gama de climas en todo el mundo.
+ En este trabajo se eligieron 4 cuencas al azar, donde: los registros se
+ encuentran en una escala mensual, en un periodo desde 1948 hasta 2000.
+ 
+\end_layout
+
+\begin_layout Itemize
+La información de series temporales del entorno de la cuenca del Rio-Chili.
+ Consiste en datos hidrometeorológicos e históricos de estaciones de mediciones
+ del entorno local: como el 
+\series bold
+Pañe
+\series default
+(Operada por Autodema), 
+\series bold
+Aguada Blanca
+\series default
+ y 
+\series bold
+Frayle
+\series default
+(ubicada en el cauce del río Blanco-Arequipa).
+ Los registros en escala mensual fueron proporcionados por tesis realizadas
+ entre los años 2002-2006.
+ Estos trabajos (tesis de 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
+key "JorgeEduardoUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DerlyUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GabrielUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
 key "autodema"
 
 \end_inset
 
- a la manipulación de variables hidrológicas en la región de estudio.
- 
-\end_layout
-
-\begin_layout Subsection
-Unidad de Medición
-\end_layout
-
-\begin_layout Standard
-metros cúbicos por segundo 
+) se encargaron de obtener datos mensuales consistentes, tomando como fuente
+ los registros de las 3 estaciones hidrométricas antes mencionadas.
+ Para generar datos consistentes, los autores usaron técnica de estadística
+ como análisis de normalidad, estudio del coeficiente de asimetría, de las
+ series temporales.
+ En este trabajo se decidió usar como fuente (hojas de calculo) las series
+ históricas generadas por esos estudios, en un periodo desde el año 1970
+ hasta 2000.
+ Los registros son mensuales en metros cúbicos por segundo 
 \begin_inset Formula $m^{3}/s$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Section
@@ -830,8 +1003,8 @@ Población y Muestra
 \end_layout
 
 \begin_layout Standard
-La subcuenca del río Chili o sistema chili regulado comprende sitios en
- los cuales se encuentran obras de regulación y trasbase(embalses Aguada
+La sub-cuenca del río Chili o sistema Chili regulado comprende sitios en
+ los cuales se encuentran obras de regulación y tras-base(embalses Aguada
  Blanca, el Fraile, El Pañe) y los lugares de aprovechamiento de recurso
  hídrico.
  
@@ -852,7 +1025,7 @@ Frayle
 \end_layout
 
 \begin_layout Standard
-Estos registros comprenderán una muestra entre los años 1970 hasta 2010.
+Estos registros comprenderán una muestra entre los años 1970 hasta 2000.
 \end_layout
 
 \begin_layout Section
@@ -864,7 +1037,7 @@ Se puede usar el nuevo modelo como complemento en las tareas de análisis
  de escenarios junto a los modelos tradicionales, por su sencillez esto
  permitirá a un administrador/tomador de decisión elegir técnicas apropiadas
  de previsión, que finalmente puedan evitar perdidas económicas y sociales
- (Construcción de defensas rivereñas para evitar inundaciones, implantación
+ (Construcción de defensas ribereñas para evitar inundaciones, implantación
  de políticas de consumo de agua para mejorar la disponibilidad del recurso
  hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
 te).
@@ -874,32 +1047,1523 @@ te).
 Estructura tentativa del Informe Final
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection*
+Capítulo 1 
+\end_layout
+
+\begin_layout Subsection*
 Introducción
 \end_layout
 
-\begin_layout Subsubsection
-Fundamentos Teóricos
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Definición del problema 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Justificación
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Objetivos
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Posibles ventajas y desventajas de la propuesta 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Contribuciones del trabajo
+\end_layout
+
+\begin_layout Subsection*
+Capítulo 2
+\end_layout
+
+\begin_layout Subsubsection*
+Marco Teórico
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Proceso Estocástico 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Series Temporales
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Redes Neuronales Recurrentes
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Métodos de entrenamiento
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Consideraciones Finales
+\end_layout
+
+\begin_layout Subsection*
+Capítulo 3
+\end_layout
+
+\begin_layout Subsection*
+Trabajos Relacionados
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Mapeo Sistemático
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Estado del Arte
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Consideraciones Finales
+\end_layout
+
+\begin_layout Subsection*
+Capítulo 4
+\end_layout
+
+\begin_layout Subsection*
+Propuesta de Modelo Estocástico usando Redes-Echo
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Componente Determinista
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Componente No determinista
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
 Propuesta de Modelo
 \end_layout
 
-\begin_layout Subsubsection
-Propuesta de Modelo para el tratamiento de Series de tiempo Hidrológicas
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Consideraciones Finales
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection*
+Capítulo 5
+\end_layout
+
+\begin_layout Subsection*
 Experimentos
 \end_layout
 
-\begin_layout Subsubsection
-Caso de Estudio:RIo Chili
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Caso de Estudio: Series Temporales De MOPEX
 \end_layout
 
-\begin_layout Subsubsection
-Conclusiones
+\begin_layout Subsubsection*
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Caso de Estudio: Rio Chili
+\end_layout
+
+\begin_layout Subsection*
+Capítulo 6
+\end_layout
+
+\begin_layout Subsection*
+Conclusiones Y Trabajos Futuro
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Apéndice
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Apéndice"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Programación Técnica y Financiera del Proyecto
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename POPTESISEdsonFinalaprobadoAsesorNuevo.xlsx - PTM.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename POPTESISEdsonFinalaprobadoAsesorNuevo.xlsx - PTM3.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename POPTESISEdsonFinalaprobadoAsesorNuevo.xlsx - PTF (1).pdf
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

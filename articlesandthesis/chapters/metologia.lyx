@@ -81,7 +81,7 @@ Descripción del Modelo
 \begin_layout Standard
 El objetivo de este trabajo es proponer un modelo de proceso estocástico
  que puede ser aplicado en series temporales de comportamiento estocástico
- y tambien en series temporales de comportamiento periódico en sus propiedades
+ y también en series temporales de comportamiento periódico en sus propiedades
  probabilísticas, como; media, varianza, entre otras.
 \end_layout
 
@@ -109,7 +109,7 @@ key "xu2002hydrologic"
 \begin_layout Itemize
 
 \series bold
-Componente Determinístico:
+Componente Determinista:
 \series default
  Donde las variables se consideran libres de variación aleatoria, de modo
  que no se considere que ninguna tenga una distribución de probabilidad
@@ -126,11 +126,11 @@ key "xu2002hydrologic"
 
 \begin_layout Standard
 El modelo tiene la finalidad de generar escenarios de datos sintéticos hidrológi
-cos, en términos de intervalos mensuales, para esto se utlizó una arquitecura
- basada en Redes Neuronales Recurrentes (RNN) como el componente determinístico;
+cos, en términos de intervalos mensuales, para esto se utilizó una arquitectura
+ basada en Redes Neuronales Recurrentes (RNN) como el componente determinista;
  el uso de RNN permite que nuestro modelo sea no-lineal capaz de capturar
- las carácteristicas de una série temporal sin la necesidad de realizar
- algún tipo de suposición a priori como retirar algunas carácteristicas
+ las características de una serie temporal sin la necesidad de realizar
+ algún tipo de suposición a priori como retirar algunas características
  de tendencia o periodicidad.
  
 \end_layout
@@ -268,7 +268,7 @@ Componente Estocástico
 \end_layout
 
 \begin_layout Standard
-En terminos de estadística, la variable 
+En términos de estadística, la variable 
 \begin_inset Formula $R_{v,t}$
 \end_inset
 
@@ -1002,7 +1002,7 @@ Finalmente para generar series de tiempo sintéticas se repite el procedimiento,
 
 \begin_layout Standard
 En este trabajo se usó una topología recurrente de Redes Neuronales(RNN)
- como componente determinístico, pero el modelo propuesto no se limita sólo
+ como componente determinista, pero el modelo propuesto no se limita sólo
  a ese tipo de Redes neuronales.
  Pueden usarse otras arquitecturas de RNA en su lugar.
  Las razones de la elección de RNN para generación de series temporales
@@ -1011,7 +1011,7 @@ En este trabajo se usó una topología recurrente de Redes Neuronales(RNN)
 \end_layout
 
 \begin_layout Section
-Componente Determinístico
+Componente Determinista
 \end_layout
 
 \begin_layout Standard
@@ -1054,7 +1054,7 @@ reference "fig:Generación-de-escenarios"
 \end_layout
 
 \begin_layout Standard
-A fin de obtener un determinado valor para la série en el instante de tiempo
+A fin de obtener un determinado valor para la serie en el instante de tiempo
  
 \begin_inset Formula $t$
 \end_inset
@@ -1196,7 +1196,7 @@ Donde:
 \end_inset
 
  es la función de activación de las neuronas de salida, esta es una herramienta
- standard para condensar valores muy pequeños o muy grandes dentro de un
+ estándar para condensar valores muy pequeños o muy grandes dentro de un
  espacio logistico.
 \end_layout
 
@@ -1212,7 +1212,7 @@ reference "fig:Esquema-del-proceso"
 \begin_inset Formula $Y_{t}$
 \end_inset
 
- de una série temporal en 
+ de una serie temporal en 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1320,7 +1320,7 @@ Conforme a lo mencionado en secciones anteriores, ocurre un encadenamiento
 \begin_inset Formula $Y_{t}$
 \end_inset
 
- de una série temporal sintética se obtiene a partir del valor anterior
+ de una serie temporal sintética se obtiene a partir del valor anterior
  
 \begin_inset Formula $Y_{t-1}$
 \end_inset
@@ -1340,7 +1340,7 @@ reference "fig:Esquema-del-proceso"
 
 ) que permiten abarcar muchos pasos en el tiempo como cascadas para afectar
  el procesamiento de cada nueva entrada.
- Por lo tanto, no es necesario incorporar tecnicas de 
+ Por lo tanto, no es necesario incorporar técnicas de 
 \begin_inset Quotes sld
 \end_inset
 
@@ -1375,7 +1375,7 @@ A menudo el uso de Redes Neuronales implica la tarea de estimar un gran
 \emph on
 Reservoir Computing
 \emph default
-(RC), especificamente se usa el método 
+(RC), específicamente se usa el método 
 \emph on
 llamado Echo State Network(ESN) 
 \begin_inset CommandInset citation
@@ -1388,12 +1388,12 @@ key "Jaeger2001a"
  
 \emph default
 Es evidente que para generar series sintéticas es preciso ajustar nuestro
- modelo con la série temporal histórica.
+ modelo con la serie temporal histórica.
  Podemos formalizar dicho problema como:
 \end_layout
 
 \begin_layout Subsection
-Formalización de los parametros
+Formalización de los parámetros
 \end_layout
 
 \begin_layout Standard
@@ -1728,7 +1728,7 @@ key "LukoseviciusJaeger09"
 
 , para definir las matrices del reservorio, esto debido a que el costo computaci
 onal del procesamiento de matrices densas es mayor al costo de procesamiento
- de matrices sparsa.
+ de matrices esparsa.
  Por lo tanto y basados un estudio preliminar (vea Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1744,8 +1744,8 @@ inicialización aleatoria
 \series bold
 conectividad
 \series default
- del 20% como enfoque estandar para inicializar los pesos de nuestro componente
- determinístico.
+ del 20% como enfoque estándar para inicializar los pesos de nuestro componente
+ determinista.
  
 \end_layout
 
@@ -2034,8 +2034,8 @@ Una vez ajustados los parámetros
 \begin_inset Formula $p$
 \end_inset
 
- del componente determinístico, es posible generar diferentes escenarios
- de una serie temporal analizada.
+ del componente determinista, es posible generar diferentes escenarios de
+ una serie temporal analizada.
  
 \end_layout
 
@@ -2046,10 +2046,10 @@ Generación de Escenarios
 \begin_layout Standard
 El modelo propuesto es un modelo mixto estocástico determinista para la
  generación de datos sintéticos que debe capturar el comportamiento estocástico
- de los registros historicos, por lo tanto debe ser capaz de generar series
+ de los registros históricos, por lo tanto debe ser capaz de generar series
  sintéticas temporales igualmente probables con la serie histórica.
  Para hacer esto posible, es necesario usar los primeros valores de los
- terminos autoregresivos que son obtenidos de las series históricas.
+ términos auto-regresivos que son obtenidos de las series históricas.
 \end_layout
 
 \begin_layout Standard
@@ -2104,9 +2104,9 @@ En este capítulo tratamos de dar una visión detallada del modelo propuesto
  que tienen la capacidad de tener memoria interna resultante de sus conexiones
  de retroalimentación, característica muy potente en la literatura de redes
  neuronales.
- Tambien se fundamenta las razones de optimizar 2 parámetros por encima
+ También se fundamenta las razones de optimizar 2 parámetros por encima
  de otros en el diseño de ESN.
- El proximo capítulo presenta los resultados obtenidos en el estudio de
+ El próximo capítulo presenta los resultados obtenidos en el estudio de
  caso de este trabajo, mostrando las configuraciones de los modelos usados
  para generar escenarios hidrológicos y los resultados del análisis de esos
  escenarios.

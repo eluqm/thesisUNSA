@@ -6,15 +6,13 @@
 \origin unavailable
 \textclass IEEEtran
 \begin_preamble
-
+\pagenumbering{gobble}
 \author{
     Edson F. Luque Mamani\\
-CLEI,2017\\
     University of San Agustin-University of Sao Paulo\\	
     edluquem@gmail.com\\	
   \and
     José Herrera Quispe\\
-CLEI,2017\\
     University of San Agustin\\
     jherreraq@unsa.edu.pe
     
@@ -22,7 +20,7 @@ CLEI,2017\\
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language american
+\language english
 \language_package default
 \inputencoding default
 \fontencoding global
@@ -73,7 +71,7 @@ CLEI,2017\\
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language swedish
 \papercolumns 2
 \papersides 1
 \paperpagestyle default
@@ -87,8 +85,6 @@ CLEI,2017\\
 \begin_body
 
 \begin_layout Title
-
-\lang spanish
 Stochastic generation and forecasting of monthly hydrometeorological data
  based on non-traditional neural network
 \end_layout
@@ -98,8 +94,6 @@ Stochastic generation and forecasting of monthly hydrometeorological data
 \end_layout
 
 \begin_layout Abstract
-
-\lang spanish
 The benefits of well-informed water management systems are related to the
  forecasting skills of hydrological variables.
  These benefits can be reflected in reducing economic and social losses
@@ -120,50 +114,43 @@ The benefits of well-informed water management systems are related to the
  in practical applications.
  The second part of the model incorporates the uncertainty associated with
  hydrological processes, the model is finally called ESN-RNN.
- This model was calibrated with series of monthly discharge data of four
- different river basins from Mopex data set.
- Finally, a comparison was made between the performance of the ESN-RNN based
- model results, the results of the two feedforward neural networks ANN-1,
- ANN-2 using one and two past months respectively and Thomas–Fiering model.
- The results show that the ESN-RNN model represents a promising alternative
+ This model was calibrated with time series of monthly discharge data from
+ four different river basins of MOPEX data set.
+ The performance of ESN-RNN is compared with two feedforward neural networks
+ ANN-1, ANN-2 (with one and two past months respectively) and the Thomas–Fiering
+ model.
+ The results show that the ESN-RNN model provides a promising alternative
  for simulation purposes, with interesting potential in the context of hydromete
 orological resources.
+ 
 \end_layout
 
 \begin_layout Keywords
-
-\lang spanish
-Echo state, forecasting, RNN.
+Echo state, forecasting, Recurrent, Stochastic process, Neural Network.
 \end_layout
 
 \begin_layout Section
-
-\lang spanish
 Introduction
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 In probability theory an stochastic process is defined as a set of models
  that allow the study of problems with random components.
- By observing phenomenon with random characteristics for a period of time,
- it is possible to obtain a trajectory of the observed process.
+ Observing a phenomenon with random characteristics for a period of time,
+ it is possible to obtain a trajectory of this observed process.
  When carrying out the same observation in a different period of time it
  is possible to obtain another trajectory, different from the first one.
- A stochastic process corresponds to the set of all possible trajectories
+ Thus, stochastic process corresponds to the set of all possible trajectories
  that can be observed of this phenomenon.
- Each observed trajectory is called a time serie.
- Therefore, time serie is considered a realization of stochastic process.
- 
+ Each trajectory are called a time series.
+ Therefore, time series is considered one realization of stochastic process.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 Natural phenomena such as precipitation and streamflow discharge have nonlinear,
- complex and chaotic characteristics, in order to model the behavior of
- these phenomena, initially linear approximation was used
+ complex and chaotic characteristics.
+ In order to model the behavior of these phenomena, initially linear approximati
+on was used 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
@@ -178,7 +165,7 @@ key "LUNA2006"
 \end_inset
 
 .
- Afterwards were developed methods using self-correcting models 
+ Afterwards, were developed methods using self-correcting models 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
@@ -195,8 +182,8 @@ key "maceira2"
 .
  However, these models are statistical and linear, which means that their
  application in time series of chaotic behavior such as hydrometeorological
- series, can not capture the actual characteristics of these series and
- therefore sometimes is found to be inadequate
+ series, cannot capture real characteristics of this time series being sometimes
+ inadequate 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Raman95multivariatemodelling"
@@ -207,25 +194,12 @@ key "Raman95multivariatemodelling"
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-Among approaches that attempt to model complex non-linear behavior, the
- Artificial Neural Networks (
-\series bold
-AN
-\series default
-N) are highlighted as machine learning methods in recent years, which may
- be adequate to deal with such problems.
- In fact, the
-\series bold
- ANNs
-\series default
- feedforward have been widely used in most research and applications in
- forecasting models in contrast to Recurrent Neural Networks(
-\series bold
-RNN
-\series default
-) 
+Among the approaches that attempt to model complex non-linear behavior,
+ the Artificial Neural Networks (ANN) are highlighted as machine learning
+ methods in recent years, they may be adequate to deal with such problems.
+ In fact, the ANNs feedforward have been widely used in most research and
+ applications in forecasting models in contrast to Recurrent Neural Networks(RNN
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
@@ -233,8 +207,8 @@ key "hess-17-253-2013"
 \end_inset
 
 .
- The RNNs are able to represent dynamic non-linear maps commonly found in
- time series forecasting tasks
+ The RNN's are able to represent dynamic non-linear maps commonly found
+ in time series forecasting tasks
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
@@ -242,8 +216,8 @@ key "lcdcampos"
 \end_inset
 
 .
- Studies about performance in forecasting of the recurrent neural network
- demostrate that they are better than their peers ANN in virtually all tests
+ Studies about the performance in forecasting, demonstrate that RNN are
+ better than their peers ANN, in virtually all tests
 \begin_inset CommandInset citation
 LatexCommand cite
 key "6327793"
@@ -254,10 +228,14 @@ key "6327793"
  However, the main reason to prefer to use the feedforward neural networks
  over recurrent neural networks is that the later generates greater complexity,
  especially in the neural network training process.
- This motived the development of a stochastic process model using Recurrent
+ This motivated the development of a stochastic process model using Recurrent
  Artificial Neural Networks in order to take advantage of its aforementioned
  characteristics.
- this was possible using an approach called Reservoir Computing (RC)
+ this was possible using an approach called Reservoir Computing(
+\series bold
+RC
+\series default
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
@@ -265,13 +243,13 @@ key "LukoseviciusJaeger09"
 \end_inset
 
 .
- Reservoir Computing is a training approach that is emerging as simple and
- fast compared to other approaches used in traditional recurrent ANNs, all
- in order to reduce complexity and leverage its proven ability to represents
- time series characteristics better.
- In addition, as part of our proposed model will be considered a non-determinist
-ic component representing noise with a normal distribution in order to take
- into account the uncertainty that normally affects natural processes 
+ Reservoir Computing is a training approach emerging as simple and fast
+ compared to other approaches used in traditional recurrent ANN, all in
+ order to reduce complexity, and leverage its proven ability to represents
+ the characteristics of time series.
+ Our model also is composed for one non-deterministic component that represents
+ the white noise with a normal distribution, in order to take into account
+ the uncertainty that normally affects natural processes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
@@ -279,9 +257,13 @@ key "Awchi"
 \end_inset
 
 .
- Being our model a new proposal in the literature.
- Finally, as a case study, it was chosen to apply this model on well-known
- Model Parameter Estimation Experiment (MOPEX) data set
+ Therefore, our model could be considered a new proposal in the literature.
+ Finally, as a case study, it was chosen for apply this model in the well-known
+ Model Parameter Estimation Experiment(
+\series bold
+MOPEX
+\series default
+) data set
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Duan20063"
@@ -297,8 +279,8 @@ History and developments
 \end_layout
 
 \begin_layout Standard
-The nonstationary nature of the precipitation and streamflow time series
- is considered one of the most important difficulties to forecast
+Non-stationary nature of time series (precipitation and streamflow) is considere
+d one of the most complicated to forecast in hydrology
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
@@ -321,8 +303,8 @@ key "Peng2010"
 
 \end_inset
 
- the author shows that there is no evidence that multivariate AR(1) models
- are inadecuate as predictors.
+, the author shows that there is no evidence that multivariate AR(1) models
+ are inadequate as predictors.
  Studies such as 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -338,9 +320,9 @@ key "Thomas"
 \end_inset
 
  describe mathematical models, which can reproduce special characteristics
- such as periodicity and consider the effects of linear correlation.
+ such periodicity, considering the effects of linear correlation.
  In fact, the non-deterministics concept considered as part of our model
- was based on Thomas and Fierinig work
+ was based on Thomas and Fiering work
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Thomas"
@@ -348,17 +330,17 @@ key "Thomas"
 \end_inset
 
 .
- All these studies propose that natural behavior of times series can be
- simulated by a simple linear relationship with previous data.
+ All these studies propose, the natural behavior of times series can be
+ simulated by simple linear relationship with previous data.
  
 \end_layout
 
 \begin_layout Standard
-The problem with previous models is that tasks like forecasting are naturally
- dynamics.
- For this reason artificial intelligence methods have been appearing as
- alternatives with good performance as predictors of time series.
- Works suchs 
+The problem with previous models is that forecasting is naturally a dynamic
+ task.
+ For this reason, artificial intelligence methods have been appearing as
+ alternatives, with good performance as predictors of time series.
+ Works such as 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "WRCR:WRCR9735"
@@ -373,8 +355,6 @@ key "WRCR:WRCR11667"
 \end_inset
 
 
-\lang spanish
-
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
@@ -382,17 +362,15 @@ key "lcdcampos"
 \end_inset
 
 
-\lang american
- 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-20-1405-2016"
 
 \end_inset
 
- used Artificial Neural Networks (ANN) as forecasting models.
- The Recurrent Neural Networks demostrated better capacity than ANN feeddorward
- due their structure
+, they used Artificial Neural Networks (ANN) as forecasting models.
+ Recurrent Neural Networks have show better forecasting ability than feedforward
+ ones, due to their structure
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
@@ -406,10 +384,12 @@ key "LukoseviciusJaeger09"
 
 \end_inset
 
-, which allow a more parsimonious modeling of dynamic properties.
- However, it was also demostrated that the recurrence present in its structure
- can cause increce of training conplexity and subsequently cause problems
- of convergence 
+.
+ This structure allows more parsimonious modeling of the dynamical time
+ series properties.
+ However, it was also demonstrated that, the recurrence structure could
+ cause increased training complexity, and subsequently cause problems of
+ convergence
 \begin_inset CommandInset citation
 LatexCommand cite
 key "1"
@@ -417,7 +397,8 @@ key "1"
 \end_inset
 
 .
- By 2000 the concept of Reservoir Computing (RC) was introduced.
+ At the beginning of the 21st century, the concept of Reservoir Computing
+ (RC) was introduced.
  Reservoir Computing is a training approach that can be remarkably simpler
  and faster than those traditional applied in RNN, according to 
 \begin_inset CommandInset citation
@@ -426,17 +407,24 @@ key "hess-17-253-2013"
 
 \end_inset
 
- few applications of RC in hydrometereology have been made: in 
+ few applications of RC in hydrometereology were developed; in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "en81012228"
 
 \end_inset
 
-, the most popular reservoir computing model named echo state networks (ESN)
- was used with a bayesian regularization for forecast short-term energy
- production of small hydroelectric plants, results indicate that the proposed
- model surpasses both RNN's feedforward and ESN in its simple version.
+, the most popular reservoir computing model denominated as 
+\series bold
+echo state networks
+\series default
+(
+\series bold
+ESN
+\series default
+) was used with a Bayesian regularization for forecast short-term energy
+ production of small hydroelectric plants, the results indicate that the
+ proposed model surpasses both RNN's feedforward and ESN in its simple version.
  Similar works such as 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -452,41 +440,42 @@ key "Abrahart201276"
 \end_inset
 
  used ESN to forecast monthly water levels for the four Great Lakes of North
- America, the authors demostrated the good performance of ESN networks and
- attributed it to their highly non-linear and dynamic structure.
- The echo state network are found to be valid alternatives to traditional
- recurrent ANNs in water inflow, for exampel in 
+ America, the authors obtained good performance of ESN networks and attributed
+ it to their highly non-linear and dynamic structure.
+ Echo state networks were found to be valid alternatives to traditional
+ recurrent ANN's, in forecasted water inflow, for example in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
 
 \end_inset
 
- where the performance of ESN is compared with SONARX
+ the authors compare the performance of ESN with SONARX
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371335"
 
 \end_inset
 
-, RBF networks and ANFIS model
+ networks, RBF networks and the ANFIS model
 \begin_inset CommandInset citation
 LatexCommand cite
 key "256541"
 
 \end_inset
 
-, and 
+.
+ In 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
 
 \end_inset
 
- where the predictive capacity of ESN models are evaluated on a variety
- of large-scale basins.
- Experiments are carried out by comparing three different ESN variations
- with two RNN models feedforward.
+, forecasting ability from ESN model was evaluated in a huge variety of
+ large-scale basins.
+ The experiments are carried out by comparing three different ESN variations
+ with two RNN feedforward models.
  In addition, several aspects of ESN's design are investigated in order
  to optimize hydrologically relevant information.
  Only 
@@ -496,34 +485,76 @@ key "en81012228"
 
 \end_inset
 
- presents a hybrid system as our model proposal, this study consider two
+ presents a hybrid system as our model proposal, our study consider two
  components; A deterministic (Recurrent ANN using ESN) and non-deterministic
- component ( random noise), in order to take advantage that a hybrid system
+ component (Random Noise), in order to take advantage that a hybrid system
  can provide us in forecasting task.
+ 
 \end_layout
 
 \begin_layout Standard
-Section 3 and 4 briefly reviews feedforward and traditional recurrent ANN
- models and their training methods, after which a short introduction to
- RC is given and ESN is described more detailed.
- Section 5 presents the proposal model used in this work.
- The results of some experiments are presented and discussed in Sect.
- 6, and finally conclusions are drawn in Sect.
- 7.
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Recurrent-Neural-Networks"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Training-Algorithms"
+
+\end_inset
+
+ briefly reviews feedforward and traditional recurrent ANN models and their
+ training methods, after which a short introduction to RC is given and ESN
+ is described more detailed.
+ Section Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Hidrometereological-data-generat"
+
+\end_inset
+
+ presents details about our proposal.
+ The results of some experiments are presented and discussed in Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Results-and-Discussion"
+
+\end_inset
+
+.
+ Finally, conclusions are drawn in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Conclusions"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
 Recurrent Neural Networks 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Recurrent-Neural-Networks"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Recurrent neural networks (RNNs) are a subclass of ANNs represented by cyclic
- graph in its structure.
- These directed cycles accumulate previous activity that allows the network
- to store an internal state and consequently process sequences of inputs
- in order to perform temporal tasks, by this reason there is no need to
- feed the network with history of previous inputs and outputs like in Time-Delay
- Neural Network 
+Recurrent Neural Networks (RNNs) are a subclass of ANN's characterized by
+ cyclic graphs in its structure.
+ These cycles accumulate previous activities and allow the network stores
+ internal states.
+ These internal states avoid needing to feed the network with the history
+ of previous input and output as the Time-Delay Neural Network
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kuna2015"
@@ -531,7 +562,9 @@ key "Kuna2015"
 \end_inset
 
 .
- Therefore, prediction of future process output can be described as: 
+ And can use the input sequences in order to perform temporal tasks as forecasti
+ng.
+ The RNN output can be described by: 
 \begin_inset Separator latexpar
 \end_inset
 
@@ -554,15 +587,15 @@ reference "fig:elmanandwilliam"
 
 \end_inset
 
- b) and a) show the two types of traditional recurrent ANN models , the
- Elman recurrent network 
+ b) and a) show the two types of traditional recurrent ANN models, the Elman
+ recurrent network 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Elman90findingstructure"
 
 \end_inset
 
- and the Willians- Zipser fully recurrent network 
+ and the Willians-Zipser fully recurrent network
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams:1989:LAC:1351124.1351135"
@@ -570,10 +603,9 @@ key "Williams:1989:LAC:1351124.1351135"
 \end_inset
 
 .
- Both networks have cyclical connections in their structure, in a) the input
- conects directly to all neurons include output one, hidden and output neurons
- are fully interconnected.
- 
+ These neural networks have cyclic connections on their structure.
+ For instance, the Elman network connects its input to all neurons, including
+ output ones, hidden and output neurons are fully interconnected.
 \end_layout
 
 \begin_layout Standard
@@ -604,8 +636,8 @@ name "fig:elmanandwilliam"
 
 \end_inset
 
-(b) Elman recurrent ANN.
- a) William-zipser fully recurrent ANN
+(b) Elman recurrent Artificial Neural Network.
+ a) William-zipser fully recurrent Artificial Neural Network.
 \end_layout
 
 \end_inset
@@ -624,18 +656,25 @@ name "fig:elmanandwilliam"
 
 \begin_layout Section
 Training Algorithms
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Training-Algorithms"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Supervised training is probably the most common approach used among the
- current types of neural network systems, in order to adjust the network
- weight matrix 
+Basically, supervised learning means to adjust the network weight matrix
+ 
 \series bold
-W,
+W 
 \series default
- samples with inputs and outputs are used in the network for later optimisation
- algorithms attempt to minimise output error.
- A well known training method is the standard backpropagation algorithm
+using the optimization algorithms , in order to minimize the output error.
+ This is probably the most common approach used among the current types
+ of neural network systems where the input and output are used in the network.
+ A well known training method is the Standard Backpropagation algorithm
  (BP)
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -643,8 +682,11 @@ key "Rumelhart:1986:PDP:104279"
 
 \end_inset
 
-, which is a kind of gradient descent technique where local minimum is approache
-d by changing weights along the direction of negative error gradient.
+.
+ Backpropagation is a method to calculate the gradient of the loss function
+ with respect to the weights.
+ This technique approximates the local minimum by changing these weights
+ along of negative error gradient direction.
  The objective function E(W) is calculated after BP applies an update to
  the weights in the network;
 \end_layout
@@ -666,7 +708,7 @@ where
 \end_inset
 
  is constant positive value called learning rate.
- Previous weigth change called momentum rate 
+ The momentum rate 
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -693,9 +735,9 @@ key "Sutskever2013"
 \end_layout
 
 \begin_layout Standard
-Weigth updates can be performed in online mode or based on the mean error
- over all training data, that is called batch mode.
- Beside more sophisticated alternatives to the BP algorithm, such as the
+Weight updates can be performed in online mode or based on the mean error
+ over all training data(that is called batch mode).
+ Besides, more sophisticated alternatives to the BP algorithm, such as the
  Levenberg-Marquardt(LM) have been found faster convergence algorithm
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -727,8 +769,8 @@ Where
 \series bold
 J 
 \series default
-the jacobian matrix, which contains the first derivatives of the network
- error with respect to the weights and biases, and 
+the jacobian matrix, which is the first derivatives of the network error
+ with respect to the weights and biases, and 
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -737,7 +779,7 @@ the jacobian matrix, which contains the first derivatives of the network
 \series bold
 H 
 \series default
-an aproximation of the Hessian matrix.
+is an approximation of the Hessian matrix.
 \end_layout
 
 \begin_layout Section*
@@ -746,16 +788,17 @@ Recurrent ANN training
 
 \begin_layout Standard
 Standard BP algorithm is not suited for networks with cycles in them.
- Nonetheless, applynig some artifices we can see a RNN like a feedforward
- network by unfolding the RNN network in time as shown in figure 
+ Nonetheless, we can apply some artifices and see the RNN like feedforward
+ network by unfolding this RNN network in time as shown in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:unfold"
 
 \end_inset
 
-, where the recurrent network is just a layered net that keeps reusing the
- same weigths, we assume a time delay of 1 in using each connection, creating
+.
+ The RNN is interpreted as layered network that keeps the same weights to
+ reusing, we assume the time delay of 1 in each connection in order to create
  an equivalent feedforward network
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -763,16 +806,17 @@ key "Williams90anefficient"
 
 \end_inset
 
-, this extension of the BP method is called backpropagation through time(BPTT).
- in BPTT the number of networks copies is equal to time step 
+.
+ This extension of the BP method is called Backpropagation Through Time(BPTT).
+ In BPTT the number of networks copies is equal to time step 
 \series bold
-T.
- 
+T
 \series default
-It would be impractical in online manner, since its memory footprint grows
- linearly with time.
- Therefore, the network unfoldig is limited to a chosen truncation depth
- to keep the method feasible
+.
+ It would be impractical in the online training since the memory footprint
+ grows linearly with the time.
+ Therefore, the network unfolding is limited to a chosen truncation depth
+ to keep the method feasible 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
@@ -808,7 +852,12 @@ name "fig:unfold"
 
 \end_inset
 
-recurrent network unfolded in time.
+Recurrent Neural Network unfolded in time, the hidden units grouped at time
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ get inputs from other neurons at previous time steps.
 \end_layout
 
 \end_inset
@@ -826,7 +875,7 @@ recurrent network unfolded in time.
 \end_layout
 
 \begin_layout Standard
-More sofisticated methods were developed to overcome limitatitons of BPTT,
+More sophisticated methods were developed to overcome BPTT limitations,
  for example Real-Time Recurrent Learning
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -842,8 +891,8 @@ key "Kuna2015"
 
 \end_inset
 
- and the extended Kalman filter(EKF) method, which each time estimates optimal
- weights, given a series of observed ouputs, for details see
+ and the extended Kalman Filter(EKF) method, which each time estimates optimal
+ weights, given a series of observed outputs, for more details see
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sum:1998:EKF:296468.296482"
@@ -851,16 +900,18 @@ key "Sum:1998:EKF:296468.296482"
 \end_inset
 
 .
- However, even the methods such the later, suffers from shortcomings related
- with model complexity and optimisation (gradient)
+ However, these methods suffer shortcomings related to the modeling complexity
+ and optimization(gradient)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
 
 \end_inset
 
-, i.e., many updates may be necessary it could be computationally expensive,
- the gradient information might becomes useless by weight updates procedure
+.
+ That means, many updates may be necessary and it could be computationally
+ expensive, the gradient information might becomes useless by weight updates
+ procedure
 \begin_inset CommandInset citation
 LatexCommand cite
 key "doya1992bifurcations"
@@ -876,21 +927,25 @@ Echo State Network
 
 \begin_layout Standard
 Echo state network(ESN) is a reservoir computing model has been introduced
- by Jaeger 
+ by Jaeger in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
 
 \end_inset
 
- in order to addresing the dificulties in RNN training.
- Basically ESN is a clever way to train a RNN where a "reservoir" of hidden
- units are sparsely connected to each other and the inputs are connected
- to this reservoir, the hidden conections are not trained, they are randomly
+, in order to addressing the difficulties to train RNN networks.
+ Basically ESN-RNN is a clever way to train a RNN where a "reservoir" of
+ hidden units are sparsely connected to each other and the inputs are connected
+ to this reservoir, the hidden connections are not trained, they are randomly
  initialized.
- The state of the dynamical reservoir is called "echo states", these states
- can be undertood as an "echo" generated by the input history.
- The output layer is connected to the hidden reservoir 
+ The state of the dynamical reservoir is called 
+\begin_inset Quotes sld
+\end_inset
+
+echo states", these states can be understood as an "echo" generated by the
+ input history.
+ The output layer is connected to the hidden reservoir
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Echo-State-Network"
@@ -898,12 +953,12 @@ reference "fig:Echo-State-Network"
 \end_inset
 
 .
- The interesting property of ESNs is that while the recurrent topology has
- fixed connections, only the linear readout is trained and extracts the
- desired response from the reservoir’s state.
- The idea behind this is that the reservoir contains a representation of
- current and historical system dynamics that is rich enough to enable the
- readout to learn the functional dependence between inputs and outputs
+ Due that the recurrent topology has fixed connections, only the linear
+ readout can be trained, in order to extract the desired response from reservoir
+ states.
+ The idea behind this, is that the "reservoir" retains the system dynamics
+ (current and historical data), which are rich enough to enable the readout
+ learn the functional dependence between inputs and outputs
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
@@ -941,7 +996,20 @@ name "fig:Echo-State-Network"
 
 \end_inset
 
-Echo State Network
+Echo State Network(ESN-RNN), the dynamical reservoir is called 
+\begin_inset Quotes sld
+\end_inset
+
+echo states" 
+\begin_inset Formula $W$
+\end_inset
+
+, the output layer 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+ is connected to the hidden reservoir(black arrows), and the input layer
+ is also connected to the output.
 \end_layout
 
 \end_inset
@@ -955,14 +1023,14 @@ Echo State Network
 \end_layout
 
 \begin_layout Standard
-According to the notation used in 
+In accordance to the notation used in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
 
 \end_inset
 
- the activation of the internal echo states is updated follow the equation:
+ the activation of the internal echo states is updated following the equation:
 \end_layout
 
 \begin_layout Standard
@@ -1012,14 +1080,23 @@ is the recurrent connection weight matrix, and
 \end_layout
 
 \begin_layout Standard
-The "echo state property" is a condition needed to scale the reservoir weight
- matrix W, this condition asserts that recurrent network states are strongly
- coupled with the input history, this is defined in term of the spectral
- radius ( largest absolute eigenvalue of W) 
+In order to scale the weight matrix 
+\begin_inset Formula $\boldsymbol{W}$
+\end_inset
+
+.
+ One condition(echo state property) is needed, that condition asserts that
+ the network states are strongly coupled with the historical input.
+ This is defined in terms of the spectral radius(largest absolute eigenvalue
+ of 
+\begin_inset Formula $\boldsymbol{W}$
+\end_inset
+
+) 
 \begin_inset Formula $\rho$
 \end_inset
 
-(W)<1, this condition is generally satisfied 
+(W)<1, this condition is generally satisfied
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jaeger78"
@@ -1058,8 +1135,9 @@ Where
 \begin_inset Formula $X$
 \end_inset
 
- is the collected states matrix of the ESN, this matrix contains the activation
- of the reservoir for each training input:
+ is the collected states matrix from ESN.
+ This matrix is the activation states of the reservoir for each training
+ input:
 \end_layout
 
 \begin_layout Standard
@@ -1078,13 +1156,20 @@ The output
 \begin_inset Formula $y(n)$
 \end_inset
 
- is then computed with equation :
+ is then computed with equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:y_n"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y(n)=W^{out}x(n)
+y(n)=W^{out}x(n)\label{eq:y_n}
 \end{equation}
 
 \end_inset
@@ -1093,18 +1178,29 @@ y(n)=W^{out}x(n)
 \end_layout
 
 \begin_layout Section
-Hidrometereological data generation using ESN-RNN with random component
+Hidrometereological Data Generation Using ESN-RNN With Random Component
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Hidrometereological-data-generat"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The proposed model is a mixed stochastic deterministic model for hydrological
- synthetic data generation, in terms of monthly series of 
-\lang spanish
-precipitation and streamflow discharge
-\lang american
- using ESN-RNN.
- The model consists of two components; the first component is the stochastic
- part of Thomas-Fiering model
+We propose a mixed model (stochastic and deterministic) for hydrological
+ synthetic data generation, in terms of monthly series of basic hydrological
+ variables (precipitation, streamflow, and discharge) using ESN-RNN.
+ The model consists of two components; 
+\end_layout
+
+\begin_layout Description
+The
+\series bold
+ First Component: 
+\series default
+is the stochastic part of Thomas-Fiering modeling
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Thomas"
@@ -1130,21 +1226,31 @@ T_{v,t+1}=\epsilon_{v,t}S_{t+1}\sqrt{1-r_{t}^{2}}
 \end_layout
 
 \begin_layout Standard
-where, 
-\begin_inset Formula $\epsilon_{v,t}$
+Where: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\epsilon_{v,t}=$
 \end_inset
 
- is a random normal deviate with zero mean and unit variance, 
-\begin_inset Formula $s_{t+1}$
+ is a random normal deviate with zero mean and unit variance
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{t+1}=$
 \end_inset
 
- represents the standard deviation of the normalized and standardized precipitat
-ion and discharge in the 
+is the standard deviation of the normalized and standardized precipitation
+ and discharge in 
 \begin_inset Formula $t+1^{th}$
 \end_inset
 
-months and 
-\begin_inset Formula $r_{t}$
+month.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r_{t}=$
 \end_inset
 
  the correlation coefficient between data in the 
@@ -1158,8 +1264,12 @@ and
 months.
 \end_layout
 
-\begin_layout Standard
-The second component 
+\begin_layout Description
+
+\series bold
+The Second Component: 
+\series default
+
 \begin_inset Formula $E_{v,t}$
 \end_inset
 
@@ -1170,7 +1280,7 @@ The second component
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-H_{v,t}=f(E_{v,t}+T_{v,t})
+H_{v,t}=f(E_{v,t}+T_{v,t})\label{eq:general}
 \end{equation}
 
 \end_inset
@@ -1179,6 +1289,7 @@ H_{v,t}=f(E_{v,t}+T_{v,t})
 \end_layout
 
 \begin_layout Standard
+Where, 
 \begin_inset Formula $H_{v,t}$
 \end_inset
 
@@ -1187,21 +1298,37 @@ H_{v,t}=f(E_{v,t}+T_{v,t})
 \begin_inset Formula $f$
 \end_inset
 
- is the inverse of preprocessing transformations defined in equations 10
- and 12: 
+ is the inverse of pre-processing transformations defined in equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:log_trans"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:std_trans"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsubsection*
-Data preprocessing input and output 
+\begin_layout Subsection
+Data Pre-processing
 \end_layout
 
 \begin_layout Standard
-In probability theory and statistical applied to hydrologic time series
- a basic assumption is which the variables, have to be normally distributed.
+In Probability and Statistical theory applied to hydrologic time series
+ the basic assumption is which the variables, have to be normally distributed.
  Therefore, a transformation is required if time series do not meet this
  basic assumption.
- The operation needed is called seasonal standardization or deseasonalizing
- (normally distributed variables with zero-mean and unit standad deviation)
+ This transformation aims to remove the seasonality from the mean and the
+ variance.
+ In the literature, this operation is called seasonal standardization or
+ deseasonalizing, which results in normally distributed variables with zero-mean
+ and unit standard deviation
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
@@ -1212,23 +1339,25 @@ key "Awchi"
 \end_layout
 
 \begin_layout Standard
-The series of MOPEX data set for the period of january, 1948 to 2000 from
- 4 river basins (see table 
+In this study, the series of MOPEX data set for the period of January, 1948
+ to 2000 from 4 river basins (see Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:riverbasin"
 
 \end_inset
 
-)were employed in this study.
- They needed a transformation to reduce their biased skewness, the skewness
- coefficient observerd was reduced using log-transformation written as:
+) were employed.
+ We found that MOPEX time series have to be transformed to reduce their
+ biased skewness.
+ The skewness coefficient was reduced using the following equation (log-transfor
+mation):
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-X_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)
+X_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)\label{eq:log_trans}
 \end{equation}
 
 \end_inset
@@ -1239,7 +1368,7 @@ X_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-c_{t}=\frac{a}{g_{t}^{2}}
+c_{t}=\frac{a}{g_{t}^{2}}\label{eq:c_t}
 \end{equation}
 
 \end_inset
@@ -1260,15 +1389,16 @@ Where,
 \begin_inset Formula $v(ν=1,….,N)$
 \end_inset
 
-, 
+.
+ 
 \begin_inset Formula $N$
 \end_inset
 
- is number of years of record of the series, 
+ is number of years from records series, 
 \begin_inset Formula $\bar{H_{t}}$
 \end_inset
 
- is monthly average inflow for month 
+ is the monthly average inflow for month 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1308,7 +1438,7 @@ The data used by stochastic component (Thomas-Fiering model) were standardized
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Y_{v,t}=\frac{X_{v,t}-\bar{X_{t}}}{S_{t}}
+Y_{v,t}=\frac{X_{v,t}-\bar{X_{t}}}{S_{t}}\label{eq:std_trans}
 \end{equation}
 
 \end_inset
@@ -1317,10 +1447,11 @@ Y_{v,t}=\frac{X_{v,t}-\bar{X_{t}}}{S_{t}}
 \end_layout
 
 \begin_layout Standard
+Where, 
 \begin_inset Formula $Y_{v,t}$
 \end_inset
 
- is standardized value for month 
+ is the standardized value for month 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1360,7 +1491,7 @@ name "tab:riverbasin"
 
 \end_inset
 
-characteristic of four Mopex river basins
+Geographical characteristics and statistics of four MOPEX river basins
 \end_layout
 
 \end_inset
@@ -1383,7 +1514,7 @@ characteristic of four Mopex river basins
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mopex id
+MOPEX id
 \end_layout
 
 \end_inset
@@ -1625,39 +1756,41 @@ Clearfield Creek
 
 \end_layout
 
-\begin_layout Subsubsection*
-Neural network architectures
+\begin_layout Subsubsection
+Neural Network Architectures
 \end_layout
 
 \begin_layout Standard
-The performance of this approach is compared with three models, two based
- on feedforward ANN and once statistical model such as Thomas and Fiering,
- usually the models mentioned above require previous measured samples which
- must be considered as input data, Therefore, the first model (ANN-1) generates
- hidrological data for the present month using the data of past month, the
- second model (ANN-2) use two previous months in order generates data for
- present month.
+The performance of our approach was compared with three models, two based
+ on feedforward ANN and once statistical model such Thomas and Fiering.
+ These models often require previous measured samples which must be considered
+ as input data, that is why the first model (ANN-1) generates hydrological
+ data for the present month using the data of past month, similarly, the
+ second model (ANN-2) use two previous months in order generates data to
+ the present month.
  
 \end_layout
 
 \begin_layout Standard
-A three-layer feedforward architecture is adopted in ANN-1 and ANN-2, and
- tan-sigmoid functions were used as activation function for which output
- falls in the range of 
+A typical three layer feedforward perceptron network architecture was adopted
+ for ANN-1 and ANN-2.
+ The tan-sigmoid functions were used as activation functions for which the
+ output falls in
 \begin_inset Formula $\left[-1,+1\right]$
 \end_inset
 
-.
- The number of hidden layer nodes was decided by trial and error procedure.
+ range.
+ The number of the hidden layers was decided by trial and error procedure.
  
 \end_layout
 
 \begin_layout Standard
-Since feedback connections in the ESN-RNN architecture develop a type of
- internal memory, it is not necessary an input signal before further processing.
- Was considerated the input and bias fully connected to the reservoir, The
- weights of the input to reservoir connection were randomly selected from
- a uniform distribution where 
+Due to the feedback connections of ESN networks architecture include internal
+ memory(internal states), it is not necessary previous input signals before
+ further processing.
+ We considered input and bias fully connected to the reservoir, the input
+ weights to the reservoir were randomly selected from a uniform distribution
+ where; 
 \series bold
 
 \begin_inset Formula $W^{in}$
@@ -1679,8 +1812,8 @@ Since feedback connections in the ESN-RNN architecture develop a type of
 \end_layout
 
 \begin_layout Standard
-The number of the internal units of the reservoir and the spectral radious
- of the reservoir weights are important settings for a ESN model
+The number of the internal units of the reservoir and the spectral radius
+ of the reservoir weights are important settings for ESN model
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
@@ -1688,9 +1821,16 @@ key "LukoseviciusJaeger09"
 \end_inset
 
 .
- By this reason a respectively training performance study for each 4 river
- basin over values of spectral radious from 0.1 to 0.9 and the size of reservoir
- was made, see Figure 
+ Due to the above, performance tests in training of the networks for each
+ river basin over values of 
+\series bold
+spectral radius
+\series default
+ (from 0.1 to 0.9) and the 
+\series bold
+reservoir size 
+\series default
+were made, see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ESN-training-performance"
@@ -1716,9 +1856,9 @@ name "fig:ESN-training-performance"
 
 \end_inset
 
-4 rivers ESN training performance, Rmse (y-axis) vs Reservoir size(x-axis),
- all over a range of values for the spectral radius from 0.1 to 0.9 (over
- 5 runs).
+ESN training performance of 4 MOPEX rivers, RMSE (y-axis) vs Reservoir size(x-ax
+is), all over a range of values for the spectral radius from 0.1 to 0.9 (over
+ 10 runs).
 \end_layout
 
 \end_inset
@@ -1750,24 +1890,24 @@ reference "fig:ESN-training-performance"
 
 \end_inset
 
- we can see that the bigger size of reservoirs generate lower performance
- in training ESN-RNN for the 4 basins selected, each river basin was assigned
- with specific reservoir size(red points) and spectral radious(highlighted
- in blue), this is because the characteristics and dynamic nature of the
+, we can see that the bigger size of reservoirs generate lower performance
+ in training ESN-RNN, for the 4 basins selected, each river basin was assigned
+ with specific reservoir size(red points) and spectral radius(highlighted
+ in blue), this is due to the characteristics and dynamic nature of the
  river are different.
  
 \end_layout
 
 \begin_layout Subsection
-Evaluation of the Performance of Models
+Performance evaluation of Models
 \end_layout
 
 \begin_layout Standard
-In this study, 200 syntetics series were generated with length of 24 months
- (2 years), The data were split up into training (1948–1999), and test (1998–200
-0).
- The performance of the forecasting models was evaluated according to three
- error criteria: Normalized Root Mean Square Error (NRMSE), Mean Absolute
+In this study, 200 synthetic time series were generated with length of 24
+ months (2 years), The data were split up into training (1948–1999), and
+ test (1998–2000).
+ The performance of the forecasting models was evaluated in accordance with
+ three error criteria: Normalized Root Mean Square Error (NRMSE), Mean Absolute
  Error (MAD), and Mean Percentage Error (MPE).
 \end_layout
 
@@ -1787,11 +1927,9 @@ name "fig:bluestone"
 
 \end_inset
 
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of Bluestone river
+Graphical evaluation of 200 synthetic time series, with testing patterns
+ from 1998 to 2000 using the historical Streamflow discharge data of Bluestone
+ river.
 \end_layout
 
 \end_inset
@@ -1831,11 +1969,9 @@ name "fig:tygersintetic"
 
 \end_inset
 
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of Tygar Valley river
+Graphical evaluation of 200 synthetic time series, with testing patterns
+ from 1998 to 2000 using the historical Streamflow discharge data of Tygar
+ Valley river
 \end_layout
 
 \end_inset
@@ -1879,11 +2015,9 @@ name "fig:eastforwhite"
 
 \end_inset
 
-Testing Patterns (1998 - 2000): 
-\lang spanish
-Streamflow discharge
-\lang american
- of East Fork White river
+Graphical evaluation of 200 synthetic time series, with testing patterns
+ from 1998 to 2000 using the historical Streamflow discharge data of East
+ Fork White river.
 \end_layout
 
 \end_inset
@@ -1913,51 +2047,59 @@ Streamflow discharge
 
 \begin_layout Section
 Results and Discussion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Results-and-Discussion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The models used here were trained and adjusted: ANN1, ANN2, Thomas-Fiering
- and ESN-RNN.
- During both the training and testing periods of the ESN, the entries of
+The models used here (ANN1, ANN2, Thomas-Fiering and ESN-RNN) were trained
+ and adjusted.
+ During the training and testing periods of the ESN model, the entries of
  
+\begin_inset Formula $W$
+\end_inset
+
+ were scaled with different spectral values for the 4 river basins, see
+ Figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN-training-performance"
+
+\end_inset
+
+.
+ In order to avoid initial contamination, we have disregarded first responses
+ (the states) of the reservoir.
+ The reservoir sizes were defined as N1=17, N2=20, N3=22, N4=25, which presented
+ the best performance value for each river basins, see the red points in
+ the Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN-training-performance"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We noted that ESN states have a wide dynamic range in forecast applications.
+ These "
 \series bold
-W
+echo states
 \series default
- were scaled with different espectral values for the 4 river basins see
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ESN-training-performance"
-
-\end_inset
-
-.
- In order to avoid an initial contamination, we have disregarded first responses
-(states) of reservoir.
- The number of hidden layer processing elements was defined as N1 = 17,
- N2= 20,N3 = 22, N4= 25, which presented best results for each 4 river basins,
- see red points in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ESN-training-performance"
-
-\end_inset
-
-.
+" are sets of functional bases constructed dynamically by the inputs, while
+ the readout simply projects the desired response onto this representation
+ space.
 \end_layout
 
 \begin_layout Standard
-We note that ESN states have a wide dynamic range in this problem, when
- it would be necessary to cover the feature space during the whole training
- period.
- Those variety ESN states represent a set of functional bases constructed
- dynamically by the input, while the readout simply projects the desired
- response onto this representation space.
- 
-\end_layout
-
-\begin_layout Standard
-We can see, at Figure 
+We can see, at Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:bluestone"
@@ -1978,16 +2120,15 @@ reference "fig:eastforwhite"
 
 \end_inset
 
-, the result of the generate synthetic data by ESN-RNN and Thomas fiering
- models, of discharge for 3 river basins respectively.
- The blue line refers to the observed measures of this time series, and
- the black lines refers to the “forecasted” series of streamflow discharge(mm)
+, the synthetic data generated by ESN-RNN and Thomas-Fiering models, of
+ discharge for 3 river basins respectively.
+ The blue line refers to the observed measures of real time series, and
+ the black lines refers to the forecast series of streamflow discharge(mm)
  to the period of 1998-2000.
- 
 \end_layout
 
 \begin_layout Standard
-Based on section a.1, b.1 of Figure 
+Based on sections a.1) and b.1) of the Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:bluestone"
@@ -2008,32 +2149,32 @@ reference "fig:eastforwhite"
 
 \end_inset
 
-, we can say the predictor model was able to learn and capture most of the
- behavior variability present on this time series, lower variability, indicate
- that the training had a desired effect in order capture the dynamic of
- hidrological series.
- which seems but is not a easy task for any predictor.
- The ESN-RNN predictor presented good results.
+, we can say that our model was able to learn and capture most of the variabilit
+y behavior present on hydrological time series.
+ A lower variance indicates that the training process had the desired effect
+ capturing the dynamic of hydrological time series, which is not an easy
+ task for any predictor.
+ The ESN-RNN model obtained good results.
 \end_layout
 
 \begin_layout Standard
-Table 
+The Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:error"
 
 \end_inset
 
- shows the forecasting errors obtained by the models used and compared in
- this paper: ESN-RNN, ANN-1,ANN-2 and Thomas -Fiering.
- We can see that ESN-RNN, and models based on no-recurrent neural networks(ANN-1
- and ANN-2) performed better than Thomas-Fiering model, which is a pure
- stochastic model.
- In addition, we note that ANN-1 and ANN-2 models presented practically
- the same performance.
- Moreover, the ESN-RNN model performed few better than all other models,
+ shows the forecasting errors obtained by each model used to compare our
+ model(ESN-RNN, ANN-1,ANN-2 and Thomas-Fiering).
+ We can see that ESN-RNN model, and these based on no-recurrent neural networks
+ such as ANN-1 and ANN-2, performed better than Thomas-Fiering model, which
+ is a pure stochastic model.
+ In addition, we note that ANN-1 and ANN-2 models obtain practically the
+ same performance.
+ Moreover, the ESN-RNN model performance was better than all other models,
  even though it presents a significantly simpler, and faster, training algorithm.
- This fact prove how powerful and promising is this approach.
+ This fact supports how powerful and promising this approach is.
 \end_layout
 
 \begin_layout Standard
@@ -2052,7 +2193,9 @@ name "tab:error"
 
 \end_inset
 
- Forescasting error for 4 Mopex river basins 
+ Results summary of all methods on MOPEX dataset: 1) each row has the results
+ of a specific method on a particular river basins; 2) each column compares
+ the results of all methods with horizon value of 24 months.
 \end_layout
 
 \end_inset
@@ -2158,7 +2301,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-296.91
+216.91
 \end_layout
 
 \end_inset
@@ -2187,7 +2330,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.72
+0.69
 \end_layout
 
 \end_inset
@@ -2196,7 +2339,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.02
+0.96
 \end_layout
 
 \end_inset
@@ -2205,7 +2348,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-356.34
+311.34
 \end_layout
 
 \end_inset
@@ -2243,7 +2386,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.05
+0.96
 \end_layout
 
 \end_inset
@@ -2252,7 +2395,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-330.23
+313.23
 \end_layout
 
 \end_inset
@@ -2281,7 +2424,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.78
+0.66
 \end_layout
 
 \end_inset
@@ -2290,7 +2433,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.14
+0.91
 \end_layout
 
 \end_inset
@@ -2299,7 +2442,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-402.00
+283.00
 \end_layout
 
 \end_inset
@@ -2328,7 +2471,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.15
+1.23
 \end_layout
 
 \end_inset
@@ -2337,7 +2480,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.54
+0.59
 \end_layout
 
 \end_inset
@@ -2346,7 +2489,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-91.93
+70.83
 \end_layout
 
 \end_inset
@@ -2375,7 +2518,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.34
+1.45
 \end_layout
 
 \end_inset
@@ -2384,7 +2527,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.61
+0.69
 \end_layout
 
 \end_inset
@@ -2393,7 +2536,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-93.56
+118.22
 \end_layout
 
 \end_inset
@@ -2422,7 +2565,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.20
+1.48
 \end_layout
 
 \end_inset
@@ -2431,7 +2574,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.59
+0.72
 \end_layout
 
 \end_inset
@@ -2440,7 +2583,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-93.24
+110.24
 \end_layout
 
 \end_inset
@@ -2469,7 +2612,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.32
+1.33
 \end_layout
 
 \end_inset
@@ -2487,7 +2630,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-95.89
+99.87
 \end_layout
 
 \end_inset
@@ -2704,7 +2847,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.70
+0.65
 \end_layout
 
 \end_inset
@@ -2713,7 +2856,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.51
+0.45
 \end_layout
 
 \end_inset
@@ -2722,7 +2865,7 @@ ESN-RNN
 \begin_inset Text
 
 \begin_layout Plain Layout
-92.15
+159.89
 \end_layout
 
 \end_inset
@@ -2751,7 +2894,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.80
+0.73
 \end_layout
 
 \end_inset
@@ -2760,7 +2903,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.59
+0.52
 \end_layout
 
 \end_inset
@@ -2769,7 +2912,7 @@ ANN-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-111.13
+175.23
 \end_layout
 
 \end_inset
@@ -2798,7 +2941,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.79
+0.74
 \end_layout
 
 \end_inset
@@ -2807,7 +2950,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.65
+0.53
 \end_layout
 
 \end_inset
@@ -2816,7 +2959,7 @@ ANN-2
 \begin_inset Text
 
 \begin_layout Plain Layout
-109.98
+178.98
 \end_layout
 
 \end_inset
@@ -2845,7 +2988,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.95
+0.73
 \end_layout
 
 \end_inset
@@ -2854,7 +2997,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.65
+0.51
 \end_layout
 
 \end_inset
@@ -2863,7 +3006,7 @@ Thomas-Fiering
 \begin_inset Text
 
 \begin_layout Plain Layout
-126.37
+165.37
 \end_layout
 
 \end_inset
@@ -2887,51 +3030,62 @@ Thomas-Fiering
 
 \begin_layout Section
 Conclusions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A model is proposed as an alternative and effective tool for generation
- of monthly hydrological streamflow series.
- The model consists basically of a deterministic component defined in terms
- of a Recurrent neural network trained wit ESN in addition to a stochastic
- component which includes a white noise module.
- Historical monthly data were used to train and test the ability of the
- model for streamflow data generation and forecasting.
- 
+A new model is proposed as an alternative and effective tool for generation
+ of monthly hydrological series.
+ This model is composed of one deterministic component, defined as a Recurrent
+ Neural Network trained with ESN algorithm.
+ The other component is the stochastic part, defined as the white noise
+ in order to take into account the uncertainty that normally affects natural
+ processes.
 \end_layout
 
 \begin_layout Standard
 This study presents a type of recurrent neural network called Echo State
  Network (ESN), which possesses a highly interconnected and recurrent topology.
- The ESN has two interesting properties: one is that only the readout is
- trained, whereas the recurrent topology has fixed connection weights; and
- another one is that ESN has internal built-in memory resulting from the
- feedback connections, it is not necessary to embed the input signal before
- further processing.
- Here, the ESN is used to forecast streamflow.
- A database of average monthly streaming inflows of project Mopex was used
- as source of training and test data.
+ ESN has two interesting properties; the first one is that only the readout
+ is trained, whereas the recurrent topology has fixed connection weights;
+ the second one is that ESN has internal built-in memory, which are the
+ result of feedback connections, thus it is not necessary to embed the input
+ signal before further processing.
+ Here, the ESN was used to forecast discharge.
+ The project MOPEX of average monthly streaming inflows was used as source
+ of training and test data.
+ 
 \end_layout
 
 \begin_layout Standard
 For comparison, the Thomas-Fiering model was applied.
- The proposed hybrid model is also tested using two neural networks architecture
-s, the first architecture (ANN-1) utilizes one previous month’s streamflow,
- and the second (ANN-2) utilizes two previous months, in order to get the
- output of the model which is the next month.
- The results show that the our model demonstrates a little better in performance
- compared to ANN-1, ANN-2 and Thomas-Fiering models.
+ The proposed hybrid model was also tested using two neural networks architectur
+e, the first architecture (ANN-1) utilizes one previous month, and the second
+ (ANN-2) utilizes two previous months, in order to get the output of the
+ model which is the next month.
+ The results demonstrated that our model is better in performance compared
+ to ANN-1, ANN-2 and Thomas-Fiering models.
  In addition the results also revealed that the proposed model performs
- little better comparing with the pure stochastic Thomas-Fiering Model,
- The syntetic series produced by the Recurrent NN (ESN), they present low
- variability and outliers in contrast with Thomas-Fiering Model, indicating
- that the use of Recurrent NN features had the desired effect.
+ better than pure stochastic Thomas-Fiering Model.
+ The synthetic series produced by our model (ESN-RNN), they present low
+ variability accompanied by few outliers in contrast with Thomas-Fiering
+ Model.
+ This fact shows that Recurrent model(ESN-RNN) features had the desired
+ effect.
  It can be concluded that the proposed model is a promising alternative
  to be considered for more applications, competing with other linear pure
- stochastic autoregressive, traditional neural networks models.
- Without forgetting to mention that the specific architecture of ESN models
- overcomes several important drawbacks to traditional recurrent methods.
+ stochastic autoregressive and traditional neural networks models.
+ We can add to the above that the architecture of ESN permits to overcome
+ several important drawbacks on traditional training methods of recurrent
+ networks.
  This approach can lead to more accurate, reliable, and realistic models.
+ 
 \end_layout
 
 \begin_layout Standard
