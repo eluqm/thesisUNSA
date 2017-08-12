@@ -7,6 +7,8 @@
 \textclass extbook
 \begin_preamble
 \usepackage{algorithm,algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -2331,12 +2333,19 @@ Sistema nervioso central
 
 \begin_layout Standard
 Las ANNs que estudiamos son aproximaciones de los niveles 5 y 6.
- La neuronas artificiales están inspirados en las neuronas biológicas, cuyo
- esquemas es representado de manera simplificada en la Figura().
+ Las neuronas artificiales están inspirados en las neuronas biológicas,
+ cuyo esquemas es representado de manera simplificada en la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Neuron"
+
+\end_inset
+
+.
  Como se puede observar, una neurona biológica está formada por: un cuerpo
  celular o la suma que contiene el núcleo de la célula; diversas dendritas,
- a través de los cuales se reciben los impulsos electrónicos; y un axón,
- a través del cual se envían impulsos eléctricos.
+ a través de las cuales se reciben los impulsos eléctricos; y un axón, a
+ través del cual se envían esos impulsos eléctricos.
  Las interconexiones entre neuronas se efectúan a través de sinapsis, puntos
  de contacto (controlados por impulsos eléctricos y por reacciones químicas
  debidas a las sustancias llamadas neurotransmisores) entre dendritas y
@@ -2370,28 +2379,306 @@ axón-sinapsis-dendritas
  un procesamiento altamente paralelo.
 \end_layout
 
-\begin_layout Subsection
-Aplicación de Redes Neuronales en Series Temporales
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSAfinal/thesisUNSA/articlesandthesis/figures/biologicalneuron.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Neuron"
+
+\end_inset
+
+Modelo simplificado de una neurona biológica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Redes Neurais Nao Recorrentes (sem memoria) ou Feedforward:
+La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:artificialneuron"
+
+\end_inset
+
+ presenta una neurona artificial que tiene un conjunto de entradas representadas
+ por, 
+\begin_inset Formula $x_{1},x_{2},\ldots,x_{m-1},x_{m}$
+\end_inset
+
+, que simulan las dendritas, y una salida 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+, que simula el axón.
+ Las entradas a la neura son ponderadas por los pesos sinápticos representados
+ por 
+\begin_inset Formula $w_{i1},w_{i2},w_{i3},\ldots,w_{im-1},w_{im}$
+\end_inset
+
+, que son sumadas por 
+\begin_inset Formula $\sum$
+\end_inset
+
+(que simula el cuerpo celular), la unidad de 
+\emph on
+bias, e
+\emph default
+s representado por 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+, que es un termino de polarización cuyo valor siempre es 1, su objetivo
+ es aumentar o disminuir la influencia del valor de la combinación linear
+ de las entradas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+.
+ La salida de la neurona se obtiene aplicando una función de activación,
+ representada por 
+\begin_inset Formula $\varphi$
+\end_inset
+
+, como se puede ver en la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:neuralequation"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Redes Neurais Recorrentes: 
-\end_layout
+\begin_inset Formula 
+\begin{equation}
+y_{i}=\varphi\left(Net_{i}\right)=\varphi\left(\sum_{j=1}^{m}x_{j}*w_{ij}+\theta_{i}\right)\label{eq:neuralequation}
+\end{equation}
 
-\begin_layout Subsection
-Procedimientos de entrenamiento
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Treinamento Supervisionado:
+La función de activación es utilizada para limitar la amplitud de salida
+ de una neurona, y algunas veces introducir no linealidad al modelo.
+ Son cuatro tipos de funciones de activación que son muy utilizadas en ANN
+ (para mas detalle vea 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Barron"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-Treinamento Nao Supervisionado:
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Documents/tesis/thesisUNSAfinal/thesisUNSA/articlesandthesis/figures/artificialneuron.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:artificialneuron"
+
+\end_inset
+
+Esquema básico de una Neura Artificial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tres características básicas identifican a los diversos tipos de ANNs
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+La función de activación de la Neurona Artificial.
+\end_layout
+
+\begin_layout Enumerate
+La topología de la red neural(interconexión entre neuronas)
+\end_layout
+
+\begin_layout Enumerate
+Regla de aprendizaje.
+\end_layout
+
+\begin_layout Standard
+Básicamente existen dos tipos de topologías de ANNs que son ampliamente
+ usados en la literatura:
+\end_layout
+
+\begin_layout Subsubsection*
+Redes Neuronales No Recurrentes(sin memoria o 
+\emph on
+Feedforward
+\emph default
+): 
+\end_layout
+
+\begin_layout Standard
+Son aquellas redes sin conexiones entre neuronas de una misma capa, no presentan
+ realimentación de sus salidas para sus entradas.
+ La Figura() ilustra una red feedforward.
+ Donde la red posee un conjunto de nodos de entrada, que solamente distribuyen
+ los patrones de entrada para la red; una o varias capas intermedias ocultas,
+ cuyas salidas son las entradas de la capa de neuronas siguientes; y una
+ capa de salida con neuronas que procesan el resultado final de la red.
+\end_layout
+
+\begin_layout Subsubsection*
+Redes Neuronales Recurrentes:
+\end_layout
+
+\begin_layout Standard
+Son aquellas redes que contienen conexiones de realimentación.
+ En su estructura las redes neuronales recurrentes pueden presentar interconexio
+nes entre neuronas de la misma capa y entre neuronas de capas no consecutivas[18
+].
+ Como se puede ver en la Figura() su arquitectura presenta interconexiones
+ mas complejas que las redes feedforward.
+\end_layout
+
+\begin_layout Standard
+Determinar la arquitectura(número de: neuronas, capas; tipo de activación)
+ de una ANN es una elección decisiva para obtener un aprendizaje ideal,
+ esto depende de la necesidad y la tarea a cumplir en su aplicación[55].
+ Un punto crucial es el numero de neuronas por capa, aunque un mayor número
+ pueda ser beneficioso, esto puede llevar a problemas de 
+\emph on
+overffiting[28].
+ 
+\emph default
+Por otra parte, un número muy pequeño de neuronas puede no ser suficiente
+ para modelar el problema adecuadamente.
+ Por lo tanto para que una red neuronal tenga un buen desempeño, ella debe
+ ser lo suficientemente grande para aprender el problema pero también lo
+ bastante pequeña para generalizar bien
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Una red neuronal necesita pasar por un proceso de entrenamiento, esto con
+ el fin de producir una salida consistente.
+ El entrenamiento de una ANN básicamente es un algoritmo que ajusta los
+ pesos sinápticos 
+\begin_inset Formula $w_{i1},w_{i2},\ldots w_{im}$
+\end_inset
+
+, de forma que estos pesos almacenen conocimiento.
+ 
+\end_layout
+
+\begin_layout Standard
+Los procedimientos de entrenamiento pueden ser clasificados en 2 tipos:
+\end_layout
+
+\begin_layout Subsubsection*
+Entrenamiento Supervisado: 
+\end_layout
+
+\begin_layout Standard
+Los patrones de entrada contienen salidas deseadas, durante este proceso
+ las entradas son presentadas a la ANN y el valor de salida que generan
+ es comparado con la salida deseada respectiva, generando así señales de
+ error(diferencia entre las dos salidas).
+ El algoritmo de entrenamiento ajusta los pesos sinápticos con el objetivo
+ de minimizar ese error.
+ Este proceso es repetido hasta obtener un error con valor mínimo aceptable.
+\end_layout
+
+\begin_layout Subsubsection*
+Entrenamiento No Supervisado: 
+\end_layout
+
+\begin_layout Standard
+Los patrones de entrada no contienen salidas deseadas, no existe señales
+ de error, este proceso extrae las propiedades estadísticas del conjunto
+ de patrones de entrada, formando finalmente agrupaciones con patrones similares.
+\end_layout
+
+\begin_layout Standard
+Despues del entrenamiento de la red neuronal, es presentada a la misma un
+ conjunto de patrones que nunca fueron presentadas a la red, si el aprendizaje
+ fue bien realizado, la ANN tiene que ser capaz generar una salida correcta
+ para esos patrones de Test.
+ Por lo tanto se dice que una red neuronal tiene una buena capacidad de
+ genera
 \end_layout
 
 \begin_layout Section
