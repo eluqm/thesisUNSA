@@ -1,0 +1,77 @@
+#
+# FULL NAME <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-08-14 18:14-0500\n"
+"PO-Revision-Date: 2017-08-14 18:16-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: RNNunfoldprocess.svg:113(format)
+msgid "image/svg+xml"
+msgstr ""
+
+#: RNNunfoldprocess.svg:199(tspan)
+#, no-wrap
+msgid "hidden unit"
+msgstr "Unidades ocultas"
+
+#: RNNunfoldprocess.svg:210(tspan) RNNunfoldprocess.svg:706(tspan)
+#: RNNunfoldprocess.svg:805(tspan) RNNunfoldprocess.svg:816(tspan)
+#, no-wrap
+msgid "W_4"
+msgstr ""
+
+#: RNNunfoldprocess.svg:571(tspan) RNNunfoldprocess.svg:717(tspan)
+#: RNNunfoldprocess.svg:794(tspan) RNNunfoldprocess.svg:827(tspan)
+#, no-wrap
+msgid "W_3"
+msgstr ""
+
+#: RNNunfoldprocess.svg:582(tspan) RNNunfoldprocess.svg:739(tspan)
+#: RNNunfoldprocess.svg:750(tspan) RNNunfoldprocess.svg:761(tspan)
+#, no-wrap
+msgid "W_2"
+msgstr ""
+
+#: RNNunfoldprocess.svg:593(tspan) RNNunfoldprocess.svg:728(tspan)
+#: RNNunfoldprocess.svg:772(tspan) RNNunfoldprocess.svg:783(tspan)
+#, no-wrap
+msgid "W_1"
+msgstr ""
+
+#: RNNunfoldprocess.svg:845(tspan)
+#, no-wrap
+msgid "unfold"
+msgstr "Desplegar"
+
+#: RNNunfoldprocess.svg:856(tspan)
+#, no-wrap
+msgid "T=0"
+msgstr ""
+
+#: RNNunfoldprocess.svg:867(tspan)
+#, no-wrap
+msgid "T=1"
+msgstr ""
+
+#: RNNunfoldprocess.svg:878(tspan)
+#, no-wrap
+msgid "T=2"
+msgstr ""
+
+#: RNNunfoldprocess.svg:889(tspan)
+#, no-wrap
+msgid "T=3"
+msgstr ""
+
+#: RNNunfoldprocess.svg:900(tspan)
+#, no-wrap
+msgid "time"
+msgstr "Tiempo"

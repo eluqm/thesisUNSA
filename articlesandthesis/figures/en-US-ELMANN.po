@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-08-14 18:00-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: RNNewilliamandelman.svg:48(format)
+msgid "image/svg+xml"
+msgstr ""
+
+#: RNNewilliamandelman.svg:275(tspan) RNNewilliamandelman.svg:653(tspan)
+msgid "Inputs"
+msgstr ""
+
+#: RNNewilliamandelman.svg:356(tspan) RNNewilliamandelman.svg:744(tspan)
+msgid "Output"
+msgstr ""
+
+#: RNNewilliamandelman.svg:380(tspan) RNNewilliamandelman.svg:768(tspan)
+msgid "context unit"
+msgstr ""
+
+#: RNNewilliamandelman.svg:390(tspan) RNNewilliamandelman.svg:778(tspan)
+msgid "Hidden neurons"
+msgstr ""
+
+#: RNNewilliamandelman.svg:788(tspan)
+msgid "a)"
+msgstr ""
+
+#: RNNewilliamandelman.svg:798(tspan)
+msgid "b)"
+msgstr ""
+
