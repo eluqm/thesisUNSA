@@ -1607,7 +1607,7 @@ key "montgomeryestatistica"
 A continuación se presentan las pruebas de bondad de ajuste elegidas para
  ser utilizadas en ese trabajo.
  Estas pruebas son muy utilizadas en la comparación de muestras y sus modelos
- distributivos, que serán útiles para validar el modelo de esta tesis.
+ distributivos, que serán útiles para validar nuestro modelo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1624,9 +1624,16 @@ Para saber si una muestra es diferente de otra, se debe comparar varianzas
  estas deben ser estadísticamente iguales, no se deben diferenciar significativa
 mente.
  La comparación directa de las muestras no es adecuada, pues es necesario
- considerar la dispersión de estas medidas[11luciana].
- Por lo tanto, es preciso establecer se hay desvío significativo entre las
- varianzas y medias de las dos muestras.
+ considerar la dispersión de estas medidas
+\begin_inset CommandInset citation
+LatexCommand citep
+key "casella2002statistical"
+
+\end_inset
+
+.
+ Por lo tanto, es preciso establecer si existe desvío significativo entre
+ las varianzas y medias de las dos muestras.
  
 \end_layout
 
@@ -1651,14 +1658,22 @@ observaciones, el test trabaja con las siguientes hipótesis:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $H_{0}:\overline{X}_{1}-\overline{X}_{2}=0$
+\begin_inset Formula 
+\[
+H_{0}:\overline{X}_{1}-\overline{X}_{2}=0
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $H_{a}:\overline{X}_{1}-\overline{X}_{2}\neq0$
+\begin_inset Formula 
+\[
+H_{a}:\overline{X}_{1}-\overline{X}_{2}\neq0
+\]
+
 \end_inset
 
 
@@ -1717,17 +1732,31 @@ t=\frac{\left|\overline{X}_{1}-\overline{X}_{2}\right|}{\sqrt{\frac{s_{1}^{2}}{n
 \end_layout
 
 \begin_layout Standard
-Para el uso de test de significación,la distribución de la estadística del
- test es aproximada por una distribución 
+Para el uso del test de significación, la distribución de la estadística
+ del test es aproximada por una distribución 
 \emph on
-t-Student
+
+\begin_inset Formula $t$
+\end_inset
+
+-Student
 \emph default
-[luciana].
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-El análisis de este test puede basarse en el p-valor, que impide rechazar
- 
+El análisis de este test puede basarse en el 
+\begin_inset Formula $p$
+\end_inset
+
+-valor, que impide rechazar 
 \begin_inset Formula $H_{0}$
 \end_inset
 
@@ -1743,7 +1772,11 @@ Test de Kolmogorov-Smirnov
 \end_layout
 
 \begin_layout Standard
-Kolmogorov-Smirnov(K-S) es un test de bondad de ajuste no paramétrico
+Kolmogorov-Smirnov(
+\series bold
+K-S
+\series default
+) es un test de bondad de ajuste no paramétrico
 \begin_inset Foot
 status open
 
@@ -1755,9 +1788,16 @@ procedimientos matemáticos para evaluar la hipótesis estadística no haciendo
 
 \end_inset
 
-[17luciana], que compara si dos distribuciones de probabilidad difieren
- o si una distribución de probabilidad difiere de la distribución en hipótesis,
- en base a muestras finitas.
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "conover1980practical"
+
+\end_inset
+
+, que compara si dos distribuciones de probabilidad difieren o si una distribuci
+ón de probabilidad difiere de la distribución en hipótesis, en base a muestras
+ finitas.
 \end_layout
 
 \begin_layout Standard
@@ -1783,11 +1823,7 @@ de una muestra de
 \begin_inset Formula $n$
 \end_inset
 
- observaciones 
-\begin_inset Formula $X_{i}$
-\end_inset
-
-es dada por la ecuación 
+ observaciones es dada por la ecuación 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:acumuladaKS"
@@ -1846,8 +1882,15 @@ reference "eq:Ks-doble"
 
 \end_inset
 
-)[42luciana] está basada en la diferencia absoluta mayor entre la función
- de distribución acumulada 
+)
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kolmogorov_1951"
+
+\end_inset
+
+ está basada en la diferencia absoluta mayor entre la función de distribución
+ acumulada 
 \begin_inset Formula $F_{n}\left(x\right)$
 \end_inset
 
@@ -1971,33 +2014,39 @@ P\left(K\leq K_{\alpha}\right)=1-\alpha
 \end_layout
 
 \begin_layout Subsection
-Evaluación de modelos estadísticos de predicción 
+Estimadores de Primer Orden
 \end_layout
 
 \begin_layout Standard
-En las secciones anteriores, los datos se dividen a menudo en dos conjuntos
- [16].
- El primer conjunto, para estimar los parámetros del modelo.
+Además de los Test de hipótesis estadísticos a menudo los modelo de predicción
+ necesitan de los llamados estimadores de primer orden, para esto los datos
+ se dividen en dos conjuntos 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hyndman"
+
+\end_inset
+
+.
+ El primer conjunto sirve para estimar los parámetros del modelo.
  El segundo conjunto, se denomina conjunto de pruebas que contiene datos
- no vistos por el modelo que se utiliza para estimar las predicciones utilizando
+ no vistos por el modelo utilizados para estimar las predicciones usando
  los parámetros antes calculados.
  
 \end_layout
 
 \begin_layout Standard
-El conjunto de pruebas nos da una manera de probar el modelo en datos que
- no estaban disponibles para el modelo cuando se calcularon los parámetros
- por primera vez.
- A partir de esto, podemos ver el desempeño cuando el modelo realiza la
- predicción de otros datos para los cuales sabemos el resultado real con
- el fin de comparar esto con el resultado previsto.
+El conjunto de pruebas sirven para validar el modelo en datos que no estaban
+ disponibles cuando se calcularon los parámetros por primera vez.
+ A partir de esto, podemos ver el desempeño cuando el modelo realiza pronóstico
+ de otros datos para los cuales sabemos el resultado real con el fin de
+ comparar estos con el resultado previsto.
  
 \end_layout
 
 \begin_layout Standard
-Para identificar la capacidad de las predicciones de nuestro modelo, a continuac
-ión se presentan las medidas de precisión de pronóstico que serán útiles
- para validar el modelo de esta tesis.
+A continuación se presentan los estimadores de precisión de pronóstico que
+ serán útiles para validar el modelo de esta tesis.
  
 \end_layout
 
@@ -2030,8 +2079,14 @@ El error de predicción es definido como
 
 \end_inset
 
- [18] a continuación se presenta una lista de las medidas de exactitud de
- las predicciones de uso común.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "DEGOOIJER2006443"
+
+\end_inset
+
+ se presenta una lista de las medidas de exactitud de uso común.
  
 \end_layout
 
@@ -2223,9 +2278,16 @@ name "tab:accura-table"
 
 \end_inset
 
-Las medidas de precisión utilizadas con frecuencia de acuerdo a [18], no
- pueden ser usadas para hacer comparaciones entre series que están en diferentes
- escalas.
+Los estimadores de precisión utilizados con frecuencia de acuerdo a 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "DEGOOIJER2006443"
+
+\end_inset
+
+.
+ No pueden ser usadas para hacer comparaciones entre series que están en
+ diferentes escalas.
 \end_layout
 
 \end_inset
@@ -2246,7 +2308,14 @@ Todas las métricas anteriores pueden ser usadas sobre series temporales
 \series bold
 Nash-Sutcliffe
 \series default
-[ref], ampliamente usado en el campo de la hidrología[].
+, ampliamente usado en el campo de la hidrología
+\begin_inset CommandInset citation
+LatexCommand citep
+key "xu2002hydrologic"
+
+\end_inset
+
+.
  Esta medida es definida como: 
 \end_layout
 
@@ -2318,8 +2387,8 @@ Nash-Sutcliffe
 Nash-Sutcliffe
 \series default
  ha sido reportada en la literatura para modelos de simulaciones de descarga,
- y simulación de constituyentes de la calidad del agua como sedimento, nitrógeno
- y carga de fósforo
+ y simulación de los constituyentes de la calidad del agua como sedimento,
+ nitrógeno y carga de fósforo
 \begin_inset CommandInset citation
 LatexCommand citep
 key "moriasi2007model"
@@ -2364,7 +2433,7 @@ key "Vasighi"
 \end_inset
 
 .
- A continuación se describen los conceptos que vale la pena diferenciar:
+ A continuación se describen conceptos que vale la pena diferenciar:
 \end_layout
 
 \begin_layout Itemize
@@ -2450,10 +2519,6 @@ El sistema nervioso humano donde los receptores recogen información del
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -3007,6 +3072,13 @@ El desempeño de entrenamiento de una ANN también depende de la cantidad
 
 \begin_layout Subsection
 Redes Neuronales Recurrentes 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Redes-Neuronales-Recurrentes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

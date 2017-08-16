@@ -197,7 +197,7 @@ La función
 Con el fin de que nuestro modelo pueda sintetizar series temporales como
  las de tipo hidrológicas(periódicas, estacionarias) con intervalos de tiempo
  mensuales, se tienen que ajustar los parámetros no sólo en intervalos de
- tiempo de la serie, si no también en su periódo.
+ tiempo de la serie, si no también en su periodo.
  Por ejemplo, si el periodo es mensual, nuestro modelo estará compuesto
  por 12 componentes estocásticos.
  En ese caso el modelo es formado por un encadenamiento de sus componentes,
@@ -241,8 +241,8 @@ name "fig:Esquema-del-proceso"
 \end_inset
 
 Esquema del proceso estocástico propuesto, las esferas celestes y negras
- representan los componentes estocásticos y determinísticos respectivamente,
- se produce un encadenamiento entre el valor de la seríe temporal de un
+ representan los componentes estocásticos y deterministas respectivamente,
+ se produce un encadenamiento entre el valor de la serie temporal de un
  periodo que es parte de la entrada a la Red Recurrente del siguiente periodo.
 \end_layout
 
@@ -320,9 +320,12 @@ key "loucks2005water"
 
 .
  Como se señaló al principio, este componente es la misma parte estocástica
- del modelo de Thomas-Fiering, por lo tanto, en la siguiente sección se
- examina dicho modelo y sus implicaciones en la formulación final de nuestra
- propuesta.
+ del modelo de 
+\emph on
+Thomas and Fiering
+\emph default
+, por lo tanto, en la siguiente sección se examina dicho modelo y sus implicacio
+nes en la formulación final de nuestra propuesta.
  
 \end_layout
 
@@ -342,7 +345,7 @@ Claramente, "Qy1" se distribuirá normalmente si ambos "Qy" y "Vy" se distribuye
 \end_layout
 
 \begin_layout Subsection
-Proceso de Márkov de primer orden: modelo de Thomas - Fiering
+Proceso de Márkov de primer orden: modelo de Thomas and Fiering
 \end_layout
 
 \begin_layout Standard
@@ -462,7 +465,7 @@ Donde:
 \begin_inset Formula $\sigma_{t+1}$
 \end_inset
 
-, es la desviación estandar en el mes 
+, es la desviación estándar en el mes 
 \begin_inset Formula $t+1$
 \end_inset
 
@@ -1024,7 +1027,11 @@ de retroalimentación, creando así una memoria interna que es requerida para
  almacenar la historia de los patrones de entrada.
  La adición de memoria en las RNN's tiene un propósito: extraer información
  de las secuencias mismas(series temporales) y utilizarlas para realizar
- tareas que las redes de feedforward no pueden.
+ tareas que las redes de 
+\emph on
+feedforward
+\emph default
+ no pueden.
  
 \end_layout
 
@@ -1197,7 +1204,7 @@ Donde:
 
  es la función de activación de las neuronas de salida, esta es una herramienta
  estándar para condensar valores muy pequeños o muy grandes dentro de un
- espacio logistico.
+ espacio logístico.
 \end_layout
 
 \begin_layout Standard
@@ -1220,7 +1227,11 @@ reference "fig:Esquema-del-proceso"
 \begin_inset Formula $E_{t}$
 \end_inset
 
-), y la parte estocástica del modelo de Thomas-Fiering(
+), y la parte estocástica del modelo de 
+\emph on
+Thomas and Fiering
+\emph default
+(
 \begin_inset Formula $R_{t}$
 \end_inset
 
@@ -1508,7 +1519,14 @@ reference "eq:eq_general"
 \emph on
 overfitting 
 \emph default
-(ver Sección 4.1 seccion de marco conceptual).
+(ver Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Marco-Teórico"
+
+\end_inset
+
+).
  Cuanto más grande sea el espacio de las señales del reservorio 
 \begin_inset Formula $x(t)$
 \end_inset
@@ -1543,7 +1561,7 @@ Radio Espectral
 \end_layout
 
 \begin_layout Standard
-Basicamente el radio espectral controla la estabilidad y tiene impacto en
+Básicamente el radio espectral controla la estabilidad y tiene impacto en
  la capacidad de memoria del modelo.
  El radio espectral de 
 \begin_inset Formula $W$
@@ -1646,7 +1664,15 @@ key "Millea2014"
 
 , esto ocurre sólo para un ESN lineal.
  En el caso no lineal, es decir, cuando se utiliza una función de activación
- tanh 
+ 
+\emph on
+
+\begin_inset Formula $tanh$
+\end_inset
+
+
+\emph default
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:statesRNN"
@@ -1697,10 +1723,14 @@ key "Baserrech2015"
 
 \begin_layout Standard
 Finalmente, con respeto a la conectividad, cabe indicar que en este trabajo
- usamos ESNs no lineales (
+ usamos ESN's no lineales (
 \series bold
 \emph on
-tanh
+
+\begin_inset Formula $tanh$
+\end_inset
+
+
 \series default
 \emph default
  como función de activación de las neuronas).

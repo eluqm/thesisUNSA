@@ -1,0 +1,859 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+En esta sección presentamos el proceso de mapeo sistemático usado en la
+ planificación de la revisión y la estrategia para investigar, catalogar
+ y clasificar los trabajos recientes relacionados con predicción de series
+ temporales.
+ 
+\end_layout
+
+\begin_layout Section
+Planificación Y Ejecución De Mapeo Sistemático
+\end_layout
+
+\begin_layout Standard
+El enfoque de este mapeo sistemático identifica, cataloga y clasifica los
+ trabajos recientes en la literatura en el área, con el fin de contribuir
+ sustancialmente en la comprensión de los mismos.
+\end_layout
+
+\begin_layout Standard
+Las palabras clave utilizadas como 
+\emph on
+strings
+\emph default
+ de búsqueda fueron los siguientes : "
+\series bold
+Water Inflow
+\series default
+" , " 
+\series bold
+Forecasting
+\series default
+ " , “
+\series bold
+echo state network
+\series default
+”
+\end_layout
+
+\begin_layout Standard
+El método utilizado para la recolección de fuentes primarias incluye la
+ realización de búsquedas en bibliotecas digitales como ACM Digital Library
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://dl.acm.org/
+\end_layout
+
+\end_inset
+
+, IEEE Xplore Digital 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://ieeexplore.ieee.org/
+\end_layout
+
+\end_inset
+
+, SciELO(Scientific Electronic Library Online) 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.scielo.org/
+\end_layout
+
+\end_inset
+
+, DBLP(Computer Science Bibliography)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://dblp.uni-trier.de/
+\end_layout
+
+\end_inset
+
+, BDBComp (Biblioteca Digital Brasileña de Computación) 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.lbd.dcc.ufmg.br/bdbcomp/
+\end_layout
+
+\end_inset
+
+, Google Academy( Académicos), Springer 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.springer.com/gp/
+\end_layout
+
+\end_inset
+
+, Hydrology and Earth System Sciences 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.hydrology-and-earth-system-sciences.net/
+\end_layout
+
+\end_inset
+
+, American Geophysical Union(AGU)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://onlinelibrary.wiley.com/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los criterios de inclusión de los estudios se presentan a continuación:
+ 
+\end_layout
+
+\begin_layout Itemize
+Los estudios deben haber sido publicados en las conferencias, 
+\emph on
+workshops
+\emph default
+ y revistas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Los estudios deben ser escritos en Inglés, portugués o español.
+\end_layout
+
+\begin_layout Itemize
+Los estudios deben estar disponibles en la web.
+\end_layout
+
+\begin_layout Itemize
+Los estudios deben tener algunas de las cadenas de búsqueda en su título,
+ resumen/
+\emph on
+abstract
+\emph default
+ o palabras clave.
+\end_layout
+
+\begin_layout Itemize
+Los estudios deben presentar la propuesta de uno o más modelos de predicción.
+\end_layout
+
+\begin_layout Standard
+En base a los criterios mencionados el proceso de búsqueda encontró 50 estudios
+ publicados entre 2005 y 2016.
+ Estos estudios fueron seleccionados para su posterior análisis.
+ Después de leer el resumen y las conclusiones fueron preseleccionados 13
+ estudios a través de los criterios de inclusión ya mencionados.
+ De los 13 estudios preseleccionados, 6 cumplen con los criterios de calidad
+ previstos en el protocolo de revisión.
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección, se describirán los elementos seleccionados y serán
+ comparados con nuestra propuesta.
+\end_layout
+
+\begin_layout Section
+Enfoques Clásicos 
+\end_layout
+
+\begin_layout Standard
+Actualmente en la literatura existen muchos modelos para la generación y
+ previsión de variables hidrológicas (caudales, precipitación y evaporación)
+ en una determinada zona.
+ Estas variables son usadas en el planeamiento de los sistemas de gestión
+ de recursos hídricos.
+\end_layout
+
+\begin_layout Standard
+Estos modelos usan las siguientes técnicas:
+\end_layout
+
+\begin_layout Itemize
+Regresión lineal simple 
+\end_layout
+
+\begin_layout Itemize
+Regresión lineal múltiple 
+\end_layout
+
+\begin_layout Itemize
+Modelos Autorregresivos (AR) 
+\end_layout
+
+\begin_layout Itemize
+Modelos de Medias Móviles (ARMA) 
+\end_layout
+
+\begin_layout Itemize
+Modelos de Medias Móviles con variable exógena ARMA y ARMAX con parámetros
+ periódicos
+\end_layout
+
+\begin_layout Standard
+En todos estos modelos, la relación lineal entre las variables hidrológicas
+ relevantes es asumida pero no siempre da los mejores resultados, y en algunos
+ casos es inadecuado
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Raman95multivariatemodelling"
+
+\end_inset
+
+.
+ Muchos estudios emplean los modelos autorregresivos para la generación
+ y previsión de caudales, mostrando de esta forma que los modelos de bajo
+ orden reproducen satisfactoriamente las características analizadas.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, los resultados de los modelos estocásticos pueden mejorar
+ la precisión de la estimación del diseño de la capacidad de los embalses.
+ Un trabajo destacado es el de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "WRCR:WRCR8709"
+
+\end_inset
+
+, que muestra que no hay evidencia que los modelos AR(1) sean inadecuados.
+\end_layout
+
+\begin_layout Standard
+Estudios iniciales como (
+\begin_inset CommandInset citation
+LatexCommand citep
+key "JAWR:JAWR70A"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Thomas"
+
+\end_inset
+
+) describen secuencias de caudales con modelos matemáticos, los cuales pueden
+ reproducir características especiales como la periodicidad y considerar
+ los efectos de la correlación lineal.
+ La más importante contribución fue hecha por 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Thomas"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Todos estos estudios proponen que las series temporales pueden ser simuladas
+ mediante una relación lineal simple de sus valores previos.
+\end_layout
+
+\begin_layout Section
+Enfoques De Aprendizaje Automático (
+\emph on
+Machine learning
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+El problema con los modelos anteriores es que tareas como predicción son
+ tareas de naturaleza dinámica.
+ Por esta razón se buscaron alternativas en la literatura como los métodos
+ de Inteligencia artificial, entre ellos destacan las Redes Neuronales Artificia
+les (
+\series bold
+ANN
+\series default
+) que han ido creciendo como alternativas y presentando un buen desempeño
+ en la predicción de series temporales de variables hidrológicas(
+\begin_inset CommandInset citation
+LatexCommand citet
+key "WRCR:WRCR9735"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "WRCR:WRCR11667"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lcdcampos"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Awchi"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hess-20-1405-2016"
+
+\end_inset
+
+).
+ La mayoría de investigaciones que usan 
+\series bold
+ANN's
+\series default
+ como modelos de predicción, han prestado mayor atención en las denominadas
+ 
+\series bold
+ANN's 
+\series default
+\emph on
+feedforward
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, las 
+\series bold
+ANN's 
+\series default
+Recurrentes que se caracterizan por tener conexiones cíclicas en su estructura,
+ permiten un modelado más parsimonioso de propiedades dinámicas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+, es por esa razón que su capacidad de representación temporal puede ser
+ mejor que el de las 
+\series bold
+ANN's
+\series default
+ 
+\emph on
+feedforwad
+\emph default
+.
+ Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
+o en la complejidad de entrenamiento y posteriormente ocasionar problemas
+ de convergencia
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+(vea la Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Redes-Neuronales-Recurrentes"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Como una alternativa a los problemas presentes en 
+\series bold
+ANN's 
+\series default
+recurrentes tradicionales ha sido recientemente introducido el concepto
+ de 
+\emph on
+Reservoir Computing
+\emph default
+(
+\series bold
+RC
+\series default
+).
+ 
+\emph on
+Reservoir Computing 
+\emph default
+es un enfoque de entrenamiento que puede ser notablemente más simple y rápido
+ que aquellos aplicados en 
+\series bold
+ANN's
+\series default
+ recurrentes tradicionales (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "1"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Pocas aplicaciones de 
+\series bold
+RC
+\series default
+ en hidrología se han realizado hasta ahora
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-17-253-2013"
+
+\end_inset
+
+, a continuación los citamos con mas detalle: 
+\end_layout
+
+\begin_layout Itemize
+En 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Baserrech2015"
+
+\end_inset
+
+, se analiza el impacto de los parámetros de un modelo 
+\series bold
+ESN
+\series default
+(radio espectral y matriz de conectividad) para predecir series de tiempo
+ pseudo-periódicas.
+ Para este análisis se evalúa el rendimiento del modelo utilizando dos métricas,
+ una es RME.
+ Otra es una métrica que se genera usando el factor de correlación entre
+ los objetivos y los valores predichos, y la varianza de los residuos.
+ Esta métrica da una idea acerca de la capacidad de memoria del modelo.
+ Este es el primer análisis de sensibilidad de los parámetros globales de
+ ESN cuando el modelo se aplica para pronosticar series de tiempo pseudo-periódi
+cas.
+\end_layout
+
+\begin_layout Itemize
+En 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+, se usa el mas popular modelo de 
+\series bold
+RC 
+\series default
+denominado 
+\emph on
+echo state network
+\emph default
+(
+\series bold
+ESN
+\series default
+) con una regularización bayesiana para el pronóstico de la producción de
+ energía a corto plazo de plantas hidroeléctricas pequeñas (SHP).
+ Según la teoría bayesiana, los pesos de salida óptimos se obtienen mediante
+ la maximización de la distribución probabilística posterior.
+ Con el fin de validar el modelo, se emplean las 
+\series bold
+ANN's
+\series default
+ 
+\emph on
+feedforward 
+\emph default
+entrenadas con el algoritmo de 
+\emph on
+Levenberg-Marquardt 
+\emph default
+y la versión genérica de 
+\series bold
+ESN
+\series default
+.
+ Los resultados indican que el modelo propuesto supera tanto a las 
+\series bold
+ANN's 
+\series default
+\emph on
+feedforward 
+\emph default
+y 
+\series bold
+ESN
+\series default
+ en su versión simple.
+\end_layout
+
+\begin_layout Itemize
+En 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hess-17-253-2013"
+
+\end_inset
+
+, el objetivo principal de este estudio es averiguar si los modelos 
+\series bold
+ESN 
+\series default
+pueden ser considerados como una alternativa válida a los enfoques de las
+ 
+\series bold
+ANN's 
+\series default
+\emph on
+feedforwad 
+\emph default
+y 
+\series bold
+ANN's
+\series default
+ recurrentes tradicionales.
+ La capacidad de predicción de estos modelos son evaluados sobre una variedad
+ de cuencas de gran escala.
+ Los experimentos se llevan a cabo mediante la comparación de tres variaciones
+ diferentes de 
+\series bold
+ESN 
+\series default
+con dos modelos simples de referencia, dos modelos 
+\series bold
+ANN's 
+\series default
+\emph on
+feedforward
+\emph default
+, y tres 
+\series bold
+ANN's 
+\series default
+recurrentes.
+ Además, varios aspectos del diseño de 
+\series bold
+ESN's 
+\series default
+se investigan con el fin de optimizar la información hidrológicamente relevante.
+ Sus resultados demuestran que 
+\series bold
+ESN 
+\series default
+supera a las 
+\series bold
+ANN
+\emph on
+'
+\emph default
+s 
+\series default
+\emph on
+feedforward
+\emph default
+ y son competitivos con el estado del arte de las
+\series bold
+ ANN's
+\series default
+ recurrentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Otro ejemplo del uso de métodos de 
+\emph on
+Reservoir Computing
+\series bold
+\emph default
+ 
+\series default
+en la literatura es 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Coulibaly201076"
+
+\end_inset
+
+, quien utiliza 
+\series bold
+ESN's
+\series default
+ para pronosticar los niveles mensuales de agua de cuatro grandes lagos
+ Norteamericanos.
+ Se demostró que este modelo superó de manera general tanto a un modelo
+ estándar de 
+\series bold
+ANN's 
+\series default
+recurrentes así como a un modelo de 
+\series bold
+ANN's 
+\series default
+Bayesiano durante un intervalo de tiempos de pronóstico.
+ 
+\end_layout
+
+\begin_layout Itemize
+El trabajo anterior fue discutido y posteriormente ampliado en el 2012 por
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Abrahart201276"
+
+\end_inset
+
+ mediante una simple operación de evaluación comparativa lineal, los autores
+ demostraron que el buen desempeño de las redes
+\series bold
+ ESN 
+\series default
+en predicción puede ser atribuida a su estructura altamente no lineal y
+ dinámica.
+\end_layout
+
+\begin_layout Itemize
+Finalmente en 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371334"
+
+\end_inset
+
+, se utilizó el modelo más popular de 
+\series bold
+RC 
+\series default
+denominado 
+\emph on
+echo state network
+\emph default
+ 
+\series bold
+ESN
+\series default
+, como predictor con un mes de antelación, basada en los valores de flujo
+ de entrada históricos en una central hidroeléctrica de Brasil.
+ El modelo 
+\series bold
+ESN 
+\series default
+fue comparado con un modelo autorregresivo no lineal auto-organizado con
+ entrada exógena (
+\series bold
+SONARX 
+\series default
+) 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "938498"
+
+\end_inset
+
+, también con una variante 
+\series bold
+SONARX 
+\series default
+basada en una función de base radial (
+\series bold
+SONARX - RBF
+\series default
+) 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371335"
+
+\end_inset
+
+ y con el modelo adaptativo de inferencia neurodifusa (
+\series bold
+ANFIS
+\series default
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "256541"
+
+\end_inset
+
+, Se concluyó que el modelo basado en 
+\series bold
+ESN 
+\series default
+se desempeñó significativamente mejor que SONARX, y ligeramente mejor que
+ los modelos ANFIS, SONARX-RBF.
+\end_layout
+
+\begin_layout Section
+Consideraciones Finales
+\end_layout
+
+\begin_layout Standard
+Podemos apreciar que son pocos los modelos propuestos en la literatura,
+ en el estudio de series temporales hidrológicas y climatológicas, que utilizan
+ el paradigma 
+\emph on
+echo state networks
+\emph default
+(
+\series bold
+RC-ESN
+\series default
+) como alternativa a los métodos de entrenamiento en 
+\series bold
+ANN's 
+\series default
+recurrentes.
+ Muchos de los trabajos en predicción utilizan ANN's 
+\emph on
+feedfordward
+\emph default
+ y mas recientemente redes mas complejas como las redes convolucionales
+ profundas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lai2017modeling"
+
+\end_inset
+
+.
+ Por lo tanto, esta es una área promisoria de estudio.
+ Debemos considerar también, que dentro de los trabajos seleccionados descritos
+ solamente el trabajo de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+ presenta un sistema híbrido para predicción de variables hidrológicas.
+ Nuestra propuesta considera dos componentes a fin de aprovechar las ventajas
+ que un sistema híbrido nos puede brindar; el primer componente, es uno
+ determinista representado por una 
+\series bold
+ANN 
+\series default
+recurrente usando 
+\series bold
+ESN 
+\series default
+y finalmente un componente no determinista representado por un ruido aleatorio
+ con distribución normal con el fin de tener en cuenta la incertidumbre
+ que afecta típicamente procesos hidrológicos.
+\end_layout
+
+\begin_layout Standard
+En el siguiente Capítulo se describirá, a un nivel de detalle significativo,
+ nuestro nuevo modelo de proceso estocástico, sus componentes, los parámetros
+ necesarios para hacer posible su aplicabilidad en la generación de series
+ temporales hidrológicas.
+\end_layout
+
+\end_body
+\end_document

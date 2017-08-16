@@ -228,6 +228,13 @@ LatexCommand tableofcontents
 
 \begin_layout Chapter
 Introducción
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Introducción"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -262,12 +269,21 @@ filename "chapters/marcoteorico.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGORITHMS ON THE TASK
  OF PREDICTING EVENT TIMING
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 HYDROLOGIC MODELS (Lärobok i Avrinningsmodeller) (edition 2002) Chong-yu
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -282,11 +298,30 @@ name "chap:Estado-del-Arte"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/stateArt.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGOR
 \begin_inset Formula $\theta$
 \end_inset
 
 ITHMS ON THE TASK OF PREDICTING EVENT TIMING
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -332,17 +367,26 @@ filename "chapters/experiments.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 UN ESTUDIO PRELIMINAR SUGIERE QUE SE DEBEN DESCONECTAR LAS CONEXIONES DE
  RETROALIMENTACIÓN POR QUE ENTORPECEN EL DESEMPEÑO, LA ARQUITECTURA SERÍA
  COMO LA IMAGEN ...
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 We have used two different data sets.
  The first data set represents exact laboratory measurements.
  This data set was composed of a time sequence of 1 000 samples of laser
  fluctuations data, and the quality of prediction was measured by an error
  of prediction in the next 100 steps.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -356,6 +400,10 @@ name "chap:Conclusión"
 
 \end_layout
 
+\begin_layout Verbatim*
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Section
 Definición del problema
 \end_layout
@@ -368,7 +416,7 @@ Justificación
 Hipótesis 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 El modelo de proceso estocástico propuesto será capaz de modelar con mayor
  precisión problemas del mundo real como la predicción de variables hidrológicas.
  Fundamentado en el uso de nuevos métodos en la literatura para asi reducir
@@ -380,7 +428,7 @@ El modelo de proceso estocástico propuesto será capaz de modelar con mayor
 Objetivos
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -465,667 +513,6 @@ Establecer las conclusiones, contribuciones, limitaciones, y trabajo futuro
 Trabajos Relacionados
 \end_layout
 
-\begin_layout Standard
-En esta sección presentamos el mapeo sistemático realizado incluyendo también
- actividades de planificación de la revisión y la estrategia para investigar,
- catalogar y clasificar los trabajos recientes relacionados con predicción
- de series temporales.
- 
-\end_layout
-
-\begin_layout Subsection
-Planificación y ejecución de mapeo sistemático
-\end_layout
-
-\begin_layout Standard
-El enfoque de este mapeo sistemático identifica, cataloga y clasifica los
- trabajos recientes en la literatura en el área, con el fin de contribuir
- sustancialmente en la comprensión de los mismos.
-\end_layout
-
-\begin_layout Standard
-Las palabras clave utilizadas como strings de búsqueda fueron los siguientes
- : "
-\series bold
-Water Inflow
-\series default
-" , " 
-\series bold
-Forecasting
-\series default
- " , “
-\series bold
-echo state network
-\series default
-”
-\end_layout
-
-\begin_layout Standard
-El método utilizado para la recolección de fuentes primarias incluye la
- realización de búsquedas en bibliotecas digitales como ACM Digital Library
- 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://dl.acm.org/
-\end_layout
-
-\end_inset
-
-, IEEE Xplore Digital 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://ieeexplore.ieee.org/
-\end_layout
-
-\end_inset
-
-, SciELO(Scientific Electronic Library Online) 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.scielo.org/
-\end_layout
-
-\end_inset
-
-, DBLP(Computer Science Bibliography)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://dblp.uni-trier.de/
-\end_layout
-
-\end_inset
-
-, BDBComp (Biblioteca Digital Brasileña de Computación) 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.lbd.dcc.ufmg.br/bdbcomp/
-\end_layout
-
-\end_inset
-
-, Google Academy( Académicos), Springer 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.springer.com/gp/
-\end_layout
-
-\end_inset
-
-, Hydrology and Earth System Sciences 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.hydrology-and-earth-system-sciences.net/
-\end_layout
-
-\end_inset
-
-, American Geophysical Union(AGU)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://onlinelibrary.wiley.com/
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Los criterios de inclusión de los estudios se presentan a continuación:
- 
-\end_layout
-
-\begin_layout Itemize
-Los estudios deben haber sido publicados en las conferencias, workshops
- y revistas.
- 
-\end_layout
-
-\begin_layout Itemize
-Los estudios deben ser escritos en Inglés, portugués o español.
-\end_layout
-
-\begin_layout Itemize
-Los estudios deben estar disponibles en la web.
-\end_layout
-
-\begin_layout Itemize
-Los estudios deben tener algunas de las cadenas de búsqueda en su título,
- resumen/ abstract o palabras clave.
-\end_layout
-
-\begin_layout Itemize
-Los estudios deben presentar la propuesta de uno o más modelos de predicción.
-\end_layout
-
-\begin_layout Standard
-En base a los criterios mencionados el proceso de búsqueda encontró 50 estudios
- publicados entre 2005 y 2015.
- Estos estudios fueron seleccionados para su posterior análisis.
- Después de leer el resumen y las conclusiones fueron preseleccionados 13
- estudios a través de los criterios de inclusión ya mencionados.
- De los 13 estudios preseleccionados, 5 cumplen con los criterios de calidad
- previstos en el protocolo de revisión.
-\end_layout
-
-\begin_layout Standard
-En la siguiente sección, se describirán los elementos seleccionados y se
- compara estos con nuestra propuesta.
-\end_layout
-
-\begin_layout Subsection
-Enfoques Clásicos 
-\end_layout
-
-\begin_layout Standard
-Actualmente en la literatura existen muchos modelos para la generación y
- previsión de variables hidrológicas (caudales, precipitacion y evaporacion)
- en una determinada zona.
- Estas variables son usadas en el planeamiento de los sistemas de gestión
- de recursos hídricos.
-\end_layout
-
-\begin_layout Standard
-Estos modelos pueden usar las siguientes técnicas:
-\end_layout
-
-\begin_layout Itemize
-Regresión lineal simple 
-\end_layout
-
-\begin_layout Itemize
-Regresión lineal multiple 
-\end_layout
-
-\begin_layout Itemize
-Modelos Autorregresivos (AR) 
-\end_layout
-
-\begin_layout Itemize
-Modelos de Medias Móviles (ARMA) 
-\end_layout
-
-\begin_layout Itemize
-Modelos de Medias Móviles con variable exógena ARMA y ARMAX con parametros
- periódicos
-\end_layout
-
-\begin_layout Standard
-En todos estos modelos, la relación lineal entre las variables hidrológicas
- relevantes es asumida pero no siempre da los mejores resultados, y en algunos
- casos es inadecuado
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Raman95multivariatemodelling"
-
-\end_inset
-
-.
- Muchos estudios emplean los modelos autorregresivos para la generación
- y previsión de caudales, mostrando de esta forma que los modelos de bajo
- orden reproducen satisfactoriamente las características analizadas.
-\end_layout
-
-\begin_layout Standard
-Por otro lado, los resultados de los modelos estocásticos de caudales pueden
- mejorar la precisión de la estimación del diseño de la capacidad de los
- embalses.
- Un trabajo destacado es el de 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "WRCR:WRCR8709"
-
-\end_inset
-
- que muestra que no hay evidencia que los modelos AR(1) multivariados sean
- inadecuados(Thomas Fiering es un modelo AR(1) con coeficientes que varían
- estacionalmente).
-\end_layout
-
-\begin_layout Standard
-Estudios iniciales como (
-\begin_inset CommandInset citation
-LatexCommand citep
-key "JAWR:JAWR70A"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Thomas"
-
-\end_inset
-
-) describen secuencias de caudales con modelos matemáticos, los cuales pueden
- reproducir características especiales como la periodicidad y considerar
- los efectos de la correlación lineal.
- La más importante contribución fue hecha por Thomas y Fiering 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Thomas"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Todos estos estudios proponen que caudales pueden ser simulados mediante
- una relación lineal simple con caudales previos.
-\end_layout
-
-\begin_layout Subsection
-Enfoques de aprendizaje automático (Machine learning)
-\end_layout
-
-\begin_layout Standard
-El problema con los modelos anteriores es que tareas como predicción son
- tareas de naturaleza dinámica.
- Por esta razón se buscaron alternativas en la literatura como los métodos
- de Inteligencia artificial, entre ellos destacan las Redes Neuronales Artificia
-les (
-\series bold
-RNA
-\series default
-) que han ido creciendo como alternativas y presentando un buen desempeño
- en la predicción de series temporales de variables hidrológicas(
-\begin_inset CommandInset citation
-LatexCommand citet
-key "WRCR:WRCR9735"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "WRCR:WRCR11667"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Awchi"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "hess-20-1405-2016"
-
-\end_inset
-
-).
- La mayoría de investigaciones que usan 
-\series bold
-RNA's
-\series default
- como modelos de predicción, han prestado mayor atención en las denominadas
- 
-\series bold
-RNA's 
-\series default
-feedforward.
- 
-\end_layout
-
-\begin_layout Standard
-Por otra parte, las 
-\series bold
-RNA's 
-\series default
-Recurrentes tienen conexiones cíclicas en su estructura que permite un modelado
- más parsimonioso de propiedades dinámicas 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "hess-17-253-2013"
-
-\end_inset
-
-, es por esa razón que su capacidad de representación temporal puede ser
- mejor que el de las 
-\series bold
-RNA's
-\series default
- feedforwad.
- Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
-o en la complejidad de entrenamiento y posteriormente ocasionar problemas
- de convergencia
-\begin_inset CommandInset citation
-LatexCommand citep
-key "LukoseviciusJaeger09"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Como una alternativa a estos problemas presentes en 
-\series bold
-RNA's 
-\series default
-recurrentes tradicionales ha sido recientemente introducido el concepto
- de Reservoir Computing (
-\series bold
-RC
-\series default
-).
- Reservoir Computing es un enfoque de entrenamiento que puede ser notablemente
- más simple y rápido que aquellos aplicados en 
-\series bold
-RNA's
-\series default
- recurrentes tradicionales(
-\begin_inset CommandInset citation
-LatexCommand citet
-key "1"
-
-\end_inset
-
-, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "LukoseviciusJaeger09"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-Pocas aplicaciones de 
-\series bold
-RC
-\series default
- en hidrología se han realizado hasta ahora
-\begin_inset CommandInset citation
-LatexCommand citep
-key "hess-17-253-2013"
-
-\end_inset
-
-, a continuación los citamos con mas detalle: 
-\end_layout
-
-\begin_layout Itemize
-En 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "en81012228"
-
-\end_inset
-
-, se usa el mas popular modelo de 
-\series bold
-RC 
-\series default
-denominado echo state network (
-\series bold
-ESN
-\series default
-) con una regularización bayesiana para el pronóstico de la producción de
- energía a corto plazo de plantas hidroeléctricas pequeñas (SHP).
- Según la teoría bayesiana, los pesos de salida óptimos se obtienen mediante
- la maximización de la distribución probabilística posterior.
- Con el fin de validar el modelo, se emplean las 
-\series bold
-RNA's
-\series default
- feedforward con el algoritmo de Levenberg-Marquardt y la version genérica
- de 
-\series bold
-ESN
-\series default
-.
- Los resultados indican que el modelo propuesto supera tanto a las 
-\series bold
-RNA's 
-\series default
-feedforward y 
-\series bold
-ESN
-\series default
- en su versión simple.
-\end_layout
-
-\begin_layout Itemize
-En 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "hess-17-253-2013"
-
-\end_inset
-
-, el objetivo principal de este estudio es averiguar si los modelos 
-\series bold
-ESN 
-\series default
-pueden ser considerados como una alternativa válida a los enfoques de las
- 
-\series bold
-RNA's 
-\series default
-feedforwad y recurrentes tradicionales.
- La capacidad de predicción de estos modelos son evaluados sobre una variedad
- de cuencas de gran escala.
- Los experimentos se llevan a cabo mediante la comparación de tres variaciones
- diferentes de 
-\series bold
-ESN 
-\series default
-con dos modelos simples de referencia, dos modelos 
-\series bold
-RNA's 
-\series default
-feedforward, y tres 
-\series bold
-RNA's 
-\series default
-recurrentes.
- Además, varios aspectos del diseño de 
-\series bold
-ESN's 
-\series default
-se investigan con el fin de optimizar la información hidrológicamente relevante.
- Sus resultados demuestran que 
-\series bold
-ESN 
-\series default
-supera a las 
-\series bold
-RNA's 
-\series default
-feedforward y son competitivos con el estado del arte de las
-\series bold
- RNA's
-\series default
- recurrentes.
- 
-\end_layout
-
-\begin_layout Itemize
-Otro ejemplo del uso de métodos de 
-\series bold
-Reservoir Computing 
-\series default
-en la literatura es 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Coulibaly201076"
-
-\end_inset
-
-, quien utiliza 
-\series bold
-ESN's
-\series default
- para pronosticar los niveles mensuales de agua de cuatro Grandes Lagos
- de Norteamérica.
- Se demostró que este modelo superó de manera general tanto a un modelo
- estándar de 
-\series bold
-RNA's 
-\series default
-recurrentes asi como a un modelo de 
-\series bold
-RNA's 
-\series default
-Bayesiano durante un intervalo de tiempos de pronóstico.
- 
-\end_layout
-
-\begin_layout Itemize
-El trabajo anterior fue discutido y posteriormente ampliado en el 2012 por
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Abrahart201276"
-
-\end_inset
-
- mediante una simple operación de evaluación comparativa lineal, los autores
- demostraron que el buen desempeño de las redes
-\series bold
- ESN 
-\series default
-en predicción puede ser atribuída a su estructura altamente no lineal y
- dinámica.
-\end_layout
-
-\begin_layout Itemize
-Finalmente en 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "4371334"
-
-\end_inset
-
-, se utilizó el modelo más popular de 
-\series bold
-RC 
-\series default
-denominado echo state network 
-\series bold
-ESN
-\series default
-, como predictor con un mes de antelación, basada en los valores de flujo
- de entrada históricos en una central hidroeléctrica de Brasil.
- El modelo 
-\series bold
-ESN 
-\series default
-fue comparado con un modelo auto-rregresivo no lineal auto-organizado con
- entrada exógena (
-\series bold
-SONARX 
-\series default
-) 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "938498"
-
-\end_inset
-
-, tambien con una variante 
-\series bold
-SONARX 
-\series default
-basada en una función de base radial (
-\series bold
-SONARX - RBF
-\series default
-) 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "4371335"
-
-\end_inset
-
- y con el modelo adaptativo de inferencia neurodifusa (
-\series bold
-ANFIS
-\series default
-) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "256541"
-
-\end_inset
-
-, Se concluyó que el modelo basado en 
-\series bold
-ESN 
-\series default
-se desempeñó significativamente mejor que SONARX, y ligeramente mejor que
- los modelos ANFIS, SONARX-RBF.
-\end_layout
-
-\begin_layout Standard
-Podemos apreciar en la literatura que los modelos que usan el concepto de
- 
-\series bold
-ESN
-\series default
- (echo state networks) como alternativa a los métodos de entrenamiento en
- 
-\series bold
-RNA's 
-\series default
-recurrentes son muy pocos en el estudio de series temporales hidrológicas
- y climatologicas, siendo así, este un área joven de estudio.
- Además, dentro de los trabajos seleccionados descritos solamente el trabajo
- de 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "en81012228"
-
-\end_inset
-
- presenta un sistema híbrido para predicción de variables hidrológicas.
- Nuestra propuesta de modelo considera dos componentes; uno determinístico
- representado por una 
-\series bold
-RNA 
-\series default
-recurrente usando 
-\series bold
-ESN 
-\series default
-y finalmente un componente no determinístico representado por un ruido aleatorio
- con distribución normal con el fin de tener en cuenta la incertidumbre
- que afecta típicamente procesos hidrológicos, tratando de aprovechar de
- esta manera las ventajas que un sistema hibrido nos puede brindar.
-\end_layout
-
 \begin_layout Section
 Diseño de Investigación
 \end_layout
@@ -1134,7 +521,7 @@ Diseño de Investigación
 Tipo de Investigación
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Corresponde al tipo experimental por que está limitado a temas en los cuales
  el investigador puede manipular la situación, en nuestro caso podemos manipular
  el modelo que estamos estudiando y proponiendo.
@@ -1146,7 +533,7 @@ Corresponde al tipo experimental por que está limitado a temas en los cuales
 Población y Muestra 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 La subcuenca del río Chili o sistema chili regulado comprende sitios en
  los cuales se encuentran obras de regulación y trasbase(embalses Aguada
  Blanca, el Fraile, El Pañe) y los lugares de aprovechamiento de recurso
@@ -1154,7 +541,7 @@ La subcuenca del río Chili o sistema chili regulado comprende sitios en
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 En este trabajo se tomará como muestra y entrada de nuestro modelo los registros
  históricos de estaciones de mediciones reales: como el 
 \series bold
@@ -1168,7 +555,7 @@ Frayle
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Estos registros comprenderán una muestra entre los años 1970 hasta 2010.
 \end_layout
 
@@ -1180,7 +567,7 @@ Variables de Estudio
 Variable Independiente
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Modelo híbrido de proceso estocástico aplicado a predicción de variables
  hidrológicas como caudales, precipitación y evaporación.
 \end_layout
@@ -1205,7 +592,7 @@ Complejidad en la estructura del modelo
 Tiempo de ejecución 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Se medirá la média, desviación estándar, asimetría para todos los experimentos
  de los modelos a comparar (
 \begin_inset CommandInset citation
@@ -1282,7 +669,7 @@ Presentación en un evento nacional o internacional.
 Impacto de los Resultados 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Se puede usar el nuevo modelo como complemento en las tareas de análisis
  de escenarios junto a los modelos tradicionales, por su sencillez esto
  permitirá a un administrador/tomador de decisión elegir técnicas apropiadas
@@ -1297,7 +684,7 @@ te).
 imagenes 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -1326,16 +713,12 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -1344,6 +727,11 @@ status open
 
 \backslash
 sloppy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
