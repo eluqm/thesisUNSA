@@ -1,0 +1,68 @@
+#
+# FULL NAME <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-09-06 03:02-0500\n"
+"PO-Revision-Date: 2017-09-06 03:06-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: ESNstructure.svg:111(format)
+msgid "image/svg+xml"
+msgstr ""
+
+#: ESNstructure.svg:197(tspan)
+#, no-wrap
+msgid "Dynamical Reservoir"
+msgstr "Reservorio Dinámico"
+
+#: ESNstructure.svg:543(tspan)
+#, no-wrap
+msgid "Read-out"
+msgstr "Capa de Salida"
+
+#: ESNstructure.svg:554(tspan)
+#, no-wrap
+msgid "Input Layer"
+msgstr "Capa de entrada"
+
+#: ESNstructure.svg:565(tspan)
+#, no-wrap
+msgid "Trained:"
+msgstr "Entrenado:"
+
+#: ESNstructure.svg:595(tspan)
+#, no-wrap
+msgid "y(n)"
+msgstr ""
+
+#: ESNstructure.svg:606(tspan)
+#, no-wrap
+msgid "x(n)"
+msgstr ""
+
+#: ESNstructure.svg:617(tspan)
+#, no-wrap
+msgid "u(n)"
+msgstr ""
+
+#: ESNstructure.svg:628(tspan)
+#, no-wrap
+msgid "W_out"
+msgstr ""
+
+#: ESNstructure.svg:639(tspan)
+#, no-wrap
+msgid "W"
+msgstr ""
+
+#: ESNstructure.svg:650(tspan)
+#, no-wrap
+msgid "W_in"
+msgstr ""

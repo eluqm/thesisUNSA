@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-09-06 04:21-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: propose_model.svg:267(format)
+msgid "image/svg+xml"
+msgstr ""
+
+#: propose_model.svg:395(tspan) propose_model.svg:1779(tspan)
+#, no-wrap
+msgid "Dynamical Reservoir"
+msgstr ""
+
+#: propose_model.svg:729(tspan)
+#, no-wrap
+msgid "Bias"
+msgstr ""
+
+#: propose_model.svg:1162(tspan) propose_model.svg:2320(tspan) propose_model.svg:2628(tspan) propose_model.svg:3005(tspan) propose_model.svg:3313(tspan)
+#, no-wrap
+msgid "2"
+msgstr ""
+
+#: propose_model.svg:1173(tspan)
+#, no-wrap
+msgid "Stochastic componet"
+msgstr ""
+
+#: propose_model.svg:1184(tspan) propose_model.svg:2595(tspan) propose_model.svg:3280(tspan)
+#, no-wrap
+msgid "1"
+msgstr ""
+
+#: propose_model.svg:1195(tspan)
+#, no-wrap
+msgid "Deterministic component"
+msgstr ""
+
+#: propose_model.svg:2304(tspan) propose_model.svg:2562(tspan) propose_model.svg:2989(tspan) propose_model.svg:3247(tspan)
+msgid "0"
+msgstr ""
+
+#: propose_model.svg:2336(tspan) propose_model.svg:3021(tspan)
+msgid "4"
+msgstr ""
+
+#: propose_model.svg:2352(tspan) propose_model.svg:3037(tspan)
+msgid "6"
+msgstr ""
+
+#: propose_model.svg:2368(tspan) propose_model.svg:3053(tspan)
+msgid "8"
+msgstr ""
+
+#: propose_model.svg:2385(tspan) propose_model.svg:3070(tspan)
+msgid "10"
+msgstr ""
+
+#: propose_model.svg:2402(tspan) propose_model.svg:3087(tspan)
+msgid "12"
+msgstr ""
+
+#: propose_model.svg:2579(tspan) propose_model.svg:3264(tspan)
+msgid "0.5"
+msgstr ""
+
+#: propose_model.svg:2612(tspan) propose_model.svg:3297(tspan)
+msgid "1.5"
+msgstr ""
+
+#: propose_model.svg:2645(tspan) propose_model.svg:3330(tspan)
+msgid "2.5"
+msgstr ""
+
+#: propose_model.svg:2661(tspan) propose_model.svg:3346(tspan)
+msgid "3"
+msgstr ""
+
+#: propose_model.svg:3626(tspan) propose_model.svg:3637(tspan) propose_model.svg:3648(tspan)
+#, no-wrap
+msgid "..."
+msgstr ""
+
