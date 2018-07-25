@@ -75,7 +75,15 @@
 \begin_body
 
 \begin_layout Section
-Descripción del Modelo
+Descripción del Modelo MEESN
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "MEESN"
+description "Modelo Estocástico ESN"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -127,8 +135,8 @@ key "xu2002hydrologic"
 \begin_layout Standard
 El modelo tiene la finalidad de generar escenarios de datos sintéticos hidrológi
 cos, en términos de intervalos mensuales, para esto se utilizó una arquitectura
- basada en Redes Neuronales Recurrentes (RNN) como el componente determinista;
- el uso de RNN permite que nuestro modelo sea no-lineal capaz de capturar
+ basada en Redes Neuronales Recurrentes (RNAR) como el componente determinista;
+ el uso de RNAR permite que nuestro modelo sea no-lineal capaz de capturar
  las características de una serie temporal sin la necesidad de realizar
  algún tipo de suposición a priori como retirar algunas características
  de tendencia o periodicidad.
@@ -140,8 +148,11 @@ El componente estocástico
 \begin_inset Formula $R_{t}$
 \end_inset
 
-, es la misma parte estocástica del modelo de Thomas-Fiering que se discutirá
- más adelante.
+, es la misma parte estocástica del modelo de 
+\emph on
+Thomas & Fiering
+\emph default
+.
  Los dos componentes se calculan sobre las series de tiempo normalizadas
  y estandarizadas.
  La forma final del modelo puede resumirse como la suma de ambos componentes,
@@ -174,14 +185,21 @@ Donde:
 \begin_inset Formula $E_{v,t}$
 \end_inset
 
-, son los valores producidos por la RNN, 
+, son los valores producidos por la RNAR, 
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $R_{v,t}$
 \end_inset
 
-, es el componente estocástico representado por las ecuaciones (6 y 8).
+, es el componente estocástico representado por las ecuaciones (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:randomCom"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
@@ -189,19 +207,18 @@ La función
 \begin_inset Formula $f$
 \end_inset
 
- representa la inversa de las transformaciones de preprocesamiento definidas
- por las ecuaciones (10 y 12).
+ representa la inversa de las transformaciones de preprocesamiento.
 \end_layout
 
 \begin_layout Standard
-Con el fin de que nuestro modelo pueda sintetizar series temporales como
- las de tipo hidrológicas(periódicas, estacionarias) con intervalos de tiempo
- mensuales, se tienen que ajustar los parámetros no sólo en intervalos de
- tiempo de la serie, si no también en su periodo.
+Para que nuestro modelo pueda sintetizar series temporales como las de tipo
+ hidrológicas(periódicas, estacionarias) con intervalos de tiempo mensuales,
+ se tienen que ajustar los parámetros no sólo en intervalos de tiempo de
+ la serie, si no también en su periodo.
  Por ejemplo, si el periodo es mensual, nuestro modelo estará compuesto
  por 12 componentes estocásticos.
  En ese caso el modelo es formado por un encadenamiento de sus componentes,
- entre el valor de entrada a la RNN(componente determinista) y el siguiente
+ entre el valor de entrada a la RNAR(componente determinista) y el siguiente
  periodo, como se puede observar en la figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -221,7 +238,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/eschema_model.pdf
+	filename ../figures/eschema_model.pdf
 	lyxscale 50
 	scale 20
 
@@ -322,7 +339,7 @@ key "loucks2005water"
  Como se señaló al principio, este componente es la misma parte estocástica
  del modelo de 
 \emph on
-Thomas and Fiering
+Thomas & Fiering
 \emph default
 , por lo tanto, en la siguiente sección se examina dicho modelo y sus implicacio
 nes en la formulación final de nuestra propuesta.
@@ -345,7 +362,7 @@ Claramente, "Qy1" se distribuirá normalmente si ambos "Qy" y "Vy" se distribuye
 \end_layout
 
 \begin_layout Subsection
-Proceso de Márkov de primer orden: modelo de Thomas and Fiering
+Proceso de Márkov de primer orden: modelo de Thomas & Fiering
 \end_layout
 
 \begin_layout Standard
@@ -449,7 +466,7 @@ reference "fig:Random"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-R_{t+1}=\epsilon\times\sigma_{t+1}\times\sqrt{\left(1-r_{t}^{2}\right)}
+R_{t+1}=\epsilon\times\sigma_{t+1}\times\sqrt{\left(1-r_{t}^{2}\right)}\label{eq:randomCom}
 \end{equation}
 
 \end_inset
@@ -537,7 +554,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/thomas_fiering_random_es.pdf
+	filename ../figures/thomas_fiering_random_es.pdf
 	scale 40
 
 \end_inset
@@ -1004,11 +1021,11 @@ Finalmente para generar series de tiempo sintéticas se repite el procedimiento,
 \end_layout
 
 \begin_layout Standard
-En este trabajo se usó una topología recurrente de Redes Neuronales(RNN)
+En este trabajo se usó una topología recurrente de Redes Neuronales(RNAR)
  como componente determinista, pero el modelo propuesto no se limita sólo
  a ese tipo de Redes neuronales.
  Pueden usarse otras arquitecturas de RNA en su lugar.
- Las razones de la elección de RNN para generación de series temporales
+ Las razones de la elección de RNAR para generación de series temporales
  en este trabajo se abordan a continuación.
  
 \end_layout
@@ -1018,14 +1035,18 @@ Componente Determinista
 \end_layout
 
 \begin_layout Standard
-Conforme a lo anterior, las Redes Neuronales Recurrentes(RNN) se distinguen
- de las redes feedforward por presentar 
+Conforme a lo anterior, las Redes Neuronales Recurrentes(RNAR) se distinguen
+ de las redes 
+\emph on
+feedforward
+\emph default
+ por presentar 
 \series bold
 bucles 
 \series default
 de retroalimentación, creando así una memoria interna que es requerida para
  almacenar la historia de los patrones de entrada.
- La adición de memoria en las RNN's tiene un propósito: extraer información
+ La adición de memoria en las RNAR's tiene un propósito: extraer información
  de las secuencias mismas(series temporales) y utilizarlas para realizar
  tareas que las redes de 
 \emph on
@@ -1039,10 +1060,18 @@ feedforward
 Esa información secuencial es preservada en los 
 \series bold
 \emph on
-estados internos ó unidades de procesamiento(PEs)
+estados internos ó unidades de procesamiento(PEs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PEs"
+description "Unidades de Procesamiento\\\\"
+
+\end_inset
+
+)
 \series default
 \emph default
- de la RNN, y permite manejar valores en el tiempo 
+ de la RNAR, y permite manejar valores en el tiempo 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1066,7 +1095,7 @@ A fin de obtener un determinado valor para la serie en el instante de tiempo
 \begin_inset Formula $t$
 \end_inset
 
-, en nuestro modelo la RNN recibe como entrada los valores en el instante
+, en nuestro modelo la RNAR recibe como entrada los valores en el instante
  de tiempo 
 \begin_inset Formula $t-1$
 \end_inset
@@ -1088,7 +1117,7 @@ reference "fig:EsquemaRNN"
 \begin_inset Formula $y_{t}$
 \end_inset
 
-, las unidades internas de procesamiento(PEs) o 
+, las PEs o 
 \series bold
 \emph on
 echo states
@@ -1170,7 +1199,7 @@ Donde:
 \end_layout
 
 \begin_layout Standard
-La salida de la RNN es calculada de acuerdo a la ecuación:
+La salida de la RNAR es calculada de acuerdo a la ecuación:
 \end_layout
 
 \begin_layout Standard
@@ -1223,13 +1252,13 @@ reference "fig:Esquema-del-proceso"
 \begin_inset Formula $t$
 \end_inset
 
- es dada por la suma de la salida de nuestra RNN(
+ es dada por la suma de la salida de nuestra RNAR(
 \begin_inset Formula $E_{t}$
 \end_inset
 
 ), y la parte estocástica del modelo de 
 \emph on
-Thomas and Fiering
+Thomas & Fiering
 \emph default
 (
 \begin_inset Formula $R_{t}$
@@ -1323,7 +1352,7 @@ Esquema detallado de unidades internas (neuronas) de una Red Neuronal Recurrente
 
 \begin_layout Standard
 Conforme a lo mencionado en secciones anteriores, ocurre un encadenamiento
- de componentes, entre el valor de entrada a la RNN(
+ de componentes, entre el valor de entrada a la RNAR(
 \begin_inset Formula $Y_{t+1}$
 \end_inset
 
@@ -1345,7 +1374,7 @@ reference "fig:Esquema-del-proceso"
 
 .
  Esta información secuencial es preservada en los estados internos de la
- RNN(
+ RNAR(
 \begin_inset Formula $x(t)$
 \end_inset
 
@@ -1355,7 +1384,7 @@ reference "fig:Esquema-del-proceso"
 \begin_inset Quotes sld
 \end_inset
 
-ventanas
+ventana
 \begin_inset Quotes srd
 \end_inset
 
@@ -1381,7 +1410,7 @@ key "lcdcampos,Awchi,herrera2013modelo"
 \begin_layout Standard
 A menudo el uso de Redes Neuronales implica la tarea de estimar un gran
  número de parámetros, relacionados a su estructura y desempeño.
- En este trabajo se utiliza un caso especial de RNN que fue desarrollado
+ En este trabajo se utiliza un caso especial de RNAR-esn que fue desarrollado
  bajo el nombre de 
 \emph on
 Reservoir Computing
@@ -1517,16 +1546,9 @@ reference "eq:eq_general"
  siempre y cuando se tomen las medidas de regularización apropiadas contra
  el 
 \emph on
-overfitting 
+overfitting
 \emph default
-(ver Sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Marco-Teórico"
-
-\end_inset
-
-).
+.
  Cuanto más grande sea el espacio de las señales del reservorio 
 \begin_inset Formula $x(t)$
 \end_inset
@@ -1541,7 +1563,7 @@ reference "chap:Marco-Teórico"
 
 \begin_layout Standard
 Dado que el entrenamiento y la ejecución de un ESN es computacionalmente
- barato en comparación con otros enfoques RNN, los tamaños del reservorio
+ barato en comparación con otros enfoques RNAR, los tamaños del reservorio
  de orden 
 \begin_inset Formula $10^{4}$
 \end_inset
@@ -1758,15 +1780,12 @@ key "LukoseviciusJaeger09"
 
 , para definir las matrices del reservorio, esto debido a que el costo computaci
 onal del procesamiento de matrices densas es mayor al costo de procesamiento
- de matrices esparsa.
- Por lo tanto y basados un estudio preliminar (vea Sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Usando-Bases-Ortonormales"
-
-\end_inset
-
-), se consideró la 
+ de matrices 
+\emph on
+esparsa
+\emph default
+.
+ Por lo tanto y basados un estudio preliminar, se consideró la 
 \series bold
 inicialización aleatoria
 \series default
@@ -2055,7 +2074,14 @@ reference "alg:parametros"
 
  no significa ningún aumento sustancial en las demandas computacionales,
  ya que todo el proceso de formación ESN es sólo el cálculo de una matriz
- pseudo inversa(ref).
+ pseudo inversa
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kuna2015"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -2123,7 +2149,7 @@ Consideraciones Finales
 \end_layout
 
 \begin_layout Standard
-En este capítulo tratamos de dar una visión detallada del modelo propuesto
+En este informe tratamos de dar una visión detallada del modelo propuesto
  por nuestro trabajo.
  Se pueden obtener reflexiones teóricas sobre el funcionamiento interno
  de los componentes de nuestra propuesta.
@@ -2134,12 +2160,9 @@ En este capítulo tratamos de dar una visión detallada del modelo propuesto
  que tienen la capacidad de tener memoria interna resultante de sus conexiones
  de retroalimentación, característica muy potente en la literatura de redes
  neuronales.
- También se fundamenta las razones de optimizar 2 parámetros por encima
- de otros en el diseño de ESN.
- El próximo capítulo presenta los resultados obtenidos en el estudio de
- caso de este trabajo, mostrando las configuraciones de los modelos usados
- para generar escenarios hidrológicos y los resultados del análisis de esos
- escenarios.
+ También se fundamenta las razones de optimizar 2 parámetros (radio espectral
+ y tamaño del reservorio) por encima de otros en el diseño de ESN.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2267,7 +2290,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/propose_model.pdf
+	filename ../figures/propose_model-as-ES.pdf
 	lyxscale 7
 	scale 4.7
 
@@ -2286,7 +2309,13 @@ name "fig:Generación-de-escenarios"
 
 \end_inset
 
-Generación de escenarios detalles del modelo 
+Generación de escenarios sintéticos, se observa en detalle el nuevo modelo
+ 
+\series bold
+MEESN
+\series default
+ en este trabajo.
+ 
 \end_layout
 
 \end_inset

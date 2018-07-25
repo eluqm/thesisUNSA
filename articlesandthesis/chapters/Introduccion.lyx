@@ -119,8 +119,9 @@ La Pérdida de agua de riego hasta en un 50% por ineficiencia en uso y distribuc
 \end_layout
 
 \begin_layout Standard
-Por lo tanto la necesidad de modelos eficientes y efectivos en la generación
- de escenarios de predicción basados en variables hidrológicas es una realidad.
+Por lo tanto cada vez es más difícil ignorar la necesidad de modelos eficientes
+ y efectivos en la generación de escenarios de predicción basados en variables
+ hidrológicas.
  Actualmente se proponen modelos basados en conceptos de inteligencia artificial
  como las Redes Neuronales Artificiales que permiten representar tareas
  de naturaleza dinámica (predicción de variables hidrológicas) con mejor
@@ -167,7 +168,15 @@ key "LukoseviciusJaeger09"
 \end_inset
 
 .
- 
+ Debido a lo anterior mencionado, esta investigación representa un intento
+ de responder a la siguiente pregunta: ¿Puede ser considerada como alternativa
+ válida un modelo de generación de escenarios para predicción de variables
+ hidrológicas basado en Redes Neuronales Recurrentes, usando nuevos métodos
+ como 
+\series bold
+ESN
+\series default
+ para reducir la complejidad en su construcción?.
 \end_layout
 
 \begin_layout Section
@@ -245,10 +254,18 @@ key "maceira2"
 
 \begin_layout Standard
 Entre las metodologías que intentar modelar problemas complejos no lineales
- actualmente las Redes Neuronales Artificiales (
+ actualmente, las Redes Neuronales Artificiales (
 \series bold
 RNA
 \series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RNA"
+description "Redes Neuronales Artificiales\\\\"
+
+\end_inset
+
 )
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -354,14 +371,41 @@ RNA
 \end_layout
 
 \begin_layout Standard
-A partir de lo anterior mencionado se motiva en este proyecto la elaboración
- de un nuevo modelo de proceso estocástico utilizando Redes Neuronales Artificia
-les Recurrentes a fin de aprovechar sus ventajas sobre RNA feedforward.
- Para esto, se aplicará un enfoque recientemente introducido denominado
- Reservoir Computing (
+Lo anterior mencionado motivó en este proyecto la elaboración de un nuevo
+ modelo de proceso estocástico utilizando Redes Neuronales Artificiales
+ Recurrentes (
+\series bold
+RNAR
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RNAR"
+description "Redes Neuronales Artificiales Recurrentes"
+
+\end_inset
+
+) a fin de aprovechar sus ventajas sobre las RNA's feedforward.
+ Para esto, se aplicó un paradigma típico de 
+\series bold
+RNAR
+\series default
+ introducido denominado 
+\emph on
+Reservoir Computing 
+\emph default
+(
 \series bold
 RC
 \series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RC"
+description "Reservoir Computing"
+
+\end_inset
+
 )
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -377,11 +421,11 @@ RC
  es un enfoque de aprendizaje que se perfila como simple y rápido en comparación
  a otros enfoques usados en 
 \series bold
-RNA's 
+RNAR
 \series default
-recurrentes, todo esto con el fin de reducir su complejidad de construcción
- y aprovechar su capacidad comprobada de representar mejor las características
- de las series temporales.
+, todo esto con el fin de reducir su complejidad de construcción y aprovechar
+ su capacidad comprobada de representar mejor las características de las
+ series temporales.
  Además, como parte de nuestra propuesta se considerará un componente no
  determinista que representa un ruido aleatorio con distribución normal,
  esto con el fin de tener en cuenta la incertidumbre que afecta típicamente
@@ -437,7 +481,7 @@ key "Thomas"
 \end_layout
 
 \begin_layout Itemize
-Revisar la literatura de los distintos modelos basados en aprendizaje de
+Revisar en la literatura los distintos modelos basados en aprendizaje de
  maquina como: Redes Neuronales feedforward, Redes Neuronales Recurrentes,
  el enfoque de 
 \series bold
@@ -448,16 +492,39 @@ y redes ANFIS.
 
 \begin_layout Itemize
 Aplicar el modelo propuesto en la generación y pronóstico de series temporales
- para 2 casos de estudio basados en variables hidrológicas(Caudales, Evaporación
-, Precipitación): el primero usando series temporales de MOPEX, en 4 cuencas
- seleccionadas de manera aleatoria.
+ para 2 casos de estudio basados en variables hidrológicas(Caudales, Precipitaci
+ón): El primero usando series temporales de 
+\series bold
+MOPEX
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "MOPEX"
+description "Model Parameter Estimation Experiment"
+
+\end_inset
+
+, en 4 cuencas seleccionadas de manera aleatoria.
  El segundo, usando series temporales de la cuenca del Chili, en tres estaciones
  de medición: el Pañe, Aguada blanca y el Frayle.
 \end_layout
 
 \begin_layout Itemize
 Evaluar el modelo propuesto en comparación con los modelos: Estocásticos
- Neuronal(PEN) de 
+ Neuronal(
+\series bold
+PEN
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PEN"
+description "Proceso Estocastico Neural"
+
+\end_inset
+
+) de 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lcdcampos"
@@ -471,7 +538,19 @@ key "Thomas"
 
 \end_inset
 
- y ANFIS 
+ y 
+\series bold
+ANFIS
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ANFIS"
+description "Adaptive Neuro-fuzzy Inference System"
+
+\end_inset
+
+
+\series default
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jang"
@@ -514,9 +593,16 @@ Las principales contribuciones de esta tesis son:
 \end_layout
 
 \begin_layout Itemize
-El desarrollo de un nuevo modelo de proceso estocástico basado en redes
- neuronales recurrentes y un componente aleatorio, usando técnicas de aprendizaj
-e ESN, como una alternativa válida capaz de simular series sintéticas igualmente
+El desarrollo de un nuevo modelo de proceso estocástico 
+\series bold
+MEESN
+\series default
+ basado en redes neuronales recurrentes y un componente aleatorio, usando
+ técnicas de aprendizaje 
+\series bold
+ESN
+\series default
+, como una alternativa válida capaz de simular series sintéticas igualmente
  probables a la serie histórica.
  
 \end_layout
@@ -529,17 +615,27 @@ Este nuevo modelo puede ser aplicado para modelar series temporales que
 \begin_layout Itemize
 Nuestro modelo aprovecha virtudes de sus dos componentes para realizar la
  estimación de un proceso estocástico: en primer lugar, la capacidad de
- aprendizaje y generalización mediante ejemplos, por parte de la RNA recurrente
- (componente determinista) y en segundo lugar, la incertidumbre de un valor
- aleatorio(componente no determinista) que afecta típicamente procesos hidrológi
-cos.
+ aprendizaje y generalización mediante ejemplos, por parte de la 
+\series bold
+RNA
+\series default
+ Recurrente (componente determinista) y en segundo lugar, la incertidumbre
+ de un valor aleatorio(componente no determinista) que afecta típicamente
+ procesos hidrológicos.
 \end_layout
 
 \begin_layout Itemize
-El proceso de aprendizaje de RNA recurrente es realizado usando el enfoque
- ESN, donde solamente es necesario ajustar los pesos de salida para poder
- capturar el comportamiento de una serie temporal, los pesos de entrada
- y del reservorio son establecidos aleatoriamente.
+El proceso de aprendizaje de una 
+\series bold
+RNAR 
+\series default
+es realizado usando el enfoque 
+\series bold
+ESN
+\series default
+, donde solamente es necesario ajustar los pesos de salida para poder capturar
+ el comportamiento de una serie temporal, los pesos de entrada y del reservorio
+ son establecidos aleatoriamente.
  De esa manera se logra reducir el costo computacional de aprendizaje.
  
 \end_layout
@@ -550,8 +646,11 @@ Para entrenar nuestro modelo es necesario solamente la serie temporal histórica
  un intervalo pre-establecido.
  No es necesario suponer ningún comportamiento de la serie histórica para
  utilizarlo en nuestro modelo.
- Todo el comportamiento de la serie es capturado por las RNA's recurrentes
- en sus estados internos.
+ Todo el comportamiento de la serie es capturado por las 
+\series bold
+RNA
+\series default
+ Recurrentes en sus estados internos.
  Esta característica permite a nuestro modelo descartar el uso de técnicas
  de 
 \begin_inset Quotes fld
@@ -598,8 +697,19 @@ reference "chap:Estado-del-Arte"
 
 \end_inset
 
-, Se utiliza el método estándar de revisión sistemática de literatura (SLR)
- basada en las directrices originales propuestas por 
+, Se utiliza el método estándar de revisión sistemática de literatura (
+\series bold
+RSL
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RSL"
+description "Revisión Sistemática de Literatura"
+
+\end_inset
+
+) basada en las directrices originales propuestas por 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "kitchenham2004procedure"
@@ -622,13 +732,30 @@ reference "chap:Propuesta"
 \end_inset
 
 , se describe detalladamente los 2 componentes principales del modelado
- completo de nuestro proceso estocástico propuesto, a fin de procesar series
- temporales hidrológicas mensuales.
- El ajuste del modelo consiste en: estimar sus parámetros (configuración
- de redes-ESN) mediante métodos de optimización aleatoria.
+ completo del nuevo proceso estocástico 
+\series bold
+MEESN
+\series default
+, con el fin de procesar series temporales hidrológicas mensuales.
+ El ajuste del modelo consiste en: estimar sus parámetros, configuración
+ de la red neuronal recurrente ESN 
+\series bold
+\emph on
+(RNAR-esn
+\series default
+\emph default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "RNAR-esn"
+description "Red Neuronal Recurrente ESN"
+
+\end_inset
+
+), mediante métodos de optimización aleatoria.
  El objetivo principal es generar escenarios sintéticos en el contexto de
  una arquitectura para la planificación de Recursos Hídricos, vinculada
- a un Sistema de Soporte de Decisiones, con miras a la planificación a medio
+ a un sistema de soporte de decisiones, con miras a la planificación a medio
  plazo que permitirán proyectar posibles escenarios de condiciones climáticas
  y de demanda de agua.
 \end_layout

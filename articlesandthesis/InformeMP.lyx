@@ -1,0 +1,857 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{algorithm,algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usepackage{slashbox}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\definecolor{lightgray}{gray}{0.8}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\listings_params "frame=tb"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%%
+\backslash
+includegraphics[width=0.15
+\backslash
+textwidth]{example-image-1x1}
+\backslash
+par
+\backslash
+vspace{1cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+scshape Universidad Nacional De San Agustín de Arequipa Facultad De Ingeniería
+ De Producción Y Servicios 
+\backslash
+
+\backslash
+Ingeniería De Sistemas 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1cm} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+scshape
+\backslash
+Large Informe Técnico 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1.5cm} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large
+\backslash
+bfseries INFORME MATEMÁTICO DE MODELO PROPUESTO, UTILIZANDO TÉCNICAS DE
+ APRENDIZAJE DE MAQUINA PARA LA PREDICCIÓN DE SERIES TEMPORALES HIDROLÓGICAS
+ DE LA CUENCA DEL RÍO CHILI AREQUIPA 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{2cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+Large
+\backslash
+itshape presentada por el Bachiller: Edson Francisco Luque Mamani
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vfill 	supervisado por:
+\backslash
+par 	Phd.~Jose Alfredo Herrera Quispe
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+% Bottom of the page 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+large 
+\backslash
+today
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Chapter
+Introducción
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Introducción"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/Introduccion.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Chapter
+Marco Teórico
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Marco-Teórico"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/marcoteorico.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGORITHMS ON THE TASK
+ OF PREDICTING EVENT TIMING
+\end_layout
+
+\begin_layout Plain Layout
+HYDROLOGIC MODELS (Lärobok i Avrinningsmodeller) (edition 2002) Chong-yu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Chapter
+Estado del Arte
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Estado-del-Arte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/stateArt.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+A COMPARISON OF TIME SERIES FORECASTING LEARNING ALGOR
+\begin_inset Formula $\theta$
+\end_inset
+
+ITHMS ON THE TASK OF PREDICTING EVENT TIMING
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Propuesta
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Propuesta"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/metologia.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Chapter
+Experimentos
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Experimentos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/experiments.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Chapter
+Conclusión y trabajos futuros
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Conclusión"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/conclusion.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim*
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+Definición del problema
+\end_layout
+
+\begin_layout Section
+Justificación
+\end_layout
+
+\begin_layout Section
+Hipótesis 
+\end_layout
+
+\begin_layout Plain Layout
+El modelo de proceso estocástico propuesto será capaz de modelar con mayor
+ precisión problemas del mundo real como la predicción de variables hidrológicas.
+ Fundamentado en el uso de nuevos métodos en la literatura para asi reducir
+ la complejidad de su construcción.
+ 
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Subsection
+Objetivos Específicos
+\end_layout
+
+\begin_layout Itemize
+Estudio de los modelos lineales, entre los cuales destacamos el modelo de
+ Thomas Fiering 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Thomas"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+La revisión bibliográfica de modelos basados en aprendizaje de maquina:
+ Redes Neuronales feedforward y Redes Neuronales Recurrentes.
+\end_layout
+
+\begin_layout Itemize
+Aplicación del modelo propuesto en la generación y predicción de series
+ temporales para un caso de estudio basado en variables hidrológicas (Caudales,
+ Evaporación, Precipitación) en la cuenca del Chili, en tres estaciones
+ de medición: el Pañe, Aguada blanca y el Frayle.
+\end_layout
+
+\begin_layout Itemize
+Evaluación del modelo propuesto en contraste con los modelos Estocásticos
+ Neuronal de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lcdcampos"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "4371334"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "en81012228"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Análisis detallado de la média, desviación estándar, asimetría como parametros
+ utilizados para evaluar el modelo propuesto en contraste con los modelos
+ anteriormente mencionados.
+\end_layout
+
+\begin_layout Itemize
+Comprobar si nuestro modelo basado en ESN puede ser considerado como una
+ alternativa válida a las redes neuronales feedforward tradicional y recurrentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+La evaluación de nuestro modelo en una gama de fenómenos no lineales de
+ comportamiento estocástico no hidrológicos(carga eléctrica por ejemplo).
+\end_layout
+
+\begin_layout Itemize
+Establecer las conclusiones, contribuciones, limitaciones, y trabajo futuro
+ del modelo.
+\end_layout
+
+\begin_layout Section
+Trabajos Relacionados
+\end_layout
+
+\begin_layout Section
+Diseño de Investigación
+\end_layout
+
+\begin_layout Subsection
+Tipo de Investigación
+\end_layout
+
+\begin_layout Plain Layout
+Corresponde al tipo experimental por que está limitado a temas en los cuales
+ el investigador puede manipular la situación, en nuestro caso podemos manipular
+ el modelo que estamos estudiando y proponiendo.
+ La ejecución de otro experimento, es relativamente barato sólo depende
+ de ciclos y tiempo.
+\end_layout
+
+\begin_layout Subsection
+Población y Muestra 
+\end_layout
+
+\begin_layout Plain Layout
+La subcuenca del río Chili o sistema chili regulado comprende sitios en
+ los cuales se encuentran obras de regulación y trasbase(embalses Aguada
+ Blanca, el Fraile, El Pañe) y los lugares de aprovechamiento de recurso
+ hídrico.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+En este trabajo se tomará como muestra y entrada de nuestro modelo los registros
+ históricos de estaciones de mediciones reales: como el 
+\series bold
+Pañe
+\series default
+(Operada por Autodema) y 
+\series bold
+Frayle
+\series default
+(ubicada en el cauce del río Blanco).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Estos registros comprenderán una muestra entre los años 1970 hasta 2010.
+\end_layout
+
+\begin_layout Subsection
+Variables de Estudio
+\end_layout
+
+\begin_layout Subsubsection
+Variable Independiente
+\end_layout
+
+\begin_layout Plain Layout
+Modelo híbrido de proceso estocástico aplicado a predicción de variables
+ hidrológicas como caudales, precipitación y evaporación.
+\end_layout
+
+\begin_layout Subsubsection
+Variables Dependientes
+\end_layout
+
+\begin_layout Itemize
+Predicción 
+\end_layout
+
+\begin_layout Itemize
+Precisión 
+\end_layout
+
+\begin_layout Itemize
+Complejidad en la estructura del modelo 
+\end_layout
+
+\begin_layout Itemize
+Tiempo de ejecución 
+\end_layout
+
+\begin_layout Plain Layout
+Se medirá la média, desviación estándar, asimetría para todos los experimentos
+ de los modelos a comparar (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "VuFind:PRIO_166e028055e191855faa7e9810468e93"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371334"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+) para establecer las conclusiones,contribuciones, limitaciones, y trabajo
+ futuro del modelo.
+ 
+\end_layout
+
+\begin_layout Section
+Resultados Esperados
+\end_layout
+
+\begin_layout Itemize
+Al termino de esta tesis, el principal resultado será demostrar de manera
+ comprobada que nuestro modelo híbrido basado en 
+\series bold
+ESN
+\series default
+ es una alternativa eficiente en la predicción de variables hidrológicas
+ con una tasa de precisión mayor y complejidad menor a los modelos tradicionales
+ en la literatura.
+ 
+\end_layout
+
+\begin_layout Itemize
+Demostrar que nuestro modelo puede ser generalizado en una gama de fenómenos
+ no lineales de comportamiento estocástico no sólamente hidrológico (carga
+ eléctrica por ejemplo).
+\end_layout
+
+\begin_layout Itemize
+Un prototipo simple de la implementacón de nuestro modelo, para uso didáctico.
+\end_layout
+
+\begin_layout Itemize
+Una disertación o tesis sustentada y depositada en la(s) biblioteca(s) de
+ la UNSA.
+ 
+\end_layout
+
+\begin_layout Itemize
+Título profesional obtenido.
+ 
+\end_layout
+
+\begin_layout Itemize
+Artículo ciéntifico sometido a una revista indizada.
+\end_layout
+
+\begin_layout Itemize
+Presentación en un evento nacional o internacional.
+\end_layout
+
+\begin_layout Section
+Impacto de los Resultados 
+\end_layout
+
+\begin_layout Plain Layout
+Se puede usar el nuevo modelo como complemento en las tareas de análisis
+ de escenarios junto a los modelos tradicionales, por su sencillez esto
+ permitirá a un administrador/tomador de decisión elegir técnicas apropiadas
+ de previsión, que finalmente puedan evitar perdidas económicas y sociales
+ (Construcción de defensas rivereñas para evitar inundaciones, implantación
+ de políticas de consumo de agua para mejorar la disponibilidad del recurso
+ hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
+te).
+\end_layout
+
+\begin_layout Section
+imagenes 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/edson/Pictures/colormapsTYGERtrainingESN.pdf
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sloppy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "hc-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

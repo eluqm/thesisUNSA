@@ -1,0 +1,6121 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass elsarticle
+\begin_preamble
+\usepackage{color}
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{orangered}{RGB}{239,134,64}
+\definecolor{orchid}{RGB}{218,112,214}
+\definecolor{violet}{RGB}{238,130,238}
+\tnotetext[t1]{This document is a collaborative effort.}
+%\tnotetext[t2]{The second title footnote which is a longer
+%longer than the first one and with an intention to fill
+%in up more than one line while formatting.}
+%\author[rvt]{E.F.~Luque\corref{cor1}\fnref{fn1}}
+%\ead{edluquem@usp.br.com}
+\author[rvt,rvt2]{E.F.~Luque}
+\ead{edluquem@usp.br.com}
+\author[focal]{D.L.~Rubin}
+\ead{dlrubin@stanford.edu}
+\author[rvt]{D.A.~Moreira}
+\ead{dilvan@gmail.com}
+
+
+%\ead[url]{http://www.elsevier.com}
+%\cortext[cor1]{Corresponding author}
+%\cortext[cor2]{Principal corresponding author}
+%\fntext[fn1]{This is the specimen author footnote.}
+%\fntext[fn2]{Another author footnote, but a little more
+%longer.}
+%\fntext[fn3]{Yet another author footnote. Indeed, you can have
+%any number of author footnotes.}
+
+\address[rvt]{Department of Computer Science\\ University of São Paulo\\ São Carlos, Brazil}
+\address[rvt2]{Department of Computer Science\\ National University of San Agustin\\ Arequipa, Peru}
+\address[focal]{Department of Radiology\\ Stanford University\\ Stanford, USA\\}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "language=XML,morestring={[s]{&quot;}{&quot;}},morecomment={[s]{?}{?}},morecomment={[s]{!--}{--}},commentstyle={\color{darkgreen}},moredelim={[s][\color{black}]{>}{<}},moredelim={[s][\color{maroon}]{\ }{=}},stringstyle={\color{violet}},keywordstyle={\color{orangered}},tagstyle={\color{blue}},otherkeywords={attribute=, xmlns=, value=, root=,code=,codeSystem=,codeSystemName=,codeSystemVersion=}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frontmatter}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+title{aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abstract}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The stochastic streamflow models (SSMS) are time series models for precise
+ prediction of hydrological data.
+ They could generate ensembles of synthetic time series traces useful for
+ hydrologic risk management.
+ Nowadays, deep learning networks get many considerations in time series
+ prediction.
+ However, despite their theoretical benefits, they fail due to their architectur
+e, defects of the backpropagation method, such as  slow convergence and
+ the vanishing gradient problem.
+ In order to cover these requirements, we propose a new stochastic model
+ applied in problems that involve phenomena of stochastic behavior and periodic
+ characteristics.
+ In the new model two components were used, the first one, a type of recurrent
+ neural network embedding an echo-state (ESN) learning mechanisn instead
+ of conventional back-propagation method, an interesting feature of ESN
+ is that from certain algebraic properties, training only the output of
+ the network is often sufficient to achieve excellent performance in practical
+ applications.
+ The last part consists of the uncertainty associated with stationary processes,
+ the model is finally called SSNESN.
+ This model was calibrated with time series of monthly discharge data from
+  different river basins of MOPEX data set.
+ We interpret our expetimental findings by comparison with two feedforward
+ neural networks and the traditional Thomas–Fiering model.
+ The results show that the SSNESN can achieve a significant enhancement
+ in the prediction performance, learning speed, and short-term memory capacity,
+ with interesting potential in the context of hydrometeorological resources.
+ This model, along with their simplicity and ease of training, can be considered
+ a first attempt that applies the echo state network methodology to stochastic
+ process.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abstract}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{keyword}
+\end_layout
+
+\begin_layout Plain Layout
+
+ESN, Recurrent, Stochastic process, Neural Network, streamflow.s
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{keyword}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frontmatter}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In probability theory an stochastic process is defined as a set of models
+ that allow the study of problems with random components.
+ Observing a phenomenon with random characteristics for a period of time,
+ it is possible to obtain a trajectory of this observed process.
+ When carrying out the same observation in a different period of time it
+ is possible to obtain another trajectory, different from the first one.
+ Thus, stochastic process corresponds to the set of all possible trajectories
+ that can be observed of this phenomenon.
+ Each trajectory are called a time series.
+ Therefore, time series is considered one realization of stochastic process.
+\end_layout
+
+\begin_layout Standard
+Natural phenomena such as precipitation and streamflow discharge have nonlinear,
+ complex and chaotic characteristics.
+ In order to model the behavior of these phenomena, initially linear approximati
+on was used 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOXANDJenKys"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LUNA2006"
+
+\end_inset
+
+.
+ Afterwards, were developed methods using self-correcting models such as
+ the PAR(p) model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maceira2,lcdcampos"
+
+\end_inset
+
+.
+ However, these models are statistical and linear, which means that their
+ application in time series of chaotic behavior such as hydrometeorological
+ series, cannot capture real characteristics of this time series being sometimes
+ inadequate 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Raman95multivariatemodelling"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Currently, among the approaches that attempt to model complex non-linear
+ behavior that can be adequate to deal with such problems, we have the deep
+ learning approach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "YU2015308"
+
+\end_inset
+
+, this approach exerts fascination on researchers due their hierarchical
+ representations from data.
+ In fact, this approach have been widely used in most research and applications
+ in forecasting models from simplest Artificial Neural Networks (ANN) feedforwar
+d to the most complex architecture based on many layers, each of which be
+ expressed by feature detector units.
+ In general, ANNs feedforward have been widely used in most research and
+ applications in forecasting models in contrast to Recurrent Neural Networks(RNN
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ The RNN's are able to represent dynamic non-linear maps commonly found
+ in time series forecasting tasks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+.Studies about the performance in forecasting, demonstrate that RNN are better
+ than their peers ANN, in virtually all tests
+\begin_inset CommandInset citation
+LatexCommand cite
+key "6327793"
+
+\end_inset
+
+.
+ However, the main reason to prefer to use the ANN feedforward higher than
+ recurrent neural networks is that the last generates greater complexity
+ in the neural network training process.
+ Massive iterative computation results in a slow convergence rate, as well
+ as the backpropagation algorithm based on gradient descent can be trapped
+ into a local optimum
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SUN201717"
+
+\end_inset
+
+.
+ All it is added to the complexity that uncertainty analysis and stochastic
+ simulation requires.
+ 
+\end_layout
+
+\begin_layout Standard
+This motivated the development of a stochastic process model using Recurrent
+ Artificial Neural Networks in order to take advantage of its aforementioned
+ characteristics.
+ this was possible using an approach called Reservoir Computing(
+\series bold
+RC
+\series default
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Reservoir Computing is a training approach attractive as simple and fast
+ compared to other approaches used in traditional recurrent ANN, all in
+ order to reduce complexity, and leverage its proven ability to represents
+ the characteristics of time series.
+ Our model also is composed for the nondeterministic component that represents
+ the white noise with a normal distribution, in order to take into account
+ the uncertainty that normally affects natural processes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+.
+ Therefore, our model could be considered a new proposal in the literature.
+ Finally, as a case study, it was chosen for apply this model in the well-known
+ Model Parameter Estimation Experiment(
+\series bold
+MOPEX
+\series default
+) data set
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Duan20063"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+History
+\end_layout
+
+\begin_layout Standard
+Initial auto-regressive models, as well as models based on Box & Jenkis
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOXANDJenKys"
+
+\end_inset
+
+ methodology were used in forecasting problems, for example in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Peng2010"
+
+\end_inset
+
+, the author shows that there is no evidence that multivariate AR(1) models
+ are inadequate as predictors.
+ Studies such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JAWR:JAWR70A"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas"
+
+\end_inset
+
+ describe mathematical models, which can reproduce special characteristics
+ such periodicity, considering the effects of linear correlation.
+ All these studies propose, the natural behavior of times series can be
+ simulated by simple linear relationship with previous data.
+ 
+\end_layout
+
+\begin_layout Standard
+The problem with previous models is that forecasting is naturally a dynamic
+ task.
+ For this reason, artificial intelligence methods have been appearing as
+ alternatives, with good performance as predictors of time series.
+ Works such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WRCR:WRCR9735"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WRCR:WRCR11667"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-20-1405-2016"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+, they used Artificial Neural Networks (ANN) as forecasting models.
+ Recently, hybrid deep neural networks such as DNN 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "deng"
+
+\end_inset
+
+ and its variations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SHEN2015243,KUREMOTO201447"
+
+\end_inset
+
+ also show great potential for time series prediction.
+ Although these proposals have shown favorable prediction performance, global
+ weight "fine-tuning" in the logistic regression layer using the backpropagation
+ algorithm, limits their further development in time series prediction.
+\end_layout
+
+\begin_layout Standard
+Recurrent Neural Networks have show better forecasting ability than feedforward
+ ones, due to their structure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ This structure allows more parsimonious modeling of the dynamical time
+ series properties.
+ However, it was also demonstrated that, the recurrence structure could
+ cause increased training complexity, and subsequently cause problems of
+ convergence
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1"
+
+\end_inset
+
+.
+ At the beginning of the 21st century, the concept of Reservoir Computing
+ (RC) was introduced.
+ 
+\end_layout
+
+\begin_layout Standard
+Reservoir Computing is a training approach that can be remarkably simpler
+ and faster than those traditional applied in Recurrent ANN.
+ Studies using RC in time series prediction were developed by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+, the most popular reservoir computing model denominated 
+\series bold
+Echo State Networks (ESN)
+\series default
+ was used with a Bayesian regularization for forecast short-term energy
+ production of small hydroelectric plants, the results indicate that the
+ proposed model surpasses both, recurrent ANN feedforward and ESN in its
+ simple version.
+\end_layout
+
+\begin_layout Standard
+Studies such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Coulibaly201076"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Abrahart201276"
+
+\end_inset
+
+ used ESN to forecast monthly water levels for the four Great Lakes of North
+ America, the authors obtained good performance of ESN networks and attributed
+ it to their highly non-linear and dynamic structure.
+ Echo state networks were found to be valid alternatives to traditional
+ recurrent ANN, in forecasted water inflow, for example in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371334"
+
+\end_inset
+
+ the authors compare the performance of ESN with SONARX 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4371335"
+
+\end_inset
+
+ networks, RBF networks and the ANFIS model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "256541"
+
+\end_inset
+
+.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+, forecasting ability from ESN model was evaluated in a huge variety of
+ large-scale basins.
+ The experiments are carried out by comparing three different ESN variations
+ with two RNN feedforward models.
+ In addition, several aspects of ESN design are investigated in order to
+ optimize hydrologically relevant information.
+ Only 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "en81012228"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SUN201717"
+
+\end_inset
+
+, present a hybrid system as our model proposal, in order to take advantage
+ that a hybrid system can provide us in forecasting task.
+ 
+\end_layout
+
+\begin_layout Standard
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Recurrent-Neural-Networks"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Training-Algorithms"
+
+\end_inset
+
+ briefly reviews feedforward and traditional recurrent ANN models and their
+ training methods, after which a short introduction to RC is given and ESN
+ is described more detailed.
+ Section Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Hidrometereological-data-generat"
+
+\end_inset
+
+ presents details about our proposal.
+ The results of some experiments are presented and discussed in Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Results-and-Discussion"
+
+\end_inset
+
+.
+ Finally, conclusions are drawn in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Conclusions"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+THEORETICAL BACKGROUND 
+\end_layout
+
+\begin_layout Section
+Objective
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The objective of this work is to automatically determine the cancer stage
+ of lesions present in medical images, using semantic web and reasoning
+ technologies, to process semantic annotations made by experts and provide
+ clinicians with a second opinion on the classification of their patients.
+ These semantic annotations are made using tools that use the AIM format
+ (used by the ePAD tool) to describe and save image findings.
+ Automatic cancer staging can increase the efficiency of radiologists and
+ oncologists and improve the quality and uniformity of image interpretation
+ by experts.
+ It is important to mention that our work focuses on staging liver cancer
+ due to data availability.
+\end_layout
+
+\begin_layout Plain Layout
+This paper is organized as follows.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Related-work"
+
+\end_inset
+
+ presents related approaches.
+ Section 4 describes our methodology composed of three main components:
+ the ontological representation of the AIM 4.0 model, the conditions to implement
+ the TNM classifier (General Ontology) and the formal representation of
+ cancer staging.
+ Section 5 analyses experimental data to assess our TNM classifier relevance.
+ Conclusions are found in Section 6.
+\end_layout
+
+\begin_layout Section
+Related work
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Related-work"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Section
+Method description
+\end_layout
+
+\begin_layout Plain Layout
+In this section, we describe our methodology.
+ It is comprised by three main tasks:
+\end_layout
+
+\begin_layout Enumerate
+Ontological representation of the AIM 4.0 model.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Generate conditions to implement the TNM classifier(General Ontology)
+\end_layout
+
+\end_inset
+
+Creating conditions to implement reasoning based on TNM rules, using OWL
+ instances.
+\end_layout
+
+\begin_layout Enumerate
+Formal Representation of Cancer Staging.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ontological representation of AIM model.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In order to perform inference and classify image annotations based on the
+ AIM standard, we need a language equipped with formal semantic.
+ Using this semantic, inferences about an ontology together with a set of
+ individual instances of classes can be made.
+ In this context, the Web Ontology Language (OWL), a language for building
+ ontological representations of information models, was used.
+ In our work, we transformed the AIM data model into an equivalent ontological
+ representation, using OWL2.
+ This transformation was performed by creating classes and properties in
+ OWL that are user understandable and suitable for inference.
+\end_layout
+
+\begin_layout Plain Layout
+We developed an OWL model, based on the ontology provides by Bulu, Hakan
+ and Rubin, Daniel L, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bulu"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model
+\end_layout
+
+\end_inset
+
+, which represented an older version of AIM.
+ Therefore, in order to represent the AIM 4.0 model, which is the version
+ used to store image annotations generated using tools (such as ePAD 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rubin2011"
+
+\end_inset
+
+), we modified Bulu’s ontology to represent AIM 4.0 model concepts.
+ Our ontology is called 
+\series bold
+AIM4-O
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+AIM4-O ontology
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:AIM4-O-ontology"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+AIM4-O Classes
+\end_layout
+
+\begin_layout Plain Layout
+In general, the AIM 4.0 model is an extension of the AIM Foundation model.
+ There are nine classes that capture lesion results and measurements derived
+ during image-based clinical analysis.
+ In this work, we considered the following six classes sufficient to achieve
+ our goal:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:Entity:
+\series default
+ It is an abstract class that represents the existence of a thing, concept,
+ observation, calculation, measurement and graphic design in AIM.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:AnnotationCollection: 
+\series default
+It is an abstract concept of a container that collects elements such as
+ 
+\family typewriter
+\series bold
+\shape italic
+AnnotationOfAnnotation 
+\series default
+\emph on
+or
+\series bold
+\emph default
+ 
+\begin_inset Newline newline
+\end_inset
+
+ImageAnnotation
+\family default
+\series default
+\shape default
+ entities.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:imageAnnotationCollection: 
+\series default
+Stores instances of 
+\family typewriter
+\series bold
+\shape italic
+AnnotationImages
+\family default
+\series default
+\shape default
+ class.
+ It associates with the 
+\family typewriter
+\series bold
+\shape italic
+Person
+\family default
+\series default
+\shape default
+ class that contains patient demographic information.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingPhysicalEntity:
+\series default
+ This class stores an anatomical location as a coded term (i.e.
+ RID2662, femur, RadLex) based on controlled vocabularies such as RadLex®,
+ SNOMED CT®, or Unified Medical Language System (UMLS).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:ImagingPhysicalCharacteristic: 
+\series default
+This class describes 
+\begin_inset Newline newline
+\end_inset
+
+the 
+\family typewriter
+\series bold
+\shape italic
+ImagingPhysicalEntity
+\family default
+\series default
+\shape default
+ as a coded term.
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+AIM:MarkupEntity: 
+\series default
+This class captures textual information and graphical representation as
+ DICOM-SR and SCOORD3D, for tridimensional and bidimensional spatial coordinates.
+\end_layout
+
+\begin_layout Subsubsection*
+Relationships 
+\end_layout
+
+\begin_layout Plain Layout
+Relationships describe semantically how different concepts relate to each
+ other.
+ For example, an 
+\family typewriter
+\series bold
+\shape italic
+ImageAnnotation
+\family default
+\series default
+\shape default
+ having an 
+\family typewriter
+\series bold
+\shape italic
+Observation
+\series default
+ 
+\family default
+\shape default
+entity that describes a lesion.
+ These relationships in our ontology enable the semantic reasoning, which
+ is a prerequisite for semantic classification and searching.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+One of the basic concepts in the AIM4-O ontology is the 
+\family typewriter
+\series bold
+\shape italic
+ImageAnnotation
+\family default
+\series default
+\shape default
+ entity.
+ It allows us to describe data properties of an image annotation in OWL,
+ such as comments, name, date and time of its creation.
+ For instance, the statement
+\family typewriter
+\series bold
+\shape italic
+ imageAnnotation1 dateTime {2014-09-26T17:07:58ˆˆdatetime}
+\family default
+\series default
+\shape default
+, says that an annotation, referred to as 
+\family typewriter
+\series bold
+\shape italic
+imageAnnotation1
+\family default
+\series default
+\shape default
+, was created at 
+\family typewriter
+\series bold
+\shape italic
+
+\begin_inset Newline newline
+\end_inset
+
+2014-09-26T17:07:58
+\family default
+\series default
+\shape default
+.
+ There are more 
+\series bold
+\emph on
+ImageAnnotation
+\series default
+\emph default
+ entity relationships to other concepts, such as physical location and observati
+ons on lesions found.
+ These relations can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AIM4example"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/AIM4.pdf
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AIM4example"
+
+\end_inset
+
+This diagram shows the 
+\series bold
+AIM4-O
+\series default
+ ontology including the six classes modified from Bulu's ontology
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bulu"
+
+\end_inset
+
+.
+ Purple ovals represent extended abstract classes from 
+\series bold
+AIM:Entity
+\series default
+, dashed ovals represent instances of 
+\series bold
+AIM:Entity
+\series default
+ abstract class, and the relationships are represented as red arrows.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sample-of-Image"
+
+\end_inset
+
+Sample of Image Annotations using AIM-XML and OWL Manchester serialization.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AIM-XML 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\rmfamily},tabsize=1"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<imageAnnotations> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ <ImageAnnotation> 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <UNIQUEIDENTIFIER root="f3fftpf6wsinx4o17il"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <dateTime value="2014-10-05T22:33:47"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <name value="Liver1"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+  <comment value="CT / RECON 2: LIVER 2 PHASE (AP) / 37"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+\end_layout
+
+\begin_layout Plain Layout
+
+   <imagingPhysicalEntityCollection> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+     <uniqueIdentifier root="1a5gzinzftm1oxc45sho8go"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+\end_layout
+
+\begin_layout Plain Layout
+
+       .
+\end_layout
+
+\begin_layout Plain Layout
+
+   </ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   </imagingPhysicalEntityCollection>
+\end_layout
+
+\begin_layout Plain Layout
+
+ </ImageAnnotation>
+\end_layout
+
+\begin_layout Plain Layout
+
+</imageAnnotations>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manchester syntax
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@prefix aim:  <http://www.w3.org/ns/aim4#> .
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
+\end_layout
+
+\begin_layout Plain Layout
+
+  Types:						 ImageAnnotationCollection          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+Individual: "f3fftpf6wsinx4o17il"
+\end_layout
+
+\begin_layout Plain Layout
+
+  Types:						 ImageAnnotation
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:hasImageReference      :sj1...,
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:hasMarkupEntity        :jma...,
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:hasCalculationEntity   :a4l...,
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:hasImagingObservation  :hoj...,
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    AIM:HASPHYSICALENTITY      :"1A5GZINZFTM1OXC45SHO8GO",
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:dateTime               "2014-10-05T22:33:47"^^xsd:dateTime,
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:uniqueIdentifier       "f3fftpf6wsinx4o17il"^^xsd:string,      
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:comment                "CT / RECON 2: LIVER 2 PHASE (AP) / 37"
+\end_layout
+
+\begin_layout Plain Layout
+
+                                ^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+    aim:name                   "Liver1"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+These relations can also be specified using OWL relationships.
+ A small example is given in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sample-of-Image"
+
+\end_inset
+
+.
+ It includes an OWL representation of an AIM 4.0 instance and its usual relations
+hips.
+ This example shows semantically equivalent concepts between AIM-XML format
+ and OWL model (Manchester serialization format) that were used in this
+ work.
+ For example, an AIM 
+\family typewriter
+\series bold
+\emph on
+ImageAnnotation
+\family default
+\series default
+\emph default
+ instance with the identifier value 
+\family typewriter
+\series bold
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+uniqueIdentifier:f3fftpf6wsinx4o17il
+\begin_inset Quotes erd
+\end_inset
+
+,
+\family default
+\series default
+\emph default
+ can be represented in OWL and used for reasoning purposes.
+ Similarly, Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sample-of-Image"
+
+\end_inset
+
+ shows that the concept
+\family typewriter
+\series bold
+\emph on
+ PhysicalEntity
+\family default
+\series default
+\emph default
+, with the identifier value
+\family typewriter
+\series bold
+\shape italic
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+uniqueIdentifier
+\series default
+:
+\series bold
+1a5gzinzftm1oxc45sho8go
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\emph default
+is
+\family default
+ related to the 
+\family typewriter
+\series bold
+\shape italic
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
+\emph on
+ImageAnnotation
+\family default
+\series default
+\emph default
+ instance by the 
+\family typewriter
+\series bold
+\emph on
+hasPhysicalEntity
+\family default
+\series default
+\emph default
+ Object Property.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sample-of-AIM"
+
+\end_inset
+
+ shows more information about the syntax of a 
+\family typewriter
+\series bold
+\emph on
+PhysicalEntity
+\family default
+\series default
+\emph default
+ instance in AIM 4.0 XML and the equivalent OWL Manchester syntax for the
+ same instance.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sample-of-AIM"
+
+\end_inset
+
+Sample of AIM PhysicalEntity in AIM-XML and OWL Manchester serialization
+ format.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AIM-XML
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<imagingPhysicalEntityCollection> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ <ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <uniqueIdentifier root="1a5gzinzftm1oxc45sho8go"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <typeCode code="RID58" codeSystem="liver" 
+\end_layout
+
+\begin_layout Plain Layout
+
+             codeSystemName="RadLex" codeSystemVersion=""/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <typeCode code="RID67" codeSystem="Couinaud hepatic segment 7" 
+\end_layout
+
+\begin_layout Plain Layout
+
+             codeSystemName="RadLex.3.10" codeSystemVersion=""/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <annotatorConfidence value="0.0"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+   <label value="Location"/> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ </ImagingPhysicalEntity> 
+\end_layout
+
+\begin_layout Plain Layout
+
+</imagingPhysicalEntityCollection> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manchester syntax
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Individual:  1a5gzinzftm1oxc45sho8go
+\end_layout
+
+\begin_layout Plain Layout
+
+ Types:			        ImagingPhysicalEntity          
+\end_layout
+
+\begin_layout Plain Layout
+
+   Facts:        
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:annotatorConfidence      0.0f,      
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:label                   "Location"^^xsd:string,      
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:typeCode                ``{codeSystemName=RadLex,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  codeSystem    =liver,code=RID58,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  codeSystemVersion=}''^^xsd:string, 
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:typeCode                ``{codeSystemName=RadLex.3.10,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  codeSystem    =Couinaudhepaticsegment7,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  code          =RID67}''^^xsd:string, 
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+   aim:uniqueIdentifier        "1a5gzinzftm1oxc45sho8go"^^xsd:string
+\end_layout
+
+\begin_layout Plain Layout
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Creating conditions to implement reasoning based on TNM rules using OWL
+ instances
+\end_layout
+
+\begin_layout Plain Layout
+The second step is to transform existing AIM-XML documents to their equivalent
+ in OWL (using the AIM4-O ontology).
+ To achieve this, we developed scripts, in the Groovy language
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://groovy-lang.org/
+\end_layout
+
+\end_inset
+
+.
+ First, we automatically map AIM-XML entities to AIM Java classes, based
+ on the AIM UML
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-A
+IMUMLModeling
+\end_layout
+
+\end_inset
+
+ model (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:xmltoowl"
+
+\end_inset
+
+).
+ We then create instances of the AIM4-O ontology from these AIM Java classes,
+ using the OWL API, a Java API for creating, manipulating and serializing
+ OWL ontologies.
+ Finally, these instances populate a semantic web knowledge base.
+ This base is suitable for classification-based and rule-based inference.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/comditionsforTNM.pdf
+	lyxscale 70
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:xmltoowl"
+
+\end_inset
+
+Mechanism to transform AIM-XML documents to encoded AIM4-O individuals using
+ OWL.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+In order to automatically stage cancer, our approach must have the support
+ of an ontology to specify the semantics of image observations from a particular
+ domain.
+ In this case, this ontology should be able to represent the topology of
+ a human body organ (the organ in which cancer starts growing and has its
+ own TNM system).
+ In this work, this organ was the liver.
+ Furthermore, it is considered necessary to include an OWL representation
+ of RadLex® 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Radlex"
+
+\end_inset
+
+ vocabulary in order to facilitate handling AIM4-O individuals, because
+ these individuals have Radlex terminology in their structure.
+ Finally, a set of rules to do the actual staging, based on the TNM liver
+ system, was added to the ontology.
+ The final result was the 
+\series bold
+General Ontology
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+General Ontology 
+\end_layout
+
+\begin_layout Plain Layout
+The General ontology is divided in 4 files, as seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:generalOntology"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+The AIM4-O ontology with individuals (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:AIM4-O-ontology"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Onlira.owl: The Liver Ontology (based on the Onlira ontology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kokciyan2014"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Radlex lexicon module (ModuleRadlex.owl
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://bioportal.bioontology.org/ontologies/RADLEX/classes
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+General concepts of TNM (axioms and SWRL rules).
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/ontologiageral2.pdf
+	lyxscale 30
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:generalOntology"
+
+\end_inset
+
+ The General Ontology imports (TNM rules, axioms, moduleRadlex.owl and Onlira.owl)
+ needed in order to classify liver cancer.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The following sections give a description of the ontologies used as part
+ of the
+\series bold
+ General Ontology
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Ontology of the Liver for Radiology 
+\emph on
+(ONLIRA
+\emph default
+) 
+\end_layout
+
+\begin_layout Plain Layout
+The ONLIRA ontology
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://bioportal.bioontology.org/ontologies/ONLIRA
+\end_layout
+
+\end_inset
+
+ was developed as part of the CaReRa project.
+ It aims to model imaging observations of the liver domain with an emphasis
+ on properties and relations between the liver, hepatic veins, and liver
+ lesions.
+ This ontology is used as an ontological representation of the liver and
+ its topological features.
+\end_layout
+
+\begin_layout Subsubsection
+Radlex terminology 
+\end_layout
+
+\begin_layout Plain Layout
+The AIM model provides an XML schema that describes anatomical structures,
+ visual observations and other information relevant to images using the
+ Radlex terminology.
+ We extracted a module from the Radlex lexicon to represent this information.
+ The Radlex module is used by the General ontology to permit a formal representa
+tion (in OWL) of TNM criteria.
+ The TNM criteria are based on knowledge about the way cancer develops and
+ disseminates.
+ For this reason, it is important that the General ontology represents not
+ only the anatomical entities mentioned in TNM but also other direct and
+ indirect related anatomical entities to consider the relative proximity
+ between them.
+ For example, to the N and M criteria (in TNM) we added 2 super classes,
+ the
+\family typewriter
+\series bold
+\emph on
+ adjacentOrganGroup,
+\family default
+\series default
+\emph default
+ which describes the set of organs adjacent to a main organ (e.g., the liver)
+ and the 
+\family typewriter
+\series bold
+\emph on
+noadjacentOrganGroup
+\family default
+\series default
+\emph default
+, which describes organs based on the most common sites of tumor dissemination
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+.
+ For the liver, we included lungs and bones as no adjacent organs, as seen
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:radlexclass"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Classes to Represent TNM System Concepts
+\end_layout
+
+\begin_layout Plain Layout
+In order to create an OWL representation for each TNM stage, we had to interpret
+ each stage definition.
+ Although it is not mentioned explicitly, the TNM criteria are exclusive,
+ so the corresponding OWL classes were made disjoint.
+ For example, the 
+\series bold
+\emph on
+T2
+\series default
+\emph default
+ stage is represented by two constraints: a single tumor (of any size) that
+ has grown into blood vessels concept (
+\series bold
+\emph on
+T2_a
+\series default
+\emph default
+ class) and a single tumor no larger than 
+\begin_inset Quotes eld
+\end_inset
+
+x
+\begin_inset Quotes erd
+\end_inset
+
+ cm concept (
+\series bold
+\emph on
+T2_b
+\series default
+\emph default
+ class).
+\end_layout
+
+\begin_layout Subsection
+Formal Representation of TNM Cancer Staging 
+\end_layout
+
+\begin_layout Plain Layout
+In the previous sections, several steps were necessary to create the General
+ ontology for a TNM classifier.
+ First, we created classes and properties in order to fill the semantic
+ gap between the tumor features and the AIM4-0 classes definitions.
+ Then, we provided formal definitions for the TNM stages, liver’s topological
+ features and Radlex terminology, in order to represent them in OWL.
+ Finally, we defined formal mechanisms for reasoning (using only OWL and
+ SWRL expressivity) such as OWL classes, intersections, equivalences, disjunctio
+ns between classes and a set of rules in order to determine cancer stage
+ from image annotations.
+ This last step will be described below.
+\end_layout
+
+\begin_layout Plain Layout
+In order to discover the limits of the OWL concepts and SWRL rules, we attempted
+ to formally define and implement the conditions that TNM staging demands.
+ TNM cancer staging is divided in two main steps.
+ The first step consists in giving a score starting from the description
+ of the tumor (T), its spreading into lymphatic nodes (N) and possible metastasi
+s (M).
+ See Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:American-Joint-Committee"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:American-Joint-Committee"
+
+\end_inset
+
+American Joint Committee on Cancer/International Union against cancer TNM
+ classification system.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0cm">
+<column alignment="left" valignment="top" width="7cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Primary tumor (T)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+TX 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Primary tumor cannot be assessed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No evidence of primary tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Solitary tumor (any size) without vascular invasion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T2 = T2_a or T2_b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Solitary tumor (any size) with vascular invasion or multiple tumors none
+ <5 cm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T3a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Multiple tumors, with at least one tumor >5 cm 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T3b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Single tumor or multiple tumors of any size involving a major branch of
+ the portal vein or hepatic vein 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+T4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Tumors with direct invasion of adjacent organs other than the gallbladder
+ or with perforation of visceral peritoneum 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph nodes (N)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+NX
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph nodes cannot be assessed 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No regional lymph node metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Regional lymph node metastasis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Distant metastasis (M)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+M0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+No distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+N0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Distant metastasis 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The second step consists in determining the stage according to the previous
+ scores (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:A)TNMexamplefigure"
+
+\end_inset
+
+).
+ To make the aforementioned tasks possible, we decided that the following
+ conditions reflect a desirable staging process:
+\end_layout
+
+\begin_layout Itemize
+Condition 1 : Staging should consider the existence of solitary or multiple
+ tumors on the same site.
+\end_layout
+
+\begin_layout Itemize
+Condition 2 : Staging should consider if tumors are either bigger or minor
+ than a certain size in cm.
+\end_layout
+
+\begin_layout Itemize
+Condition 3 : Staging should consider lesions in adjacent organs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/exemploIIIA.pdf
+	lyxscale 75
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A)TNMexamplefigure"
+
+\end_inset
+
+A) Axial, contrasted CT image shows multiple HCC tumors (green lines), identifie
+d and annotated using the ePAD tool, There was no regional lymph node involvemen
+t or metastasis.
+ B) The diagram shows multiple HCCs with at least one was > 5 cm.
+ This patient was classified as having TNM stageIIIA (T3a,N0,M0).
+ Adapted from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Asserting Conditions using OWL 
+\end_layout
+
+\begin_layout Description
+
+\series bold
+Condition 1 : 
+\series default
+Staging should consider the existence of solitary or multiple tumors on
+ the same site.
+\end_layout
+
+\begin_layout Plain Layout
+The AIM4-O ontology does not give us the explicit mechanics such as classes,
+ subclasses, or properties, that allows us to infer whether a patient has
+ a single or multiple tumors.
+ In the case of multiple tumors, we constructed the following rule 
+\family typewriter
+\series bold
+\emph on
+MoreThanOneTumor
+\family default
+\series default
+\emph default
+ (in SWRL notation):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
+DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+This rule classifies an 
+\family typewriter
+\series bold
+\emph on
+ImageStudy
+\family default
+\series default
+\emph default
+ as a member of the 
+\family typewriter
+\series bold
+\emph on
+MorethanOneTumor
+\family default
+\series default
+\emph default
+ class if an image study "X" is referenced by more than one image annotation.
+ In order to classify something as 
+\family typewriter
+\series bold
+\emph on
+MorethanOneTumor
+\family default
+\series default
+\emph default
+, we created a new concept called 
+\family typewriter
+\series bold
+\emph on
+isImageStudyOf
+\family default
+\series default
+\emph default
+.
+ This concept is the inverse of the 
+\family typewriter
+\series bold
+\emph on
+hasImageStudy
+\family default
+\series default
+\emph default
+ object property.
+ The 
+\family typewriter
+\series bold
+\emph on
+hasImageStudy
+\family default
+\series default
+\emph default
+ property relates an 
+\family typewriter
+\series bold
+\emph on
+ImageAnnotation
+\family default
+\series default
+\emph default
+ entity to an 
+\family typewriter
+\series bold
+\emph on
+ImageStudy 
+\family default
+\series default
+\emph default
+entity.
+\end_layout
+
+\begin_layout Plain Layout
+In the scenario of classifying patients with one solitary tumor, we did
+ not find axioms or rules that satisfied this requirement, due to the fact
+ that OWL works under the Open World Assumption.
+ Open world means that just because something is not said it does not mean
+ that it is not true.
+ For example, I can say that the patient annotation describes a cancer lesion,
+ using the 
+\family typewriter
+\series bold
+\emph on
+ImagingObservation
+\family default
+\series default
+\emph default
+ entity of the AIM4-O ontology model, but unless I explicitly say that there
+ are no other lesions, it is assumed that there may be other lesion that
+ I just have not mentioned or described.
+\end_layout
+
+\begin_layout Plain Layout
+We have tried to solve this problem (the open world assumption) by considering
+ some alternatives such as modeling again our AIM4-O ontology (e.g., setting
+ the 
+\family typewriter
+\series bold
+\emph on
+hasImagingObservation
+\family default
+\series default
+\emph default
+ object property as a primitive class).
+ But, this did not seem intuitive to us.
+ Instead, we decided to state the number of lesions explicitly by creating
+ one new concept named 
+\family typewriter
+\series bold
+\emph on
+singleLesion
+\family default
+\series default
+\emph default
+, as a data property of an 
+\family typewriter
+\series bold
+\emph on
+ImageStudy
+\family default
+\series default
+\emph default
+ entity.
+ This concept denotes if an 
+\family typewriter
+\series bold
+\emph on
+ImageStudy
+\family default
+\series default
+\emph default
+ describes exactly one solitary tumor.
+ We assumed that an 
+\family typewriter
+\series bold
+\emph on
+ImageStudy
+\family default
+\series default
+\emph default
+ entity describes only one tumor (
+\family typewriter
+\series bold
+\emph on
+“singleLesion {true}”
+\family default
+\series default
+\emph default
+) if only if it is referenced by only one I
+\family typewriter
+\series bold
+\emph on
+mageAnnotation
+\family default
+\series default
+\emph default
+ entity.
+ However, it was not possible to formulate this using only OWL.
+ Instead, this information was provided by a data structure that was generated
+ as part of the process of parsing the AIM-XML image annotations to create
+ AIM4-O individuals.
+ Finally, to classify annotations that describe a single lesion, we constructed
+ the rule 
+\family typewriter
+\series bold
+\emph on
+SingleTumor
+\family default
+\series default
+\emph default
+ (in SWRL notation):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
+equal(?val,true)\rightarrow singleTumor(?X)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Condition 2: Staging should consider if tumors are either bigger or minor
+ than a certain size in cm.
+\end_layout
+
+\begin_layout Plain Layout
+This condition was easily implemented by getting the value from the data
+ property
+\family typewriter
+\series bold
+\emph on
+ values
+\family default
+\series default
+\emph default
+ on the 
+\family typewriter
+\series bold
+\emph on
+CalculationResult
+\family default
+\series default
+\emph default
+ entity.
+ This entity is related to the 
+\family typewriter
+\series bold
+\emph on
+ImageAnnotation
+\family default
+\series default
+\emph default
+ entity through the 
+\family typewriter
+\series bold
+\emph on
+hasCalculationEntity
+\family default
+\series default
+\emph default
+ object property.
+ In order to satisfy this condition, we assert the following rules taking
+ 5 centimeters as the longest dimension of the target liver lesion (in SWRL
+ notation): 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+LessThan5cmTumor:
+\series default
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
+hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+MoreThan5cmTumor:
+\series default
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
+hasCalculationResult(?y,?z)\land\\
+values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Condition 3: Staging should consider lesions in adjacent organs.
+\end_layout
+
+\begin_layout Plain Layout
+To satisfy this condition, the most complicated criterion of classification,
+ we had to consider the fact that a cancerous tumor can spread through out
+ the body.
+ For that, we needed to create one new concept, based on the 
+\family typewriter
+\series bold
+\emph on
+Lesion
+\family default
+\series default
+\emph default
+ class from the Onlira ontology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kokciyan2014"
+
+\end_inset
+
+.
+ The 
+\family typewriter
+\series bold
+\emph on
+Lesion
+\family default
+\series default
+\emph default
+ class handles important characteristics of a lesion, such as composition,
+ density, size, shape, etc.
+ But, unfortunately, they are not enough for TNM classification and reasoning.
+ For this reason, we added 3 properties to it and created the subclass
+\family typewriter
+\series bold
+\emph on
+ OutsideLesion
+\family default
+\series default
+\emph default
+, these properties are:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/hasLocationOP.pdf
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:properties"
+
+\end_inset
+
+ General Ontology adds to the 
+\series bold
+Onlira:Lesion
+\series default
+ class 2 properties defined as necessary for the TNM representation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+\emph on
+hasLocation
+\family default
+\series default
+\emph default
+ (object property): This property indicates the lesions location based on
+ Radlex taxonomy.
+ This property relates Onlira 
+\family typewriter
+\series bold
+\emph on
+Lesion
+\family default
+\series default
+\emph default
+ class instances to Radlex 
+\family typewriter
+\series bold
+\emph on
+AnatomicalEntity
+\family default
+\series default
+\emph default
+ class instances (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:properties"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+\emph on
+isRegionalLymphNodeAffected
+\family default
+\series default
+\emph default
+ (data property): This property denotes whether a lesion is found in some
+ lymph node.
+ It was useful to enable classification criteria such as N0 and N1 (see
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:properties"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\series bold
+\emph on
+isAdjacentOrgan
+\family default
+\series default
+\emph default
+ (data property): This property denotes whether a lesion with a 
+\family typewriter
+\series bold
+\emph on
+hasLocation
+\family default
+\series default
+\emph default
+ value 
+\family typewriter
+\emph on
+"X"
+\family default
+\emph default
+ is close to any adjacent orga
+\family typewriter
+n
+\family default
+.
+ In accordance with the TNM liver classification criterion, which is the
+ case of study in this work, we considered as adjacent organs to the liver
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+; the pancreas, duodenum and colon (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:radlexclass"
+
+\end_inset
+
+).
+ Furthermore, we grouped these concepts as organs in radlex representation,
+ creating two new classes, 
+\family typewriter
+\series bold
+\emph on
+AdjacentOrganGroup
+\family default
+\series default
+\emph default
+ and 
+\family typewriter
+\series bold
+\emph on
+NoAdjacentOrganGroup
+\family default
+\series default
+\emph default
+:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+\emph on
+AdjacentOrganGroup
+\family default
+\series default
+\emph default
+ and 
+\family typewriter
+\series bold
+\emph on
+NoAdjacentOrganGroup 
+\family default
+\series default
+\emph default
+classes indicate whether a body organ is considered adjacent or not to the
+ organ where the primary tumor was located.
+ The primary organ defines the type of staging system to use, in our case,
+ this organ was the liver.
+ Finally, we constructed the following rule (in SWRL notation) to indicates
+ whether an 
+\family typewriter
+\series bold
+\emph on
+OutsideLesion 
+\family default
+\series default
+\emph default
+is located in an adjacent organ:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+\hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
+hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Once the above requirements were adequately covered using OWL and SWRL rules,
+ we constructed the axioms and rules in order to be able to automatically
+ classify cancer lesions, based on the TNM system.
+ We noticed that the way we modeled things mattered.
+ For example, it was easier to define 
+\family typewriter
+\emph on
+N1a
+\family default
+\emph default
+ and 
+\family typewriter
+\emph on
+N0
+\family default
+\emph default
+ criteria and reuse their definitions for 
+\family typewriter
+\emph on
+M0
+\family default
+\emph default
+, rather than to start with the definition of 
+\family typewriter
+\emph on
+M0
+\family default
+\emph default
+ and end up handling complex closures.
+ With the use of the AIM4-O ontology, anatomical concepts can easily be
+ related to each other as demonstrated previously.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/drawingRadlextaxonomyLiver.pdf
+	lyxscale 50
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:radlexclass"
+
+\end_inset
+
+Getting the subclass-hierarchy from Radlex.
+ 
+\family typewriter
+\series bold
+\emph on
+AdjacentOrganGroup (Pancreas, Spleen, Stomach, Gallblader,and Colon)
+\family default
+\series default
+\emph default
+ and 
+\family typewriter
+\series bold
+\emph on
+NoAdjacentOrganGroup (Lymph nodes, Lung) 
+\family default
+\series default
+\emph default
+classes are created regarding the organ where the primary tumor was located
+ (in this case, the liver).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Experimental Study and Results
+\end_layout
+
+\begin_layout Plain Layout
+In this section, we first describe our experimental datasets, based on actual
+ medical images and reports.
+ Then, we evaluate the expressivity of the AIM4-O ontology.
+ Finally, we present a quantitative evaluation of our TNM classifier for
+ semantic image findings, which is the objective of this work, using precision
+ and recall.
+\end_layout
+
+\begin_layout Subsection
+Datasets
+\end_layout
+
+\begin_layout Plain Layout
+Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
+ (HCC) patients from The NCI’s Genomic Data Commons (GDC).
+ In this work, all experiments were supported by the GDC data.
+ An important requirement to enable a feasible clinical evaluation was to
+ have an image dataset to validate the results of the GDC clinical reports.
+ To cover this requirement, we used the TCIA database 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Clark2013"
+
+\end_inset
+
+.
+ It hosts a large archive of medical images about cancer, it is accessible
+ for public download and it is related to GDC records by a patient 
+\family typewriter
+\series bold
+\emph on
+subject ID
+\family default
+\series default
+\emph default
+.
+ The imaging modality selected was computed tomography (CT).
+ The downloaded images were loaded into the ePAD annotation tool and were
+ annotated.
+\end_layout
+
+\begin_layout Plain Layout
+While TNM staging could be applied to other types of cancer, this work focuses
+ on staging liver.
+ One reason is the availability of clinical data and images.
+ For a given patient, the input to our TNM classifier consists of AIM files
+ (image annotations) and the output consists of the Cancer Staging for this
+ patient.
+\end_layout
+
+\begin_layout Subsection
+Quantitative assessment of AIM4-O ontology
+\end_layout
+
+\begin_layout Plain Layout
+According to Blomqvist et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Blomqvist2012"
+
+\end_inset
+
+, "
+\emph on
+the ontological evaluation is the process of assessing an ontology with
+ respect to certain criteria, using certain measures
+\emph default
+".
+ In this work, we undertook the evaluation of the AIM4-O ontology from the
+ functional point of view.
+ To achieve this, we carried out a task-focused assessment and inference
+ requirements 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kokciyan2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+In order to evaluate the AIM4-O ontology, we studied and evaluated how it
+ could help in searching clinical reports that describe image findings (reports
+ about cancer).
+ For this purpose, we compared two different approaches:
+\end_layout
+
+\begin_layout Itemize
+Ontology-based (semantic) search: If the clinical reports are described
+ as AIM4-O individuals, these reports can be searched using description
+ logic query languages (DL query).
+\end_layout
+
+\begin_layout Itemize
+Natural Language process-based (keyword) search: Clinical reports and image
+ findings are usually written in natural language, therefore, a method for
+ searching can be keyword search.
+\end_layout
+
+\begin_layout Plain Layout
+In order to highlight the differences between these two approaches, we describe
+ four queries expressed both in DL (DL query) and keywords (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:queries"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Enumerate
+Q1- Find all reports related to an image observation (tumor observation).
+\end_layout
+
+\begin_layout Enumerate
+Q2- Find all reports that describe multiple tumors.
+\end_layout
+
+\begin_layout Enumerate
+Q3- Find all reports that contain a tumor observation that has a size greater
+ than 8 cm.
+\end_layout
+
+\begin_layout Enumerate
+Q4- Find all reports that contain a tumor observation with descriptors (e.g.,
+ invasion, mass, vascular).
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:queries"
+
+\end_inset
+
+Description logic and keyword representation for four queries.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="2.5cm">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DL query
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Keyword query
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations some (hasImageAnnotations some (hasImagingObservation some
+ (ImagingObservationEntity and label value "Lesion type "))) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations min 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple tumor 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasAnnotations some (hasImageAnnotations some (hasCalculationEntity some
+ (hasCalculationResult some (some values float [> 8.0f])))) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tumor size greater than 8 cm 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hasImagingObservationCharacteristic 1 min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vascular tumor invasion mass 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We have considered the following points in order to evaluate both approaches:
+\end_layout
+
+\begin_layout Itemize
+The evaluation was based on GDC reports: We randomly took 15 radiology reports
+ of different patients written in natural language and converted them into
+ AIM4-O instances.
+\end_layout
+
+\begin_layout Itemize
+A report was retrieved if it satisfied the DL query or it collects all keywords
+ in the search query.
+\end_layout
+
+\begin_layout Itemize
+Finally, we compared the precision and recall against a gold standard.
+ The gold standard was determined by a radiologist manually.
+\end_layout
+
+\begin_layout Plain Layout
+The four queries with corresponding precision and recall results are showing
+ in Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prexrecallontology"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prexrecallontology"
+
+\end_inset
+
+Recall and Precision values for the four queries.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="1.2cm">
+<column alignment="left" valignment="top" width="1.8cm">
+<column alignment="left" valignment="top" width="2.3cm">
+<column alignment="left" valignment="top" width="1.8cm">
+<column alignment="left" valignment="top" width="2.3cm">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" rightline="true" usebox="none" width="1.8cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Query ID
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Semantic search- DL
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none" width="3.5cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Keyword search
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Precision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Presicion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recall
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Q4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Observations 
+\end_layout
+
+\begin_layout Plain Layout
+By analyzing the four queries we can see that the semantic search has the
+ greatest number of relevant documents retrieved:
+\end_layout
+
+\begin_layout Description
+Q1: With the semantic approach, 15 reports were retrieved with a precision
+ and recall of 1 (15/15).
+ With the keyword search, 12 reports were retrieved with a precision of
+ 1 (12/12) and recall of 0.8 (12/15).
+ 
+\end_layout
+
+\begin_layout Description
+Q2: With the semantic approach, 5 reports were retrieved with a precision
+ and recall of 1 (5/5).
+ With the keyword search, 5 reports were retrieved with a precision and
+ recall of 0.4 (2/5).
+ 
+\end_layout
+
+\begin_layout Description
+Q3: With the semantic search, 10 reports were retrieved with a precision
+ of 0.9 (9/10) and recall of 0.9 (9/10).
+ With the keyword search approach no reports were retrieved, because there
+ were not any reports that contained all the query words (i.e., lesion size
+ greater than 8 cm).
+ 
+\end_layout
+
+\begin_layout Description
+Q4: With the semantic search, 15 reports were retrieved with a precision
+ of 0.67 (10/15) and recall of 1 (10/10).
+ With the keyword search, 7 reports were retrieved with a precision of 1
+ (7/7) and recall of 0.7 (7/10).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+The semantic search approach performance was better, with recall values
+ close to 1 and always better than the keyword search.
+ Also, in all but one case, precision values were better for the semantic
+ search.
+ The keyword search had 0 precision and recall for the query 3, which is
+ a very bad result.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Classification using the Recist Criteria
+\end_layout
+
+\begin_layout Plain Layout
+The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
+ a standardized assessment of tumor burden and tumor response during therapy.
+ Here, a sum of the diameters for all target lesions is calculated and reported
+ as the baseline for follow-up and indicates therapy response/failure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Recist"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+A considerable part of guidelines on Recist criteria can be automated using
+ the AIM4-O ontology model and image annotations.
+ However, this is not done by defining logical axioms and SWRL rules in
+ OWL, as we do with other types classification such as TNM.
+ That happens because Recist is based on value comparisons and OWL uses
+ an open world assumption.
+ Instead, we use SPARQL to retrieve relevant data to classify findings by
+ comparing their measurement values to size specifications provided by Recist.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Description
+Recist specifications:
+\end_layout
+
+\begin_layout Plain Layout
+Baseline documentation of “Target” and “Non-Target” lesions
+\end_layout
+
+\begin_layout Itemize
+All measurable lesions, up to a maximum of 2 lesions per organ and 5 lesions
+ in total, representative of all involved organs should be identified as
+ target lesions, recorded and measured at baseline.
+ 
+\end_layout
+
+\begin_layout Itemize
+A sum of the Longest Diameter (LD), for all target lesions, will be calculated
+ and reported as the baseline sum LD.
+ The baseline sum LD will be used as reference by which to characterize
+ the objective tumor response.
+ 
+\end_layout
+
+\begin_layout Itemize
+All other lesions (or sites of disease) should be identified as non-target
+ lesions and should also be recorded at baseline.
+ Measurements of these lesions are not required, but the presence or absence
+ of each should be noted throughout follow-up.
+\end_layout
+
+\begin_layout Description
+Response Criteria evaluation of target lesions
+\end_layout
+
+\begin_layout Itemize
+Complete Response (CR): Disappearance of all target lesions 
+\end_layout
+
+\begin_layout Itemize
+Partial Response (PR): At least a 30% decrease in the LD sum of the target
+ lesions, taking as reference the baseline LD sum.
+ 
+\end_layout
+
+\begin_layout Itemize
+Stable Disease (SD): Neither sufficient shrinkage to qualify for PR nor
+ sufficient increase to qualify for PD, taking as reference the smallest
+ LD sum since the treatment started.
+ 
+\end_layout
+
+\begin_layout Itemize
+Progressive Disease (PD): At least a 20% increase in the LD sum of the target
+ lesions, taking as reference the smallest LD sum recorded since the treatment
+ started or the appearance of one or more new lesions 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsubsection
+Asserting Recist guidelines using OWL and SPARQL
+\end_layout
+
+\begin_layout Plain Layout
+The guidelines of Recist in detail in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Recist"
+
+\end_inset
+
+, represent rules and most of them were implemented using SPARQL (rules
+ related to non-target lesions were not implemented):
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Selection of target lesions
+\series default
+:The selection of final target lesions, from the set of potential lesions,
+ is performed by the radiologist.
+ However, this selection can also be implement using the following rule
+ (in SWRL notation):
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Srwl rule that classifies potential target lesions based on tumor size (<15mm):
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\lang brazilian
+\begin_inset Formula 
+\begin{gather*}
+\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\\
+\land hasCalculationResult(?y,?z)\\
+values(?z,?val)\land greaterThan(?val,1.5)\rightarrow isAdjacentOrgan(?x,true)\\
+\hline 
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\lang brazilian
+Verification of target lesions:
+\series default
+ It is verified that there are at most five target lesions selected and
+ that each organ appears at most twice as the lesion location.
+ This is done by the following SPARQL ASK queries: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that verifies that there are at most five target lesions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto: <http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+ASK where { Select (count(?lesion) as ?log) where {     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?anotation onto:hasPerson onto:Xindividual.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?anotation onto:hasImageAnnotations ?imageanotation.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?imageanotation onto:hasImagingObservation ?observation.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?observation onto:typeCode ?typeCode.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		FILTER regex(str(?typeCode),'Lesion Baseline Evaluation')     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		?imageanotation onto:hasLesion ?lesion.
+     		
+\end_layout
+
+\begin_layout Plain Layout
+
+		} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	having (?log <= 5 ) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that verifies that there are at most five target lesions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>       	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>       
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#> 
+\end_layout
+
+\begin_layout Plain Layout
+
+ASK where {  
+\end_layout
+
+\begin_layout Plain Layout
+
+	SELECT (count(?location) as ?log) where {         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?anotation onto:hasPerson onto:Xindividual.
+         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?anotation onto:hasImageAnnotations ?imageanotation.
+          		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?imageanotation onto:hasImagingObservation ?observation.
+          	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?observation onto:typeCode ?typeCode.
+          	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  FILTER regex(str(?typeCode),'Lesion Baseline Evaluation').
+         	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?imageanotation onto:hasLesion ?lesion.
+         	
+\end_layout
+
+\begin_layout Plain Layout
+
+	  ?lesion onto:hasLocation ?location.
+         		
+\end_layout
+
+\begin_layout Plain Layout
+
+      ?location rdf:type onto:Xorgan.
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+having (?log <= 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\lang brazilian
+Calculation of RECIST sum:
+\series default
+ This operation is easily implemented by getting the values from the value
+ property on the CalculationResult entity.
+ This entity is related to the ImageAnnotation entity through the hasCalculation
+Entity object property (AIM4-O ontology), as shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AIM4example"
+
+\end_inset
+
+.
+ The shortest axis (lymph nodes) and longest axis (other lesions) are summed
+ for all target lesions by the follow SPARQL queries: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparql query that sums shorest and longest axis of all target lesion.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+The “
+\series bold
+Xdatatime
+\series default
+” variable can be “Lesion Baseline Evaluation” or “Follow Up”
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset listings
+lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>     
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
+\end_layout
+
+\begin_layout Plain Layout
+
+SELECT ( SUM(?values) as ?sum) where {     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?anotation onto:hasPerson onto:Xindividual.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?anotation onto:hasImageAnnotations ?imageanotation.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+	?imageanotation onto:hasImagingObservation ?observation.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+	?observation onto:typeCode ?typeCode.
+      	
+\end_layout
+
+\begin_layout Plain Layout
+
+	FILTER regex(str(?typeCode),'Xdatatime').
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+	?imageanotation onto:hasCalculationEntity ?calculation.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?calculation onto:hasCalculationResult ?calcresult.
+     	
+\end_layout
+
+\begin_layout Plain Layout
+
+	?calcresult onto:values ?values.
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\lang brazilian
+Classification of response:
+\series default
+ Finally, the classification of complete response(CP), partial response
+ (PR) or stable disease (SD) is carried out in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ShowsRecist"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/recistResult.jpg
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ShowsRecist"
+
+\end_inset
+
+Shows the response classification PD (Progressive Disease: at least a 20%
+ increase in the LD sum of target lesions) of a patient with one lesion
+ in the liver “liver2” , with studies on dates october 31 and september
+ 26.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang brazilian
+The reasoning, based on the four guidelines above, provide an automated
+ estimate of the tumor burden, according to the RECIST criteria, on imaging
+ studies at baseline and follow-up.
+ This information will enable oncologists to calculate and classify patients
+ response.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Automatic TNM clinical stage
+\end_layout
+
+\begin_layout Plain Layout
+In this section, we calculated the classification rate of the TNM classifier.
+ At first, we created an ePAD template named "TNM template" in order to
+ provide to the radiologist with a pre-specified set of semantic terms for
+ image annotations.
+ These image annotations, which are compatible with the ePAD tool, were
+ stored in the AIM-XML format.
+ An example of an annotated image is presented in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TNMtemplate"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/templateTNM.pdf
+	lyxscale 50
+	scale 27
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TNMtemplate"
+
+\end_inset
+
+A CT image of the liver annotated using the TNM template (on the right of
+ the image).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+After, the generated image annotations (in AIM-XML format) were classified
+ automatically using the TNM criteria.
+ This process was duly evaluated and correctly accepted by an experienced
+ radiologist, he analyzed the accuracy of the generated annotations in terms
+ of semantic.
+ The process we followed was:
+\end_layout
+
+\begin_layout Itemize
+The data set used came from the following open databases:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The NCI's Genomic Data Commons (GDC)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdc.cancer.gov/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The Cancer Imaging Archive (TCIA)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://public.cancerimagingarchive.net/ncia/login.jsf
+\end_layout
+
+\end_inset
+
+ (collects only images, the number of series and studies): As we working
+ with TNM classification from the liver, we searched for "LIHC - Liver hepatocel
+lular carcinoma" obtaining 52 patients with information available in both
+ databases (images and reports).
+ However, the information about tumor size was obtained by manual review
+ of the medical reports.
+ These reports are also available in The NCI's Genomic Data Commons.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+After reading the medical reports, the radiologist was provided with an
+ excel spreadsheet that provided information about medical findings, such
+ as lesion size, vascular invasion, and others.
+\end_layout
+
+\begin_layout Itemize
+Based on this excel file and the GDC data, we created the AIM-XML annotations
+ and integrated them into our knowledge base (as AIM4-O ontology individuals).
+\end_layout
+
+\begin_layout Itemize
+The AIM files were used as inputs for our TNM classifier.
+ The produced output was compared with the TNM values that physicians reported.
+\end_layout
+
+\begin_layout Plain Layout
+In this paper, the 7th edition of TNM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Faria2014"
+
+\end_inset
+
+ has been employed.
+ The AIM image annotations were generated based on 52 different clinical
+ reports.
+ Our automatic staging approach was evaluated by using precision and recall
+ values.
+ The cancer stages generated by our TNM classifier were compared to those
+ described by the physicians who created the original clinical reports (our
+ gold standard).
+ One patient, with a subject ID "TCGA-DD-A1EJ", was removed from this analysis.
+ The specialist considered that the TNM classification reported by the physician
+ in his respective clinical report was incorrect (more information below).
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Results"
+
+\end_inset
+
+Confusion Matrix of cancer stages predicted by the TNM classifier versus
+ the values of the doctors placed in the reports.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n = 51
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actual Stages
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IVA
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Predicted Stages
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IIIB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IVA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+For the calculation of precision and recall, the result is considered positive
+ when the automatic staging coincides with the stage given by physicians
+ who created the original clinical report.
+ See Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Results"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Precision was 85.7% and recall 81.0% (for 51 patients).
+ This means that, for precision, at 85.7% of the time the system agreed with
+ the staging given by physicians.
+ For the recall, this means that, of all the times that a given stage was
+ reported by a physician, in 81.0% of cases the system agreed with him/her.
+ It is important to note that, even when the system diverged from physicians,
+ the maximum difference between them was only one stage.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We discussed these patient staging results with a physician (DR) from the
+ Radiology Department of Stanford University School of Medicine, who found
+ this results very good.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+In Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+ we show the results of the evaluation summarized in the color scale matrix.
+ It represents our confusion matrix for a multi-stage classification.
+ The darker the square in the diagonal of the matrix means that the respective
+ class was better classified.
+ The other squares in grays, outside of the diagonal, indicates that the
+ class in the vertical axis was confused by the classifier with the correspondin
+g class on the vertical axis.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/confusionmatrix2.pdf
+	lyxscale 70
+	scale 38
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:matrixconfusion"
+
+\end_inset
+
+Confusion matrix for TNM multi-stage classification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+For early stages of cancer, such as I, II, IIIA, the percentage of misclassifica
+tions (e.g., false positives and false negatives) was very small.
+ They are represented by the highlighted diagonal of the matrix (Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:matrixconfusion"
+
+\end_inset
+
+).
+ For more advanced stages of cancer, such as IIIB or IVA, it was larger
+ (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:histogram"
+
+\end_inset
+
+).
+ This may have happened simply because we had few patients at these stages
+ or because these stages are described by relatively more complex concepts.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/classhistogram.pdf
+	scale 39
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:histogram"
+
+\end_inset
+
+Summary of Histograms for each TNM stage from the Confusion Matrix (51 reports):
+ FN - False Negatives, FP - False Positives and TP - True Positives.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Our classifier also revealed the fact that there are clinical reports with
+ inaccurate staging diagnosis.
+ An example of this situation was the clinical case with subject ID "TCGA-DD-A1E
+J".
+ The result of the classifier was considered correct by our expert.
+ The stage predicted was the Stage I, however, the stage described by the
+ medical report was the Stage III
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
+\end_layout
+
+\end_inset
+
+.
+ As it was the only case in which the difference between the classifier’s
+ stage and the physician’s evaluation differed by more than one level, our
+ expert decided to analyze the report and concluded that the classifier’s
+ stage was correct.
+ He recommended us to not use this patient’s data, so this report was excluded
+ from the analysis.
+ Examples, like this, serve to warrant the importance of improving clinical
+ decision support systems (through the use of image metadata in cancer treatment
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Recurrent Neural Networks 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Recurrent-Neural-Networks"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recurrent Neural Networks (RNNs) are a subclass of ANN's characterized by
+ cyclic graphs in its structure.
+ These cycles accumulate previous activities and allow the network stores
+ internal states.
+ These internal states avoid needing to feed the network with the history
+ of previous input and output as the Time-Delay Neural Network
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kuna2015"
+
+\end_inset
+
+.
+ And can use the input sequences in order to perform temporal tasks as forecasti
+ng.
+ The RNN output can be described by: 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Output_{t+1}\cong Forecasting\left(RNNstate,Input_{t},Output_{t}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:elmanandwilliam"
+
+\end_inset
+
+ b) and a) show the two types of traditional recurrent ANN models, the Elman
+ recurrent network 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Elman90findingstructure"
+
+\end_inset
+
+ and the Willians-Zipser fully recurrent network
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams:1989:LAC:1351124.1351135"
+
+\end_inset
+
+.
+ These neural networks have cyclic connections on their structure.
+ For instance, the Elman network connects its input to all neurons, including
+ output ones, hidden and output neurons are fully interconnected.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNewilliamandelman.pdf
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:elmanandwilliam"
+
+\end_inset
+
+(b) Elman recurrent Artificial Neural Network.
+ a) William-zipser fully recurrent Artificial Neural Network.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Training Algorithms
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Training-Algorithms"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Basically, supervised learning means to adjust the network weight matrix
+ 
+\series bold
+W 
+\series default
+using the optimization algorithms , in order to minimize the output error.
+ This is probably the most common approach used among the current types
+ of neural network systems where the input and output are used in the network.
+ A well known training method is the Standard Backpropagation algorithm
+ (BP)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rumelhart:1986:PDP:104279"
+
+\end_inset
+
+.
+ Backpropagation is a method to calculate the gradient of the loss function
+ with respect to the weights.
+ This technique approximates the local minimum by changing these weights
+ along of negative error gradient direction.
+ The objective function E(W) is calculated after BP applies an update to
+ the weights in the network;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle\omega_{ji}=-\eta\frac{\partial E}{\partial\omega_{ji}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\eta$
+\end_inset
+
+ is constant positive value called learning rate.
+ The momentum rate 
+\begin_inset Formula $\beta$
+\end_inset
+
+ can be added to the current weight change, this often speeds up the learning
+ process
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sutskever2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\triangle\omega_{ji}^{'}=\beta\triangle\omega_{ji}-\eta\frac{\partial E}{\partial\omega_{ji}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weight updates can be performed in online mode or based on the mean error
+ over all training data(that is called batch mode).
+ Besides, more sophisticated alternatives to the BP algorithm, such as the
+ Levenberg-Marquardt(LM) have been found faster convergence algorithm
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-9-111-2005"
+
+\end_inset
+
+.
+ In this algorithm the weight update is obtained by the following equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\varDelta\omega=-\left[H+\mu I\right]^{-1}J^{T}\rho
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is a learning rate, 
+\series bold
+J 
+\series default
+the jacobian matrix, which is the first derivatives of the network error
+ with respect to the weights and biases, and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is a vector of network errors.
+ Finally, 
+\series bold
+H 
+\series default
+is an approximation of the Hessian matrix.
+\end_layout
+
+\begin_layout Section*
+Recurrent ANN training
+\end_layout
+
+\begin_layout Standard
+Standard BP algorithm is not suited for networks with cycles in them.
+ Nonetheless, we can apply some artifices and see the RNN like feedforward
+ network by unfolding this RNN network in time as shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:unfold"
+
+\end_inset
+
+.
+ The RNN is interpreted as layered network that keeps the same weights to
+ reusing, we assume the time delay of 1 in each connection in order to create
+ an equivalent feedforward network
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams90anefficient"
+
+\end_inset
+
+.
+ This extension of the BP method is called Backpropagation Through Time(BPTT).
+ In BPTT the number of networks copies is equal to time step 
+\series bold
+T
+\series default
+.
+ It would be impractical in the online training since the memory footprint
+ grows linearly with the time.
+ Therefore, the network unfolding is limited to a chosen truncation depth
+ to keep the method feasible 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hess-17-253-2013"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNunfoldprocess.pdf
+	lyxscale 30
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:unfold"
+
+\end_inset
+
+Recurrent Neural Network unfolded in time, the hidden units grouped at time
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ get inputs from other neurons at previous time steps.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+More sophisticated methods were developed to overcome BPTT limitations,
+ for example Real-Time Recurrent Learning
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Williams:1989:LAC:1351124.1351135"
+
+\end_inset
+
+, Clockwork Recurrent Network (CW-RNN) that splits hidden layer into M modules
+ running at different clocks
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kuna2015"
+
+\end_inset
+
+ and the extended Kalman Filter(EKF) method, which each time estimates optimal
+ weights, given a series of observed outputs, for more details see
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sum:1998:EKF:296468.296482"
+
+\end_inset
+
+.
+ However, these methods suffer shortcomings related to the modeling complexity
+ and optimization(gradient)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ That means, many updates may be necessary and it could be computationally
+ expensive, the gradient information might becomes useless by weight updates
+ procedure
+\begin_inset CommandInset citation
+LatexCommand cite
+key "doya1992bifurcations"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+Cancer staging entails an intensive work, this often requires an accurate
+ interpretation of the cancer findings in images by medical experts (oncologists
+ and radiologists).
+ Expert accuracy is achieved through training and experience 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Depeursinge2014"
+
+\end_inset
+
+, but variations in image interpretation is a human observer limitation.
+ In this context, we developed an automatic staging approach (a TNM classifier).
+ It can help physicians to obtain a higher accuracy rate for image interpretatio
+n.
+ 
+\end_layout
+
+\begin_layout Standard
+To achieve this, first an ontology to represent AIM4 annotations, called
+ AIM4-O, was developed and validated using a task-focused assessment of
+ actual clinical cases.
+ Using the ontology to semantically search reports, we got much higher precision
+ and recall values when compared to key-word (no semantics) search.
+ Subsequently, the General ontology, integrating the AIM4 ontology, Onlira
+ ontology (a subset of the Radlex vocabulary) and SWRL rules for TNM staging,
+ was developed and used to develop a TNM classifier using the Groovy language.
+\end_layout
+
+\begin_layout Standard
+This TNM classifier was evaluated using actual cancer cases.
+ Our experimental data showed that, when compared to 51 staging values given
+ in actual physician reports, the classifier generated results had 85.1%
+ precision and 81.0% recall.
+ When the classifier stages differed from physician’s reported stages, that
+ difference was, at most, of 1 stage.
+\end_layout
+
+\begin_layout Standard
+The TNM classifier revealed one patient report with inconsistencies in the
+ diagnostics.
+ It is important to note that this automatic staging procedure does not
+ give clinicians new information.
+ It is merely a second opinion for the purposes of quality in clinical diagnosis.
+ We also highlighted some limitations of description logics, such as the
+ Open World Assumption.
+ 
+\end_layout
+
+\begin_layout Standard
+Our TNM classifier can be used in automated clinical workflows, where AIM
+ based image annotations are produced by imaging systems.
+ Automatic TNM staging can be as easy as pushing a button in such systems.
+\end_layout
+
+\begin_layout Standard
+We believe that our approach could be also applied to other kinds of cancer
+ such as lungs or colon, by modifying only the rules and axioms that represent
+ the TNM criteria.
+ That can be done avoiding the creation of an entirely new ontology for
+ each type of cancer.
+\end_layout
+
+\begin_layout Standard
+Besides cancer staging, other tasks, such as RECIST cancer criteria can
+ also be automated using this combination of AIM, OWL ontologies and SWRL
+ rules.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Future work:
+\series default
+ will include more varied data sets for evaluation, expansion of the classifier
+ to other organs, and incorporation into existing information systems.
+ The TNM classifier has the potential to be integrated into larger software
+ systems.
+ The Specific Domain Language (DSL), as a communication tool between physicians
+ and the formal representation of the TNM criteria (axioms and SWRL rules),
+ would allow physicians to modify the system themselves.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+A limitation
+\series default
+ to this work is that a relatively small dataset was used in our evaluation.
+ One reason is the requirement that both medical images (CT) and clinical
+ reports have to be present for the same patient for optimal validation.
+ Another is the time constraint for radiologists and it is difficult to
+ get them to review large datasets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refsjournal"
+options "elsarticle-num-names"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -11,18 +11,39 @@
 \usepackage{algorithm,algpseudocode}
 \usepackage{tikz}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
-
+\usepackage{slashbox}
 \renewcommand{\arraystretch}{1.5}
 
 \usepackage{tocloft}
 \renewcommand\cftsecdotsep{\cftdotsep}
 %\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+\usepackage{hyperref}
+\hypersetup{
+      final=true,
+      plainpages=false,
+      pdfstartview=FitV,
+      pdftoolbar=true,
+      pdfmenubar=true,
+      bookmarksopen=true,
+      bookmarksnumbered=true,
+      breaklinks=true,
+      linktocpage,
+      colorlinks=true,
+      linkcolor=blue,
+      urlcolor=blue,
+      citecolor=blue,
+      anchorcolor=green
+    }
 
 % specify here the journal
 %\journal{Example: Nuclear Physics B}
 
 % use this if you need line numbers
 %\usepackage{lineno}
+
+\usepackage{colortbl}
+\usepackage{adjustbox}
+\definecolor{lightgray}{gray}{0.8}
 \end_preamble
 \use_default_options false
 \begin_modules
@@ -52,7 +73,7 @@ theorems-std
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 0
 \use_package amssymb 0
 \use_package cancel 0
@@ -76,14 +97,18 @@ theorems-std
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2cm
+\bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language french
 \papercolumns 1
-\papersides 2
-\paperpagestyle headings
+\papersides 1
+\paperpagestyle plain
 \listings_params "frame=tb"
 \tracking_changes false
 \output_changes false
@@ -94,39 +119,149 @@ theorems-std
 
 \begin_body
 
-\begin_layout Title
-Modelo estocástico basado en redes neurales no tradicionales aplicada a
- la generación de caudales mensuales caso: cuenca del Rio Chilli, Arequipa
- 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage} 	
 \end_layout
 
-\begin_layout Author
-- 
-\begin_inset Newline newline
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%%
+\backslash
+includegraphics[width=0.15
+\backslash
+textwidth]{example-image-1x1}
+\backslash
+par
+\backslash
+vspace{1cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+scshape Universidad Nacional De San Agustín de Arequipa Facultad De Ingeniería
+ De Producción Y Servicios 
+\backslash
+
+\backslash
+Ingeniería De Sistemas 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1cm} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+scshape
+\backslash
+Large Tesis profesional 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1.5cm} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large
+\backslash
+bfseries MODELO ESTOCÁSTICO BASADO EN REDES NEURONALES NO TRADICIONALES
+ APLICADA A LA GENERACIÓN DE CAUDALES MENSUALES CASO: CUENCA DEL RIO CHILI,
+ AREQUIPA 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{2cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+Large
+\backslash
+itshape presentada por el Bachiller: Edson Francisco Luque Mamani
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vfill 	supervisado por:
+\backslash
+par 	Phd.~Jose Alfredo Herrera Quispe 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vfill
+\end_layout
+
+\begin_layout Plain Layout
+
+% Bottom of the page 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+large 
+\backslash
+today
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
 \end_inset
 
 
-\series bold
-Alumno
-\series default
-: Edson Francisco Luque Mamani
-\begin_inset Newline newline
-\end_inset
-
-
-\series bold
-Asesor
-\series default
-: PhD.
- Jose Herrera Quispe
-\begin_inset Newline newline
-\end_inset
-
-Universidad Nacional San Agustin – UNSA
-\begin_inset Newline newline
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Standard
@@ -137,11 +272,87 @@ Universidad Nacional San Agustin – UNSA
 \end_layout
 
 \begin_layout Standard
-Las investigaciones en recursos hídricos pueden involucrar generación de
- datos y/o pronóstico no solo de variables hidrológicas sino de otras variables
- derivadas que permitan reducir perdidas de tipo económicas y sociales,
- dimensionando y escenificando el impacto de una sequía, inundación y principalm
-ente la demanda poblacional.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+null
+\backslash
+vspace{
+\backslash
+stretch {1}}         
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+begin{flushright}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		A mis padres, José y Dina por su capacidad de creer en mi        
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+end{flushright} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+stretch{2}}
+\backslash
+null
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+chapter*{Resumen} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Resumen} 
+\end_layout
+
+\end_inset
+
+Las investigaciones en recursos hídricos pueden involucrar la generación
+ de datos y/o pronóstico no sólo de variables hidrológicas sino de otras
+ variables derivadas que permitan reducir pérdidas de tipo económicas y
+ sociales, dimensionando y escenificando el impacto de una sequía, inundación
+ y principalmente la demanda poblacional.
  Por lo tanto, la búsqueda de un diseño óptimo en un proyecto de gestión
  del agua frecuentemente involucra encontrar un método o técnica que genere
  largas secuencias de las características de los flujos(caudales) en este
@@ -149,35 +360,39 @@ ente la demanda poblacional.
  Estas secuencias consideradas como series temporales pueden ser usadas
  para analizar y optimizar el desempeño del proyecto diseñado.
  Con el fin de cubrir esos requerimientos, este trabajo tiene como objetivo
- la elaboración de un modelo híbrido de proceso estocástico para ser aplicado
+ la elaboración de un nuevo modelo de proceso estocástico para ser aplicado
  en problemas que envuelven fenómenos de comportamiento estocástico y de
- características periódicas (caudales) en sus propiedades probabilísticas
- como media, varianza, etc.
- Para esto, serán usados dos componentes, el primero, un tipo de red neuronal
- recurrente recientemente introducido en la literatura y conceptualmente
- simple denominado 
+ características periódicas en sus propiedades probabilísticas como media
+ y varianza.
+ Para esto fueron usados dos componentes, el primero, un tipo de red neuronal
+ recurrente introducido en la literatura denominado Echo State Network(ESN),
+ siendo el componente determinista.
+ Una característica interesante de ESN es que a partir de ciertas propiedades
+ algebraicas, entrenar solamente la capa de salida de la red es a menudo
+ suficiente para alcanzar un desempeño excelente en aplicaciones prácticas.
+ La segunda parte del modelo, es un componente aleatorio que incorpora al
+ modelo la incertidumbre asociada a los procesos hidrológicos.
+ El modelo finalmente es llamado 
 \series bold
-ESN
+MEESN
 \series default
-(echo state network) como el componente determinista, una característica
- interesante de 
+.
+ Este fue calibrado y validado en series temporales mensuales de cuatro
+ cuencas hidrográficas de MOPEX, así como en el ámbito local en series de
+ la cuenca del Chili.
+ El nuevo modelo fue comparado con modelos presentes en la literatura como
+ el modelo; PEN, Thomas & Fiering y ANFIS.
+ Los resultados muestran que 
 \series bold
-ESN
+MEESN
 \series default
- es que a partir de ciertas propiedades algebraicas, entrenar solamente
- la salida de la red es a menudo suficiente para alcanzar una desempeño
- excelente en aplicaciones prácticas.
- El segundo, es un componente aleatorio que incorpora al modelo la incertidumbre
- asociada a los procesos hidrológicos.
- 
-\end_layout
-
-\begin_layout Standard
-Finalmente nuestro modelo será validado en el ámbito de la cuenca del Chili-Areq
-uipa y comparado con otros modelos en la literatura, el comportamiento de
- la serie histórica para generar series temporales sintéticas, igualmente
- probables a la serie histórica.
- 
+ y su versión modificada 
+\series bold
+MEESN+TSM
+\series default
+ (que considera una variable exógena) ofrecen una alternativa prometedora
+ para propósitos de simulación, con potencial interesante en el contexto
+ de los recursos hidrometeorológicos.
 \end_layout
 
 \begin_layout Standard
@@ -191,6 +406,34 @@ Palabras Clave:
 
 \begin_layout Standard
 \begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+nomname}{Lista De Abreviaturas y Siglas}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
 \end_inset
 
 
@@ -384,13 +627,37 @@ We have used two different data sets.
  of prediction in the next 100 steps.
 \end_layout
 
+\begin_layout Plain Layout
+Mi nombre es Edson Francisco Luque Mamani, con el fin de cumplir los requisitos
+ para poder obtener el título profesional en la escuela de ingeniería de
+ sistemas de la universidad nacional de san agustín, me dirijo a ustedes,
+ quienes en esta oportunidad fueron seleccionados como mi jurado, para expresar
+ lo siguiente; por motivos administrativos, vacaciones, matriculas y otros,
+ es probable que el documento físico de borrador de tesis NO les sea otorgado
+ próximamente, y es por eso que utilizo este medio para otorgarles la versión
+ digital del borrador, y así poder acelerar este proceso, ya que este proyecto
+ fue financiado por cienciactiva y está sujeto a un tiempo de entrega.
+ Es por eso les pido a ustedes distinguidos jurados puedan revisar mi trabajo.
+\end_layout
+
+\begin_layout Plain Layout
+Estoy a disposición frente a cualquier duda sobre el trabajo realizado,
+ gracias por su tiempo.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Saludos, Edson.
+ 
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Chapter
-Conclusión
+Conclusión y trabajos futuros
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Conclusión"
@@ -400,7 +667,18 @@ name "chap:Conclusión"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/conclusion.lyx"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Verbatim*
+
 \begin_inset Note Note
 status collapsed
 

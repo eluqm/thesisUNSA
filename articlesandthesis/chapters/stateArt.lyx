@@ -360,7 +360,7 @@ El problema con los modelos anteriores es que tareas como predicción son
  de Inteligencia artificial, entre ellos destacan las Redes Neuronales Artificia
 les (
 \series bold
-ANN
+RNA
 \series default
 ) que han ido creciendo como alternativas y presentando un buen desempeño
  en la predicción de series temporales de variables hidrológicas(
@@ -401,12 +401,12 @@ key "hess-20-1405-2016"
 ).
  La mayoría de investigaciones que usan 
 \series bold
-ANN's
+RNA's
 \series default
  como modelos de predicción, han prestado mayor atención en las denominadas
  
 \series bold
-ANN's 
+RNA's 
 \series default
 \emph on
 feedforward
@@ -418,7 +418,7 @@ feedforward
 \begin_layout Standard
 Por otra parte, las 
 \series bold
-ANN's 
+RNA's 
 \series default
 Recurrentes que se caracterizan por tener conexiones cíclicas en su estructura,
  permiten un modelado más parsimonioso de propiedades dinámicas 
@@ -431,7 +431,7 @@ key "hess-17-253-2013"
 , es por esa razón que su capacidad de representación temporal puede ser
  mejor que el de las 
 \series bold
-ANN's
+RNA's
 \series default
  
 \emph on
@@ -461,7 +461,7 @@ reference "subsec:Redes-Neuronales-Recurrentes"
 \begin_layout Standard
 Como una alternativa a los problemas presentes en 
 \series bold
-ANN's 
+RNAR's 
 \series default
 recurrentes tradicionales ha sido recientemente introducido el concepto
  de 
@@ -480,7 +480,7 @@ Reservoir Computing
 es un enfoque de entrenamiento que puede ser notablemente más simple y rápido
  que aquellos aplicados en 
 \series bold
-ANN's
+RNA's
 \series default
  recurrentes tradicionales (
 \begin_inset CommandInset citation
@@ -565,7 +565,7 @@ ESN
  la maximización de la distribución probabilística posterior.
  Con el fin de validar el modelo, se emplean las 
 \series bold
-ANN's
+RNA's
 \series default
  
 \emph on
@@ -582,7 +582,7 @@ ESN
 .
  Los resultados indican que el modelo propuesto supera tanto a las 
 \series bold
-ANN's 
+RNA's 
 \series default
 \emph on
 feedforward 
@@ -609,14 +609,14 @@ ESN
 pueden ser considerados como una alternativa válida a los enfoques de las
  
 \series bold
-ANN's 
+RNA's 
 \series default
 \emph on
 feedforwad 
 \emph default
 y 
 \series bold
-ANN's
+RNA's
 \series default
  recurrentes tradicionales.
  La capacidad de predicción de estos modelos son evaluados sobre una variedad
@@ -628,14 +628,14 @@ ESN
 \series default
 con dos modelos simples de referencia, dos modelos 
 \series bold
-ANN's 
+RNA's 
 \series default
 \emph on
 feedforward
 \emph default
 , y tres 
 \series bold
-ANN's 
+RNA's 
 \series default
 recurrentes.
  Además, varios aspectos del diseño de 
@@ -649,7 +649,7 @@ ESN
 \series default
 supera a las 
 \series bold
-ANN
+RNA
 \emph on
 '
 \emph default
@@ -660,7 +660,7 @@ feedforward
 \emph default
  y son competitivos con el estado del arte de las
 \series bold
- ANN's
+ RNAR's
 \series default
  recurrentes.
  
@@ -690,11 +690,11 @@ ESN's
  Se demostró que este modelo superó de manera general tanto a un modelo
  estándar de 
 \series bold
-ANN's 
+RNA's 
 \series default
 recurrentes así como a un modelo de 
 \series bold
-ANN's 
+RNA's 
 \series default
 Bayesiano durante un intervalo de tiempos de pronóstico.
  
@@ -801,16 +801,16 @@ Podemos apreciar que son pocos los modelos propuestos en la literatura,
 \emph on
 echo state networks
 \emph default
-(
+, como alternativa a los métodos de entrenamiento en 
 \series bold
-RC-ESN
-\series default
-) como alternativa a los métodos de entrenamiento en 
-\series bold
-ANN's 
+RNA's 
 \series default
 recurrentes.
- Muchos de los trabajos en predicción utilizan ANN's 
+ Muchos de los trabajos en predicción utilizan 
+\series bold
+RNA
+\series default
+'s 
 \emph on
 feedfordward
 \emph default
@@ -832,14 +832,28 @@ key "en81012228"
 
 \end_inset
 
- presenta un sistema híbrido para predicción de variables hidrológicas.
- Nuestra propuesta considera dos componentes a fin de aprovechar las ventajas
- que un sistema híbrido nos puede brindar; el primer componente, es uno
- determinista representado por una 
+ presenta un sistema híbrido para predicción de variables hidrológicas,
+ por otra parte, es correcto mencionar algunos trabajos no publicados que
+ sirvieron de base para realizar esta investigación como el trabajo de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "herrera2013modelo"
+
+\end_inset
+
+, en el cual se utiliza un sistema en base a razonamiento basado en casos
+ y un componente aleatorio.
+ Nuestra propuesta 
 \series bold
-ANN 
+MEESN
 \series default
-recurrente usando 
+ considera dos componentes a fin de aprovechar las ventajas que un sistema
+ híbrido nos puede brindar; el primer componente, es uno determinista representa
+do por una 
+\series bold
+RNAR 
+\series default
+usando 
 \series bold
 ESN 
 \series default

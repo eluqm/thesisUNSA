@@ -1,0 +1,1333 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+%\renewcommand\cftsecleader{\cftdotfill{\cftsecdotsep}}
+
+% specify here the journal
+%\journal{Example: Nuclear Physics B}
+
+% use this if you need line numbers
+%\usepackage{lineno}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering 
+\end_layout
+
+\begin_layout Plain Layout
+
+	%%
+\backslash
+includegraphics[width=0.15
+\backslash
+textwidth]{example-image-1x1}
+\backslash
+par
+\backslash
+vspace{1cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+scshape
+\backslash
+Large Universidad Nacional De San Agustín de Arequipa 
+\backslash
+
+\backslash
+Facultad De Ingeniería De Producción Y Servicios  
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1cm} 	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+scshape
+\backslash
+Large Catálogo de Trabajo De Tesis 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+vspace{1.5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I.
+ NIVEL:PREGRADO
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+item ESCUELA PROFESIONAL: {
+\backslash
+bfseries INGENIERÍA DE SISTEMAS}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+item TITULO PROFESIONAL : {
+\backslash
+bfseries INGENIERO DE SISTEMAS}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+item DENOMINACIÓN DEL TRABAJO DE TESIS:		
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bfseries MODELO ESTOCÁSTICO BASADO EN REDES NEURONALES NO TRADICIONALES
+ APLICADA A LA GENERACIÓN DE CAUDALES MENSUALES CASO: CUENCA DEL RIO CHILLI,
+ AREQUIPA 
+\backslash
+par} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+item AUTOR: {
+\backslash
+bfseries EDSON FRANCISCO LUQUE MAMANI}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+CONTENIDO:
+\end_layout
+
+\begin_layout Section*
+ASPECTOS METODOLÓGICOS
+\end_layout
+
+\begin_layout Subsection*
+Tipo y Nivel de la Investigación
+\end_layout
+
+\begin_layout Standard
+Posteriormente al haber revisado la literatura existente sobre el tema,
+ es momento de visualizar el alcance del estudio que se efectuará.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta tesis, se realizó una investigación 
+\series bold
+exploratoria
+\series default
+ y 
+\series bold
+experimental
+\series default
+, por que en primera instancia, no existen antecedentes de un modelo estocástico
+ similar, en la literatura que combine las siguientes técnicas:
+\end_layout
+
+\begin_layout Itemize
+Entrenamiento de redes neuronales recurrentes basado en ESN.
+ 
+\end_layout
+
+\begin_layout Itemize
+El modelo de Thomas & Fiering, en específico, su componente estocástico.
+\end_layout
+
+\begin_layout Standard
+Así mismo se busca manipular este modelo estocástico, modificando sus parámetros
+(redes neuronales) y el horizonte de predicción, con el fin de comparar
+ nuestra propuesta con los modelos existentes en la literatura, en las mismas
+ condiciones y con los mismos datos.
+ La ejecución de otro nuevo experimento, es relativamente barato y sólo
+ depende de ciclos y tiempo.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Método y Diseño de la investigación
+\end_layout
+
+\begin_layout Standard
+EL enfoque de nuestra investigación es 
+\series bold
+cuantitativo.
+
+\series default
+ Por esta razón es necesario realizar una investigación experimental donde
+ se manipulará variables independientes.
+ Se usará estadística descriptiva para el análisis de resultados.
+ Se utilizarán indicadores como la media, desviación estándar, asimetría
+ para todos los experimentos de las series de tiempo generadas por los modelos
+ a comparar (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "4371334"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand citet
+key "en81012228"
+
+\end_inset
+
+).
+ Así como medidas de bondad de ajuste, con el objetivo de comprobar si las
+ series generadas son igualmente probables a la serie histórica.
+ Para finalmente establecer las conclusiones,contribuciones, limitaciones,
+ y trabajo futuro del modelo.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Técnicas e Instrumentos de Recolección de Información
+\end_layout
+
+\begin_layout Subsubsection*
+Técnicas
+\end_layout
+
+\begin_layout Standard
+Las informaciones de tipo secundaria necesarias para validar nuestro modelo
+ estocástico se dividen en :
+\end_layout
+
+\begin_layout Itemize
+La información de series temporales procedentes de 
+\series bold
+MOPEX
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+http://www.nws.noaa.gov/ohd/mopex/mo_datasets.htm
+\end_layout
+
+\end_inset
+
+.
+
+\series default
+ MOPEX es una base de datos hidrometeorológicos consistentes e históricos
+ ampliamente usado por la comunidad científica, contiene información de
+ unas 200 cuencas hidrográficas de escala intermedia (500 - 10 000 km2)
+ de una amplia gama de climas en todo el mundo.
+ En este trabajo se eligieron 4 cuencas al azar, donde: los registros se
+ encuentran en una escala mensual, en un periodo desde 1948 hasta 2000.
+ 
+\end_layout
+
+\begin_layout Itemize
+La información de series temporales del entorno de la cuenca del Rio-Chili.
+ Consiste en datos hidrometeorológicos e históricos de estaciones de mediciones
+ del entorno local: como el 
+\series bold
+Pañe
+\series default
+(Operada por Autodema), 
+\series bold
+Aguada Blanca
+\series default
+ y 
+\series bold
+Frayle
+\series default
+(ubicada en el cauce del río Blanco-Arequipa).
+ Los registros en escala mensual fueron proporcionados por tesis realizadas
+ entre los años 2002-2006.
+ Estos trabajos (tesis de 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "JorgeEduardoUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "DerlyUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GabrielUNSA"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "autodema"
+
+\end_inset
+
+) se encargaron de obtener datos mensuales consistentes, tomando como fuente
+ los registros de las 3 estaciones hidrométricas antes mencionadas.
+ Para generar datos consistentes, los autores usaron técnica de estadística
+ como análisis de normalidad, estudio del coeficiente de asimetría, de las
+ series temporales.
+ En este trabajo se decidió usar como fuente (hojas de calculo) las series
+ históricas generadas por esos estudios, en un periodo desde el año 1970
+ hasta 2000.
+ Los registros son mensuales en metros cúbicos por segundo 
+\begin_inset Formula $m^{3}/s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+PLANTEAMIENTO DEL PROBLEMA
+\end_layout
+
+\begin_layout Standard
+Según 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "autodema"
+
+\end_inset
+
+ dentro de los problemas identificados en la región de Arequipa se encontraron
+ una ineficiente y desintegrada gestión del recurso hídrico en la Cuenca
+ del Río Chili, generando baja disponibilidad del recurso.
+ Se atribuye a este tipo de problemas de gestión como causantes de pérdidas
+ físicas, económicas, sociales y ambientales.
+ 
+\end_layout
+
+\begin_layout Standard
+Cada vez es más difícil ignorar la necesidad de modelos eficientes y efectivos
+ en la generación de escenarios de predicción basados en variables hidrológicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, los recientes desarrollos en el campo de inteligencia artificial
+ han estimulado el desarrollo de modelos basados en conceptos como las Redes
+ Neuronales Artificiales que permiten representar tareas de naturaleza dinámica
+ (predicción de variables hidrológicas) con mejor desempeño que los modelos
+ lineales tradicionales.
+ Estudios previos han demostrado que el tipo de redes neuronales que presenta
+ un notable desempeño en el área de hidrología según 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Coulibaly201076"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chang:chang2002"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Chiang2004297"
+
+\end_inset
+
+, son las denominadas Redes Neuronales Recurrentes, debido a su estructura
+ de conexiones cíclicas permite un modelado más parsimonioso de propiedades
+ dinámicas.
+ Sin embargo, la recurrencia presente en su estructura puede ocasionar increment
+o en la complejidad de entrenamiento y posteriormente ocasionar problemas
+ de convergencia
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ Debido a lo anterior mencionado, esta investigación representa un intento
+ de responder a la siguiente pregunta: ¿Puede ser considerada como alternativa
+ válida un modelo de generación de escenarios para predicción de variables
+ hidrológicas basado en Redes Neuronales Recurrentes, usando nuevos métodos
+ como 
+\series bold
+ESN
+\series default
+ para reducir la complejidad en su construcción?.
+ 
+\end_layout
+
+\begin_layout Section*
+OBJETIVOS
+\end_layout
+
+\begin_layout Subsection*
+Objetivo General
+\end_layout
+
+\begin_layout Standard
+Proponer un modelo de Proceso Estocástico para la generación de series temporale
+s hidrológicas mediante el uso de técnicas de inteligencia artificial relativame
+nte novedosas como 
+\series bold
+ESN 
+\series default
+y un ruido aleatorio basado en la incertidumbre que afecta típicamente procesos
+ hidrológicos.
+\end_layout
+
+\begin_layout Subsection*
+Objetivos Específicos
+\end_layout
+
+\begin_layout Itemize
+Estudiar los modelos lineales, entre los cuales destacamos el modelo de
+ Thomas Fiering 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Thomas"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Revisar la literatura de los distintos modelos basados en aprendizaje de
+ maquina como: Redes Neuronales feedforward, Redes Neuronales Recurrentes,
+ el enfoque 
+\series bold
+Reservoir Computing
+\series default
+ y redes ANFIS.
+\end_layout
+
+\begin_layout Itemize
+Aplicar el modelo propuesto en la generación y predicción de series temporales
+ para un caso de estudio basado en variables hidrológicas (Caudales, Evaporación
+, Precipitación) en la cuenca del Chili, en tres estaciones de medición:
+ el Pañe, Aguada blanca y el Frayle.
+\end_layout
+
+\begin_layout Itemize
+Evaluar el modelo propuesto en comparación con los modelos: Estocásticos
+ Neuronal(PEN) de, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "4371334"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Thomas"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "en81012228"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Analizar la media, desviación estándar, asimetría como parámetros utilizados
+ para evaluar el modelo propuesto en comparación con los modelos anteriormente
+ mencionados.
+\end_layout
+
+\begin_layout Itemize
+Comprobar si nuestro modelo basado en ESN puede ser considerado como una
+ alternativa válida a las redes neuronales feedforward tradicional y recurrentes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Establecer las conclusiones, contribuciones, limitaciones, y trabajo futuro
+ del modelo.
+\end_layout
+
+\begin_layout Section*
+HIPÓTESIS 
+\end_layout
+
+\begin_layout Standard
+El modelo de proceso estocástico propuesto será capaz de modelar con mayor
+ precisión problemas del mundo real como la predicción de variables hidrológicas.
+ Fundamentado en el uso de nuevos métodos en la literatura para así reducir
+ la complejidad de su construcción.
+\end_layout
+
+\begin_layout Section*
+MARCO TEÓRICO
+\end_layout
+
+\begin_layout Subsection*
+Procesos estocásticos 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Procesos-estocásticos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo general, se representa un Proceso Estocástico(
+\series bold
+PE
+\series default
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PE"
+description "Proceso Estocástico"
+
+\end_inset
+
+) como 
+\begin_inset Formula $\left\{ Z\left(t\right):t\in T\right\} $
+\end_inset
+
+, donde 
+\begin_inset Formula $t$
+\end_inset
+
+ representa el instante de tiempo, 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ es una variable aleatoria llamada estado del proceso en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+ y 
+\begin_inset Formula $T$
+\end_inset
+
+ es el conjunto de índices denominado espacio paramétrico de PE.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, un PE es un modelo matemático caracterizado por una colección
+ de variables aleatorias ordenadas, en el tiempo y en el espacio, y definidas
+ en un conjunto, continuo o discreto, que describe la evolución de algún
+ fenómeno con características aleatorias 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Muller"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Si el conjunto 
+\begin_inset Formula $T$
+\end_inset
+
+ es un intervalo finito o infinito de números reales, se dice que 
+\begin_inset Formula $\left\{ Z\left(t\right):t\in T\right\} $
+\end_inset
+
+ es un proceso continuo.
+ Por otra parte, si 
+\begin_inset Formula $T$
+\end_inset
+
+ es un conjunto finito o contable, como por ejemplo 
+\begin_inset Formula $T=\left\{ 1,2,3,\ldots\right\} $
+\end_inset
+
+o 
+\begin_inset Formula $T=\left\{ 1,9,43,279\right\} $
+\end_inset
+
+, se dice que PE es un proceso discreto 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+.
+ El espacio de estados de un PE es el conjunto de todos los posibles valores
+ de variables 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+, que también puede ser discreto o continuo.
+ La combinación de los posibles valores de 
+\begin_inset Formula $T$
+\end_inset
+
+ y 
+\begin_inset Formula $Z\left(t\right)$
+\end_inset
+
+ conduce a cuatro clases de proceso estocástico (para mas información véase
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "barros2009processos"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection*
+Serie Temporal
+\end_layout
+
+\begin_layout Standard
+El concepto de proceso estocástico proporciona el análisis probabilístico
+ de series temporales.
+ Así, una serie temporal puede ser considerada una realización de un PE,
+ esto es, una posible trayectoria del proceso.
+ Por lo tanto, un PE es un proceso generador de datos cuya serie temporal
+ es una realización muestral entre todas las series posibles a ser generadas
+ por este modelo.
+ Por ejemplo, nosotros podemos considerar el siguiente proceso estocástico
+ definido como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z_{t}=Z_{t-1}+a_{t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde podemos asumir que 
+\begin_inset Formula $Z_{0}=0$
+\end_inset
+
+, y 
+\begin_inset Formula $a_{t}$
+\end_inset
+
+ es una variable independiente e idénticamente distribuida 
+\begin_inset Formula $N\left(0,\sigma^{2}\right)$
+\end_inset
+
+.
+ Este proceso es conocido como 
+\series bold
+camino aleatorio.
+\end_layout
+
+\begin_layout Subsection*
+Modelos De Aprendizaje De Maquina
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Modelos-De-Aprendizaje"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Redes Neuronales
+\end_layout
+
+\begin_layout Standard
+Según Haykin en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos"
+
+\end_inset
+
+, son modelos computacionales no-lineales, inspirados en la estructura paralela
+ del cerebro humano.
+ Desde un punto de vista práctico, son sólo un sistema paralelo computacional
+ que consiste en muchos elementos de procesamiento conectados entre sí de
+ una manera específica con el fin de realizar una tarea particular
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vasighi"
+
+\end_inset
+
+.
+ A continuación se describen conceptos que vale la pena diferenciar:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Redes Neuronales(NNs),
+\series default
+ son redes de neuronas, por ejemplo, como los encontrados en los cerebros
+ reales.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Neuronas Artificiales,
+\series default
+ son aproximaciones en bruto de las neuronas encontradas en el cerebro.
+ Pueden ser dispositivos físicos, o construcciones puramente matemáticas.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las Redes Neuronales Artificiales(RNAs),
+\series default
+ son redes de neuronas y, por lo tanto, constituyen aproximaciones a algunas
+ partes del cerebro.
+ Pueden ser dispositivos físicos, o simulados en ordenadores.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Redes
+\emph on
+ Echo State(RNAR-esn)
+\end_layout
+
+\begin_layout Standard
+Como se mencionó anteriormente, la red ESN fue desarrollada por Jaeger en
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaeger2001a,Jaeger78"
+
+\end_inset
+
+, independiente del modelo LSMs propuesto por Maass.
+ Se podría decir que se trata de un enfoque de RC.
+ La red ESN utiliza neuronas de valor real (normalmente con valores entre
+ -1 y 1).
+ De lo contrario, el procedimiento de entrenamiento sería similar a los
+ LSM.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Dinámica una Red ESN
+\end_layout
+
+\begin_layout Standard
+La red ESN es un tipo de red recurrente que tiene un coste computacional
+ muy bajo para la fase de entrenamiento.
+ Sus pesos internos se fijan aleatoriamente al comienzo del experimento
+ y luego se entrena solamente los pesos de salida (
+\emph on
+read-out
+\emph default
+), usando algún tipo de técnica de ajuste lineal (también se puede usar
+ una técnica no lineal que generalmente mejora el rendimiento) de manera
+ que la suma de todas las neuronas, multiplicada cada una por su peso de
+ salida, coincida con el valor de la serie de tiempo deseado.
+ La Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ESN_SIMPLE"
+
+\end_inset
+
+ muestra la arquitectura de una red ESN simple.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/ESN_simple.pdf
+	lyxscale 300
+	scale 150
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ESN_SIMPLE"
+
+\end_inset
+
+La arquitectura de red ESN básica utilizada en este trabajo.
+ Las flechas sombreadas indican las conexiones que están entrenadas con
+ el enfoque de "
+\series bold
+echo state network
+\series default
+" (en otros enfoques, todas las conexiones pueden ser entrenadas).
+ Las conexiones internas recurrentes dentro del reservorio(zona gris) permanecen
+ fijas durante todo el proceso de entrenamiento y validación.
+ Fuente:
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaeger2001a"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A primera vista puede parecer sorprendente que una RNAR con conexiones aleatoria
+s pueda ser efectiva, pero los parámetros aleatorios han sido exitosos en
+ varios dominios.
+ Por ejemplo, se han utilizado proyecciones aleatorias en el aprendizaje
+ mecánico y la reducción de la dimensionalidad 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Datar:2004:LHS:997817.997857"
+
+\end_inset
+
+, y más recientemente, se ha demostrado que los pesos aleatorios son eficaces
+ para redes neuronales convolucionales en problemas con datos de entrenamiento
+ muy limitados 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jarret,Saxe_551"
+
+\end_inset
+
+.
+ Por lo tanto, no debería sorprender que las conexiones al azar sean efectivas
+ al menos en algunas situaciones.
+\end_layout
+
+\begin_layout Standard
+Aunque ESN no resuelve el problema de entrenar RNAR en su totalidad, su
+ funcionamiento impresionante sugiere que una inicialización basada en ESN
+ podría ser acertada.
+ Esto es confirmado por los resultados de 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ilya"
+
+\end_inset
+
+ en su trabajo de tesis.
+\end_layout
+
+\begin_layout Section*
+CONCLUSIONES
+\end_layout
+
+\begin_layout Itemize
+El principal objetivo de esta tesis fue la elaboración de un nuevo modelo
+ de proceso estocástico denominado 
+\series bold
+MEESN
+\series default
+, que pueda aplicarse en una gama de problemas envolviendo fenómenos de
+ comportamiento no lineales con características periódicas de sus propiedades,
+ como las series temporales hidrológicas.
+\end_layout
+
+\begin_layout Itemize
+Dado que las redes neuronales artificiales son modelos no lineales, de simple
+ entendimiento e implementación, en especial las de tipo
+\series bold
+ recurrentes, 
+\series default
+son capaces de representar mapas dinámicos no lineales comúnmente encontradas
+ en las tareas de pronóstico de series temporales
+\begin_inset CommandInset citation
+LatexCommand citep
+key "hess-20-1405-2016"
+
+\end_inset
+
+.
+ Estas son capaces de identificar y asimilar características de series temporale
+s históricas, tales como estacionalidad, periodicidad y tendencia, se decidió
+ entonces utilizarlas como base del nuevo modelo de proceso estocástico
+ 
+\series bold
+MEESN
+\series default
+.
+ Una gran ventaja del uso de RNA's recurrentes en nuestro modelo es que
+ no necesitan conocimientos a priori ó técnicas de 
+\begin_inset Quotes fld
+\end_inset
+
+ventana
+\begin_inset Quotes frd
+\end_inset
+
+ del ambiente de la serie o de una compleja formulación teórica sobre su
+ comportamiento, para ser aplicadas en una serie temporal, porque todas
+ las características de la serie son aprendidas a través de ejemplos (aprendizaj
+e supervisado).
+ 
+\end_layout
+
+\begin_layout Itemize
+La meta de este modelo es generar escenarios de series temporales sintéticas
+ igualmente probables a la serie histórica, abordando cualquier periodo
+ de tiempo, para ser utilizados en la solución de problemas que envuelven
+ fenómenos climatológicos (p.ejemplo temperatura, precipitación, etc) y económico
+s (p.ejemplo inversión de prevención etc), entre otros.
+\end_layout
+
+\begin_layout Itemize
+El nuevo modelo 
+\series bold
+MEESN
+\series default
+ propone una herramienta alternativa para la generación de caudales mensuales.
+ Este modelo presenta un tipo de red recurrente denominado 
+\series bold
+Echo State Network (ESN
+\series default
+), que poseen una topología altamente inter-enlazada y recurrente, inicializada
+ de manera aleatoria.
+ 
+\series bold
+ESN
+\series default
+ tiene dos interesantes propiedades; la primera es que sólo se entrena la
+ ultima capa, la segunda es
+\series bold
+ 
+\series default
+gracias a su memoria interna, que es el resultado de las conexiones recurrentes,
+ no es necesario incrustar señales de entrada anteriores(meses anteriores).
+ A primera vista puede parecer sorprendente que una red neuronal recurrente
+ con conexiones aleatorias pueda ser efectiva, pero los parámetros aleatorios
+ han sido exitosos en varios dominios 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jarret,Saxe_551,Datar:2004:LHS:997817.997857"
+
+\end_inset
+
+.
+ El proceso de aprendizaje de redes recurrentes es realizado usando el enfoque
+ 
+\series bold
+ESN
+\series default
+.
+ De esa manera se logra reducir el costo computacional de aprendizaje.
+\end_layout
+
+\begin_layout Itemize
+Los casos de estudio de esta tesis, aplicaron a la generación y pronóstico
+ de series temporales basados en variables hidrológicas(Caudales, Precipitación)
+, para 2 casos : el primero en el contexto internacional de las series temporale
+s de 
+\series bold
+MOPEX
+\series default
+, en 4 cuencas seleccionadas de manera aleatoria.
+ El segundo, en el contexto local de las series temporales de la cuenca
+ del Chili en Arequipa, en tres estaciones de medición: el Pañe, Aguada
+ blanca y el Frayle.
+\end_layout
+
+\begin_layout Itemize
+Como fue visto en el capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Experimentos"
+
+\end_inset
+
+, se experimentó en primer lugar con varias estructuras del modelo 
+\series bold
+MEESN, 
+\series default
+con el objetivo de analizar las propiedades de conectividad y su impacto
+ en el desempeño de las 
+\series bold
+Redes 
+\emph on
+Echo State,
+\emph default
+ 
+\series default
+utilizando series de tiempo hidrológicas.
+ En estos experimentos llegamos a la conclusión que el uso de una matriz
+ de pesos ortonormal, en contraste con los resultados previos como los de
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Millea2014"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Koryakin201235"
+
+\end_inset
+
+, no presentan un mejor o igual desempeño, que una matriz de conectividad
+ aleatoria(prueba 
+\begin_inset Formula $t$
+\end_inset
+
+ de dos muestras no emparejadas).
+\end_layout
+
+\begin_layout Itemize
+Una vez determinado el tipo de matriz de conectividad, se generaron 100
+ escenarios sintéticos con un horizonte de 36 meses, tanto para las series
+ de 
+\series bold
+MOPEX 
+\series default
+y para las series producidas por las estaciones de medición local (cuenca
+ 
+\series bold
+CHILI
+\series default
+).
+ Se aplicó en cada escenario algunos test de adherencia para comprobar si
+ los escenarios son estadísticamente similares a las series históricas.
+ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
+ generados por nuestro modelo en las estaciones de la cuenca del Chilli
+ y MOPEX, mostraron una buena adherencia, con los 
+\begin_inset Formula $p$
+\end_inset
+
+-valores por encima del nivel de significancia.
+ Los escenarios lograron reproducir el primer y segundo momento de la serie
+ histórica.
+\end_layout
+
+\begin_layout Itemize
+En la inspección visual de los escenarios generados, se observó que nuestro
+ modelo en su versión original
+\series bold
+ MEESN 
+\series default
+ajustado para las estaciones de la cuenca del Chili, no presenta un rendimiento
+ de predicción muy bueno en algunas estaciones como el Frayle y Aguada blanca,
+ realizando algunos test se verificó que el componente estocástico de los
+ meses de enero dificulta la estimación.
+ Este comportamiento puede estar determinado por factores externos como
+ variables exógenas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Como fue presentado en el capitulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Experimentos"
+
+\end_inset
+
+, se utilizó dos versiones del modelo 
+\series bold
+MEESN, 
+\series default
+donde se incorpora una variable exógena como la temperatura superficial
+ del mar (TSM), que es una de las variables físicas que mejor indica la
+ variación temporal del ciclo El Niño, dicho fenómeno influye dramáticamente
+ en el clima en todo el Perú, por lo cual es ampliamente usada para estudiar
+ la variabilidad a diferentes escalas de tiempo en el Océano Pacífico.
+ Los resultados obtenidos por el modelo re-formulado
+\series bold
+ MEESN+(TSM),
+\series default
+ donde agregamos una variable exógena, mejora de manera significativa los
+ resultados obtenidos por su versión original.
+ Este trabajo exhibe un enfoque novedoso en el sentido que incorpora una
+ variable exógena como es la TSM la cual condiciona las series sintéticas
+ obtenidas sin dejar de preservar ciertos estadísticos de interés como las
+ varianzas y covarianzas.
+\end_layout
+
+\begin_layout Itemize
+Es necesario mencionar sin embargo que la relación entre los caudales y
+ la TSM fue abordada en este trabajo por medio de una regresión lineal simple.
+ 
+\end_layout
+
+\begin_layout Itemize
+La presencia del componente aleatorio en el modelo 
+\series bold
+MEESN, 
+\series default
+nos aleja parcialmente de la denominación de 
+\series bold
+caja negra, 
+\series default
+denominación inherente a los modelos de RNAs.
+\end_layout
+
+\begin_layout Itemize
+Finalmente, se puede usar el nuevo modelo 
+\series bold
+MEESN y 
+\series default
+su modificación
+\series bold
+ MEESN+TSM
+\series default
+ como complemento en las tareas de análisis de escenarios junto a los modelos
+ tradicionales, el modelo se destaca por la habilidad de incluir características
+ ocultas (ejemplo: datos extremos en las envolturas), lo que permite evaluar
+ eventos extremos (sequías, heladas, lluvias torrenciales) esto permitirá
+ a un tomador de decisión desarrollar acciones técnicas de previsión, que
+ finalmente puedan evitar perdidas económicas y sociales ( implantación
+ de políticas de consumo de agua para mejorar la disponibilidad del recurso
+ hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
+te).
+ Nuestro modelo puede ser considerado como una alternativa válida a los
+ modelos basados en redes neuronales 
+\emph on
+feedforward
+\emph default
+ y recurrentes tradicionales.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "hc-de"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
