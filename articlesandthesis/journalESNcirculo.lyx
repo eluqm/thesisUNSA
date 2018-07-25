@@ -7,6 +7,9 @@
 \textclass elsarticle
 \begin_preamble
 \usepackage{color}
+\usepackage{algorithm,algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 \definecolor{maroon}{rgb}{0.5,0,0}
 \definecolor{darkgreen}{rgb}{0,0.5,0}
 \definecolor{orangered}{RGB}{239,134,64}
@@ -5990,13 +5993,9 @@ Recurrent Neural Network unfolded in time, the hidden units grouped at time
 \end_inset
 
  get inputs from other neurons at previous time steps such as 
-\lang spanish
-
 \begin_inset Formula $T-1,T-2,\ldots T$
 \end_inset
 
-
-\lang english
 .
 \end_layout
 
@@ -6027,8 +6026,8 @@ key "Kuna2015"
 
 \end_inset
 
- and the extended Kalman Filter(EKF) method, which each time estimates optimal
- weights, given a series of observed outputs, for more details see
+ and the extended Kalman Filter (EKF) method, which each time estimates
+ optimal weights, given a series of observed outputs, for more details see
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sum:1998:EKF:296468.296482"
@@ -6120,103 +6119,710 @@ key "Ilya"
 Now we will proceed to give the formal description of the ESN network.
 \end_layout
 
+\begin_layout Subsection
+Training Echo State Networks
+\end_layout
+
+\begin_layout Standard
+The RC paradigm creates a random ANN that remains unchanged throughout the
+ training.
+ This ANN is called 
+\begin_inset Quotes eld
+\end_inset
+
+Reservoir
+\begin_inset Quotes erd
+\end_inset
+
+, which is passively excited by the input signal and maintains a non-linear
+ transformation of the input history in its state.
+ 
+\end_layout
+
+\begin_layout Standard
+The main equation of ESN, where we do not use any input, but only the output
+ feedback, is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t+1)=f(W\text{·}x(t)+W^{fb}\text{·}y(t))
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Or alternatively, with entries:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t+1)=f(W^{in}\text{·}u(t)+W\text{·}x(t)+W^{fb}\text{·}y(t))
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ is the vector that contains all the states of the reservoir at time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $W$
+\end_inset
+
+ is the reservoir matrix, where each input 
+\begin_inset Formula $W_{ij}$
+\end_inset
+
+ corresponds to the connection between the neuron 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $W^{fb}$
+\end_inset
+
+ is the matrix of the feedback vector, and 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ is the output at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ In the second version of the equation we see 
+\begin_inset Formula $u(t)$
+\end_inset
+
+ multiplied by the input vector 
+\begin_inset Formula $W^{in}$
+\end_inset
+
+.
+ This equation represents the initial phase of the network, where the output
+ actually works as input, driving the dynamics of the network.
+ The function 
+\begin_inset Formula $f$
+\end_inset
+
+ is generally chosen to be the hyperbolic tangent for the internal neurons
+ (
+\begin_inset Formula $tanh$
+\end_inset
+
+) and the identity function for the output neuron.
+ To account for echo state property, the internal weight matrix 
+\begin_inset Formula $W$
+\end_inset
+
+ is typically scaled as: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W\leftarrow\frac{\alpha}{\mid\lambda_{max}\mid}W
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mid\lambda_{max}\mid$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is the spectral radius of 
+\begin_inset Formula $W$
+\end_inset
+
+, and 
+\begin_inset Formula $\alpha\in(0,1)$
+\end_inset
+
+ is a scaling parameter.
+ Additionally, due to the influence of initial reservoir states, a certain
+ number of initial steps need to be abandoned during the training, called
+ washout phase
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SUN201717"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:training_ESN"
+
+\end_inset
+
+ summarizes how the training of an ESN network is carried out.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{training ESN}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$i 
+\backslash
+gets historicalSequence_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$j 
+\backslash
+gets reservoir_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$M 
+\backslash
+gets array(i,j)$}  
+\backslash
+Comment{state matrix} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$Forgetpoints 
+\backslash
+gets Z$} 
+\backslash
+Comment{forget initial steps} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{$t 
+\backslash
+le samples_{size}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+If{$t 
+\backslash
+le Forgetpoints$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$M(t,:)
+\backslash
+gets x(t)$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:training_ESN"
+
+\end_inset
+
+Standard training algorithm of ESN network, the states are collected in
+ an 
+\begin_inset Formula $M$
+\end_inset
+
+ matrix that has in each row the status vector 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ and in each column the neurons of the reservoir.
+ Therefore, 
+\begin_inset Formula $M$
+\end_inset
+
+ is a matrix of examples (rows) by the reservoir dimension (columns).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Echo State Network learning
+\end_layout
+
+\begin_layout Standard
+The linear output layer of an ESN network is defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y\left(n\right)=W_{out}\left[1;u\left(n\right);x\left(n\right)\right]\label{eq:readoutequation-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $y\left(n\right)\in R^{N_{y}}$
+\end_inset
+
+, is the output vector with dimension 
+\begin_inset Formula $N_{y}$
+\end_inset
+
+ of the network, 
+\begin_inset Formula $W_{out}\in R^{N_{y}\times\left(1+N_{u}+N_{x}\right)}$
+\end_inset
+
+, is the output weights matrix and 
+\begin_inset Formula $\left[.;.;.\right]$
+\end_inset
+
+ means a vertical vector concatenation (or matrix).
+ Now in order to get the matrix 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, we can use linear algebra procedures such as Pseudo-Inverse or Ridge regressio
+n 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jaeger2001a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Moore-Penrose pseudoinverse
+\end_layout
+
+\begin_layout Standard
+The Pseudoinverse, or Moore-Penrose Pseudoinverse, is a generalization of
+ a inverse matrix, but for matrices that are not rectangular.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{out}=pinv(M)∗T\label{eq:pinv}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, is the vector of output weights, and 
+\begin_inset Formula $T$
+\end_inset
+
+, is the vector of expected values.
+ Therefore, we have a set of 
+\begin_inset Formula $m$
+\end_inset
+
+ equations with 
+\begin_inset Formula $n$
+\end_inset
+
+ unknowns, where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of neurons, the size and the inputs of 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+ are the respective weights of the states of the neurons.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ be  
+\begin_inset Formula $(m\times n)$
+\end_inset
+
+ matrix, then the Moore-Penrose is unique, denote 
+\begin_inset Formula $A*$
+\end_inset
+
+, have the size 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ and satisfy the following four conditions:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+AA*A=A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+A*AA*=A*
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(A*A\right)^{T}=A*A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula 
+\[
+\left(AA*\right)^{T}=AA*
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ridge Regression
+\end_layout
+
+\begin_layout Standard
+Finding the optimal weights, which minimize the squared error between 
+\begin_inset Formula $y\left(n\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $y^{target}\left(n\right)$
+\end_inset
+
+, is equivalent to solving a system of linear equations typically overdetermined.
+ The system is overdetermined, because typically 
+\begin_inset Formula $T\gg1+N_{u}+N_{x}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+There are well-known standard ways of solving the equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pinv"
+
+\end_inset
+
+, probably the most universal and stable solution in this context is the
+ Ridge regression, also known as regression with regularization from Tikhonov:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{out}=Y^{target}X^{T}\left(XX^{T}+\beta I\right)^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $β$
+\end_inset
+
+ is a regularization coefficient, and 
+\begin_inset Formula $I$
+\end_inset
+
+ is the identity matrix.
+\end_layout
+
+\begin_layout Standard
+We show only two of the methods that can be used to solve the equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pinv"
+
+\end_inset
+
+, although the latter is not very trivial it is preferred to use.
+ Next, the output values ​​of the network will be validated, using the adjusted
+ matrix 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Echo State Network Validation
+\end_layout
+
+\begin_layout Standard
+In this stage, the network is executed on the test data, where the states
+ of the neurons at time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ in the validation phase are states of the neurons at time 
+\begin_inset Formula $t=m$
+\end_inset
+
+ in the learning phase.
+ The difference now is that the output is calculated by the network using
+ the weights of 
+\begin_inset Formula $W_{out}$
+\end_inset
+
+, so these values ​​are not previously known.
+ The equations for the validation phase are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\widehat{y}(t)=f^{out}\left(x\left(t\right)*W^{out}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x\left(t+1\right)=f\left(W\cdot x\left(t\right)+W^{fb}\cdot\widehat{y}\left(t\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $\widehat{y}$
+\end_inset
+
+ is the output after the pseudoinverse calculation.
+ It is common to use an identity output function, however in the equation
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pinv"
+
+\end_inset
+
+, some non-linear transformation can be applied, such as 
+\begin_inset Formula $tanh$
+\end_inset
+
+.
+ Also when calculating weights (
+\begin_inset Formula $W_{out}$
+\end_inset
+
+) we could use a non-linear technique, such as perceptron, SVM, or Ridge
+ regression.
+ Finally, to evaluate the ESN network, we usually calculate the Normalized
+ Mean Square Error (NRMSE) which is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+NRMSE=\sqrt{\frac{\parallel\widehat{y}-y\parallel{}^{2}}{m*\sigma_{y}^{2}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where, 
+\begin_inset Formula $\sigma_{y}^{2}$
+\end_inset
+
+  is the variance of the desired output 
+\begin_inset Formula $y,m$
+\end_inset
+
+ is the validation sequence, and, is the expected output, 
+\begin_inset Formula $\widehat{y}$
+\end_inset
+
+ is the output calculated by the ESN network after the process Learning.
+\end_layout
+
 \begin_layout Section
 Conclusion
 \end_layout
 
 \begin_layout Standard
-Cancer staging entails an intensive work, this often requires an accurate
- interpretation of the cancer findings in images by medical experts (oncologists
- and radiologists).
- Expert accuracy is achieved through training and experience 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Depeursinge2014"
-
-\end_inset
-
-, but variations in image interpretation is a human observer limitation.
- In this context, we developed an automatic staging approach (a TNM classifier).
- It can help physicians to obtain a higher accuracy rate for image interpretatio
-n.
- 
-\end_layout
-
-\begin_layout Standard
-To achieve this, first an ontology to represent AIM4 annotations, called
- AIM4-O, was developed and validated using a task-focused assessment of
- actual clinical cases.
- Using the ontology to semantically search reports, we got much higher precision
- and recall values when compared to key-word (no semantics) search.
- Subsequently, the General ontology, integrating the AIM4 ontology, Onlira
- ontology (a subset of the Radlex vocabulary) and SWRL rules for TNM staging,
- was developed and used to develop a TNM classifier using the Groovy language.
-\end_layout
-
-\begin_layout Standard
-This TNM classifier was evaluated using actual cancer cases.
- Our experimental data showed that, when compared to 51 staging values given
- in actual physician reports, the classifier generated results had 85.1%
- precision and 81.0% recall.
- When the classifier stages differed from physician’s reported stages, that
- difference was, at most, of 1 stage.
-\end_layout
-
-\begin_layout Standard
-The TNM classifier revealed one patient report with inconsistencies in the
- diagnostics.
- It is important to note that this automatic staging procedure does not
- give clinicians new information.
- It is merely a second opinion for the purposes of quality in clinical diagnosis.
- We also highlighted some limitations of description logics, such as the
- Open World Assumption.
- 
-\end_layout
-
-\begin_layout Standard
-Our TNM classifier can be used in automated clinical workflows, where AIM
- based image annotations are produced by imaging systems.
- Automatic TNM staging can be as easy as pushing a button in such systems.
-\end_layout
-
-\begin_layout Standard
-We believe that our approach could be also applied to other kinds of cancer
- such as lungs or colon, by modifying only the rules and axioms that represent
- the TNM criteria.
- That can be done avoiding the creation of an entirely new ontology for
- each type of cancer.
-\end_layout
-
-\begin_layout Standard
-Besides cancer staging, other tasks, such as RECIST cancer criteria can
- also be automated using this combination of AIM, OWL ontologies and SWRL
- rules.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Future work:
-\series default
- will include more varied data sets for evaluation, expansion of the classifier
- to other organs, and incorporation into existing information systems.
- The TNM classifier has the potential to be integrated into larger software
- systems.
- The Specific Domain Language (DSL), as a communication tool between physicians
- and the formal representation of the TNM criteria (axioms and SWRL rules),
- would allow physicians to modify the system themselves.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-A limitation
-\series default
- to this work is that a relatively small dataset was used in our evaluation.
- One reason is the requirement that both medical images (CT) and clinical
- reports have to be present for the same patient for optimal validation.
- Another is the time constraint for radiologists and it is difficult to
- get them to review large datasets.
+.
 \end_layout
 
 \begin_layout Standard
