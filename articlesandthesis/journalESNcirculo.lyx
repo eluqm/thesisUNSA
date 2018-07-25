@@ -678,11 +678,26 @@ reference "sec:Conclusions"
 \end_layout
 
 \begin_layout Section
-THEORETICAL BACKGROUND 
+Theoretical Background 
+\end_layout
+
+\begin_layout Standard
+In this section, we briefly summarize the theoretical background of the
+ considered models, namely RNN and ESN, which are the basis of the following
+ SSNESN understanding.
 \end_layout
 
 \begin_layout Section
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Objective
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -774,7 +789,15 @@ Formal Representation of Cancer Staging.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Ontological representation of AIM model.
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -5643,8 +5666,8 @@ name "sec:Recurrent-Neural-Networks"
 \end_layout
 
 \begin_layout Standard
-Recurrent Neural Networks (RNNs) are a subclass of ANN's characterized by
- cyclic graphs in its structure.
+Recurrent Neural Networks (RNN) are a subclass of ANN characterized by cyclic
+ graphs in its structure.
  These cycles accumulate previous activities and allow the network stores
  internal states.
  These internal states avoid needing to feed the network with the history
@@ -5674,15 +5697,15 @@ ng.
 \end_layout
 
 \begin_layout Standard
-Figure 
+The figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:elmanandwilliam"
 
 \end_inset
 
- b) and a) show the two types of traditional recurrent ANN models, the Elman
- recurrent network 
+ shows the two types of traditional recurrent ANN models, the Elman recurrent
+ network 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Elman90findingstructure"
@@ -5745,7 +5768,7 @@ name "fig:elmanandwilliam"
 \end_layout
 
 \begin_layout Section
-Training Algorithms
+Learning Algorithms
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Training-Algorithms"
@@ -5759,9 +5782,13 @@ name "sec:Training-Algorithms"
 Basically, supervised learning means to adjust the network weight matrix
  
 \series bold
-W 
+
+\begin_inset Formula $W$
+\end_inset
+
+ 
 \series default
-using the optimization algorithms , in order to minimize the output error.
+using the optimization algorithms, in order to minimize the output error.
  This is probably the most common approach used among the current types
  of neural network systems where the input and output are used in the network.
  A well known training method is the Standard Backpropagation algorithm
@@ -5777,8 +5804,11 @@ key "Rumelhart:1986:PDP:104279"
  with respect to the weights.
  This technique approximates the local minimum by changing these weights
  along of negative error gradient direction.
- The objective function E(W) is calculated after BP applies an update to
- the weights in the network;
+ The objective function 
+\begin_inset Formula $E(W)$
+\end_inset
+
+ is calculated after BP applies an update to the weights in the network;
 \end_layout
 
 \begin_layout Standard
@@ -5857,7 +5887,11 @@ Where
 
  is a learning rate, 
 \series bold
-J 
+
+\begin_inset Formula $J$
+\end_inset
+
+ 
 \series default
 the jacobian matrix, which is the first derivatives of the network error
  with respect to the weights and biases, and 
@@ -5867,13 +5901,17 @@ the jacobian matrix, which is the first derivatives of the network error
  is a vector of network errors.
  Finally, 
 \series bold
-H 
+
+\begin_inset Formula $H$
+\end_inset
+
+ 
 \series default
 is an approximation of the Hessian matrix.
 \end_layout
 
-\begin_layout Section*
-Recurrent ANN training
+\begin_layout Subsection
+Recurrent Learning
 \end_layout
 
 \begin_layout Standard
@@ -5900,7 +5938,11 @@ key "Williams90anefficient"
  This extension of the BP method is called Backpropagation Through Time(BPTT).
  In BPTT the number of networks copies is equal to time step 
 \series bold
-T
+
+\begin_inset Formula $T$
+\end_inset
+
+
 \series default
 .
  It would be impractical in the online training since the memory footprint
@@ -5947,7 +5989,15 @@ Recurrent Neural Network unfolded in time, the hidden units grouped at time
 \begin_inset Formula $T$
 \end_inset
 
- get inputs from other neurons at previous time steps.
+ get inputs from other neurons at previous time steps such as 
+\lang spanish
+
+\begin_inset Formula $T-1,T-2,\ldots T$
+\end_inset
+
+
+\lang english
+.
 \end_layout
 
 \end_inset
@@ -6005,6 +6055,69 @@ key "doya1992bifurcations"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Echo state network
+\end_layout
+
+\begin_layout Standard
+Echo state networks (ESN) establish an efficient and powerful approach to
+ recurrent neural network (RNN) training.
+ Unlike the traditional RNN, such as Elman networks, that are organized
+ in layers and contain feedback connections.
+ The core part of ESN is a single reservoir consisting of a mass of neurons
+ that are randomly interconnected and self-connected.
+ The reservoir itself remains unchanged, once it is selected.
+ The efficient learning can be achieved by determining the weights of the
+ connections between the reservoir and the output layer.
+ ESN overcome the slow convergence, high computational requirements and
+ suboptimal estimates of the model parameters.
+ All these are founded in training algorithms based on direct optimization
+ of the network weights.
+ 
+\end_layout
+
+\begin_layout Standard
+It may seem surprising that an ANN with random connections may be effective,
+ but random parameters have been successful in several domains.
+ For example, random projections have been used in mechanical learning and
+ dimensionality reduction 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Datar:2004:LHS:997817.997857"
+
+\end_inset
+
+, and more recently, random weights have been shown to be effective for
+ convolutional neuronal networks in problems with training data.
+ very limited 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jarret,Saxe_551"
+
+\end_inset
+
+.
+ Therefore, it should not be surprising that random connections are effective
+ at least in some situations.
+\end_layout
+
+\begin_layout Standard
+Although ESN does not solve the problem of training RNN entirely, its impressive
+ performance suggests that an initialization based on ESN could be successful.
+ This is confirmed by the results of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ilya"
+
+\end_inset
+
+ in his work.
+\end_layout
+
+\begin_layout Standard
+Now we will proceed to give the formal description of the ESN network.
 \end_layout
 
 \begin_layout Section
