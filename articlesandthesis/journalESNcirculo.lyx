@@ -6884,6 +6884,68 @@ Where:
  represents the inverse of the preprocessing transformations.
 \end_layout
 
+\begin_layout Standard
+So that our model can synthesize time series such as hydrological (periodic,
+ stationary) with monthly time intervals, you have to adjust the parameters
+ not only in time intervals of the series, but also in your period.
+ For example, if the period is monthly, our model will be composed of 12
+ stochastic components.
+ In this case, the model is formed by a chain of its components, between
+ the input value to the RNAR (deterministic component) and the next period,
+ as can be seen in the figure
+\end_layout
+
+\begin_layout Standard
+This section offers an overview of our stochastic process model proposal,
+ followed by a detailed description of each of its components.
+\end_layout
+
+\begin_layout Standard
+4.2 Stochastic component
+\end_layout
+
+\begin_layout Standard
+In terms of statistics, the variable 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+ represents a normally distributed random noise, which takes into account
+ the uncertainty that usually affects hydrological processes.
+ 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+ is added to provide the variability in 
+\begin_inset Formula $Y_{v}$
+\end_inset
+
+, t which remains even after Y_v, t-1 is known (Loucks et al., 2005).
+ Each 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+ is independent of past values 
+\begin_inset Formula $​​Y_{v,w}$
+\end_inset
+
+, where w 
+\backslash
+leq t-1, and 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $R_{v,w}$
+\end_inset
+
+ for w 
+\backslash
+ neq t-1 .
+ As was pointed out at the beginning, this component is the same stochastic
+ part of the Thomas & Fiering model, therefore, in the next section we examine
+ this model and its implications in the final formulation of our proposal.
+\end_layout
+
 \begin_layout Section
 Conclusion
 \end_layout
