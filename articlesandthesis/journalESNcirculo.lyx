@@ -172,7 +172,7 @@ e, defects of the backpropagation method, such as  slow convergence and
  the network is often sufficient to achieve excellent performance in practical
  applications.
  The last part consists of the uncertainty associated with stationary processes,
- the model is finally called SSNESN.
+ the model is finally called stochastic streamflow models ESN (SSNESN).
  This model was calibrated with time series of monthly discharge data from
   different river basins of MOPEX data set.
  We interpret our expetimental findings by comparison with two feedforward
@@ -6815,6 +6815,73 @@ Where,
 \end_inset
 
  is the output calculated by the ESN network after the process Learning.
+\end_layout
+
+\begin_layout Section
+Stochastic Streamflow model ESN
+\end_layout
+
+\begin_layout Standard
+In the section, we present a new stochastic model architecture for time
+ series prediction, SSMESN, and give the details of the whole architecture
+ and learning algorithm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y_{v,t}=f\left(R_{v,t}+E_{v,t}\right)\label{eq:eq_general}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The model has the purpose of generating scenarios of hydrological synthetic
+ data, in terms of monthly intervals, for this an architecture based on
+ Recurrent Neural Networks (RNAR) was used as the deterministic component;
+ the use of RNAR allows our model to be non-linear, capable of capturing
+ the characteristics of a time series without the need to make some kind
+ of a priori assumption such as removing some trend or periodicity characteristi
+cs.
+\end_layout
+
+\begin_layout Standard
+Where:
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $Y_{v,t}$
+\end_inset
+
+, are the synthetic values ​​produced by the model,
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $E_{v,t}$
+\end_inset
+
+, are the values ​​produced by the RNAR,
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+, is the stochastic component represented by the equations ([eq: randomCom]).
+\end_layout
+
+\begin_layout Standard
+• The function 
+\begin_inset Formula $f$
+\end_inset
+
+ represents the inverse of the preprocessing transformations.
 \end_layout
 
 \begin_layout Section
