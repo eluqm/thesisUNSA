@@ -6841,15 +6841,8 @@ Y_{v,t}=f\left(R_{v,t}+E_{v,t}\right)\label{eq:eq_general}
 \begin_layout Standard
 The model has the purpose of generating scenarios of hydrological synthetic
  data, in terms of monthly intervals, for this an architecture based on
- Recurrent Neural Networks (RNAR) was used as the deterministic component;
- the use of RNAR allows our model to be non-linear, capable of capturing
- the characteristics of a time series without the need to make some kind
- of a priori assumption such as removing some trend or periodicity characteristi
-cs.
-\end_layout
-
-\begin_layout Standard
-Where:
+ Recurrent Neural Networks (RNAR) was used as the deterministic component
+ where:
 \end_layout
 
 \begin_layout Standard
@@ -6885,23 +6878,69 @@ Where:
 \end_layout
 
 \begin_layout Standard
-So that our model can synthesize time series such as hydrological (periodic,
- stationary) with monthly time intervals, you have to adjust the parameters
- not only in time intervals of the series, but also in your period.
+So that our model can synthesize hydrological monthly time series (periodic,
+ stationary), you have to adjust the parameters not only in time intervals
+ of the series, but also in your period.
  For example, if the period is monthly, our model will be composed of 12
  stochastic components.
  In this case, the model is formed by a chain of its components, between
- the input value to the RNAR (deterministic component) and the next period,
- as can be seen in the figure
+ the input value to the RNAR and the next period, as can be seen in the
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Esquema-del-proceso"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-This section offers an overview of our stochastic process model proposal,
- followed by a detailed description of each of its components.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/eschema_model.pdf
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-4.2 Stochastic component
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Esquema-del-proceso"
+
+\end_inset
+
+Proposed stochastic process, the celestial and black spheres represent the
+ stochastic and deterministic components, respectively, a chaining between
+ the value of the time series of a period that is part of the input to the
+ Recurrent Network of the next period.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Stochastic component
 \end_layout
 
 \begin_layout Standard
@@ -6919,7 +6958,18 @@ In terms of statistics, the variable
 \begin_inset Formula $Y_{v}$
 \end_inset
 
-, t which remains even after Y_v, t-1 is known (Loucks et al., 2005).
+, t which remains even after 
+\begin_inset Formula $Y_{v,t-1}$
+\end_inset
+
+ is known 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "loucks2005water"
+
+\end_inset
+
+.
  Each 
 \begin_inset Formula $R_{v,t}$
 \end_inset
@@ -6943,7 +6993,33 @@ leq t-1, and
  neq t-1 .
  As was pointed out at the beginning, this component is the same stochastic
  part of the Thomas & Fiering model, therefore, in the next section we examine
- this model and its implications in the final formulation of our proposal.
+ this model and its implications in the final formulation of our proposal
+ asdasdassdasd asdadasdasda This section offers an overview of our stochastic
+ process model proposal, followed by a detailed description of each of its
+ components.
+\end_layout
+
+\begin_layout Standard
+4.2 Stochastic component
+\end_layout
+
+\begin_layout Standard
+In terms of statistics, the variable 
+\begin_inset Formula $R_{v,t}$
+\end_inset
+
+ represents a normally distributed random noise, which takes into account
+ the uncertainty that usually affects hydrological processes.
+ R_ {v, t} is added to provide the variability in Y_v, t which remains even
+ after Y_v, t-1 is known (Loucks et al., 2005).
+ Each R_ {v, t} is independent of past values ​​Y_ {v, w}, where w 
+\backslash
+ leq t-1, and R_ {v, t} is independent of R_ {v, w} for w 
+\backslash
+ neq t-1 .
+ As was pointed out at the beginning, this component is the same stochastic
+ part of the Thomas & Fiering model, therefore, in the next section we examine
+ this model and its implications in the final formulation of our proposal
 \end_layout
 
 \begin_layout Section
