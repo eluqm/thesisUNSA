@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -53,6 +55,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -61,7 +64,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language swedish
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swedish
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -80,6 +86,7 @@ Descripción del Modelo MEESN
 LatexCommand nomenclature
 symbol "MEESN"
 description "Modelo Estocástico ESN"
+literal "true"
 
 \end_inset
 
@@ -108,6 +115,7 @@ Componente Estocástico:
 \begin_inset CommandInset citation
 LatexCommand citep
 key "xu2002hydrologic"
+literal "true"
 
 \end_inset
 
@@ -125,6 +133,7 @@ Componente Determinista:
 \begin_inset CommandInset citation
 LatexCommand citep
 key "xu2002hydrologic"
+literal "true"
 
 \end_inset
 
@@ -307,6 +316,7 @@ En términos de estadística, la variable
 \begin_inset CommandInset citation
 LatexCommand citep
 key "loucks2005water"
+literal "true"
 
 \end_inset
 
@@ -1065,6 +1075,7 @@ estados internos ó unidades de procesamiento(PEs
 LatexCommand nomenclature
 symbol "PEs"
 description "Unidades de Procesamiento\\\\"
+literal "true"
 
 \end_inset
 
@@ -1392,6 +1403,7 @@ ventana
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Vafaeipour2014"
+literal "true"
 
 \end_inset
 
@@ -1400,6 +1412,7 @@ key "Vafaeipour2014"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lcdcampos,Awchi,herrera2013modelo"
+literal "true"
 
 \end_inset
 
@@ -1421,6 +1434,7 @@ llamado Echo State Network(ESN)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Jaeger2001a"
+literal "true"
 
 \end_inset
 
@@ -1510,6 +1524,7 @@ Las Redes ESN tienen algunos parámetros globales que impactan en su rendimiento
 \begin_inset CommandInset citation
 LatexCommand citep
 key "LukoseviciusJaeger09,Baserrech2015"
+literal "true"
 
 \end_inset
 
@@ -1527,6 +1542,7 @@ Según
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Jaeger2001a"
+literal "true"
 
 \end_inset
 
@@ -1572,6 +1588,7 @@ Dado que el entrenamiento y la ejecución de un ESN es computacionalmente
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Alomar:2016:FSE:2934357.2934372"
+literal "true"
 
 \end_inset
 
@@ -1602,6 +1619,7 @@ Básicamente el radio espectral controla la estabilidad y tiene impacto en
 \begin_inset CommandInset citation
 LatexCommand citep
 key "LukoseviciusJaeger09"
+literal "true"
 
 \end_inset
 
@@ -1637,6 +1655,7 @@ key "LukoseviciusJaeger09"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Verstraeten2007391"
+literal "true"
 
 \end_inset
 
@@ -1653,6 +1672,7 @@ Para
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Song:2010:ECS:1801020.1801314"
+literal "true"
 
 \end_inset
 
@@ -1660,6 +1680,7 @@ key "Song:2010:ECS:1801020.1801314"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Jaeger78"
+literal "true"
 
 \end_inset
 
@@ -1681,6 +1702,7 @@ key "Jaeger78"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Millea2014"
+literal "true"
 
 \end_inset
 
@@ -1706,6 +1728,7 @@ d
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Koryakin201235"
+literal "true"
 
 \end_inset
 
@@ -1724,6 +1747,7 @@ La topología del reservorio también puede impactar en el rendimiento del
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BasterrechAlba,BasterrechFyfe"
+literal "true"
 
 \end_inset
 
@@ -1736,6 +1760,7 @@ inicialización aleatoria
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Baserrech2015"
+literal "true"
 
 \end_inset
 
@@ -1760,6 +1785,7 @@ Finalmente, con respeto a la conectividad, cabe indicar que en este trabajo
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Jaeger78"
+literal "true"
 
 \end_inset
 
@@ -1767,6 +1793,7 @@ key "Jaeger78"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Millea2014"
+literal "true"
 
 \end_inset
 
@@ -1775,6 +1802,7 @@ key "Millea2014"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "LukoseviciusJaeger09"
+literal "true"
 
 \end_inset
 
@@ -1821,6 +1849,7 @@ Hemos utilizado la optimización aleatoria
 \begin_inset CommandInset citation
 LatexCommand citep
 key "matyas1965random"
+literal "true"
 
 \end_inset
 
@@ -1835,6 +1864,7 @@ key "matyas1965random"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Duan20063"
+literal "true"
 
 \end_inset
 
@@ -2078,6 +2108,7 @@ reference "alg:parametros"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Kuna2015"
+literal "true"
 
 \end_inset
 

@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -58,6 +58,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -78,15 +80,16 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
+\cite_engine natbib
 \cite_engine_type default
-\biblio_style plainnat
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -95,11 +98,13 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\listings_params "language=XML,morestring={[s]{&quot;}{&quot;}},morecomment={[s]{?}{?}},morecomment={[s]{!--}{--}},commentstyle={\color{darkgreen}},moredelim={[s][\color{black}]{>}{<}},moredelim={[s][\color{maroon}]{\ }{=}},stringstyle={\color{violet}},keywordstyle={\color{orangered}},tagstyle={\color{blue}},otherkeywords={attribute=, xmlns=, value=, root=,code=,codeSystem=,codeSystemName=,codeSystemVersion=}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -249,6 +254,7 @@ on was used
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
+literal "true"
 
 \end_inset
 
@@ -256,6 +262,7 @@ key "BOXANDJenKys"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LUNA2006"
+literal "true"
 
 \end_inset
 
@@ -265,6 +272,7 @@ key "LUNA2006"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "maceira2,lcdcampos"
+literal "true"
 
 \end_inset
 
@@ -276,6 +284,7 @@ key "maceira2,lcdcampos"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Raman95multivariatemodelling"
+literal "true"
 
 \end_inset
 
@@ -289,6 +298,7 @@ Currently, among the approaches that attempt to model complex non-linear
 \begin_inset CommandInset citation
 LatexCommand cite
 key "YU2015308"
+literal "true"
 
 \end_inset
 
@@ -304,6 +314,7 @@ d to the most complex architecture based on many layers, each of which be
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
+literal "true"
 
 \end_inset
 
@@ -313,6 +324,7 @@ key "hess-17-253-2013"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
+literal "true"
 
 \end_inset
 
@@ -321,6 +333,7 @@ key "lcdcampos"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "6327793"
+literal "true"
 
 \end_inset
 
@@ -334,6 +347,7 @@ key "6327793"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
+literal "true"
 
 \end_inset
 
@@ -355,6 +369,7 @@ RC
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
+literal "true"
 
 \end_inset
 
@@ -369,6 +384,7 @@ key "LukoseviciusJaeger09"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
+literal "true"
 
 \end_inset
 
@@ -383,6 +399,7 @@ MOPEX
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Duan20063"
+literal "true"
 
 \end_inset
 
@@ -400,6 +417,7 @@ Initial auto-regressive models, as well as models based on Box & Jenkis
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
+literal "true"
 
 \end_inset
 
@@ -407,6 +425,7 @@ key "BOXANDJenKys"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Peng2010"
+literal "true"
 
 \end_inset
 
@@ -416,6 +435,7 @@ key "Peng2010"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "JAWR:JAWR70A"
+literal "true"
 
 \end_inset
 
@@ -423,6 +443,7 @@ key "JAWR:JAWR70A"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Thomas"
+literal "true"
 
 \end_inset
 
@@ -442,6 +463,7 @@ The problem with previous models is that forecasting is naturally a dynamic
 \begin_inset CommandInset citation
 LatexCommand cite
 key "WRCR:WRCR9735"
+literal "true"
 
 \end_inset
 
@@ -449,6 +471,7 @@ key "WRCR:WRCR9735"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "WRCR:WRCR11667"
+literal "true"
 
 \end_inset
 
@@ -456,6 +479,7 @@ key "WRCR:WRCR11667"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
+literal "true"
 
 \end_inset
 
@@ -463,6 +487,7 @@ key "lcdcampos"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-20-1405-2016"
+literal "true"
 
 \end_inset
 
@@ -470,6 +495,7 @@ key "hess-20-1405-2016"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
+literal "true"
 
 \end_inset
 
@@ -477,6 +503,7 @@ key "4371334"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
+literal "true"
 
 \end_inset
 
@@ -485,6 +512,7 @@ key "Awchi"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "deng"
+literal "true"
 
 \end_inset
 
@@ -492,6 +520,7 @@ key "deng"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SHEN2015243,KUREMOTO201447"
+literal "true"
 
 \end_inset
 
@@ -507,6 +536,7 @@ Recurrent Neural Networks have show better forecasting ability than feedforward
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
+literal "true"
 
 \end_inset
 
@@ -514,6 +544,7 @@ key "hess-17-253-2013"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
+literal "true"
 
 \end_inset
 
@@ -526,6 +557,7 @@ key "LukoseviciusJaeger09"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "1"
+literal "true"
 
 \end_inset
 
@@ -542,6 +574,7 @@ Reservoir Computing is a training approach that can be remarkably simpler
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
+literal "true"
 
 \end_inset
 
@@ -549,6 +582,7 @@ key "hess-17-253-2013"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "en81012228"
+literal "true"
 
 \end_inset
 
@@ -567,6 +601,7 @@ Studies such as
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Coulibaly201076"
+literal "true"
 
 \end_inset
 
@@ -574,6 +609,7 @@ key "Coulibaly201076"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Abrahart201276"
+literal "true"
 
 \end_inset
 
@@ -585,6 +621,7 @@ key "Abrahart201276"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
+literal "true"
 
 \end_inset
 
@@ -592,6 +629,7 @@ key "4371334"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371335"
+literal "true"
 
 \end_inset
 
@@ -599,6 +637,7 @@ key "4371335"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "256541"
+literal "true"
 
 \end_inset
 
@@ -607,6 +646,7 @@ key "256541"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
+literal "true"
 
 \end_inset
 
@@ -620,6 +660,7 @@ key "hess-17-253-2013"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "en81012228"
+literal "true"
 
 \end_inset
 
@@ -627,6 +668,7 @@ key "en81012228"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
+literal "true"
 
 \end_inset
 
@@ -688,19 +730,6 @@ Theoretical Background
 In this section, we briefly summarize the theoretical background of the
  considered models, namely RNN and ESN, which are the basis of the following
  SSNESN understanding.
-\end_layout
-
-\begin_layout Section
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Objective
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -791,1824 +820,6 @@ Formal Representation of Cancer Staging.
 
 \end_layout
 
-\begin_layout Subsection
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Ontological representation of AIM model.
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-In order to perform inference and classify image annotations based on the
- AIM standard, we need a language equipped with formal semantic.
- Using this semantic, inferences about an ontology together with a set of
- individual instances of classes can be made.
- In this context, the Web Ontology Language (OWL), a language for building
- ontological representations of information models, was used.
- In our work, we transformed the AIM data model into an equivalent ontological
- representation, using OWL2.
- This transformation was performed by creating classes and properties in
- OWL that are user understandable and suitable for inference.
-\end_layout
-
-\begin_layout Plain Layout
-We developed an OWL model, based on the ontology provides by Bulu, Hakan
- and Rubin, Daniel L, 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bulu"
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model
-\end_layout
-
-\end_inset
-
-, which represented an older version of AIM.
- Therefore, in order to represent the AIM 4.0 model, which is the version
- used to store image annotations generated using tools (such as ePAD 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rubin2011"
-
-\end_inset
-
-), we modified Bulu’s ontology to represent AIM 4.0 model concepts.
- Our ontology is called 
-\series bold
-AIM4-O
-\series default
-.
-\end_layout
-
-\begin_layout Subsubsection
-AIM4-O ontology
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:AIM4-O-ontology"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-AIM4-O Classes
-\end_layout
-
-\begin_layout Plain Layout
-In general, the AIM 4.0 model is an extension of the AIM Foundation model.
- There are nine classes that capture lesion results and measurements derived
- during image-based clinical analysis.
- In this work, we considered the following six classes sufficient to achieve
- our goal:
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:Entity:
-\series default
- It is an abstract class that represents the existence of a thing, concept,
- observation, calculation, measurement and graphic design in AIM.
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:AnnotationCollection: 
-\series default
-It is an abstract concept of a container that collects elements such as
- 
-\family typewriter
-\series bold
-\shape italic
-AnnotationOfAnnotation 
-\series default
-\emph on
-or
-\series bold
-\emph default
- 
-\begin_inset Newline newline
-\end_inset
-
-ImageAnnotation
-\family default
-\series default
-\shape default
- entities.
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:imageAnnotationCollection: 
-\series default
-Stores instances of 
-\family typewriter
-\series bold
-\shape italic
-AnnotationImages
-\family default
-\series default
-\shape default
- class.
- It associates with the 
-\family typewriter
-\series bold
-\shape italic
-Person
-\family default
-\series default
-\shape default
- class that contains patient demographic information.
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:ImagingPhysicalEntity:
-\series default
- This class stores an anatomical location as a coded term (i.e.
- RID2662, femur, RadLex) based on controlled vocabularies such as RadLex®,
- SNOMED CT®, or Unified Medical Language System (UMLS).
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:ImagingPhysicalCharacteristic: 
-\series default
-This class describes 
-\begin_inset Newline newline
-\end_inset
-
-the 
-\family typewriter
-\series bold
-\shape italic
-ImagingPhysicalEntity
-\family default
-\series default
-\shape default
- as a coded term.
-
-\series bold
- 
-\end_layout
-
-\begin_layout Enumerate
-
-\series bold
-AIM:MarkupEntity: 
-\series default
-This class captures textual information and graphical representation as
- DICOM-SR and SCOORD3D, for tridimensional and bidimensional spatial coordinates.
-\end_layout
-
-\begin_layout Subsubsection*
-Relationships 
-\end_layout
-
-\begin_layout Plain Layout
-Relationships describe semantically how different concepts relate to each
- other.
- For example, an 
-\family typewriter
-\series bold
-\shape italic
-ImageAnnotation
-\family default
-\series default
-\shape default
- having an 
-\family typewriter
-\series bold
-\shape italic
-Observation
-\series default
- 
-\family default
-\shape default
-entity that describes a lesion.
- These relationships in our ontology enable the semantic reasoning, which
- is a prerequisite for semantic classification and searching.
- 
-\end_layout
-
-\begin_layout Plain Layout
-One of the basic concepts in the AIM4-O ontology is the 
-\family typewriter
-\series bold
-\shape italic
-ImageAnnotation
-\family default
-\series default
-\shape default
- entity.
- It allows us to describe data properties of an image annotation in OWL,
- such as comments, name, date and time of its creation.
- For instance, the statement
-\family typewriter
-\series bold
-\shape italic
- imageAnnotation1 dateTime {2014-09-26T17:07:58ˆˆdatetime}
-\family default
-\series default
-\shape default
-, says that an annotation, referred to as 
-\family typewriter
-\series bold
-\shape italic
-imageAnnotation1
-\family default
-\series default
-\shape default
-, was created at 
-\family typewriter
-\series bold
-\shape italic
-
-\begin_inset Newline newline
-\end_inset
-
-2014-09-26T17:07:58
-\family default
-\series default
-\shape default
-.
- There are more 
-\series bold
-\emph on
-ImageAnnotation
-\series default
-\emph default
- entity relationships to other concepts, such as physical location and observati
-ons on lesions found.
- These relations can be seen in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AIM4example"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/AIM4.pdf
-	lyxscale 30
-	scale 13
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AIM4example"
-
-\end_inset
-
-This diagram shows the 
-\series bold
-AIM4-O
-\series default
- ontology including the six classes modified from Bulu's ontology
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bulu"
-
-\end_inset
-
-.
- Purple ovals represent extended abstract classes from 
-\series bold
-AIM:Entity
-\series default
-, dashed ovals represent instances of 
-\series bold
-AIM:Entity
-\series default
- abstract class, and the relationships are represented as red arrows.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:sample-of-Image"
-
-\end_inset
-
-Sample of Image Annotations using AIM-XML and OWL Manchester serialization.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="1">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-AIM-XML 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "language=XML,basicstyle={\scriptsize\rmfamily},tabsize=1"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-<imageAnnotations> 
-\end_layout
-
-\begin_layout Plain Layout
-
- <ImageAnnotation> 
-\end_layout
-
-\begin_layout Plain Layout
-
-  <UNIQUEIDENTIFIER root="f3fftpf6wsinx4o17il"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-  <dateTime value="2014-10-05T22:33:47"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-  <name value="Liver1"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-  <comment value="CT / RECON 2: LIVER 2 PHASE (AP) / 37"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
-\end_layout
-
-\begin_layout Plain Layout
-
-   <imagingPhysicalEntityCollection> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <ImagingPhysicalEntity> 
-\end_layout
-
-\begin_layout Plain Layout
-
-     <uniqueIdentifier root="1a5gzinzftm1oxc45sho8go"/>
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
-\end_layout
-
-\begin_layout Plain Layout
-
-       .
-\end_layout
-
-\begin_layout Plain Layout
-
-   </ImagingPhysicalEntity> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   </imagingPhysicalEntityCollection>
-\end_layout
-
-\begin_layout Plain Layout
-
- </ImageAnnotation>
-\end_layout
-
-\begin_layout Plain Layout
-
-</imageAnnotations>
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Manchester syntax
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=4"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-@prefix aim:  <http://www.w3.org/ns/aim4#> .
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: 8ixmtfhbiqujozezrep1r90t1n0po8wxyfy5svzs
-\end_layout
-
-\begin_layout Plain Layout
-
-  Types:						 ImageAnnotationCollection          
-\end_layout
-
-\begin_layout Plain Layout
-
-   Facts:
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:hasImageAnnotations     :9gs43xqj1kyl13lmega0zhoenzvgeakkprft8fw8,
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-
-Individual: "f3fftpf6wsinx4o17il"
-\end_layout
-
-\begin_layout Plain Layout
-
-  Types:						 ImageAnnotation
-\end_layout
-
-\begin_layout Plain Layout
-
-   Facts:        
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:hasImageReference      :sj1...,
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:hasMarkupEntity        :jma...,
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:hasCalculationEntity   :a4l...,
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:hasImagingObservation  :hoj...,
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    AIM:HASPHYSICALENTITY      :"1A5GZINZFTM1OXC45SHO8GO",
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:dateTime               "2014-10-05T22:33:47"^^xsd:dateTime,
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:uniqueIdentifier       "f3fftpf6wsinx4o17il"^^xsd:string,      
-      
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:comment                "CT / RECON 2: LIVER 2 PHASE (AP) / 37"
-\end_layout
-
-\begin_layout Plain Layout
-
-                                ^^xsd:string,      
-\end_layout
-
-\begin_layout Plain Layout
-
-    aim:name                   "Liver1"^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-These relations can also be specified using OWL relationships.
- A small example is given in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:sample-of-Image"
-
-\end_inset
-
-.
- It includes an OWL representation of an AIM 4.0 instance and its usual relations
-hips.
- This example shows semantically equivalent concepts between AIM-XML format
- and OWL model (Manchester serialization format) that were used in this
- work.
- For example, an AIM 
-\family typewriter
-\series bold
-\emph on
-ImageAnnotation
-\family default
-\series default
-\emph default
- instance with the identifier value 
-\family typewriter
-\series bold
-\emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-uniqueIdentifier:f3fftpf6wsinx4o17il
-\begin_inset Quotes erd
-\end_inset
-
-,
-\family default
-\series default
-\emph default
- can be represented in OWL and used for reasoning purposes.
- Similarly, Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:sample-of-Image"
-
-\end_inset
-
- shows that the concept
-\family typewriter
-\series bold
-\emph on
- PhysicalEntity
-\family default
-\series default
-\emph default
-, with the identifier value
-\family typewriter
-\series bold
-\shape italic
-
-\begin_inset Newline newline
-\end_inset
-
-
-\shape default
-\emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-uniqueIdentifier
-\series default
-:
-\series bold
-1a5gzinzftm1oxc45sho8go
-\series default
-
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\emph default
-is
-\family default
- related to the 
-\family typewriter
-\series bold
-\shape italic
-
-\begin_inset Newline newline
-\end_inset
-
-
-\shape default
-\emph on
-ImageAnnotation
-\family default
-\series default
-\emph default
- instance by the 
-\family typewriter
-\series bold
-\emph on
-hasPhysicalEntity
-\family default
-\series default
-\emph default
- Object Property.
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Sample-of-AIM"
-
-\end_inset
-
- shows more information about the syntax of a 
-\family typewriter
-\series bold
-\emph on
-PhysicalEntity
-\family default
-\series default
-\emph default
- instance in AIM 4.0 XML and the equivalent OWL Manchester syntax for the
- same instance.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Sample-of-AIM"
-
-\end_inset
-
-Sample of AIM PhysicalEntity in AIM-XML and OWL Manchester serialization
- format.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="1">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-AIM-XML
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=5"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-<imagingPhysicalEntityCollection> 
-\end_layout
-
-\begin_layout Plain Layout
-
- <ImagingPhysicalEntity> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <uniqueIdentifier root="1a5gzinzftm1oxc45sho8go"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <typeCode code="RID58" codeSystem="liver" 
-\end_layout
-
-\begin_layout Plain Layout
-
-             codeSystemName="RadLex" codeSystemVersion=""/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <typeCode code="RID67" codeSystem="Couinaud hepatic segment 7" 
-\end_layout
-
-\begin_layout Plain Layout
-
-             codeSystemName="RadLex.3.10" codeSystemVersion=""/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <annotatorConfidence value="0.0"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
-   <label value="Location"/> 
-\end_layout
-
-\begin_layout Plain Layout
-
- </ImagingPhysicalEntity> 
-\end_layout
-
-\begin_layout Plain Layout
-
-</imagingPhysicalEntityCollection> 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Manchester syntax
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "language=XML,basicstyle={\scriptsize\ttfamily},tabsize=5"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-Individual:  1a5gzinzftm1oxc45sho8go
-\end_layout
-
-\begin_layout Plain Layout
-
- Types:			        ImagingPhysicalEntity          
-\end_layout
-
-\begin_layout Plain Layout
-
-   Facts:        
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:annotatorConfidence      0.0f,      
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:label                   "Location"^^xsd:string,      
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:typeCode                ``{codeSystemName=RadLex,
-\end_layout
-
-\begin_layout Plain Layout
-
-                                  codeSystem    =liver,code=RID58,
-\end_layout
-
-\begin_layout Plain Layout
-
-                                  codeSystemVersion=}''^^xsd:string, 
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:typeCode                ``{codeSystemName=RadLex.3.10,
-\end_layout
-
-\begin_layout Plain Layout
-
-                                  codeSystem    =Couinaudhepaticsegment7,
-\end_layout
-
-\begin_layout Plain Layout
-
-                                  code          =RID67}''^^xsd:string, 
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-   aim:uniqueIdentifier        "1a5gzinzftm1oxc45sho8go"^^xsd:string
-\end_layout
-
-\begin_layout Plain Layout
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Creating conditions to implement reasoning based on TNM rules using OWL
- instances
-\end_layout
-
-\begin_layout Plain Layout
-The second step is to transform existing AIM-XML documents to their equivalent
- in OWL (using the AIM4-O ontology).
- To achieve this, we developed scripts, in the Groovy language
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://groovy-lang.org/
-\end_layout
-
-\end_inset
-
-.
- First, we automatically map AIM-XML entities to AIM Java classes, based
- on the AIM UML
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://wiki.nci.nih.gov/display/AIM/Extending+the+AIM+Model#ExtendingtheAIMModel-A
-IMUMLModeling
-\end_layout
-
-\end_inset
-
- model (Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:xmltoowl"
-
-\end_inset
-
-).
- We then create instances of the AIM4-O ontology from these AIM Java classes,
- using the OWL API, a Java API for creating, manipulating and serializing
- OWL ontologies.
- Finally, these instances populate a semantic web knowledge base.
- This base is suitable for classification-based and rule-based inference.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/comditionsforTNM.pdf
-	lyxscale 70
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:xmltoowl"
-
-\end_inset
-
-Mechanism to transform AIM-XML documents to encoded AIM4-O individuals using
- OWL.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-In order to automatically stage cancer, our approach must have the support
- of an ontology to specify the semantics of image observations from a particular
- domain.
- In this case, this ontology should be able to represent the topology of
- a human body organ (the organ in which cancer starts growing and has its
- own TNM system).
- In this work, this organ was the liver.
- Furthermore, it is considered necessary to include an OWL representation
- of RadLex® 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Radlex"
-
-\end_inset
-
- vocabulary in order to facilitate handling AIM4-O individuals, because
- these individuals have Radlex terminology in their structure.
- Finally, a set of rules to do the actual staging, based on the TNM liver
- system, was added to the ontology.
- The final result was the 
-\series bold
-General Ontology
-\series default
-.
-\end_layout
-
-\begin_layout Subsubsection
-General Ontology 
-\end_layout
-
-\begin_layout Plain Layout
-The General ontology is divided in 4 files, as seen in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:generalOntology"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Itemize
-The AIM4-O ontology with individuals (Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:AIM4-O-ontology"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Itemize
-Onlira.owl: The Liver Ontology (based on the Onlira ontology 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kokciyan2014"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Itemize
-Radlex lexicon module (ModuleRadlex.owl
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://bioportal.bioontology.org/ontologies/RADLEX/classes
-\end_layout
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Itemize
-General concepts of TNM (axioms and SWRL rules).
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/ontologiageral2.pdf
-	lyxscale 30
-	scale 13
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:generalOntology"
-
-\end_inset
-
- The General Ontology imports (TNM rules, axioms, moduleRadlex.owl and Onlira.owl)
- needed in order to classify liver cancer.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-The following sections give a description of the ontologies used as part
- of the
-\series bold
- General Ontology
-\series default
-.
-\end_layout
-
-\begin_layout Subsubsection
-Ontology of the Liver for Radiology 
-\emph on
-(ONLIRA
-\emph default
-) 
-\end_layout
-
-\begin_layout Plain Layout
-The ONLIRA ontology
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://bioportal.bioontology.org/ontologies/ONLIRA
-\end_layout
-
-\end_inset
-
- was developed as part of the CaReRa project.
- It aims to model imaging observations of the liver domain with an emphasis
- on properties and relations between the liver, hepatic veins, and liver
- lesions.
- This ontology is used as an ontological representation of the liver and
- its topological features.
-\end_layout
-
-\begin_layout Subsubsection
-Radlex terminology 
-\end_layout
-
-\begin_layout Plain Layout
-The AIM model provides an XML schema that describes anatomical structures,
- visual observations and other information relevant to images using the
- Radlex terminology.
- We extracted a module from the Radlex lexicon to represent this information.
- The Radlex module is used by the General ontology to permit a formal representa
-tion (in OWL) of TNM criteria.
- The TNM criteria are based on knowledge about the way cancer develops and
- disseminates.
- For this reason, it is important that the General ontology represents not
- only the anatomical entities mentioned in TNM but also other direct and
- indirect related anatomical entities to consider the relative proximity
- between them.
- For example, to the N and M criteria (in TNM) we added 2 super classes,
- the
-\family typewriter
-\series bold
-\emph on
- adjacentOrganGroup,
-\family default
-\series default
-\emph default
- which describes the set of organs adjacent to a main organ (e.g., the liver)
- and the 
-\family typewriter
-\series bold
-\emph on
-noadjacentOrganGroup
-\family default
-\series default
-\emph default
-, which describes organs based on the most common sites of tumor dissemination
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Faria2014"
-
-\end_inset
-
-.
- For the liver, we included lungs and bones as no adjacent organs, as seen
- in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:radlexclass"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Subsubsection
-Classes to Represent TNM System Concepts
-\end_layout
-
-\begin_layout Plain Layout
-In order to create an OWL representation for each TNM stage, we had to interpret
- each stage definition.
- Although it is not mentioned explicitly, the TNM criteria are exclusive,
- so the corresponding OWL classes were made disjoint.
- For example, the 
-\series bold
-\emph on
-T2
-\series default
-\emph default
- stage is represented by two constraints: a single tumor (of any size) that
- has grown into blood vessels concept (
-\series bold
-\emph on
-T2_a
-\series default
-\emph default
- class) and a single tumor no larger than 
-\begin_inset Quotes eld
-\end_inset
-
-x
-\begin_inset Quotes erd
-\end_inset
-
- cm concept (
-\series bold
-\emph on
-T2_b
-\series default
-\emph default
- class).
-\end_layout
-
-\begin_layout Subsection
-Formal Representation of TNM Cancer Staging 
-\end_layout
-
-\begin_layout Plain Layout
-In the previous sections, several steps were necessary to create the General
- ontology for a TNM classifier.
- First, we created classes and properties in order to fill the semantic
- gap between the tumor features and the AIM4-0 classes definitions.
- Then, we provided formal definitions for the TNM stages, liver’s topological
- features and Radlex terminology, in order to represent them in OWL.
- Finally, we defined formal mechanisms for reasoning (using only OWL and
- SWRL expressivity) such as OWL classes, intersections, equivalences, disjunctio
-ns between classes and a set of rules in order to determine cancer stage
- from image annotations.
- This last step will be described below.
-\end_layout
-
-\begin_layout Plain Layout
-In order to discover the limits of the OWL concepts and SWRL rules, we attempted
- to formally define and implement the conditions that TNM staging demands.
- TNM cancer staging is divided in two main steps.
- The first step consists in giving a score starting from the description
- of the tumor (T), its spreading into lymphatic nodes (N) and possible metastasi
-s (M).
- See Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:American-Joint-Committee"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:American-Joint-Committee"
-
-\end_inset
-
-American Joint Committee on Cancer/International Union against cancer TNM
- classification system.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="15" columns="2">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0cm">
-<column alignment="left" valignment="top" width="7cm">
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Primary tumor (T)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-TX 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Primary tumor cannot be assessed 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T0 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-No evidence of primary tumor 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Solitary tumor (any size) without vascular invasion 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T2 = T2_a or T2_b
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Solitary tumor (any size) with vascular invasion or multiple tumors none
- <5 cm
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T3a
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Multiple tumors, with at least one tumor >5 cm 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T3b
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Single tumor or multiple tumors of any size involving a major branch of
- the portal vein or hepatic vein 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-T4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Tumors with direct invasion of adjacent organs other than the gallbladder
- or with perforation of visceral peritoneum 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Regional lymph nodes (N)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-NX
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Regional lymph nodes cannot be assessed 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-N0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-No regional lymph node metastasis 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-N1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Regional lymph node metastasis
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Distant metastasis (M)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-M0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-No distant metastasis 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-N0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-Distant metastasis 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-The second step consists in determining the stage according to the previous
- scores (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:A)TNMexamplefigure"
-
-\end_inset
-
-).
- To make the aforementioned tasks possible, we decided that the following
- conditions reflect a desirable staging process:
-\end_layout
-
-\begin_layout Itemize
-Condition 1 : Staging should consider the existence of solitary or multiple
- tumors on the same site.
-\end_layout
-
-\begin_layout Itemize
-Condition 2 : Staging should consider if tumors are either bigger or minor
- than a certain size in cm.
-\end_layout
-
-\begin_layout Itemize
-Condition 3 : Staging should consider lesions in adjacent organs.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status collapsed
@@ -2650,6 +861,7 @@ t or metastasis.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
+literal "true"
 
 \end_inset
 
@@ -3011,6 +1223,7 @@ Lesion
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
+literal "true"
 
 \end_inset
 
@@ -3176,6 +1389,7 @@ n
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
+literal "true"
 
 \end_inset
 
@@ -3391,6 +1605,7 @@ Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clark2013"
+literal "true"
 
 \end_inset
 
@@ -3429,6 +1644,7 @@ According to Blomqvist et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Blomqvist2012"
+literal "true"
 
 \end_inset
 
@@ -3445,6 +1661,7 @@ the ontological evaluation is the process of assessing an ontology with
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
+literal "true"
 
 \end_inset
 
@@ -4117,6 +2334,7 @@ The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Recist"
+literal "true"
 
 \end_inset
 
@@ -4217,6 +2435,7 @@ The guidelines of Recist in detail in
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Recist"
+literal "true"
 
 \end_inset
 
@@ -4939,6 +3158,7 @@ In this paper, the 7th edition of TNM
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
+literal "true"
 
 \end_inset
 
@@ -5678,6 +3898,7 @@ Recurrent Neural Networks (RNN) are a subclass of ANN characterized by cyclic
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kuna2015"
+literal "true"
 
 \end_inset
 
@@ -5712,6 +3933,7 @@ reference "fig:elmanandwilliam"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Elman90findingstructure"
+literal "true"
 
 \end_inset
 
@@ -5719,6 +3941,7 @@ key "Elman90findingstructure"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams:1989:LAC:1351124.1351135"
+literal "true"
 
 \end_inset
 
@@ -5737,9 +3960,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNewilliamandelman.pdf
+	filename figures/RNNewilliamandelman.pdf
 	lyxscale 30
-	scale 10
+	scale 15
 
 \end_inset
 
@@ -5799,6 +4022,7 @@ using the optimization algorithms, in order to minimize the output error.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rumelhart:1986:PDP:104279"
+literal "true"
 
 \end_inset
 
@@ -5840,6 +4064,7 @@ where
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sutskever2013"
+literal "true"
 
 \end_inset
 
@@ -5865,6 +4090,7 @@ Weight updates can be performed in online mode or based on the mean error
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-9-111-2005"
+literal "true"
 
 \end_inset
 
@@ -5934,6 +4160,7 @@ reference "fig:unfold"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams90anefficient"
+literal "true"
 
 \end_inset
 
@@ -5955,6 +4182,7 @@ key "Williams90anefficient"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
+literal "true"
 
 \end_inset
 
@@ -5968,9 +4196,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNunfoldprocess.pdf
+	filename figures/RNNunfoldprocess-ES.pdf
 	lyxscale 30
-	scale 12
+	scale 15
 
 \end_inset
 
@@ -6015,6 +4243,7 @@ More sophisticated methods were developed to overcome BPTT limitations,
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams:1989:LAC:1351124.1351135"
+literal "true"
 
 \end_inset
 
@@ -6023,6 +4252,7 @@ key "Williams:1989:LAC:1351124.1351135"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kuna2015"
+literal "true"
 
 \end_inset
 
@@ -6031,6 +4261,7 @@ key "Kuna2015"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sum:1998:EKF:296468.296482"
+literal "true"
 
 \end_inset
 
@@ -6040,6 +4271,7 @@ key "Sum:1998:EKF:296468.296482"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
+literal "true"
 
 \end_inset
 
@@ -6050,6 +4282,7 @@ key "LukoseviciusJaeger09"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "doya1992bifurcations"
+literal "true"
 
 \end_inset
 
@@ -6085,6 +4318,7 @@ It may seem surprising that an ANN with random connections may be effective,
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Datar:2004:LHS:997817.997857"
+literal "true"
 
 \end_inset
 
@@ -6094,6 +4328,7 @@ key "Datar:2004:LHS:997817.997857"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jarret,Saxe_551"
+literal "true"
 
 \end_inset
 
@@ -6109,6 +4344,7 @@ Although ESN does not solve the problem of training RNN entirely, its impressive
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ilya"
+literal "true"
 
 \end_inset
 
@@ -6291,6 +4527,7 @@ Where
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
+literal "true"
 
 \end_inset
 
@@ -6522,6 +4759,7 @@ n
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jaeger2001a"
+literal "true"
 
 \end_inset
 
@@ -6904,9 +5142,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/eschema_model.pdf
+	filename figures/eschema_model.pdf
 	lyxscale 50
-	scale 20
+	scale 25
 
 \end_inset
 
@@ -6954,11 +5192,11 @@ In terms of statistics, the variable
 \begin_inset Formula $R_{v,t}$
 \end_inset
 
- is added to provide the variability in 
-\begin_inset Formula $Y_{v}$
+ is added to provide variability in 
+\begin_inset Formula $Y_{v,t}$
 \end_inset
 
-, t which remains even after 
+ which remains even after 
 \begin_inset Formula $Y_{v,t-1}$
 \end_inset
 
@@ -6966,6 +5204,7 @@ In terms of statistics, the variable
 \begin_inset CommandInset citation
 LatexCommand cite
 key "loucks2005water"
+literal "true"
 
 \end_inset
 
@@ -6978,9 +5217,11 @@ key "loucks2005water"
 \begin_inset Formula $​​Y_{v,w}$
 \end_inset
 
-, where w 
-\backslash
-leq t-1, and 
+, where 
+\begin_inset Formula $w\leq t-1$
+\end_inset
+
+, and 
 \begin_inset Formula $R_{v,t}$
 \end_inset
 
@@ -6988,38 +5229,931 @@ leq t-1, and
 \begin_inset Formula $R_{v,w}$
 \end_inset
 
- for w 
-\backslash
- neq t-1 .
- As was pointed out at the beginning, this component is the same stochastic
- part of the Thomas & Fiering model, therefore, in the next section we examine
- this model and its implications in the final formulation of our proposal
- asdasdassdasd asdadasdasda This section offers an overview of our stochastic
- process model proposal, followed by a detailed description of each of its
- components.
-\end_layout
-
-\begin_layout Standard
-4.2 Stochastic component
-\end_layout
-
-\begin_layout Standard
-In terms of statistics, the variable 
-\begin_inset Formula $R_{v,t}$
+ for 
+\begin_inset Formula $w\neq t-1$
 \end_inset
 
- represents a normally distributed random noise, which takes into account
- the uncertainty that usually affects hydrological processes.
- R_ {v, t} is added to provide the variability in Y_v, t which remains even
- after Y_v, t-1 is known (Loucks et al., 2005).
- Each R_ {v, t} is independent of past values ​​Y_ {v, w}, where w 
+ .
+ This component is the same stochastic part from Thomas & Fiering model,
+ 
+\end_layout
+
+\begin_layout Subsection
+First order stationary Markov model or Thomas Fiering model (Stationary)
+\end_layout
+
+\begin_layout Standard
+The method consists of the use of twelve linear regression equations: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}Y_{jan}= & \overline{Y}_{jan}+b_{jan}\left(Y_{dec}-\overline{Y}_{dec}\right)+\varepsilon_{jan}\\
+Y_{feb}= & \overline{Y}_{feb}+b_{feb}\left(Y_{jan}-\overline{Y}_{jan}\right)+\varepsilon_{feb}\\
+...= & ...
+\end{aligned}
+\label{eq:thomas2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:thomas2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the regression analysis of 
+\begin_inset Formula $Y_{t+1}$
+\end_inset
+
+ is given in 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+ over years where 
+\begin_inset Formula $t=1(january),2(february),...,12(december)$
+\end_inset
+
+, 
+\begin_inset Formula $b_{j}$
+\end_inset
+
+ is the regression coefficient between month 
+\begin_inset Formula $t+1$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ The monthly regression line can be determined from previous values, by
+ means of the general equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\widehat{Y}_{t+1}=\overline{Y}_{t+1}+b_{t}\left(Y_{t}-\overline{Y}_{t}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The variability of these points plotted from the regression line that reflect
+ the variance on this line is added by the additional component 
+\begin_inset Formula $R_{t}$
+\end_inset
+
+ (in red in the Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Random"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{t+1}=\epsilon\times\sigma_{t+1}\times\sqrt{\left(1-r_{t}^{2}\right)}\label{eq:randomCom}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where:
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $\sigma_{t+1}$
+\end_inset
+
+, is the standard deviation in month 
+\begin_inset Formula $t+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+, is the correlation coefficient between months 
+\begin_inset Formula $t+1$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+ (throughout the historical record).
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $\epsilon=N(0,1)$
+\end_inset
+
+, a normally distributed random noise with zero mean and standard deviation
+ one.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/thomas_fiering_random_es.pdf
+	lyxscale 30
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Random"
+
+\end_inset
+
+Conditional distribution of 
+\begin_inset Formula $Y_{t+1}$
+\end_inset
+
+ given 
+\begin_inset Formula $Y_{t}=y_{t}$
+\end_inset
+
+ for two normal random variables.
+ The red oval represents the stochastic component used by our model in its
+ final form.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The procedure for using the stochastic component 
+\begin_inset Formula $R_{t}$
+\end_inset
+
+ in our model is described in the follow pseudocode 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:ramdom_component"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
- leq t-1, and R_ {v, t} is independent of R_ {v, w} for w 
+begin{algorithmic}[1] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
- neq t-1 .
- As was pointed out at the beginning, this component is the same stochastic
- part of the Thomas & Fiering model, therefore, in the next section we examine
- this model and its implications in the final formulation of our proposal
+caption{Random Component $R_{t}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State {$
+\backslash
+textit{n} 
+\backslash
+gets 
+\backslash
+text{length of }
+\backslash
+textit{(Historical record)}$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+For{$t= 0 
+\backslash
+to 11 $}
+\backslash
+Comment{monthly, t:=0,january} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $v
+\backslash
+gets t$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $j
+\backslash
+gets 1$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $sum_{t}
+\backslash
+gets 0, sum_{t+1}
+\backslash
+gets 0$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{$v 
+\backslash
+le n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $sum_{t}
+\backslash
+gets sum_{t}+Y_{t,v}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $sum_{t+1}
+\backslash
+gets sum_{t+1}+Y_{t+1,v}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $j
+\backslash
+gets j+1, v
+\backslash
+gets v+12*j$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State{$
+\backslash
+overline{Y}_{t}=
+\backslash
+frac{sum_{t}}{n}$}
+\backslash
+Comment{streamflow }
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State{$
+\backslash
+overline{Y}_{t+1}=
+\backslash
+frac{sum_{t+1}}{n}$}
+\backslash
+Comment{streamflow}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $j
+\backslash
+gets 1, v
+\backslash
+gets t$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{$v 
+\backslash
+le n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $temp1_{t}
+\backslash
+gets temp1_{t} + 
+\backslash
+left(Y_{t,v}-
+\backslash
+overline{Y}_{t}
+\backslash
+right)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $temp2_{t}
+\backslash
+gets temp2_{t} + 
+\backslash
+left(Y_{t,v}-
+\backslash
+overline{Y}_{t}
+\backslash
+right)^{2}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $temp1_{t+1}
+\backslash
+gets temp1_{t+1} + 
+\backslash
+left(Y_{t+1,v}-
+\backslash
+overline{Y}_{t+1}
+\backslash
+right)$	
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $temp2_{t+1}
+\backslash
+gets temp2_{t+1} + 
+\backslash
+left(Y_{t+1,v}-
+\backslash
+overline{Y}_{t+1}
+\backslash
+right)^{2}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $j
+\backslash
+gets j+1, v
+\backslash
+gets v+12*j$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State{$
+\backslash
+sigma_{t}=
+\backslash
+sqrt{
+\backslash
+frac{
+\backslash
+left(temp2_{t}
+\backslash
+right)}{n-1}}$}
+\backslash
+Comment{standar deviation} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State{$r_{t}=
+\backslash
+frac{
+\backslash
+left(temp1_{t}
+\backslash
+right)
+\backslash
+times 
+\backslash
+left(temp1_{t+1}
+\backslash
+right)}{
+\backslash
+sqrt{
+\backslash
+left(temp2_{t}
+\backslash
+right) 
+\backslash
+times 
+\backslash
+left(temp2_{t+1}
+\backslash
+right)}}$}
+\backslash
+Comment{correlation coefficient between $t$ and $t+1$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State{$
+\backslash
+epsilon=N(0,1)$} 
+\backslash
+Comment{normally distributed random noise}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State{$R_{t+1}=
+\backslash
+epsilon
+\backslash
+times
+\backslash
+sigma_{t+1}
+\backslash
+times
+\backslash
+sqrt{
+\backslash
+left(1-r_{t}^{2}
+\backslash
+right)}$}
+\backslash
+Comment{Stochastic component, The model is then a set of twelve regression
+ equations}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:ramdom_component"
+
+\end_inset
+
+Calculate Random Component
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally to generate synthetic time series the procedure is repeated, generating
+ a sequence of random numbers 
+\begin_inset Formula $\left\{ \epsilon_{1},\epsilon_{2},...\right\} $
+\end_inset
+
+  that are replaced in the model, In this work, a recurrent topology  was
+ used as a deterministic component.
+\end_layout
+
+\begin_layout Subsection
+Echo State Component
+\end_layout
+
+\begin_layout Standard
+This sequential information is preserved in the internal states or processing
+ units (PU) of the Recurrent ANN, and allows to manage values at time 
+\begin_inset Formula $t$
+\end_inset
+
+ without the need for pre-processing or time delay as can be seen in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Generación-de-escenarios"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to obtain a time series value at time 
+\begin_inset Formula $t$
+\end_inset
+
+, in our model the Recurrent ANN receives as input the values at time 
+\begin_inset Formula $t-1$
+\end_inset
+
+.
+ The activation of the internal PU (echo states) is updated according to:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x\left(t+1\right)=\vartheta\left(W^{in}y_{t+1}+\theta_{t+1}+Wx(t)\right)\label{eq:statesRNN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where:
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $x(t)$
+\end_inset
+
+, is the vector of internal states or PU.
+\end_layout
+
+\begin_layout Standard
+• W, is the synaptic weights matrix with recurrent connection.
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $y_{t+1}$
+\end_inset
+
+, is the input signal, in month 
+\begin_inset Formula $t+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $W^{in}$
+\end_inset
+
+, is the synaptic weight matrix between the input signal and the PU.
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $\vartheta$
+\end_inset
+
+, represents the activation function of the internal states (usually a hyperboli
+c tangent function).
+\end_layout
+
+\begin_layout Standard
+• 
+\begin_inset Formula $\theta_{t+1}$
+\end_inset
+
+, bias.
+\end_layout
+
+\begin_layout Standard
+The output of the Recurrent ANN is calculated according to the equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{t+1}=\delta\left(W^{out}\left(x(t+1)+y_{t}\right)+\theta_{t}\right)\label{eq:ouputRNN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where: 
+\begin_inset Formula $W^{out}$
+\end_inset
+
+, is the weight matrix between the internal states 
+\begin_inset Formula $x(t+1)$
+\end_inset
+
+ added to the input signals 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ and the output neurons.
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is the activation function of the output neurons, this is a standard tool
+ for condensing very small or very large values within a logistic space.
+\end_layout
+
+\begin_layout Standard
+As can be seen in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Esquema-del-proceso"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ the synthetic values 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+ is given by the sum of the output of our Recurrent ANN (
+\begin_inset Formula $E_{t}$
+\end_inset
+
+), and the stochastic part of the Thomas & Fiering model (
+\begin_inset Formula $R_{t}$
+\end_inset
+
+), described by the equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eq_general"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In order to obtain a mathematical description, the equations are concatenated
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:statesRNN"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ouputRNN"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eq_general"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, to obtain the following extended equation of our model:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline}
+\begin{aligned}Y_{t+1}= & f\left(\delta\left(W^{out}\times\left(\vartheta\left[W^{in}y_{t}+\theta_{t}+Wx(t-1)\right]+y_{t}\right)+\theta_{t}\right)+R_{t}\right)\end{aligned}
+\label{eq:final_form}
+\end{multline}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/propose_model-as-ES.pdf
+	lyxscale 30
+	scale 4.7
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Generación-de-escenarios"
+
+\end_inset
+
+Generation of synthetic scenarios, the new SSNESN model is observed in detail
+ in this work.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sequential information generated by the new model is preserved in the
+ internal states of the Recurrent ANN (
+\begin_inset Formula $x(t)$
+\end_inset
+
+) that allow many steps in time to affect the processing of each new entry.
+ Therefore, it is not necessary to incorporate "sliding window" techniques
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vafaeipour2014"
+literal "true"
+
+\end_inset
+
+ in our model, in contrast with similar works in the literature (Campos
+ et al., 2011, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lcdcampos,Awchi"
+literal "true"
+
+\end_inset
+
+.
+ Often the use of Neural Networks involves the task of estimating a large
+ number of hyper-parameters, related to their structure and performance.
+ It is evident that to generate synthetic series it is necessary to adjust
+ our model with the historical time series.
+ We can formalize this problem as:
 \end_layout
 
 \begin_layout Section
