@@ -581,7 +581,7 @@ name "chap:Propuesta"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chapters/metologia.lyx"
+filename "chapters/metologia2.2.lyx"
 
 \end_inset
 
@@ -678,7 +678,6 @@ filename "chapters/conclusion.lyx"
 \end_layout
 
 \begin_layout Verbatim*
-
 \begin_inset Note Note
 status collapsed
 

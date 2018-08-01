@@ -58,8 +58,6 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -80,16 +78,15 @@
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
+\cite_engine basic
 \cite_engine_type default
-\biblio_style plain
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
 \use_refstyle 1
-\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -98,10 +95,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style english
-\dynamic_quotes 0
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -254,7 +248,6 @@ on was used
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
-literal "true"
 
 \end_inset
 
@@ -262,7 +255,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LUNA2006"
-literal "true"
 
 \end_inset
 
@@ -272,7 +264,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "maceira2,lcdcampos"
-literal "true"
 
 \end_inset
 
@@ -284,7 +275,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Raman95multivariatemodelling"
-literal "true"
 
 \end_inset
 
@@ -298,7 +288,6 @@ Currently, among the approaches that attempt to model complex non-linear
 \begin_inset CommandInset citation
 LatexCommand cite
 key "YU2015308"
-literal "true"
 
 \end_inset
 
@@ -314,7 +303,6 @@ d to the most complex architecture based on many layers, each of which be
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
-literal "true"
 
 \end_inset
 
@@ -324,7 +312,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
-literal "true"
 
 \end_inset
 
@@ -333,7 +320,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "6327793"
-literal "true"
 
 \end_inset
 
@@ -347,7 +333,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
-literal "true"
 
 \end_inset
 
@@ -369,7 +354,6 @@ RC
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
-literal "true"
 
 \end_inset
 
@@ -384,7 +368,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
-literal "true"
 
 \end_inset
 
@@ -399,7 +382,6 @@ MOPEX
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Duan20063"
-literal "true"
 
 \end_inset
 
@@ -417,7 +399,6 @@ Initial auto-regressive models, as well as models based on Box & Jenkis
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BOXANDJenKys"
-literal "true"
 
 \end_inset
 
@@ -425,7 +406,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Peng2010"
-literal "true"
 
 \end_inset
 
@@ -435,7 +415,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "JAWR:JAWR70A"
-literal "true"
 
 \end_inset
 
@@ -443,7 +422,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Thomas"
-literal "true"
 
 \end_inset
 
@@ -463,7 +441,6 @@ The problem with previous models is that forecasting is naturally a dynamic
 \begin_inset CommandInset citation
 LatexCommand cite
 key "WRCR:WRCR9735"
-literal "true"
 
 \end_inset
 
@@ -471,7 +448,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "WRCR:WRCR11667"
-literal "true"
 
 \end_inset
 
@@ -479,7 +455,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "lcdcampos"
-literal "true"
 
 \end_inset
 
@@ -487,7 +462,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-20-1405-2016"
-literal "true"
 
 \end_inset
 
@@ -495,7 +469,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
-literal "true"
 
 \end_inset
 
@@ -503,7 +476,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Awchi"
-literal "true"
 
 \end_inset
 
@@ -512,7 +484,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "deng"
-literal "true"
 
 \end_inset
 
@@ -520,7 +491,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SHEN2015243,KUREMOTO201447"
-literal "true"
 
 \end_inset
 
@@ -536,7 +506,6 @@ Recurrent Neural Networks have show better forecasting ability than feedforward
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
-literal "true"
 
 \end_inset
 
@@ -544,7 +513,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
-literal "true"
 
 \end_inset
 
@@ -557,7 +525,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "1"
-literal "true"
 
 \end_inset
 
@@ -574,7 +541,6 @@ Reservoir Computing is a training approach that can be remarkably simpler
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
-literal "true"
 
 \end_inset
 
@@ -582,7 +548,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "en81012228"
-literal "true"
 
 \end_inset
 
@@ -601,7 +566,6 @@ Studies such as
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Coulibaly201076"
-literal "true"
 
 \end_inset
 
@@ -609,7 +573,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Abrahart201276"
-literal "true"
 
 \end_inset
 
@@ -621,7 +584,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371334"
-literal "true"
 
 \end_inset
 
@@ -629,7 +591,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "4371335"
-literal "true"
 
 \end_inset
 
@@ -637,7 +598,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "256541"
-literal "true"
 
 \end_inset
 
@@ -646,7 +606,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
-literal "true"
 
 \end_inset
 
@@ -660,7 +619,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "en81012228"
-literal "true"
 
 \end_inset
 
@@ -668,7 +626,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
-literal "true"
 
 \end_inset
 
@@ -861,7 +818,6 @@ t or metastasis.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
-literal "true"
 
 \end_inset
 
@@ -1223,7 +1179,6 @@ Lesion
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
-literal "true"
 
 \end_inset
 
@@ -1389,7 +1344,6 @@ n
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
-literal "true"
 
 \end_inset
 
@@ -1605,7 +1559,6 @@ Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Clark2013"
-literal "true"
 
 \end_inset
 
@@ -1644,7 +1597,6 @@ According to Blomqvist et al.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Blomqvist2012"
-literal "true"
 
 \end_inset
 
@@ -1661,7 +1613,6 @@ the ontological evaluation is the process of assessing an ontology with
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kokciyan2014"
-literal "true"
 
 \end_inset
 
@@ -2334,7 +2285,6 @@ The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Recist"
-literal "true"
 
 \end_inset
 
@@ -2435,7 +2385,6 @@ The guidelines of Recist in detail in
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Recist"
-literal "true"
 
 \end_inset
 
@@ -3158,7 +3107,6 @@ In this paper, the 7th edition of TNM
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Faria2014"
-literal "true"
 
 \end_inset
 
@@ -3898,7 +3846,6 @@ Recurrent Neural Networks (RNN) are a subclass of ANN characterized by cyclic
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kuna2015"
-literal "true"
 
 \end_inset
 
@@ -3933,7 +3880,6 @@ reference "fig:elmanandwilliam"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Elman90findingstructure"
-literal "true"
 
 \end_inset
 
@@ -3941,7 +3887,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams:1989:LAC:1351124.1351135"
-literal "true"
 
 \end_inset
 
@@ -4022,7 +3967,6 @@ using the optimization algorithms, in order to minimize the output error.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rumelhart:1986:PDP:104279"
-literal "true"
 
 \end_inset
 
@@ -4064,7 +4008,6 @@ where
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sutskever2013"
-literal "true"
 
 \end_inset
 
@@ -4090,7 +4033,6 @@ Weight updates can be performed in online mode or based on the mean error
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-9-111-2005"
-literal "true"
 
 \end_inset
 
@@ -4160,7 +4102,6 @@ reference "fig:unfold"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams90anefficient"
-literal "true"
 
 \end_inset
 
@@ -4182,7 +4123,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-17-253-2013"
-literal "true"
 
 \end_inset
 
@@ -4243,7 +4183,6 @@ More sophisticated methods were developed to overcome BPTT limitations,
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams:1989:LAC:1351124.1351135"
-literal "true"
 
 \end_inset
 
@@ -4252,7 +4191,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kuna2015"
-literal "true"
 
 \end_inset
 
@@ -4261,7 +4199,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sum:1998:EKF:296468.296482"
-literal "true"
 
 \end_inset
 
@@ -4271,7 +4208,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LukoseviciusJaeger09"
-literal "true"
 
 \end_inset
 
@@ -4282,7 +4218,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "doya1992bifurcations"
-literal "true"
 
 \end_inset
 
@@ -4318,7 +4253,6 @@ It may seem surprising that an ANN with random connections may be effective,
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Datar:2004:LHS:997817.997857"
-literal "true"
 
 \end_inset
 
@@ -4328,7 +4262,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jarret,Saxe_551"
-literal "true"
 
 \end_inset
 
@@ -4344,7 +4277,6 @@ Although ESN does not solve the problem of training RNN entirely, its impressive
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ilya"
-literal "true"
 
 \end_inset
 
@@ -4527,7 +4459,6 @@ Where
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SUN201717"
-literal "true"
 
 \end_inset
 
@@ -4759,7 +4690,6 @@ n
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jaeger2001a"
-literal "true"
 
 \end_inset
 
@@ -5204,7 +5134,6 @@ In terms of statistics, the variable
 \begin_inset CommandInset citation
 LatexCommand cite
 key "loucks2005water"
-literal "true"
 
 \end_inset
 
@@ -5267,9 +5196,6 @@ From equation
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:thomas2"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -5323,9 +5249,6 @@ The variability of these points plotted from the regression line that reflect
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Random"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -5444,9 +5367,6 @@ The procedure for using the stochastic component
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:ramdom_component"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -5877,9 +5797,6 @@ This sequential information is preserved in the internal states or processing
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Generación-de-escenarios"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6006,9 +5923,6 @@ As can be seen in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Esquema-del-proceso"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6028,9 +5942,6 @@ noprefix "false"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eq_general"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6040,9 +5951,6 @@ noprefix "false"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:statesRNN"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6050,9 +5958,6 @@ noprefix "false"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ouputRNN"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6060,9 +5965,6 @@ noprefix "false"
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:eq_general"
-plural "false"
-caps "false"
-noprefix "false"
 
 \end_inset
 
@@ -6091,7 +5993,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/propose_model-as-ES.pdf
-	lyxscale 30
+	lyxscale 20
 	scale 4.7
 
 \end_inset
@@ -6135,7 +6037,6 @@ The sequential information generated by the new model is preserved in the
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Vafaeipour2014"
-literal "true"
 
 \end_inset
 
@@ -6144,7 +6045,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lcdcampos,Awchi"
-literal "true"
 
 \end_inset
 
