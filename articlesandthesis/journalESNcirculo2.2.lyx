@@ -689,3143 +689,7 @@ In this section, we briefly summarize the theoretical background of the
  SSNESN understanding.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-The objective of this work is to automatically determine the cancer stage
- of lesions present in medical images, using semantic web and reasoning
- technologies, to process semantic annotations made by experts and provide
- clinicians with a second opinion on the classification of their patients.
- These semantic annotations are made using tools that use the AIM format
- (used by the ePAD tool) to describe and save image findings.
- Automatic cancer staging can increase the efficiency of radiologists and
- oncologists and improve the quality and uniformity of image interpretation
- by experts.
- It is important to mention that our work focuses on staging liver cancer
- due to data availability.
-\end_layout
-
-\begin_layout Plain Layout
-This paper is organized as follows.
- Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Related-work"
-
-\end_inset
-
- presents related approaches.
- Section 4 describes our methodology composed of three main components:
- the ontological representation of the AIM 4.0 model, the conditions to implement
- the TNM classifier (General Ontology) and the formal representation of
- cancer staging.
- Section 5 analyses experimental data to assess our TNM classifier relevance.
- Conclusions are found in Section 6.
-\end_layout
-
-\begin_layout Section
-Related work
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Related-work"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Section
-Method description
-\end_layout
-
-\begin_layout Plain Layout
-In this section, we describe our methodology.
- It is comprised by three main tasks:
-\end_layout
-
-\begin_layout Enumerate
-Ontological representation of the AIM 4.0 model.
- 
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Generate conditions to implement the TNM classifier(General Ontology)
-\end_layout
-
-\end_inset
-
-Creating conditions to implement reasoning based on TNM rules, using OWL
- instances.
-\end_layout
-
-\begin_layout Enumerate
-Formal Representation of Cancer Staging.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/exemploIIIA.pdf
-	lyxscale 75
-	scale 37
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:A)TNMexamplefigure"
-
-\end_inset
-
-A) Axial, contrasted CT image shows multiple HCC tumors (green lines), identifie
-d and annotated using the ePAD tool, There was no regional lymph node involvemen
-t or metastasis.
- B) The diagram shows multiple HCCs with at least one was > 5 cm.
- This patient was classified as having TNM stageIIIA (T3a,N0,M0).
- Adapted from 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Faria2014"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Asserting Conditions using OWL 
-\end_layout
-
-\begin_layout Description
-
-\series bold
-Condition 1 : 
-\series default
-Staging should consider the existence of solitary or multiple tumors on
- the same site.
-\end_layout
-
-\begin_layout Plain Layout
-The AIM4-O ontology does not give us the explicit mechanics such as classes,
- subclasses, or properties, that allows us to infer whether a patient has
- a single or multiple tumors.
- In the case of multiple tumors, we constructed the following rule 
-\family typewriter
-\series bold
-\emph on
-MoreThanOneTumor
-\family default
-\series default
-\emph default
- (in SWRL notation):
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{gather*}
-\hline ImageStudy(?X)\land isImageStudyOf(?x,?y)\land isImageStudyOf(?x,?z)\land\\
-DifferentFrom(?y,?z)\rightarrow MoreThanOneTumor(?x)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-This rule classifies an 
-\family typewriter
-\series bold
-\emph on
-ImageStudy
-\family default
-\series default
-\emph default
- as a member of the 
-\family typewriter
-\series bold
-\emph on
-MorethanOneTumor
-\family default
-\series default
-\emph default
- class if an image study "X" is referenced by more than one image annotation.
- In order to classify something as 
-\family typewriter
-\series bold
-\emph on
-MorethanOneTumor
-\family default
-\series default
-\emph default
-, we created a new concept called 
-\family typewriter
-\series bold
-\emph on
-isImageStudyOf
-\family default
-\series default
-\emph default
-.
- This concept is the inverse of the 
-\family typewriter
-\series bold
-\emph on
-hasImageStudy
-\family default
-\series default
-\emph default
- object property.
- The 
-\family typewriter
-\series bold
-\emph on
-hasImageStudy
-\family default
-\series default
-\emph default
- property relates an 
-\family typewriter
-\series bold
-\emph on
-ImageAnnotation
-\family default
-\series default
-\emph default
- entity to an 
-\family typewriter
-\series bold
-\emph on
-ImageStudy 
-\family default
-\series default
-\emph default
-entity.
-\end_layout
-
-\begin_layout Plain Layout
-In the scenario of classifying patients with one solitary tumor, we did
- not find axioms or rules that satisfied this requirement, due to the fact
- that OWL works under the Open World Assumption.
- Open world means that just because something is not said it does not mean
- that it is not true.
- For example, I can say that the patient annotation describes a cancer lesion,
- using the 
-\family typewriter
-\series bold
-\emph on
-ImagingObservation
-\family default
-\series default
-\emph default
- entity of the AIM4-O ontology model, but unless I explicitly say that there
- are no other lesions, it is assumed that there may be other lesion that
- I just have not mentioned or described.
-\end_layout
-
-\begin_layout Plain Layout
-We have tried to solve this problem (the open world assumption) by considering
- some alternatives such as modeling again our AIM4-O ontology (e.g., setting
- the 
-\family typewriter
-\series bold
-\emph on
-hasImagingObservation
-\family default
-\series default
-\emph default
- object property as a primitive class).
- But, this did not seem intuitive to us.
- Instead, we decided to state the number of lesions explicitly by creating
- one new concept named 
-\family typewriter
-\series bold
-\emph on
-singleLesion
-\family default
-\series default
-\emph default
-, as a data property of an 
-\family typewriter
-\series bold
-\emph on
-ImageStudy
-\family default
-\series default
-\emph default
- entity.
- This concept denotes if an 
-\family typewriter
-\series bold
-\emph on
-ImageStudy
-\family default
-\series default
-\emph default
- describes exactly one solitary tumor.
- We assumed that an 
-\family typewriter
-\series bold
-\emph on
-ImageStudy
-\family default
-\series default
-\emph default
- entity describes only one tumor (
-\family typewriter
-\series bold
-\emph on
-“singleLesion {true}”
-\family default
-\series default
-\emph default
-) if only if it is referenced by only one I
-\family typewriter
-\series bold
-\emph on
-mageAnnotation
-\family default
-\series default
-\emph default
- entity.
- However, it was not possible to formulate this using only OWL.
- Instead, this information was provided by a data structure that was generated
- as part of the process of parsing the AIM-XML image annotations to create
- AIM4-O individuals.
- Finally, to classify annotations that describe a single lesion, we constructed
- the rule 
-\family typewriter
-\series bold
-\emph on
-SingleTumor
-\family default
-\series default
-\emph default
- (in SWRL notation):
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{gather*}
-\hline ImageStudy(?X)\land singleLesion(?X,?val)\land\\
-equal(?val,true)\rightarrow singleTumor(?X)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Condition 2: Staging should consider if tumors are either bigger or minor
- than a certain size in cm.
-\end_layout
-
-\begin_layout Plain Layout
-This condition was easily implemented by getting the value from the data
- property
-\family typewriter
-\series bold
-\emph on
- values
-\family default
-\series default
-\emph default
- on the 
-\family typewriter
-\series bold
-\emph on
-CalculationResult
-\family default
-\series default
-\emph default
- entity.
- This entity is related to the 
-\family typewriter
-\series bold
-\emph on
-ImageAnnotation
-\family default
-\series default
-\emph default
- entity through the 
-\family typewriter
-\series bold
-\emph on
-hasCalculationEntity
-\family default
-\series default
-\emph default
- object property.
- In order to satisfy this condition, we assert the following rules taking
- 5 centimeters as the longest dimension of the target liver lesion (in SWRL
- notation): 
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\series bold
-LessThan5cmTumor:
-\series default
- 
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Formula 
-\begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
-hasCalculationResult(?y,?z)\land\\
-values(?z,?val)\land lessThan(?val,5)\rightarrow lessThan5cmTumor(?x)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\series bold
-MoreThan5cmTumor:
-\series default
- 
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Formula 
-\begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\land\\
-hasCalculationResult(?y,?z)\land\\
-values(?z,?val)\land greaterThan(?val,5)\rightarrow MoreThan5cmTumor(?x)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Condition 3: Staging should consider lesions in adjacent organs.
-\end_layout
-
-\begin_layout Plain Layout
-To satisfy this condition, the most complicated criterion of classification,
- we had to consider the fact that a cancerous tumor can spread through out
- the body.
- For that, we needed to create one new concept, based on the 
-\family typewriter
-\series bold
-\emph on
-Lesion
-\family default
-\series default
-\emph default
- class from the Onlira ontology 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kokciyan2014"
-
-\end_inset
-
-.
- The 
-\family typewriter
-\series bold
-\emph on
-Lesion
-\family default
-\series default
-\emph default
- class handles important characteristics of a lesion, such as composition,
- density, size, shape, etc.
- But, unfortunately, they are not enough for TNM classification and reasoning.
- For this reason, we added 3 properties to it and created the subclass
-\family typewriter
-\series bold
-\emph on
- OutsideLesion
-\family default
-\series default
-\emph default
-, these properties are:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/hasLocationOP.pdf
-	lyxscale 50
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:properties"
-
-\end_inset
-
- General Ontology adds to the 
-\series bold
-Onlira:Lesion
-\series default
- class 2 properties defined as necessary for the TNM representation.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-\series bold
-\emph on
-hasLocation
-\family default
-\series default
-\emph default
- (object property): This property indicates the lesions location based on
- Radlex taxonomy.
- This property relates Onlira 
-\family typewriter
-\series bold
-\emph on
-Lesion
-\family default
-\series default
-\emph default
- class instances to Radlex 
-\family typewriter
-\series bold
-\emph on
-AnatomicalEntity
-\family default
-\series default
-\emph default
- class instances (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:properties"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-\series bold
-\emph on
-isRegionalLymphNodeAffected
-\family default
-\series default
-\emph default
- (data property): This property denotes whether a lesion is found in some
- lymph node.
- It was useful to enable classification criteria such as N0 and N1 (see
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:properties"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Itemize
-
-\family typewriter
-\series bold
-\emph on
-isAdjacentOrgan
-\family default
-\series default
-\emph default
- (data property): This property denotes whether a lesion with a 
-\family typewriter
-\series bold
-\emph on
-hasLocation
-\family default
-\series default
-\emph default
- value 
-\family typewriter
-\emph on
-"X"
-\family default
-\emph default
- is close to any adjacent orga
-\family typewriter
-n
-\family default
-.
- In accordance with the TNM liver classification criterion, which is the
- case of study in this work, we considered as adjacent organs to the liver
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Faria2014"
-
-\end_inset
-
-; the pancreas, duodenum and colon (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:radlexclass"
-
-\end_inset
-
-).
- Furthermore, we grouped these concepts as organs in radlex representation,
- creating two new classes, 
-\family typewriter
-\series bold
-\emph on
-AdjacentOrganGroup
-\family default
-\series default
-\emph default
- and 
-\family typewriter
-\series bold
-\emph on
-NoAdjacentOrganGroup
-\family default
-\series default
-\emph default
-:
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Formula 
-\begin{gather*}
-\hline NoAdjacentOrganGroup\subseteq RadlexEntity.Organ\\
-AdjacentOrganGroup\subseteq RadlexEntity.Organ\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\family typewriter
-\series bold
-\emph on
-AdjacentOrganGroup
-\family default
-\series default
-\emph default
- and 
-\family typewriter
-\series bold
-\emph on
-NoAdjacentOrganGroup 
-\family default
-\series default
-\emph default
-classes indicate whether a body organ is considered adjacent or not to the
- organ where the primary tumor was located.
- The primary organ defines the type of staging system to use, in our case,
- this organ was the liver.
- Finally, we constructed the following rule (in SWRL notation) to indicates
- whether an 
-\family typewriter
-\series bold
-\emph on
-OutsideLesion 
-\family default
-\series default
-\emph default
-is located in an adjacent organ:
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Formula 
-\begin{gather*}
-\hline Lesion(?x)\land adjacentOrganGroup(?y)\land\\
-hasLocation(?x,?y)\rightarrow isAdjacentOrgan(?x,true)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Once the above requirements were adequately covered using OWL and SWRL rules,
- we constructed the axioms and rules in order to be able to automatically
- classify cancer lesions, based on the TNM system.
- We noticed that the way we modeled things mattered.
- For example, it was easier to define 
-\family typewriter
-\emph on
-N1a
-\family default
-\emph default
- and 
-\family typewriter
-\emph on
-N0
-\family default
-\emph default
- criteria and reuse their definitions for 
-\family typewriter
-\emph on
-M0
-\family default
-\emph default
-, rather than to start with the definition of 
-\family typewriter
-\emph on
-M0
-\family default
-\emph default
- and end up handling complex closures.
- With the use of the AIM4-O ontology, anatomical concepts can easily be
- related to each other as demonstrated previously.
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/drawingRadlextaxonomyLiver.pdf
-	lyxscale 50
-	scale 18
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:radlexclass"
-
-\end_inset
-
-Getting the subclass-hierarchy from Radlex.
- 
-\family typewriter
-\series bold
-\emph on
-AdjacentOrganGroup (Pancreas, Spleen, Stomach, Gallblader,and Colon)
-\family default
-\series default
-\emph default
- and 
-\family typewriter
-\series bold
-\emph on
-NoAdjacentOrganGroup (Lymph nodes, Lung) 
-\family default
-\series default
-\emph default
-classes are created regarding the organ where the primary tumor was located
- (in this case, the liver).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Experimental Study and Results
-\end_layout
-
-\begin_layout Plain Layout
-In this section, we first describe our experimental datasets, based on actual
- medical images and reports.
- Then, we evaluate the expressivity of the AIM4-O ontology.
- Finally, we present a quantitative evaluation of our TNM classifier for
- semantic image findings, which is the objective of this work, using precision
- and recall.
-\end_layout
-
 \begin_layout Subsection
-Datasets
-\end_layout
-
-\begin_layout Plain Layout
-Our first dataset is a set of real clinical reports of Hepatocellular Carcinoma
- (HCC) patients from The NCI’s Genomic Data Commons (GDC).
- In this work, all experiments were supported by the GDC data.
- An important requirement to enable a feasible clinical evaluation was to
- have an image dataset to validate the results of the GDC clinical reports.
- To cover this requirement, we used the TCIA database 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Clark2013"
-
-\end_inset
-
-.
- It hosts a large archive of medical images about cancer, it is accessible
- for public download and it is related to GDC records by a patient 
-\family typewriter
-\series bold
-\emph on
-subject ID
-\family default
-\series default
-\emph default
-.
- The imaging modality selected was computed tomography (CT).
- The downloaded images were loaded into the ePAD annotation tool and were
- annotated.
-\end_layout
-
-\begin_layout Plain Layout
-While TNM staging could be applied to other types of cancer, this work focuses
- on staging liver.
- One reason is the availability of clinical data and images.
- For a given patient, the input to our TNM classifier consists of AIM files
- (image annotations) and the output consists of the Cancer Staging for this
- patient.
-\end_layout
-
-\begin_layout Subsection
-Quantitative assessment of AIM4-O ontology
-\end_layout
-
-\begin_layout Plain Layout
-According to Blomqvist et al.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Blomqvist2012"
-
-\end_inset
-
-, "
-\emph on
-the ontological evaluation is the process of assessing an ontology with
- respect to certain criteria, using certain measures
-\emph default
-".
- In this work, we undertook the evaluation of the AIM4-O ontology from the
- functional point of view.
- To achieve this, we carried out a task-focused assessment and inference
- requirements 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kokciyan2014"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-In order to evaluate the AIM4-O ontology, we studied and evaluated how it
- could help in searching clinical reports that describe image findings (reports
- about cancer).
- For this purpose, we compared two different approaches:
-\end_layout
-
-\begin_layout Itemize
-Ontology-based (semantic) search: If the clinical reports are described
- as AIM4-O individuals, these reports can be searched using description
- logic query languages (DL query).
-\end_layout
-
-\begin_layout Itemize
-Natural Language process-based (keyword) search: Clinical reports and image
- findings are usually written in natural language, therefore, a method for
- searching can be keyword search.
-\end_layout
-
-\begin_layout Plain Layout
-In order to highlight the differences between these two approaches, we describe
- four queries expressed both in DL (DL query) and keywords (see Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:queries"
-
-\end_inset
-
-):
-\end_layout
-
-\begin_layout Enumerate
-Q1- Find all reports related to an image observation (tumor observation).
-\end_layout
-
-\begin_layout Enumerate
-Q2- Find all reports that describe multiple tumors.
-\end_layout
-
-\begin_layout Enumerate
-Q3- Find all reports that contain a tumor observation that has a size greater
- than 8 cm.
-\end_layout
-
-\begin_layout Enumerate
-Q4- Find all reports that contain a tumor observation with descriptors (e.g.,
- invasion, mass, vascular).
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:queries"
-
-\end_inset
-
-Description logic and keyword representation for four queries.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="1.5cm">
-<column alignment="center" valignment="top" width="7cm">
-<column alignment="center" valignment="top" width="2.5cm">
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Query ID
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DL query
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Keyword query
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hasAnnotations some (hasImageAnnotations some (hasImagingObservation some
- (ImagingObservationEntity and label value "Lesion type "))) 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Tumor 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hasAnnotations min 2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Multiple tumor 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hasAnnotations some (hasImageAnnotations some (hasCalculationEntity some
- (hasCalculationResult some (some values float [> 8.0f])))) 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Tumor size greater than 8 cm 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hasImagingObservationCharacteristic 1 min
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Vascular tumor invasion mass 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-We have considered the following points in order to evaluate both approaches:
-\end_layout
-
-\begin_layout Itemize
-The evaluation was based on GDC reports: We randomly took 15 radiology reports
- of different patients written in natural language and converted them into
- AIM4-O instances.
-\end_layout
-
-\begin_layout Itemize
-A report was retrieved if it satisfied the DL query or it collects all keywords
- in the search query.
-\end_layout
-
-\begin_layout Itemize
-Finally, we compared the precision and recall against a gold standard.
- The gold standard was determined by a radiologist manually.
-\end_layout
-
-\begin_layout Plain Layout
-The four queries with corresponding precision and recall results are showing
- in Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:prexrecallontology"
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:prexrecallontology"
-
-\end_inset
-
-Recall and Precision values for the four queries.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="5">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="1.2cm">
-<column alignment="left" valignment="top" width="1.8cm">
-<column alignment="left" valignment="top" width="2.3cm">
-<column alignment="left" valignment="top" width="1.8cm">
-<column alignment="left" valignment="top" width="2.3cm">
-<row>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" rightline="true" usebox="none" width="1.8cm">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Query ID
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Semantic search- DL
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none" width="3.5cm">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Keyword search
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Precision
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Recall
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Presicion
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Recall
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.8
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Q4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.67
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.7
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Observations 
-\end_layout
-
-\begin_layout Plain Layout
-By analyzing the four queries we can see that the semantic search has the
- greatest number of relevant documents retrieved:
-\end_layout
-
-\begin_layout Description
-Q1: With the semantic approach, 15 reports were retrieved with a precision
- and recall of 1 (15/15).
- With the keyword search, 12 reports were retrieved with a precision of
- 1 (12/12) and recall of 0.8 (12/15).
- 
-\end_layout
-
-\begin_layout Description
-Q2: With the semantic approach, 5 reports were retrieved with a precision
- and recall of 1 (5/5).
- With the keyword search, 5 reports were retrieved with a precision and
- recall of 0.4 (2/5).
- 
-\end_layout
-
-\begin_layout Description
-Q3: With the semantic search, 10 reports were retrieved with a precision
- of 0.9 (9/10) and recall of 0.9 (9/10).
- With the keyword search approach no reports were retrieved, because there
- were not any reports that contained all the query words (i.e., lesion size
- greater than 8 cm).
- 
-\end_layout
-
-\begin_layout Description
-Q4: With the semantic search, 15 reports were retrieved with a precision
- of 0.67 (10/15) and recall of 1 (10/10).
- With the keyword search, 7 reports were retrieved with a precision of 1
- (7/7) and recall of 0.7 (7/10).
- 
-\end_layout
-
-\begin_layout Plain Layout
-The semantic search approach performance was better, with recall values
- close to 1 and always better than the keyword search.
- Also, in all but one case, precision values were better for the semantic
- search.
- The keyword search had 0 precision and recall for the query 3, which is
- a very bad result.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsection
-Classification using the Recist Criteria
-\end_layout
-
-\begin_layout Plain Layout
-The RECIST (Response Evaluation Criteria In Solid Tumors) guideline allows
- a standardized assessment of tumor burden and tumor response during therapy.
- Here, a sum of the diameters for all target lesions is calculated and reported
- as the baseline for follow-up and indicates therapy response/failure
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Recist"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Plain Layout
-A considerable part of guidelines on Recist criteria can be automated using
- the AIM4-O ontology model and image annotations.
- However, this is not done by defining logical axioms and SWRL rules in
- OWL, as we do with other types classification such as TNM.
- That happens because Recist is based on value comparisons and OWL uses
- an open world assumption.
- Instead, we use SPARQL to retrieve relevant data to classify findings by
- comparing their measurement values to size specifications provided by Recist.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Description
-Recist specifications:
-\end_layout
-
-\begin_layout Plain Layout
-Baseline documentation of “Target” and “Non-Target” lesions
-\end_layout
-
-\begin_layout Itemize
-All measurable lesions, up to a maximum of 2 lesions per organ and 5 lesions
- in total, representative of all involved organs should be identified as
- target lesions, recorded and measured at baseline.
- 
-\end_layout
-
-\begin_layout Itemize
-A sum of the Longest Diameter (LD), for all target lesions, will be calculated
- and reported as the baseline sum LD.
- The baseline sum LD will be used as reference by which to characterize
- the objective tumor response.
- 
-\end_layout
-
-\begin_layout Itemize
-All other lesions (or sites of disease) should be identified as non-target
- lesions and should also be recorded at baseline.
- Measurements of these lesions are not required, but the presence or absence
- of each should be noted throughout follow-up.
-\end_layout
-
-\begin_layout Description
-Response Criteria evaluation of target lesions
-\end_layout
-
-\begin_layout Itemize
-Complete Response (CR): Disappearance of all target lesions 
-\end_layout
-
-\begin_layout Itemize
-Partial Response (PR): At least a 30% decrease in the LD sum of the target
- lesions, taking as reference the baseline LD sum.
- 
-\end_layout
-
-\begin_layout Itemize
-Stable Disease (SD): Neither sufficient shrinkage to qualify for PR nor
- sufficient increase to qualify for PD, taking as reference the smallest
- LD sum since the treatment started.
- 
-\end_layout
-
-\begin_layout Itemize
-Progressive Disease (PD): At least a 20% increase in the LD sum of the target
- lesions, taking as reference the smallest LD sum recorded since the treatment
- started or the appearance of one or more new lesions 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Subsubsection
-Asserting Recist guidelines using OWL and SPARQL
-\end_layout
-
-\begin_layout Plain Layout
-The guidelines of Recist in detail in 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Recist"
-
-\end_inset
-
-, represent rules and most of them were implemented using SPARQL (rules
- related to non-target lesions were not implemented):
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Selection of target lesions
-\series default
-:The selection of final target lesions, from the set of potential lesions,
- is performed by the radiologist.
- However, this selection can also be implement using the following rule
- (in SWRL notation):
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset space \space{}
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-
-\series bold
-Srwl rule that classifies potential target lesions based on tumor size (<15mm):
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-
-\lang brazilian
-\begin_inset Formula 
-\begin{gather*}
-\hline ImageAnnotation(?x)\land hasCalculationEntity(?x,?y)\\
-\land hasCalculationResult(?y,?z)\\
-values(?z,?val)\land greaterThan(?val,1.5)\rightarrow isAdjacentOrgan(?x,true)\\
-\hline 
-\end{gather*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-\lang brazilian
-Verification of target lesions:
-\series default
- It is verified that there are at most five target lesions selected and
- that each organ appears at most twice as the lesion location.
- This is done by the following SPARQL ASK queries: 
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="1">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sparql query that verifies that there are at most five target lesions
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset listings
-lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX onto: <http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-ASK where { Select (count(?lesion) as ?log) where {     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		?anotation onto:hasPerson onto:Xindividual.
-     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		?anotation onto:hasImageAnnotations ?imageanotation.
-     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		?imageanotation onto:hasImagingObservation ?observation.
-     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		?observation onto:typeCode ?typeCode.
-     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		FILTER regex(str(?typeCode),'Lesion Baseline Evaluation')     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		?imageanotation onto:hasLesion ?lesion.
-     		
-\end_layout
-
-\begin_layout Plain Layout
-
-		} 
-\end_layout
-
-\begin_layout Plain Layout
-
-	having (?log <= 5 ) 
-\end_layout
-
-\begin_layout Plain Layout
-
-}; 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sparql query that verifies that there are at most five target lesions
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset listings
-lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX owl: <http://www.w3.org/2002/07/owl#> 
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>       	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>       
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#> 
-\end_layout
-
-\begin_layout Plain Layout
-
-ASK where {  
-\end_layout
-
-\begin_layout Plain Layout
-
-	SELECT (count(?location) as ?log) where {         		
-\end_layout
-
-\begin_layout Plain Layout
-
-      ?anotation onto:hasPerson onto:Xindividual.
-         		
-\end_layout
-
-\begin_layout Plain Layout
-
-      ?anotation onto:hasImageAnnotations ?imageanotation.
-          		
-\end_layout
-
-\begin_layout Plain Layout
-
-      ?imageanotation onto:hasImagingObservation ?observation.
-          	
-\end_layout
-
-\begin_layout Plain Layout
-
-	  ?observation onto:typeCode ?typeCode.
-          	
-\end_layout
-
-\begin_layout Plain Layout
-
-	  FILTER regex(str(?typeCode),'Lesion Baseline Evaluation').
-         	
-\end_layout
-
-\begin_layout Plain Layout
-
-	  ?imageanotation onto:hasLesion ?lesion.
-         	
-\end_layout
-
-\begin_layout Plain Layout
-
-	  ?lesion onto:hasLocation ?location.
-         		
-\end_layout
-
-\begin_layout Plain Layout
-
-      ?location rdf:type onto:Xorgan.
-         
-\end_layout
-
-\begin_layout Plain Layout
-
-	} 
-\end_layout
-
-\begin_layout Plain Layout
-
-having (?log <= 2) 
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-\lang brazilian
-Calculation of RECIST sum:
-\series default
- This operation is easily implemented by getting the values from the value
- property on the CalculationResult entity.
- This entity is related to the ImageAnnotation entity through the hasCalculation
-Entity object property (AIM4-O ontology), as shown in Fig.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AIM4example"
-
-\end_inset
-
-.
- The shortest axis (lymph nodes) and longest axis (other lesions) are summed
- for all target lesions by the follow SPARQL queries: 
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="1">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Sparql query that sums shorest and longest axis of all target lesion.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\end_inset
-
-The “
-\series bold
-Xdatatime
-\series default
-” variable can be “Lesion Baseline Evaluation” or “Follow Up”
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset listings
-lstparams "language=XML,basicstyle={\tiny\rmfamily},tabsize=5"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>     
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX owl: <http://www.w3.org/2002/07/owl#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-PREFIX onto:<http://www.owl-ontologies.com/Ontology1311106921.owl#>     	
-\end_layout
-
-\begin_layout Plain Layout
-
-SELECT ( SUM(?values) as ?sum) where {     	
-\end_layout
-
-\begin_layout Plain Layout
-
-	?anotation onto:hasPerson onto:Xindividual.
-     	
-\end_layout
-
-\begin_layout Plain Layout
-
-	?anotation onto:hasImageAnnotations ?imageanotation.
-      
-\end_layout
-
-\begin_layout Plain Layout
-
-	?imageanotation onto:hasImagingObservation ?observation.
-      
-\end_layout
-
-\begin_layout Plain Layout
-
-	?observation onto:typeCode ?typeCode.
-      	
-\end_layout
-
-\begin_layout Plain Layout
-
-	FILTER regex(str(?typeCode),'Xdatatime').
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-	?imageanotation onto:hasCalculationEntity ?calculation.
-     	
-\end_layout
-
-\begin_layout Plain Layout
-
-	?calculation onto:hasCalculationResult ?calcresult.
-     	
-\end_layout
-
-\begin_layout Plain Layout
-
-	?calcresult onto:values ?values.
-     
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-\lang brazilian
-Classification of response:
-\series default
- Finally, the classification of complete response(CP), partial response
- (PR) or stable disease (SD) is carried out in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ShowsRecist"
-
-\end_inset
-
-: 
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/recistResult.jpg
-	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ShowsRecist"
-
-\end_inset
-
-Shows the response classification PD (Progressive Disease: at least a 20%
- increase in the LD sum of target lesions) of a patient with one lesion
- in the liver “liver2” , with studies on dates october 31 and september
- 26.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang brazilian
-The reasoning, based on the four guidelines above, provide an automated
- estimate of the tumor burden, according to the RECIST criteria, on imaging
- studies at baseline and follow-up.
- This information will enable oncologists to calculate and classify patients
- response.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Automatic TNM clinical stage
-\end_layout
-
-\begin_layout Plain Layout
-In this section, we calculated the classification rate of the TNM classifier.
- At first, we created an ePAD template named "TNM template" in order to
- provide to the radiologist with a pre-specified set of semantic terms for
- image annotations.
- These image annotations, which are compatible with the ePAD tool, were
- stored in the AIM-XML format.
- An example of an annotated image is presented in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:TNMtemplate"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide true
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/templateTNM.pdf
-	lyxscale 50
-	scale 27
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:TNMtemplate"
-
-\end_inset
-
-A CT image of the liver annotated using the TNM template (on the right of
- the image).
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-After, the generated image annotations (in AIM-XML format) were classified
- automatically using the TNM criteria.
- This process was duly evaluated and correctly accepted by an experienced
- radiologist, he analyzed the accuracy of the generated annotations in terms
- of semantic.
- The process we followed was:
-\end_layout
-
-\begin_layout Itemize
-The data set used came from the following open databases:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-The NCI's Genomic Data Commons (GDC)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://gdc.cancer.gov/
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-The Cancer Imaging Archive (TCIA)
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://public.cancerimagingarchive.net/ncia/login.jsf
-\end_layout
-
-\end_inset
-
- (collects only images, the number of series and studies): As we working
- with TNM classification from the liver, we searched for "LIHC - Liver hepatocel
-lular carcinoma" obtaining 52 patients with information available in both
- databases (images and reports).
- However, the information about tumor size was obtained by manual review
- of the medical reports.
- These reports are also available in The NCI's Genomic Data Commons.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-After reading the medical reports, the radiologist was provided with an
- excel spreadsheet that provided information about medical findings, such
- as lesion size, vascular invasion, and others.
-\end_layout
-
-\begin_layout Itemize
-Based on this excel file and the GDC data, we created the AIM-XML annotations
- and integrated them into our knowledge base (as AIM4-O ontology individuals).
-\end_layout
-
-\begin_layout Itemize
-The AIM files were used as inputs for our TNM classifier.
- The produced output was compared with the TNM values that physicians reported.
-\end_layout
-
-\begin_layout Plain Layout
-In this paper, the 7th edition of TNM 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Faria2014"
-
-\end_inset
-
- has been employed.
- The AIM image annotations were generated based on 52 different clinical
- reports.
- Our automatic staging approach was evaluated by using precision and recall
- values.
- The cancer stages generated by our TNM classifier were compared to those
- described by the physicians who created the original clinical reports (our
- gold standard).
- One patient, with a subject ID "TCGA-DD-A1EJ", was removed from this analysis.
- The specialist considered that the TNM classification reported by the physician
- in his respective clinical report was incorrect (more information below).
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Results"
-
-\end_inset
-
-Confusion Matrix of cancer stages predicted by the TNM classifier versus
- the values of the doctors placed in the reports.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="7">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-n = 51
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Actual Stages
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-I
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-II
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IIIA
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IIIB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IVA
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Predicted Stages
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-I
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-24
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-II
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IIIA
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IIIB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-IVA
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-For the calculation of precision and recall, the result is considered positive
- when the automatic staging coincides with the stage given by physicians
- who created the original clinical report.
- See Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Results"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-Precision was 85.7% and recall 81.0% (for 51 patients).
- This means that, for precision, at 85.7% of the time the system agreed with
- the staging given by physicians.
- For the recall, this means that, of all the times that a given stage was
- reported by a physician, in 81.0% of cases the system agreed with him/her.
- It is important to note that, even when the system diverged from physicians,
- the maximum difference between them was only one stage.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-We discussed these patient staging results with a physician (DR) from the
- Radiology Department of Stanford University School of Medicine, who found
- this results very good.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-In Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:matrixconfusion"
-
-\end_inset
-
- we show the results of the evaluation summarized in the color scale matrix.
- It represents our confusion matrix for a multi-stage classification.
- The darker the square in the diagonal of the matrix means that the respective
- class was better classified.
- The other squares in grays, outside of the diagonal, indicates that the
- class in the vertical axis was confused by the classifier with the correspondin
-g class on the vertical axis.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/confusionmatrix2.pdf
-	lyxscale 70
-	scale 38
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:matrixconfusion"
-
-\end_inset
-
-Confusion matrix for TNM multi-stage classification
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-For early stages of cancer, such as I, II, IIIA, the percentage of misclassifica
-tions (e.g., false positives and false negatives) was very small.
- They are represented by the highlighted diagonal of the matrix (Figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:matrixconfusion"
-
-\end_inset
-
-).
- For more advanced stages of cancer, such as IIIB or IVA, it was larger
- (Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:histogram"
-
-\end_inset
-
-).
- This may have happened simply because we had few patients at these stages
- or because these stages are described by relatively more complex concepts.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/classhistogram.pdf
-	scale 39
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:histogram"
-
-\end_inset
-
-Summary of Histograms for each TNM stage from the Confusion Matrix (51 reports):
- FN - False Negatives, FP - False Positives and TP - True Positives.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Our classifier also revealed the fact that there are clinical reports with
- inaccurate staging diagnosis.
- An example of this situation was the clinical case with subject ID "TCGA-DD-A1E
-J".
- The result of the classifier was considered correct by our expert.
- The stage predicted was the Stage I, however, the stage described by the
- medical report was the Stage III
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://gdc-portal.nci.nih.gov/cases/52292ffc-0902-4d97-b461-20723987a177
-\end_layout
-
-\end_inset
-
-.
- As it was the only case in which the difference between the classifier’s
- stage and the physician’s evaluation differed by more than one level, our
- expert decided to analyze the report and concluded that the classifier’s
- stage was correct.
- He recommended us to not use this patient’s data, so this report was excluded
- from the analysis.
- Examples, like this, serve to warrant the importance of improving clinical
- decision support systems (through the use of image metadata in cancer treatment
-).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Recurrent Neural Networks 
 \begin_inset CommandInset label
 LatexCommand label
@@ -3938,7 +802,7 @@ name "fig:elmanandwilliam"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Learning Algorithms
 \begin_inset CommandInset label
 LatexCommand label
@@ -5992,7 +2856,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/propose_model-as-ES.pdf
+	filename figures/propose_model.pdf
 	lyxscale 20
 	scale 4.7
 
@@ -6040,8 +2904,7 @@ key "Vafaeipour2014"
 
 \end_inset
 
- in our model, in contrast with similar works in the literature (Campos
- et al., 2011, 
+ in our model, in contrast with similar works in the literature 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lcdcampos,Awchi"
@@ -6053,7 +2916,332 @@ key "lcdcampos,Awchi"
  number of hyper-parameters, related to their structure and performance.
  It is evident that to generate synthetic series it is necessary to adjust
  our model with the historical time series.
- We can formalize this problem as:
+ We can formalize this problem as: 
+\end_layout
+
+\begin_layout Standard
+Given a time series 
+\begin_inset Formula $Y_{1},Y_{2},...,Y_{t}$
+\end_inset
+
+ each in a real space 
+\begin_inset Formula $N_{Y-dimensional}$
+\end_inset
+
+, the goal is to calculate a learning machine 
+\begin_inset Formula $\varphi\left(\bullet,p\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $p$
+\end_inset
+
+ parameters such that it is able to predict (best possible) the value of
+ any observation of 
+\begin_inset Formula $Y_{t+\tau}\left(\tau\geq1\right)$
+\end_inset
+
+.
+ The objective function associated with 
+\begin_inset Formula $\varphi\left(\bullet,p\right)$
+\end_inset
+
+ for a single tuple 
+\begin_inset Formula $\left(\varphi\left(Y_{t},p\right),Y_{t+\tau}\right)$
+\end_inset
+
+, is defined by a distance function that measures the deviation between
+ the target 
+\begin_inset Formula $Y_{t+\tau}$
+\end_inset
+
+ and the prediction 
+\begin_inset Formula $\varphi\left(Y_{t},p\right)$
+\end_inset
+
+.
+ In this work, the standardized Mean Square Error distance is used for an
+ arbitrary range of time 
+\begin_inset Formula $\tau$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+NRMSE=\sqrt{\frac{1}{\sigma\left(Y_{\tau}\right)\tau}\sum_{t=1}^{\tau}\sum_{i=1}^{N_{Y}}\left(\varphi_{i}\left(Y_{t},p\right)-Y_{i,\left(t+\tau\right)}\right)^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+ESN training and design settings
+\end_layout
+
+\begin_layout Standard
+In this work the configuration of ESN basically depends on the following
+ parameters: the size of the reservoir (internal states), the spectral radius
+ of the reservoir matrix, the density of the reservoir matrix and the topology
+ of the reservoir network (connectivity) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09,Baserrech2015"
+
+\end_inset
+
+.
+ We decided to explain in more detail the three most common learning approaches
+ in the ESN literature
+\end_layout
+
+\begin_layout Subsubsection
+Reservoir Size
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jaeger2001a"
+
+\end_inset
+
+, an obviously crucial parameter of the model 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:eq_general"
+
+\end_inset
+
+ is 
+\begin_inset Formula $N_{x}$
+\end_inset
+
+, the number of units in the reservoir.
+ The larger the space of the reservoir signals 
+\begin_inset Formula $x(t)$
+\end_inset
+
+, the easier it will be to find a linear combination of the signals to approxima
+te 
+\begin_inset Formula $y^{objective}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Since the training and execution of an ESN is computationally cheap compared
+ to other Recurrent ANN approaches, reservoir sizes of order 
+\begin_inset Formula $10^{4}$
+\end_inset
+
+  are common 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Alomar:2016:FSE:2934357.2934372"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Spectral Radius
+\end_layout
+
+\begin_layout Standard
+Basically, the spectral radius controls the stability and memory capacity
+ of the model.
+ It is denoted by 
+\begin_inset Formula $\rho\left(W\right)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\rho\left(W\right)$
+\end_inset
+
+ is less than 1, the stability of the ESN can be assured 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+.
+ To satisfy this condition, the 
+\begin_inset Formula $W$
+\end_inset
+
+ matrix is usually scaled as follows: 
+\begin_inset Formula $W\leftarrow\left(\frac{\alpha}{\rho\left(W\right)}\right)W$
+\end_inset
+
+, where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a constant in 
+\begin_inset Formula $<0.1]$
+\end_inset
+
+.
+ A spectral radius
+\begin_inset Formula $\rho\left(W\right)$
+\end_inset
+
+ close to 1 is appropriate for learning tasks that require long times.
+ On the other hand, a value of 
+\begin_inset Formula $\rho\left(W\right)$
+\end_inset
+
+ close to 0 is suitable for tasks that require short memory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Verstraeten2007391"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Connectivity
+\end_layout
+
+\begin_layout Standard
+According to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Song:2010:ECS:1801020.1801314"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jaeger78"
+
+\end_inset
+
+, connectivity is defined as the number of non-zero weights of the total
+ number of weights in the network.
+ In the non-linear case, that is, when an activation function 
+\begin_inset Formula $tanh$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:statesRNN"
+
+\end_inset
+
+ is used, some researchers have reported no effect of the connectivity value
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Millea2014,Koryakin201235"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The reservoir topology can also impact the performance of the model.
+ Frequently, weights are initialized using the uniform distribution in an
+ arbitrary range.
+ Several approaches have been studied to find better reservoir weights than
+ random weights.
+ Approaches that use topographic maps, optimization of swarms can be seen
+ in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BasterrechAlba,BasterrechFyfe"
+
+\end_inset
+
+.
+ But, the most common approach continues to use random initialization 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Baserrech2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, with respect to connectivity, it should be noted that we use non-linear
+ ESNs (
+\begin_inset Formula $tanh$
+\end_inset
+
+ as a function of activation).
+ Based on the studies of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jaeger78"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Millea2014"
+
+\end_inset
+
+, in practice, around 
+\begin_inset Formula $20%\ensuremath{\%}
+$
+\end_inset
+
+ % of non-zero values are often used 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "LukoseviciusJaeger09"
+
+\end_inset
+
+, to define the reservoir matrices.
+ Therefore, based on these preliminary study, we considered the random initializ
+ation of the reservoir and connectivity of 
+\begin_inset Formula $20%\ensuremath{\%}
+$
+\end_inset
+
+ % as standard approach to initialize the weights of our Echo State Component.
+\end_layout
+
+\begin_layout Standard
+In order to find a good ESN configuration, we used a very simple computational
+ method (Random Optimization), in which the connectivity is not considered,
+ only the size of the reservoir and the spectral radius.
+\end_layout
+
+\begin_layout Section
+Results and discussion
+\end_layout
+
+\begin_layout Section
+Hidrometereological Data Generation Using ESN-RNN With Random Component
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Hidrometereological-data-generat"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
