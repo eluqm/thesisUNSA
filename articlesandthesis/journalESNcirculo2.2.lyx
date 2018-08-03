@@ -1093,8 +1093,12 @@ Echo state networks (ESN) establish an efficient and powerful approach to
  recurrent neural network (RNN) training.
  Unlike the traditional RNN, such as Elman networks, that are organized
  in layers and contain feedback connections.
- The core part of ESN is a single reservoir consisting of a mass of neurons
- that are randomly interconnected and self-connected.
+ The core part of ESN is a single 
+\emph on
+reservoir
+\emph default
+ consisting of a mass of neurons that are randomly interconnected and self-conne
+cted.
  The reservoir itself remains unchanged, once it is selected.
  The efficient learning can be achieved by determining the weights of the
  connections between the reservoir and the output layer.
@@ -1102,7 +1106,6 @@ Echo state networks (ESN) establish an efficient and powerful approach to
  suboptimal estimates of the model parameters.
  All these are founded in training algorithms based on direct optimization
  of the network weights.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1131,8 +1134,9 @@ key "Jarret,Saxe_551"
 \end_layout
 
 \begin_layout Standard
-Although ESN does not solve the problem of training RNN entirely, its impressive
- performance suggests that an initialization based on ESN could be successful.
+Although ESN does not solve the problem of training Recurrent ANN entirely,
+ its impressive performance suggests that an initialization based on ESN
+ could be successful.
  This is confirmed by the results of 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1143,10 +1147,6 @@ key "Ilya"
  in his work.
 \end_layout
 
-\begin_layout Standard
-Now we will proceed to give the formal description of the ESN network.
-\end_layout
-
 \begin_layout Subsection
 Training Echo State Networks
 \end_layout
@@ -1155,16 +1155,11 @@ Training Echo State Networks
 The RC paradigm creates a random ANN that remains unchanged throughout the
  training.
  This ANN is called 
-\begin_inset Quotes eld
-\end_inset
-
-Reservoir
-\begin_inset Quotes erd
-\end_inset
-
-, which is passively excited by the input signal and maintains a non-linear
- transformation of the input history in its state.
- 
+\emph on
+"Reservoir"
+\emph default
+ that is passively excited by the input signal and maintains a non-linear
+ transformation of the input history in its states.
 \end_layout
 
 \begin_layout Standard
@@ -1203,7 +1198,7 @@ Where
 \begin_inset Formula $x(t)$
 \end_inset
 
- is the vector that contains all the states of the reservoir at time 
+ is the vector that comprise all the states of the reservoir on time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1223,7 +1218,19 @@ Where
 \begin_inset Formula $j$
 \end_inset
 
-, 
+, it is necessary check the echo state property, for this, the weight matrix
+ 
+\begin_inset Formula $W$
+\end_inset
+
+ is typically scaled as equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scaled"
+
+\end_inset
+
+ , 
 \begin_inset Formula $W^{fb}$
 \end_inset
 
@@ -1231,7 +1238,7 @@ Where
 \begin_inset Formula $y(t)$
 \end_inset
 
- is the output at time 
+ is the output on time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1257,17 +1264,12 @@ Where
 \end_inset
 
 ) and the identity function for the output neuron.
- To account for echo state property, the internal weight matrix 
-\begin_inset Formula $W$
-\end_inset
-
- is typically scaled as: 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-W\leftarrow\frac{\alpha}{\mid\lambda_{max}\mid}W
+W\leftarrow\frac{\alpha}{\mid\lambda_{max}\mid}W\label{eq:scaled}
 \end{equation}
 
 \end_inset
@@ -1276,7 +1278,14 @@ W\leftarrow\frac{\alpha}{\mid\lambda_{max}\mid}W
 \end_layout
 
 \begin_layout Standard
-Where 
+From equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:scaled"
+
+\end_inset
+
+, The 
 \family roman
 \series medium
 \shape up
@@ -1562,7 +1571,7 @@ Moore-Penrose pseudoinverse
 
 \begin_layout Standard
 The Pseudoinverse, or Moore-Penrose Pseudoinverse, is a generalization of
- a inverse matrix, but for matrices that are not rectangular.
+ an inverse matrix, but for matrices that are not rectangular.
  
 \end_layout
 
@@ -1700,7 +1709,7 @@ reference "eq:pinv"
 \end_inset
 
 , probably the most universal and stable solution in this context is the
- Ridge regression, also known as regression with regularization from Tikhonov:
+ Ridge regression or the regression with regularization from Tikhonov:
 \end_layout
 
 \begin_layout Standard
@@ -1735,7 +1744,7 @@ reference "eq:pinv"
 \end_inset
 
 , although the latter is not very trivial it is preferred to use.
- Next, the output values ​​of the network will be validated, using the adjusted
+ Next, the output values of the network will be validated, using the adjusted
  matrix 
 \begin_inset Formula $W_{out}$
 \end_inset
@@ -1749,11 +1758,11 @@ Echo State Network Validation
 
 \begin_layout Standard
 In this stage, the network is executed on the test data, where the states
- of the neurons at time 
+ of the neurons on time 
 \begin_inset Formula $t=0$
 \end_inset
 
- in the validation phase are states of the neurons at time 
+ in the validation phase are states of the neurons on time 
 \begin_inset Formula $t=m$
 \end_inset
 
@@ -1795,8 +1804,8 @@ Where,
 \end_inset
 
  is the output after the pseudoinverse calculation.
- It is common to use an identity output function, however in the equation
- 
+ It is common to use an identity output function.
+ However, in the equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:pinv"
@@ -1838,7 +1847,7 @@ Where,
 \begin_inset Formula $y,m$
 \end_inset
 
- is the validation sequence, and, is the expected output, 
+ is the validation sequence, and 
 \begin_inset Formula $\widehat{y}$
 \end_inset
 
@@ -1846,7 +1855,7 @@ Where,
 \end_layout
 
 \begin_layout Section
-Stochastic Streamflow model ESN
+Stochastic Streamflow model ESN (SSMESN)
 \end_layout
 
 \begin_layout Standard
@@ -1878,7 +1887,7 @@ The model has the purpose of generating scenarios of hydrological synthetic
 \begin_inset Formula $Y_{v,t}$
 \end_inset
 
-, are the synthetic values ​​produced by the model,
+, are the synthetic values ​​produced by the model.
 \end_layout
 
 \begin_layout Standard
@@ -1886,7 +1895,7 @@ The model has the purpose of generating scenarios of hydrological synthetic
 \begin_inset Formula $E_{v,t}$
 \end_inset
 
-, are the values ​​produced by the RNAR,
+, are the values ​​produced by the RNAR.
 \end_layout
 
 \begin_layout Standard
@@ -1894,7 +1903,14 @@ The model has the purpose of generating scenarios of hydrological synthetic
 \begin_inset Formula $R_{v,t}$
 \end_inset
 
-, is the stochastic component represented by the equations ([eq: randomCom]).
+, is the stochastic component represented by the equations (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:randomCom"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -2023,7 +2039,7 @@ key "loucks2005water"
 \end_inset
 
  .
- This component is the same stochastic part from Thomas & Fiering model,
+ This component is the same stochastic part from Thomas & Fiering model.
  
 \end_layout
 
@@ -2067,7 +2083,7 @@ reference "eq:thomas2"
 \begin_inset Formula $Y_{t}$
 \end_inset
 
- over years where 
+, where 
 \begin_inset Formula $t=1(january),2(february),...,12(december)$
 \end_inset
 
@@ -2105,7 +2121,7 @@ The variability of these points plotted from the regression line that reflect
 \begin_inset Formula $R_{t}$
 \end_inset
 
- (in red in the Figure 
+ ( red oval in the Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Random"
@@ -2230,7 +2246,7 @@ reference "alg:ramdom_component"
 
 \end_inset
 
-:
+.
 \end_layout
 
 \begin_layout Standard
@@ -2648,12 +2664,12 @@ Echo State Component
 
 \begin_layout Standard
 This sequential information is preserved in the internal states or processing
- units (PU) of the Recurrent ANN, and allows to manage values at time 
+ units (PU) of the Recurrent ANN.
+ These PU allows us to manage values on time 
 \begin_inset Formula $t$
 \end_inset
 
- without the need for pre-processing or time delay as can be seen in Figure
- 
+ without data preprocessing or time delay, as can be seen in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Generación-de-escenarios"
@@ -2665,16 +2681,16 @@ reference "fig:Generación-de-escenarios"
 \end_layout
 
 \begin_layout Standard
-In order to obtain a time series value at time 
+To obtain time series values on time 
 \begin_inset Formula $t$
 \end_inset
 
-, in our model the Recurrent ANN receives as input the values at time 
+, the Recurrent ANN accepts as input the values on time 
 \begin_inset Formula $t-1$
 \end_inset
 
 .
- The activation of the internal PU (echo states) is updated according to:
+ The activation of the internal PU (echo states) is updated conforming to:
 \end_layout
 
 \begin_layout Standard
@@ -2908,11 +2924,11 @@ key "lcdcampos,Awchi"
 \end_inset
 
 .
- Often the use of Neural Networks involves the task of estimating a large
- number of hyper-parameters, related to their structure and performance.
- It is evident that to generate synthetic series it is necessary to adjust
- our model with the historical time series.
- We can formalize this problem as: 
+ Often the use of Neural Networks involves large number estimation of hyper-para
+meters, related to their structure and performance.
+ It is unmistakable that to generate synthetic series it is necessary to
+ adjust our model with the historical time series.
+ We can formalize this problem according to: 
 \end_layout
 
 \begin_layout Standard
@@ -2992,7 +3008,7 @@ key "LukoseviciusJaeger09,Baserrech2015"
 
 .
  We decided to explain in more detail the three most common learning approaches
- in the ESN literature
+ in the ESN literature.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3000,7 +3016,7 @@ Reservoir Size
 \end_layout
 
 \begin_layout Standard
-According to 
+As reported by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Jaeger2001a"
@@ -3063,7 +3079,7 @@ Basically, the spectral radius controls the stability and memory capacity
 \begin_inset Formula $\rho\left(W\right)$
 \end_inset
 
- is less than 1, the stability of the ESN can be assured 
+ is less than 1, the stability of the ESN can be guaranteed 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "LukoseviciusJaeger09"
@@ -3092,7 +3108,7 @@ key "LukoseviciusJaeger09"
 \begin_inset Formula $\rho\left(W\right)$
 \end_inset
 
- close to 1 is appropriate for learning tasks that require long times.
+ close to 1 is appropriate for learning tasks that require long periods.
  On the other hand, a value of 
 \begin_inset Formula $\rho\left(W\right)$
 \end_inset
@@ -3112,7 +3128,7 @@ Connectivity
 \end_layout
 
 \begin_layout Standard
-According to 
+As reported by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Song:2010:ECS:1801020.1801314"
@@ -3152,11 +3168,11 @@ key "Millea2014,Koryakin201235"
 
 \begin_layout Standard
 The reservoir topology can also impact the performance of the model.
- Frequently, weights are initialized using the uniform distribution in an
- arbitrary range.
+ Frequently, weights are initialized using the "Uniform Distribution" in
+ an arbitrary range.
  Several approaches have been studied to find better reservoir weights than
  random weights.
- Approaches that use topographic maps, optimization of swarms can be seen
+ Advances that use topographical maps, optimization of swarms can be seen
  in 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3183,7 +3199,7 @@ Finally, with respect to connectivity, it should be noted that we use non-linear
 \end_inset
 
  as a function of activation).
- Based on the studies of 
+ Based on studies of 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Jaeger78"
