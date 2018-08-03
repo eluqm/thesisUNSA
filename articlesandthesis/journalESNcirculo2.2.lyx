@@ -816,14 +816,10 @@ name "sec:Training-Algorithms"
 \begin_layout Standard
 Basically, supervised learning means to adjust the network weight matrix
  
-\series bold
-
 \begin_inset Formula $W$
 \end_inset
 
- 
-\series default
-using the optimization algorithms, in order to minimize the output error.
+ using the optimization algorithms, in order to minimize the output error.
  This is probably the most common approach used among the current types
  of neural network systems where the input and output are used in the network.
  A well known training method is the Standard Backpropagation algorithm
@@ -837,13 +833,13 @@ key "Rumelhart:1986:PDP:104279"
 .
  Backpropagation is a method to calculate the gradient of the loss function
  with respect to the weights.
- This technique approximates the local minimum by changing these weights
- along of negative error gradient direction.
+ In this algorithm, the sign of the gradient of a weight indicates whether
+ the error varies directly with, or inversely to, the weight.
  The objective function 
 \begin_inset Formula $E(W)$
 \end_inset
 
- is calculated after BP applies an update to the weights in the network;
+ is calculated after BP applies an update to the weights in the network:
 \end_layout
 
 \begin_layout Standard
@@ -890,10 +886,10 @@ key "Sutskever2013"
 \end_layout
 
 \begin_layout Standard
-Weight updates can be performed in online mode or based on the mean error
- over all training data(that is called batch mode).
+In order to update the weights the online mode, or the average error over
+ all training data (batch mode) can be used.
  Besides, more sophisticated alternatives to the BP algorithm, such as the
- Levenberg-Marquardt(LM) have been found faster convergence algorithm
+ Levenberg-Marquardt(LM) have been found faster convergence algorithm 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hess-9-111-2005"
@@ -952,7 +948,7 @@ Recurrent Learning
 \begin_layout Standard
 Standard BP algorithm is not suited for networks with cycles in them.
  Nonetheless, we can apply some artifices and see the RNN like feedforward
- network by unfolding this RNN network in time as shown in Figure 
+ network by unfolding this "RNN" network in time as shown in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:unfold"
@@ -962,7 +958,7 @@ reference "fig:unfold"
 .
  The RNN is interpreted as layered network that keeps the same weights to
  reusing, we assume the time delay of 1 in each connection in order to create
- an equivalent feedforward network
+ an equivalent feedforward network 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Williams90anefficient"
@@ -1076,9 +1072,9 @@ key "LukoseviciusJaeger09"
 \end_inset
 
 .
- That means, many updates may be necessary and it could be computationally
- expensive, the gradient information might becomes useless by weight updates
- procedure
+ This means that many updates may be necessary and it could be computationally
+ expensive.
+ The gradient information might becomes useless
 \begin_inset CommandInset citation
 LatexCommand cite
 key "doya1992bifurcations"
