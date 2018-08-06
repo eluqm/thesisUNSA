@@ -3214,8 +3214,7 @@ key "Millea2014"
 \end_inset
 
 , in practice, around 
-\begin_inset Formula $20%\ensuremath{\%}
-$
+\begin_inset Formula $20$
 \end_inset
 
  % of non-zero values are often used 
@@ -3228,8 +3227,7 @@ key "LukoseviciusJaeger09"
 , to define the reservoir matrices.
  Therefore, based on these preliminary study, we considered the random initializ
 ation of the reservoir and connectivity of 
-\begin_inset Formula $20%\ensuremath{\%}
-$
+\begin_inset Formula $20$
 \end_inset
 
  % as standard approach to initialize the weights of our Echo State Component.
