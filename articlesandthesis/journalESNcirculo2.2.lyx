@@ -3243,6 +3243,1025 @@ In order to find a good ESN configuration, we used a very simple computational
 Results and discussion
 \end_layout
 
+\begin_layout Standard
+To generate scenarios of hydrometeorological variables such as streamflow,
+ the parameters of SSMESN model as the number of internal units (Reservoir)
+ and the spectral radius of the connectivity matrix, they are important
+ parameters related to ESN properties.
+ For this reason a performance study of SSMESN model for each historical
+ time series on the values of the spectral radius (from 0.1 to 0.9) and the
+ size of the reservoir (10 to 70) was carried out.
+\end_layout
+
+\begin_layout Subsection
+Data Preprocessing
+\end_layout
+
+\begin_layout Standard
+Our study takes into consideration a basic assumption in the theory of probabili
+ties and statistics applied to hydrological time series, where, variables
+ have to be distributed normally.
+ Therefore, a transformation is required if the time series does not meet
+ this basic assumption.
+ The operation that is needed is called seasonal standardization, if it
+ is really so called (normally distributed variables with zero mean and
+ standard deviation one) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Awchi"
+
+\end_inset
+
+.
+ On the other hand, in order to develop estimation schemes of the spectral
+ radius and reservoir size it was determined to use appropriate time series
+ such as MOPEX.
+\end_layout
+
+\begin_layout Subsection
+Test data
+\end_layout
+
+\begin_layout Standard
+The data used in this first stage are available to the scientific community
+ through the url: 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.nws.noaa.gov/ohd/mopex/mo_datasets.htm
+\end_layout
+
+\end_inset
+
+, for the investigation of global hydrological models.
+ MOPEX was presented by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Duan20063"
+
+\end_inset
+
+ and includes a data set with the monthly precipitation, potential evaporation
+ and flow (discharge) of the basins in the "East" zone of the United States,
+ between January 1948 and 2000.
+ It was decided to adopt the historical records of —- specific basins.
+ The Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:mopex_basin"
+
+\end_inset
+
+ provides the geographical, hydrometeorological and surface characteristics
+ of these basins.
+ The asymmetry of the flow records is shown in the last column.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size footnotesize
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="6">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="2.6cm">
+<column alignment="center" valignment="top" width="2.6cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Mopex ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Cuenca
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Área(km2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Media Anual Caudal(mm/s)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Coef.
+ Asimetría
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+12413000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+East Fork White
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+4421
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+376
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1.857748 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+01541500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Clearfield Creek
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+2170
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+179
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.78
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+03054500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Tygart Valley
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+2372
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+745
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+0.858691 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+01541000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Bluestone
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1020
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+421
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+1.65 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02143000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14359000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+H
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7363500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:mopex_basin"
+
+\end_inset
+
+Summary of the hydrographic basins used in this work (MOPEX) and its characteris
+tics.
+ High values of asymmetry indicate the occurrence of extremely high flow
+ events.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It was identified through a small inspection on the data set of the 4 basins,
+ that a transformation was needed to reduce the coefficient of asymmetry,
+ this was possible using the logarithmic transformation written as: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y_{v,t}=\log\left(H_{v,t}+c_{t}\overline{H_{t}}\right)\label{eq:logtrans}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c_{t}=\frac{a}{g_{t}^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $H_{v,t}$
+\end_inset
+
+, are monthly data observed for month 
+\begin_inset Formula $t(t=1,\ldots,12)$
+\end_inset
+
+ and year 
+\begin_inset Formula $v(v=1,\ldots,N)$
+\end_inset
+
+, 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of years of records.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\overline{H_{t}}$
+\end_inset
+
+, is the average monthly flow for month 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a$
+\end_inset
+
+ is a constant (for this study the value adopted was 
+\begin_inset Formula $0.8$
+\end_inset
+
+ by trial and error).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g_{t}$
+\end_inset
+
+, is the coefficient of asymmetry for 
+\begin_inset Formula $H_{1,t},H_{2,t},...,H_{N,t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y_{v,t}$
+\end_inset
+
+, are the normalized data for month 
+\begin_inset Formula $t$
+\end_inset
+
+ in year 
+\begin_inset Formula $v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Once the time series were standardized, the network configuration with the
+ best learning performance was searched for each of the selected MOPEX basins.
+\end_layout
+
+\begin_layout Subsection
+ESN network Learning configuration 
+\end_layout
+
+\begin_layout Itemize
+No feedback connections were used from the output units to the reservoir,
+ its use generated a lower performance.
+\end_layout
+
+\begin_layout Itemize
+The weights of the connections between the inputs and the reservoir determine
+ the intensity with which a reservoir is excited, and therefore the degree
+ of non-linearity of its response.
+ Here, all connection weights were obtained from a normal distribution.
+\end_layout
+
+\begin_layout Itemize
+We follow a common practice of using a sparse and randomly connected reservoir
+ (sparsa), allowing approximately 
+\begin_inset Formula $20$
+\end_inset
+
+% of all connections to be active.
+\end_layout
+
+\begin_layout Itemize
+The weights of the connections between the reservoir and the network output
+ layer were adjusted in batch mode by the methods: Ridge Regression and
+ Moore-Penrose Pseudo-Inverse.
+ The table "[tab: trainingTable]" summaries the statistics based on 10 independe
+nt training repetitions.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/trainingMOPEXcolormap.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+Mapas de calor que representan el NRMSE promediado en 10 repeticiones, en
+ un rango de valores como: el tamaño del reservorio (eje x) y el radio espectral
+ (eje y).
+ Corresponde a las 4 cuencas de MOPEX(East Fork White, Clearfield, Tygart
+ Valley, Bluestone).
+ Los tonos más claros representan un alto NRMSE, los tonos más oscuros un
+ bajo NRMSE.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Performance-de-entrenamiento"
+
+\end_inset
+
+ shows the learning performance, over reservoir size and spectral radius
+ parameters.
+ For this, the historical records of basin were divided into periods of
+ training (1979-1996) and testing (1997-2000).
+ We can see that the larger the reservoirs, the higher the value of NRMSE.
+ Basins were assigned with specific reservoir size and spectral radius (the
+ darkest region in the heat maps).
+ This is interpreted as the difference between the characteristics and the
+ dynamic nature of each basin (see Table "[tab: config_RNN_ESN]").
+\end_layout
+
+\begin_layout Standard
+In the Table "[tab: trainingTable]", The Leaky-integrator neurons try to
+ provide a slower dynamics to the reservoir, considering the wide range
+ of time scales in which the hydrological processes take place (months,
+ years, days).
+ However, it can be seen that in the Table "[tab: trainingTable]" these
+ neurons fail to significantly increase the informative content of the reservoir
+ (lower NRMSE), in contrast to the 
+\begin_inset Formula $tanh$
+\end_inset
+
+ neurons.
+ The pseudo-inverse matrix learning method also fails to increase such content,
+ in contrast to the Ridge regression method.
+\end_layout
+
+\begin_layout Standard
+From the data in the Table "[tab: trainingTable]", it is unmistakable that
+ the optimal network configurations (with lower NRMSE) for the 4 basins
+ tend to be similar.
+\end_layout
+
+\begin_layout Subsection
+Statistical tests
+\end_layout
+
+\begin_layout Standard
+The objective of this section is to analyze the quality of the scenarios
+ obtained through the statistical tests.
+ In order to verify if the synthetic series are equally likely to the historical
+ MOPEX series.
+\end_layout
+
+\begin_layout Standard
+The direct comparison of the measures is not adequate, since it is necessary
+ to consider the dispersion of these measures 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lcdcampos"
+
+\end_inset
+
+.
+ Therefore, it is necessary to establish whether there are significant deviation
+s between the variances and the means of the two samples.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $t-test$
+\end_inset
+
+ was applied to validate whether the mean of the scenarios is statistically
+ equal to the historical mean.
+ The analysis was based on the 
+\begin_inset Formula $p-values$
+\end_inset
+
+ obtained.
+ For this, the average of the 100 values of each month in each year of the
+ scenarios is calculated.
+ For example, the average of the January scenario of year 1 is compared
+ with the historical average of the month of January, and so on, until comparing
+ the average of the scenario of December of year 3 with the historical average
+ of the month of December.
+ In each test performed, a 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is obtained.
+ In the case that this 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is above the level of significance (we consider 
+\begin_inset Formula $1$
+\end_inset
+
+%), the hypothesis of the test is accepted:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $h_{1}$
+\end_inset
+
+: the average of the one-month scenario "x" is statistically equal to the
+ historical average of that month.
+\end_layout
+
+\begin_layout Standard
+This is done for all the months of all the years of the scenarios, giving
+ a total of 36 
+\begin_inset Formula $p-values$
+\end_inset
+
+.
+ The percentage of 
+\begin_inset Formula $p-values$
+\end_inset
+
+ above the level of significance indicates the performance of syntethic
+ scenarios.
+ The closer to 100% is the implication that the scenarios managed to reproduce
+ the first moment of the historical series.
+\end_layout
+
+\begin_layout Standard
+In an analogous way, the Levene test was applied to evaluate if the variance
+ of each period of the scenarios is statistically equal to the variance
+ of the corresponding historical month.
+ If the result of the Levene test is close to 100%, it means that the scenarios
+ managed to reproduce the second moment of the historical series well.
+\end_layout
+
+\begin_layout Standard
+In this study, 100 synthetic series of 36 months (3 years) were generated.
+ One of the reasons that the learning of the series generated for the station
+ "03054500" presents a lower adherence in the levene test, c be the fact
+ of the little dispersion of historical data, this possibly due to the constant
+ climatology of this station.
+\end_layout
+
 \begin_layout Section
 Hidrometereological Data Generation Using ESN-RNN With Random Component
 \begin_inset CommandInset label
