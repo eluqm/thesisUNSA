@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-08-08 12:17-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 12413000_tmean.svg:21(format)
+#, no-wrap
+msgid "image/svg+xml"
+msgstr ""
+
+#: 12413000_tmean.svg:376(tspan) 12413000_tmean.svg:383(tspan) 12413000_tmean.svg:390(tspan) 12413000_tmean.svg:397(tspan) 12413000_tmean.svg:404(tspan) 12413000_tmean.svg:411(tspan) 12413000_tmean.svg:418(tspan) 12413000_tmean.svg:425(tspan) 12413000_tmean.svg:432(tspan) 12413000_tmean.svg:439(tspan) 12413000_tmean.svg:446(tspan) 12413000_tmean.svg:453(tspan) 12413000_tmean.svg:460(tspan) 12413000_tmean.svg:467(tspan) 12413000_tmean.svg:474(tspan) 12413000_tmean.svg:481(tspan) 12413000_tmean.svg:488(tspan) 12413000_tmean.svg:495(tspan) 12413000_tmean.svg:502(tspan) 12413000_tmean.svg:509(tspan) 12413000_tmean.svg:516(tspan) 12413000_tmean.svg:523(tspan) 12413000_tmean.svg:530(tspan) 12413000_tmean.svg:537(tspan) 12413000_tmean.svg:544(tspan) 12413000_tmean.svg:551(tspan) 12413000_tmean.svg:558(tspan) 12413000_tmean.svg:565(tspan) 12413000_tmean.svg:572(tspan) 12413000_tmean.svg:579(tspan) 12413000_tmean.svg:586(tspan) 12413000_tmean.svg:593(tspan) 12413000_tmean.svg:600(tspan) 12413000_tmean.svg:607(tspan) 12413000_tmean.svg:614(tspan) 12413000_tmean.svg:621(tspan)
+#, no-wrap
+msgid "●"
+msgstr ""
+
+#: 12413000_tmean.svg:649(tspan)
+#, no-wrap
+msgid "0.00"
+msgstr ""
+
+#: 12413000_tmean.svg:657(tspan)
+#, no-wrap
+msgid "0.25"
+msgstr ""
+
+#: 12413000_tmean.svg:665(tspan)
+#, no-wrap
+msgid "0.50"
+msgstr ""
+
+#: 12413000_tmean.svg:673(tspan)
+#, no-wrap
+msgid "0.75"
+msgstr ""
+
+#: 12413000_tmean.svg:681(tspan)
+#, no-wrap
+msgid "1.00"
+msgstr ""
+
+#: 12413000_tmean.svg:702(tspan)
+#, no-wrap
+msgid "1"
+msgstr ""
+
+#: 12413000_tmean.svg:709(tspan)
+#, no-wrap
+msgid "2"
+msgstr ""
+
+#: 12413000_tmean.svg:716(tspan)
+#, no-wrap
+msgid "3"
+msgstr ""
+
+#: 12413000_tmean.svg:723(tspan)
+#, no-wrap
+msgid "4"
+msgstr ""
+
+#: 12413000_tmean.svg:730(tspan)
+#, no-wrap
+msgid "5"
+msgstr ""
+
+#: 12413000_tmean.svg:737(tspan)
+#, no-wrap
+msgid "6"
+msgstr ""
+
+#: 12413000_tmean.svg:744(tspan)
+#, no-wrap
+msgid "7"
+msgstr ""
+
+#: 12413000_tmean.svg:751(tspan)
+#, no-wrap
+msgid "8"
+msgstr ""
+
+#: 12413000_tmean.svg:758(tspan)
+#, no-wrap
+msgid "9"
+msgstr ""
+
+#: 12413000_tmean.svg:766(tspan)
+#, no-wrap
+msgid "10"
+msgstr ""
+
+#: 12413000_tmean.svg:774(tspan)
+#, no-wrap
+msgid "11"
+msgstr ""
+
+#: 12413000_tmean.svg:782(tspan)
+#, no-wrap
+msgid "12"
+msgstr ""
+
+#: 12413000_tmean.svg:790(tspan)
+#, no-wrap
+msgid "13"
+msgstr ""
+
+#: 12413000_tmean.svg:798(tspan)
+#, no-wrap
+msgid "14"
+msgstr ""
+
+#: 12413000_tmean.svg:806(tspan)
+#, no-wrap
+msgid "15"
+msgstr ""
+
+#: 12413000_tmean.svg:814(tspan)
+#, no-wrap
+msgid "16"
+msgstr ""
+
+#: 12413000_tmean.svg:822(tspan)
+#, no-wrap
+msgid "17"
+msgstr ""
+
+#: 12413000_tmean.svg:830(tspan)
+#, no-wrap
+msgid "18"
+msgstr ""
+
+#: 12413000_tmean.svg:838(tspan)
+#, no-wrap
+msgid "19"
+msgstr ""
+
+#: 12413000_tmean.svg:846(tspan)
+#, no-wrap
+msgid "20"
+msgstr ""
+
+#: 12413000_tmean.svg:854(tspan)
+#, no-wrap
+msgid "21"
+msgstr ""
+
+#: 12413000_tmean.svg:862(tspan)
+#, no-wrap
+msgid "22"
+msgstr ""
+
+#: 12413000_tmean.svg:870(tspan)
+#, no-wrap
+msgid "23"
+msgstr ""
+
+#: 12413000_tmean.svg:878(tspan)
+#, no-wrap
+msgid "24"
+msgstr ""
+
+#: 12413000_tmean.svg:886(tspan)
+#, no-wrap
+msgid "25"
+msgstr ""
+
+#: 12413000_tmean.svg:894(tspan)
+#, no-wrap
+msgid "26"
+msgstr ""
+
+#: 12413000_tmean.svg:902(tspan)
+#, no-wrap
+msgid "27"
+msgstr ""
+
+#: 12413000_tmean.svg:910(tspan)
+#, no-wrap
+msgid "28"
+msgstr ""
+
+#: 12413000_tmean.svg:918(tspan)
+#, no-wrap
+msgid "29"
+msgstr ""
+
+#: 12413000_tmean.svg:926(tspan)
+#, no-wrap
+msgid "30"
+msgstr ""
+
+#: 12413000_tmean.svg:934(tspan)
+#, no-wrap
+msgid "31"
+msgstr ""
+
+#: 12413000_tmean.svg:942(tspan)
+#, no-wrap
+msgid "32"
+msgstr ""
+
+#: 12413000_tmean.svg:950(tspan)
+#, no-wrap
+msgid "33"
+msgstr ""
+
+#: 12413000_tmean.svg:958(tspan)
+#, no-wrap
+msgid "34"
+msgstr ""
+
+#: 12413000_tmean.svg:966(tspan)
+#, no-wrap
+msgid "35"
+msgstr ""
+
+#: 12413000_tmean.svg:974(tspan)
+#, no-wrap
+msgid "36"
+msgstr ""
+
+#: 12413000_tmean.svg:988(tspan)
+#, no-wrap
+msgid "Meses"
+msgstr ""
+
+#: 12413000_tmean.svg:998(tspan)
+#, no-wrap
+msgid "p−valores"
+msgstr ""
+
+#: 12413000_tmean.svg:1020(tspan)
+#, no-wrap
+msgid "p_value"
+msgstr ""
+
+#: 12413000_tmean.svg:1038(tspan)
+#, no-wrap
+msgid "0.01"
+msgstr ""
+
