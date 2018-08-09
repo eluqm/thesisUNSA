@@ -3804,7 +3804,7 @@ G
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+06191500
 \end_layout
 
 \end_inset
@@ -4084,8 +4084,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/trainingMOPEXcolormap.pdf
-	scale 60
+	filename figures/trainingMOPEXcolormap8.pdf
+	scale 45
 
 \end_inset
 
