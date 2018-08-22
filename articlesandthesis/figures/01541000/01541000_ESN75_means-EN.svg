@@ -34,16 +34,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1301"
-     inkscape:window-height="744"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="1.1238095"
-     inkscape:cx="438.91827"
-     inkscape:cy="270.49236"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
+     inkscape:zoom="0.56190476"
+     inkscape:cx="280"
+     inkscape:cy="210"
+     inkscape:window-x="75"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
      inkscape:current-layer="g10" /><g
      id="g10"
      inkscape:groupmode="layer"
@@ -1334,7 +1334,7 @@
                x="0 8.5579996 14.674 20.174 26.290001 29.952999 35.452999 41.569 47.069 49.511002 55.626999"
                y="0"
                sodipodi:role="line"
-               id="tspan892">Forecast</tspan></text>
+               id="tspan892">Test</tspan></text>
 </g></g><g
          id="g896"
          transform="scale(3.1250001)"><path

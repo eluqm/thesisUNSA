@@ -3091,6 +3091,19 @@ e, the first architecture (ANN-1) utilizes one previous month, and the second
  
 \end_layout
 
+\begin_layout Subsubsection*
+Acknowledgement
+\end_layout
+
+\begin_layout Standard
+This research was supported by the Specific Cooperation Agreement between
+ FONDECYT and UNSA through grant contract No.
+ TT-0068-2016-UNSA.
+ We thank our colleagues from San Agustin University who provided insight
+ and expertise that greatly assisted the research, although they may not
+ agree with all of the interpretations/conclusions of this paper.
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex

@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-08-10 17:37-0500\n"
+"PO-Revision-Date: 2018-08-10 17:38-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: 01541000_TF75_sint.svg:21(format)
+#, no-wrap
+msgid "image/svg+xml"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:293(tspan)
+#, no-wrap
+msgid "Meses"
+msgstr "Months"
+
+#: 01541000_TF75_sint.svg:363(tspan) 01541000_TF75_sint.svg:603(tspan)
+#, no-wrap
+msgid "0"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:373(tspan) 01541000_TF75_sint.svg:653(tspan)
+#, no-wrap
+msgid "5"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:384(tspan) 01541000_TF75_sint.svg:704(tspan)
+#, no-wrap
+msgid "10"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:395(tspan)
+#, no-wrap
+msgid "15"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:406(tspan)
+#, no-wrap
+msgid "20"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:417(tspan)
+#, no-wrap
+msgid "25"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:428(tspan)
+#, no-wrap
+msgid "30"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:439(tspan)
+#, no-wrap
+msgid "35"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:450(tspan)
+#, no-wrap
+msgid "40"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:521(tspan)
+#, no-wrap
+msgid "Caudal"
+msgstr "Discharge"
+
+#: 01541000_TF75_sint.svg:613(tspan)
+#, no-wrap
+msgid "1"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:623(tspan)
+#, no-wrap
+msgid "2"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:633(tspan)
+#, no-wrap
+msgid "3"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:643(tspan)
+#, no-wrap
+msgid "4"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:663(tspan)
+#, no-wrap
+msgid "6"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:673(tspan)
+#, no-wrap
+msgid "7"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:683(tspan)
+#, no-wrap
+msgid "8"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:693(tspan)
+#, no-wrap
+msgid "9"
+msgstr ""
+
+#: 01541000_TF75_sint.svg:20779(tspan)
+#, no-wrap
+msgid "Series temporales hidrólogicas"
+msgstr "Hydrological Time Series"
+
+#: 01541000_TF75_sint.svg:20796(tspan)
+#, no-wrap
+msgid "Escenarios"
+msgstr "Scenarios"
+
+#: 01541000_TF75_sint.svg:20819(tspan)
+#, no-wrap
+msgid "Observación"
+msgstr "Test"

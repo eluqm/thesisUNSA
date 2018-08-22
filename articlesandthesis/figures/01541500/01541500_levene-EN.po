@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-08-10 19:08-0500\n"
+"PO-Revision-Date: 2018-08-10 19:08-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: 01541500_levene.svg:21(format)
+#, no-wrap
+msgid "image/svg+xml"
+msgstr ""
+
+#: 01541500_levene.svg:376(tspan) 01541500_levene.svg:383(tspan)
+#: 01541500_levene.svg:390(tspan) 01541500_levene.svg:397(tspan)
+#: 01541500_levene.svg:404(tspan) 01541500_levene.svg:411(tspan)
+#: 01541500_levene.svg:418(tspan) 01541500_levene.svg:425(tspan)
+#: 01541500_levene.svg:432(tspan) 01541500_levene.svg:439(tspan)
+#: 01541500_levene.svg:446(tspan) 01541500_levene.svg:453(tspan)
+#: 01541500_levene.svg:460(tspan) 01541500_levene.svg:467(tspan)
+#: 01541500_levene.svg:474(tspan) 01541500_levene.svg:481(tspan)
+#: 01541500_levene.svg:488(tspan) 01541500_levene.svg:495(tspan)
+#: 01541500_levene.svg:502(tspan) 01541500_levene.svg:509(tspan)
+#: 01541500_levene.svg:516(tspan) 01541500_levene.svg:523(tspan)
+#: 01541500_levene.svg:530(tspan) 01541500_levene.svg:537(tspan)
+#: 01541500_levene.svg:544(tspan) 01541500_levene.svg:551(tspan)
+#: 01541500_levene.svg:558(tspan) 01541500_levene.svg:565(tspan)
+#: 01541500_levene.svg:572(tspan) 01541500_levene.svg:579(tspan)
+#: 01541500_levene.svg:586(tspan) 01541500_levene.svg:593(tspan)
+#: 01541500_levene.svg:600(tspan) 01541500_levene.svg:607(tspan)
+#: 01541500_levene.svg:614(tspan) 01541500_levene.svg:621(tspan)
+#, no-wrap
+msgid "●"
+msgstr ""
+
+#: 01541500_levene.svg:649(tspan)
+#, no-wrap
+msgid "0.00"
+msgstr ""
+
+#: 01541500_levene.svg:657(tspan)
+#, no-wrap
+msgid "0.25"
+msgstr ""
+
+#: 01541500_levene.svg:665(tspan)
+#, no-wrap
+msgid "0.50"
+msgstr ""
+
+#: 01541500_levene.svg:673(tspan)
+#, no-wrap
+msgid "0.75"
+msgstr ""
+
+#: 01541500_levene.svg:681(tspan)
+#, no-wrap
+msgid "1.00"
+msgstr ""
+
+#: 01541500_levene.svg:702(tspan)
+#, no-wrap
+msgid "1"
+msgstr ""
+
+#: 01541500_levene.svg:709(tspan)
+#, no-wrap
+msgid "2"
+msgstr ""
+
+#: 01541500_levene.svg:716(tspan)
+#, no-wrap
+msgid "3"
+msgstr ""
+
+#: 01541500_levene.svg:723(tspan)
+#, no-wrap
+msgid "4"
+msgstr ""
+
+#: 01541500_levene.svg:730(tspan)
+#, no-wrap
+msgid "5"
+msgstr ""
+
+#: 01541500_levene.svg:737(tspan)
+#, no-wrap
+msgid "6"
+msgstr ""
+
+#: 01541500_levene.svg:744(tspan)
+#, no-wrap
+msgid "7"
+msgstr ""
+
+#: 01541500_levene.svg:751(tspan)
+#, no-wrap
+msgid "8"
+msgstr ""
+
+#: 01541500_levene.svg:758(tspan)
+#, no-wrap
+msgid "9"
+msgstr ""
+
+#: 01541500_levene.svg:766(tspan)
+#, no-wrap
+msgid "10"
+msgstr ""
+
+#: 01541500_levene.svg:774(tspan)
+#, no-wrap
+msgid "11"
+msgstr ""
+
+#: 01541500_levene.svg:782(tspan)
+#, no-wrap
+msgid "12"
+msgstr ""
+
+#: 01541500_levene.svg:790(tspan)
+#, no-wrap
+msgid "13"
+msgstr ""
+
+#: 01541500_levene.svg:798(tspan)
+#, no-wrap
+msgid "14"
+msgstr ""
+
+#: 01541500_levene.svg:806(tspan)
+#, no-wrap
+msgid "15"
+msgstr ""
+
+#: 01541500_levene.svg:814(tspan)
+#, no-wrap
+msgid "16"
+msgstr ""
+
+#: 01541500_levene.svg:822(tspan)
+#, no-wrap
+msgid "17"
+msgstr ""
+
+#: 01541500_levene.svg:830(tspan)
+#, no-wrap
+msgid "18"
+msgstr ""
+
+#: 01541500_levene.svg:838(tspan)
+#, no-wrap
+msgid "19"
+msgstr ""
+
+#: 01541500_levene.svg:846(tspan)
+#, no-wrap
+msgid "20"
+msgstr ""
+
+#: 01541500_levene.svg:854(tspan)
+#, no-wrap
+msgid "21"
+msgstr ""
+
+#: 01541500_levene.svg:862(tspan)
+#, no-wrap
+msgid "22"
+msgstr ""
+
+#: 01541500_levene.svg:870(tspan)
+#, no-wrap
+msgid "23"
+msgstr ""
+
+#: 01541500_levene.svg:878(tspan)
+#, no-wrap
+msgid "24"
+msgstr ""
+
+#: 01541500_levene.svg:886(tspan)
+#, no-wrap
+msgid "25"
+msgstr ""
+
+#: 01541500_levene.svg:894(tspan)
+#, no-wrap
+msgid "26"
+msgstr ""
+
+#: 01541500_levene.svg:902(tspan)
+#, no-wrap
+msgid "27"
+msgstr ""
+
+#: 01541500_levene.svg:910(tspan)
+#, no-wrap
+msgid "28"
+msgstr ""
+
+#: 01541500_levene.svg:918(tspan)
+#, no-wrap
+msgid "29"
+msgstr ""
+
+#: 01541500_levene.svg:926(tspan)
+#, no-wrap
+msgid "30"
+msgstr ""
+
+#: 01541500_levene.svg:934(tspan)
+#, no-wrap
+msgid "31"
+msgstr ""
+
+#: 01541500_levene.svg:942(tspan)
+#, no-wrap
+msgid "32"
+msgstr ""
+
+#: 01541500_levene.svg:950(tspan)
+#, no-wrap
+msgid "33"
+msgstr ""
+
+#: 01541500_levene.svg:958(tspan)
+#, no-wrap
+msgid "34"
+msgstr ""
+
+#: 01541500_levene.svg:966(tspan)
+#, no-wrap
+msgid "35"
+msgstr ""
+
+#: 01541500_levene.svg:974(tspan)
+#, no-wrap
+msgid "36"
+msgstr ""
+
+#: 01541500_levene.svg:988(tspan)
+#, no-wrap
+msgid "Meses"
+msgstr "Months"
+
+#: 01541500_levene.svg:998(tspan)
+#, no-wrap
+msgid "p−valores"
+msgstr "p-values"
+
+#: 01541500_levene.svg:1020(tspan)
+#, no-wrap
+msgid "p_value"
+msgstr "p-value"
+
+#: 01541500_levene.svg:1038(tspan)
+#, no-wrap
+msgid "0.01"
+msgstr ""

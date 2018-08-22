@@ -1,0 +1,138 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-08-10 20:04-0500\n"
+"PO-Revision-Date: 2018-08-10 20:05-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: trainingMOPEXcolormap8.svg:705(format)
+msgid "image/svg+xml"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:850(tspan)
+#, no-wrap
+msgid "Reg. Contraida"
+msgstr "Ridge Regression"
+
+#: trainingMOPEXcolormap8.svg:862(tspan)
+#, no-wrap
+msgid "Pseudoinversa"
+msgstr "Pseudoinversa"
+
+#: trainingMOPEXcolormap8.svg:874(tspan)
+#, no-wrap
+msgid "A"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1252(tspan)
+#: trainingMOPEXcolormap8.svg:1726(tspan)
+#: trainingMOPEXcolormap8.svg:1738(tspan)
+#: trainingMOPEXcolormap8.svg:1750(tspan)
+#: trainingMOPEXcolormap8.svg:1819(tspan)
+#: trainingMOPEXcolormap8.svg:1831(tspan)
+#: trainingMOPEXcolormap8.svg:1843(tspan)
+#: trainingMOPEXcolormap8.svg:1855(tspan)
+#, no-wrap
+msgid "10 20 30 40 50 60 70 "
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1264(tspan)
+#, no-wrap
+msgid "B"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1276(tspan)
+#, no-wrap
+msgid "C"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1288(tspan)
+#, no-wrap
+msgid "D"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1343(tspan)
+#, no-wrap
+msgid "F"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1399(tspan)
+#, no-wrap
+msgid "E"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1571(tspan)
+#, no-wrap
+msgid "G"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1583(tspan)
+#, no-wrap
+msgid "H"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1669(tspan)
+#: trainingMOPEXcolormap8.svg:1762(tspan)
+#, no-wrap
+msgid "0.9"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1674(tspan)
+#: trainingMOPEXcolormap8.svg:1767(tspan)
+#, no-wrap
+msgid "0.8"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1679(tspan)
+#: trainingMOPEXcolormap8.svg:1772(tspan)
+#, no-wrap
+msgid "0.7"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1684(tspan)
+#: trainingMOPEXcolormap8.svg:1777(tspan)
+#, no-wrap
+msgid "0.6"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1689(tspan)
+#: trainingMOPEXcolormap8.svg:1782(tspan)
+#, no-wrap
+msgid "0.5"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1694(tspan)
+#: trainingMOPEXcolormap8.svg:1787(tspan)
+#, no-wrap
+msgid "0.4"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1699(tspan)
+#: trainingMOPEXcolormap8.svg:1792(tspan)
+#, no-wrap
+msgid "0.3"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1704(tspan)
+#: trainingMOPEXcolormap8.svg:1797(tspan)
+#, no-wrap
+msgid "0.2"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1709(tspan)
+#: trainingMOPEXcolormap8.svg:1802(tspan)
+#, no-wrap
+msgid "0.1"
+msgstr ""
+
+#: trainingMOPEXcolormap8.svg:1714(tspan)
+#: trainingMOPEXcolormap8.svg:1807(tspan)
+#, no-wrap
+msgid " "
+msgstr ""
