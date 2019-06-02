@@ -79,7 +79,7 @@
 \begin_layout Standard
 Este capítulo ofrece un resumen de los fundamentos teóricos necesarios para
  entender nuestro nuevo modelo.
- el capítulo inicia con la Sección 
+ el Capítulo inicia con la Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Procesos-estocásticos"
@@ -87,7 +87,7 @@ reference "sec:Procesos-estocásticos"
 \end_inset
 
 , donde se comenta sobre procesos estocásticos y sus propiedades.
- La sección 
+ La Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Ruido-Blanco"
@@ -96,7 +96,7 @@ reference "sec:Ruido-Blanco"
 
  presenta el concepto de Ruido blanco, que es utilizado en la generación
  de series temporales sintéticas por parte de nuestro modelo.
- La sección 
+ La Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Modelos-Estadísticos"
@@ -112,9 +112,9 @@ reference "sec:Test-de-Hipótesis"
 
 \end_inset
 
- son presentados algunos Test de hipótesis, utilizados para la validación
- de la bondad de ajuste (test de adherencia) de los escenarios generados
- por nuestro modelo en comparación con la serie histórica.
+ algunos Test de hipótesis, utilizados para la validación de la bondad de
+ ajuste de los escenarios generados por nuestro modelo en comparación con
+ la serie histórica son presentados.
  Se encuentra en la Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -139,10 +139,6 @@ y
 \emph on
 echo state
 \emph default
- 
-\emph on
-networks
-\emph default
 , paradigmas que son usados para entrenar de manera simple e igualmente
  efectiva una Red Neuronal Recurrente, que es el componente mas importante
  en nuestro modelo.
@@ -164,14 +160,6 @@ Por lo general, se representa un Proceso Estocástico(
 \series bold
 PE
 \series default
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "PE"
-description "Proceso Estocástico"
-
-\end_inset
-
 ) como 
 \begin_inset Formula $\left\{ Z\left(t\right):t\in T\right\} $
 \end_inset
@@ -274,8 +262,8 @@ El concepto de proceso estocástico proporciona el análisis probabilístico
  de series temporales.
  Así, una serie temporal puede ser considerada una realización de un PE,
  esto es, una posible trayectoria del proceso.
- Por lo tanto, un PE es un proceso generador de datos cuya serie temporal
- es una realización muestral entre todas las series posibles a ser generadas
+ Por lo tanto, PE es un proceso generador de datos cuya serie temporal es
+ una realización muestral entre todas las series posibles a ser generadas
  por este modelo.
  Por ejemplo, nosotros podemos considerar el siguiente proceso estocástico
  definido como:
@@ -332,7 +320,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/ramdom_walk.pdf
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/ramdom_walk.pdf
 	scale 50
 
 \end_inset
@@ -371,7 +359,7 @@ Proceso estocástico de camino aleatorio, se muestra 200 realizaciones de
 \end_layout
 
 \begin_layout Standard
-Con el fin de obtener un modelo adecuado para una serie temporal, se necesita
+A fin de obtener un modelo adecuado para una serie temporal, se necesita
  de una secuencia de estudio de la misma.
  Donde dado un PE (fenómeno real) se obtiene una serie temporal (muestra
  finita de observaciones equidistantes en el tiempo) y a través del análisis
@@ -730,7 +718,7 @@ Un método de pronóstico es un procedimiento que calcula
  Se han propuesto numerosos algoritmos de aprendizaje de máquina y estadísticos.
  Los modelos estadísticos estándar son los más predominantes en la literatura
  seguida por los modelos de redes neuronales artificiales de aprendizaje
- automático.
+ automático (ANNs).
 \end_layout
 
 \begin_layout Section
@@ -746,7 +734,7 @@ name "sec:Modelos-Estadísticos"
 
 \begin_layout Standard
 Esta sección cubre algunos algoritmos comunes utilizados para la predicción
- de series temporales en estadística.
+ de series de tiempo en estadística.
  El campo de predicción ha sido influenciado, durante mucho tiempo, por
  métodos estadísticos lineales tales como el modelo auto-regresivo (AR),
  el modelo de media móvil (MA) y los modelos híbridos que derivan de ellos
@@ -1560,10 +1548,6 @@ Se da el nombre de nivel de significación del test, a la probabilidad
 \begin_inset Formula $5\%$
 \end_inset
 
- ó 
-\begin_inset Formula $1\%$
-\end_inset
-
 , pero cualquier valor entre 0 y 1 puede ser utilizado.
  Normalmente, los métodos emplean un Test estadístico de prueba y una distribuci
 ón de muestreo.
@@ -1602,7 +1586,7 @@ Se da el nombre de nivel de significación del test, a la probabilidad
 \end_layout
 
 \begin_layout Subsection
-Pruebas de bondad de Ajuste(adherencia)
+Pruebas de bondad de Ajuste
 \end_layout
 
 \begin_layout Standard
@@ -1666,11 +1650,11 @@ Dada dos muestras
 \begin_inset Formula $n_{1}$
 \end_inset
 
- y la segunda con 
+y la segunda con 
 \begin_inset Formula $n_{2}$
 \end_inset
 
- observaciones, el test trabaja con las siguientes hipótesis:
+observaciones, el test trabaja con las siguientes hipótesis:
 \end_layout
 
 \begin_layout Standard
@@ -1704,16 +1688,16 @@ es la media de la muestra
 \begin_inset Formula $X_{1}$
 \end_inset
 
- y 
+y 
 \begin_inset Formula $\overline{X}_{2}$
 \end_inset
 
- la media de la muestra.
+la media de la muestra.
  Considerando 
 \begin_inset Formula $s_{1}^{2}$
 \end_inset
 
- y 
+y 
 \begin_inset Formula $s_{2}^{2}$
 \end_inset
 
@@ -1776,7 +1760,7 @@ El análisis de este test puede basarse en el
 \begin_inset Formula $H_{0}$
 \end_inset
 
- en el caso que su valor este encima del nivel de significación 
+en el caso que su valor este encima del nivel de significación 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -1784,193 +1768,10 @@ El análisis de este test puede basarse en el
 \end_layout
 
 \begin_layout Subsubsection
-Test de Levene
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Test-de-Levene"
-
-\end_inset
-
-
+Test de Kolmogorov-Smirnov
 \end_layout
 
 \begin_layout Standard
-Este test verifica la homogeneidad de varianzas
-\begin_inset CommandInset citation
-LatexCommand citep
-key "conover1980practical"
-
-\end_inset
-
-.
- Sean consideradas 
-\begin_inset Formula $K\geq2$
-\end_inset
-
- muestras aleatorias independientes entre si.
- La muestra 
-\begin_inset Formula $i$
-\end_inset
-
- representa una colección de 
-\begin_inset Formula $n_{i}$
-\end_inset
-
-variables aleatorias independientes e idénticamente distribuidas, con distribuci
-ón 
-\begin_inset Formula $G_{i}$
-\end_inset
-
-, media 
-\begin_inset Formula $\mu_{i}$
-\end_inset
-
- y varianza 
-\begin_inset Formula $\sigma_{i}^{2}$
-\end_inset
-
-, siendo 
-\begin_inset Formula $G_{i},\mu_{i},\sigma_{i}^{2}$
-\end_inset
-
- desconocidos.
-\end_layout
-
-\begin_layout Standard
-El test trabaja con las hipótesis:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-H_{0}:\sigma_{i} & =...=\sigma_{k}\\
-H_{a}:\sigma_{q}\neq\sigma_{r},para\,algun\,q\neq r,q & =1,...,k\,y\,r=1,...,k
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La ecuación 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:levenedesvio"
-
-\end_inset
-
- presenta los desvíos absolutos de las variables 
-\begin_inset Formula $X_{i,j}$
-\end_inset
-
- con relación a la media muestral del grupo 
-\begin_inset Formula $X_{i}$
-\end_inset
-
-, denotado por 
-\begin_inset Formula $\overline{X}_{i}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{alignat}{1}
-\overline{X}_{i} & =\frac{\sum_{j=1}^{n_{i}}X_{i,,j}}{n_{i}}\nonumber \\
-Z_{i,,j} & =\mid X_{i,j}-\overline{X}_{i}\mid\label{eq:levenedesvio}
-\end{alignat}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-con 
-\begin_inset Formula $j=1,...,n_{i}\,e\,i=1,...,k$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-La estadística del test de 
-\series bold
-levene 
-\series default
-es denotado por 
-\begin_inset Formula $W_{0}$
-\end_inset
-
- y es calculada por la ecuación 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:leveneW"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{alignat}{1}
-W_{0} & =\left(\frac{n-k}{k-1}\right).\frac{\sum_{i=1}^{k}n_{i}.\left(\overline{Z}_{i}-\hat{Z}\right)^{2}}{\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}\left(Z_{i,j}-\overline{Z}_{i}\right)^{2}}\label{eq:leveneW}
-\end{alignat}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Donde:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{alignat*}{1}
-\overline{Z}_{i} & =\frac{\sum_{j=1}^{n_{i}}Z_{i,j}}{n_{i}}\\
-\hat{Z} & =\frac{\sum_{i=1}^{k}n_{i}.\overline{Z}_{i}}{n}\\
-n & =\sum_{i=1}^{k}n_{i}
-\end{alignat*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El test de Levene rechaza la hipótesis 
-\begin_inset Formula $H_{o}$
-\end_inset
-
-si la estadística del test 
-\begin_inset Formula $W_{o}$
-\end_inset
-
- es mayor que el cuartil de orden 1-
-\begin_inset Formula $\alpha$
-\end_inset
-
- de la distribución 
-\begin_inset Formula $F_{\left(k-1,n-k\right)}$
-\end_inset
-
-, siendo 
-\begin_inset Formula $\alpha$
-\end_inset
-
- la probabilidad de cometer un error de tipo I.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
 Kolmogorov-Smirnov(
 \series bold
 K-S
@@ -1994,12 +1795,12 @@ key "conover1980practical"
 
 \end_inset
 
-, que compara si dos distribuciones de probabilidad difieren, o si una distribuc
-ión de probabilidad difiere de la distribución en hipótesis, en base a muestras
+, que compara si dos distribuciones de probabilidad difieren o si una distribuci
+ón de probabilidad difiere de la distribución en hipótesis, en base a muestras
  finitas.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2013,7 +1814,7 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 La función de distribución acumulada empírica 
 \begin_inset Formula $F_{n}$
 \end_inset
@@ -2032,7 +1833,7 @@ reference "eq:acumuladaKS"
 .
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 F_{n}\left(x\right)=\frac{1}{n}\cdot\sum_{i=1}^{n}I_{X_{i}\leq x}\label{eq:acumuladaKS}
@@ -2043,7 +1844,7 @@ F_{n}\left(x\right)=\frac{1}{n}\cdot\sum_{i=1}^{n}I_{X_{i}\leq x}\label{eq:acumu
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 Donde, 
 \begin_inset Formula $x$
 \end_inset
@@ -2052,7 +1853,7 @@ Donde,
  
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 I_{X_{i}\leq x}=\begin{cases}
@@ -2066,7 +1867,7 @@ I_{X_{i}\leq x}=\begin{cases}
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 La estadística del Test (ecuaciones 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2112,7 +1913,7 @@ observaciones respectivamente o la diferencia entre
 .
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 D_{n}=sup_{x}\left|F_{n}\left(x\right)-F\left(x\right)\right|\label{eq:Ks-SIMPLE}
@@ -2123,7 +1924,7 @@ D_{n}=sup_{x}\left|F_{n}\left(x\right)-F\left(x\right)\right|\label{eq:Ks-SIMPLE
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 D_{n1,n2}=sup_{x}\left|F_{n1}\left(x\right)-F_{n2}\left(x\right)\right|\label{eq:Ks-doble}
@@ -2134,30 +1935,30 @@ D_{n1,n2}=sup_{x}\left|F_{n1}\left(x\right)-F_{n2}\left(x\right)\right|\label{eq
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 Las hipótesis de Test son:
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula $H_{0}:$
 \end_inset
 
  las distribuciones del Test son idénticas
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula $H_{a}:$
 \end_inset
 
 las distribuciones del Test no son idénticas
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 La conclusión del Test consiste en rechazar 
 \begin_inset Formula $H_{0}$
 \end_inset
 
- al nivel de significación 
+al nivel de significación 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -2171,7 +1972,7 @@ reference "eq:satisfaccionKS"
  es satisfecha.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 \begin{array}{cc}
@@ -2185,7 +1986,7 @@ reference "eq:satisfaccionKS"
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 Donde, 
 \begin_inset Formula $K_{\alpha}$
 \end_inset
@@ -2201,7 +2002,7 @@ representa el límite de la región de aceptación de
 es dada por: 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 P\left(K\leq K_{\alpha}\right)=1-\alpha
@@ -2212,26 +2013,12 @@ P\left(K\leq K_{\alpha}\right)=1-\alpha
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Estimadores de Primer Orden
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Estimadores-de-Primer"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Además de los Test de hipótesis estadísticos a menudo los modelo de predicción
- necesitan de los llamados estimadores de primer orden, para esto los datos
- se dividen en dos conjuntos 
+Sumando a los test a menudo los datos se dividen en dos conjuntos 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "hyndman"
@@ -2251,50 +2038,21 @@ El conjunto de pruebas sirven para validar el modelo en datos que no estaban
  disponibles cuando se calcularon los parámetros por primera vez.
  A partir de esto, podemos ver el desempeño cuando el modelo realiza pronóstico
  de otros datos para los cuales sabemos el resultado real con el fin de
- comparar estos con el resultado previsto.
+ comparar esto con el resultado previsto.
  
 \end_layout
 
 \begin_layout Standard
-A continuación se presentan los estimadores de precisión de pronóstico que
- serán útiles para validar el modelo de esta tesis.
+Para identificar la capacidad de las predicciones de nuestro modelo, a continuac
+ión se presentan las medidas de precisión de pronóstico que serán útiles
+ para validar el modelo de esta tesis.
  
 \end_layout
 
 \begin_layout Standard
-Las medidas más utilizadas son el Error Medio Cuadrático (MSE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "MSE"
-description "Error Medio Cuadrático"
-
-\end_inset
-
-), el Error Medio Absoluto (MAE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "MAE"
-description "Error Medio Absoluto"
-
-\end_inset
-
-), Raíz del Error Medio Cuadrático (RMSE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "RMSE"
-description "Raíz del Error Medio Cuadrático"
-
-\end_inset
-
-) y Error Porcentual Absoluto Medio (MAPE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "MAPE"
-description "Error Porcentual Absoluto Medio"
-
-\end_inset
-
-).
+Las medidas más utilizadas son el Error Medio Cuadrático (MSE), el Error
+ Medio Absoluto (MAE), Raíz del Error Medio Cuadrático (RMSE) y Error Porcentual
+ Absoluto Medio (MAPE).
  En la Tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2327,7 +2085,8 @@ key "DEGOOIJER2006443"
 
 \end_inset
 
- se presenta una lista de las medidas de exactitud de uso común.
+ a continuación se presenta una lista de las medidas de exactitud de las
+ predicciones de uso común.
  
 \end_layout
 
@@ -2519,15 +2278,14 @@ name "tab:accura-table"
 
 \end_inset
 
-Los estimadores de precisión utilizados con frecuencia de acuerdo a 
+Las medidas de precisión utilizadas con frecuencia de acuerdo a 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DEGOOIJER2006443"
 
 \end_inset
 
-.
- No pueden ser usadas para hacer comparaciones entre series que están en
+, no pueden ser usadas para hacer comparaciones entre series que están en
  diferentes escalas.
 \end_layout
 
@@ -2628,8 +2386,8 @@ Nash-Sutcliffe
 Nash-Sutcliffe
 \series default
  ha sido reportada en la literatura para modelos de simulaciones de descarga,
- y simulación de los constituyentes de la calidad del agua como sedimento,
- nitrógeno y carga de fósforo
+ y simulación de constituyentes de la calidad del agua como sedimento, nitrógeno
+ y carga de fósforo
 \begin_inset CommandInset citation
 LatexCommand citep
 key "moriasi2007model"
@@ -2674,7 +2432,7 @@ key "Vasighi"
 \end_inset
 
 .
- A continuación se describen conceptos que vale la pena diferenciar:
+ A continuación se describen los conceptos que vale la pena diferenciar:
 \end_layout
 
 \begin_layout Itemize
@@ -2692,7 +2450,7 @@ Las Redes Neuronales(NNs),
 \series bold
 Las Neuronas Artificiales,
 \series default
- son aproximaciones en bruto de las neuronas encontradas en el cerebro.
+ son aproximaciones brutas de las neuronas encontradas en el cerebro.
  Pueden ser dispositivos físicos, o construcciones puramente matemáticas.
  
 \end_layout
@@ -2700,10 +2458,10 @@ Las Neuronas Artificiales,
 \begin_layout Itemize
 
 \series bold
-Las Redes Neuronales Artificiales(RNAs),
+Las Redes Neuronales Artificiales(ANNs),
 \series default
- son redes de neuronas y, por lo tanto, constituyen aproximaciones a algunas
- partes del cerebro.
+ son redes de neuronas y, por lo tanto, constituyen aproximaciones brutas
+ a algunas partes del cerebro.
  Pueden ser dispositivos físicos, o simulados en ordenadores.
  
 \end_layout
@@ -2733,9 +2491,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/biologicalflow.pdf
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/biologicalflow.pdf
 	lyxscale 50
-	scale 25
+	scale 20
 
 \end_inset
 
@@ -2760,6 +2518,10 @@ El sistema nervioso humano donde los receptores recogen información del
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -2819,7 +2581,7 @@ Sistema nervioso central
 \end_layout
 
 \begin_layout Standard
-Las RNAs que estudiamos son aproximaciones de los niveles 5 y 6.
+Las ANNs que estudiamos son aproximaciones de los niveles 5 y 6.
  Las neuronas artificiales están inspirados en las neuronas biológicas,
  cuyo esquemas es representado de manera simplificada en la Figura 
 \begin_inset CommandInset ref
@@ -2830,7 +2592,7 @@ reference "fig:Neuron"
 
 .
  Como se puede observar, una neurona biológica está formada por: un cuerpo
- celular o soma que contiene el núcleo de la célula; diversas dendritas,
+ celular o la suma que contiene el núcleo de la célula; diversas dendritas,
  a través de las cuales se reciben los impulsos eléctricos; y un axón, a
  través del cual se envían esos impulsos eléctricos.
  Las interconexiones entre neuronas se efectúan a través de sinapsis, puntos
@@ -2875,7 +2637,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/biologicalneuron.pdf
+	filename /home/edson/Documents/tesis/thesisUNSAfinal/thesisUNSA/articlesandthesis/figures/biologicalneuron.pdf
 	lyxscale 50
 	scale 20
 
@@ -2981,7 +2743,7 @@ y_{i}=\varphi\left(Net_{i}\right)=\varphi\left(\sum_{j=1}^{m}x_{j}*w_{ij}+\theta
 \begin_layout Standard
 La función de activación es utilizada para limitar la amplitud de salida
  de una neurona, y algunas veces introducir no linealidad al modelo.
- Son cuatro tipos de funciones de activación que son muy utilizadas en RNA
+ Son cuatro tipos de funciones de activación que son muy utilizadas en ANN
  (para mas detalle vea 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3001,7 +2763,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/artificialneuron.pdf
+	filename /home/edson/Documents/tesis/thesisUNSAfinal/thesisUNSA/articlesandthesis/figures/artificialneuron.pdf
 	scale 35
 
 \end_inset
@@ -3019,7 +2781,7 @@ name "fig:artificialneuron"
 
 \end_inset
 
-Esquema básico de una Neurona Artificial
+Esquema básico de una Neura Artificial
 \end_layout
 
 \end_inset
@@ -3033,7 +2795,7 @@ Esquema básico de una Neurona Artificial
 \end_layout
 
 \begin_layout Standard
-Tres características básicas identifican a los diversos tipos de RNAs
+Tres características básicas identifican a los diversos tipos de ANNs
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lcdcampos"
@@ -3056,7 +2818,7 @@ Regla de aprendizaje.
 \end_layout
 
 \begin_layout Standard
-Básicamente existen dos tipos de topologías de RNAs que son ampliamente
+Básicamente existen dos tipos de topologías de ANNs que son ampliamente
  usados en la literatura:
 \end_layout
 
@@ -3078,11 +2840,7 @@ reference "fig:feedforwardtopology"
 
 \end_inset
 
-, ilustra una red 
-\emph on
-feedforward
-\emph default
-.
+, ilustra una red feedforward.
  Donde la red posee un conjunto de nodos de entrada, que solamente distribuyen
  los patrones de entrada para la red; una o varias capas intermedias ocultas,
  cuyas salidas son las entradas de la capa de neuronas siguientes; y una
@@ -3098,7 +2856,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/feddfordward.pdf
+	filename /media/epad/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/feddfordward.pdf
 	scale 35
 
 \end_inset
@@ -3116,12 +2874,8 @@ name "fig:feedforwardtopology"
 
 \end_inset
 
-Red Neuronal 
-\emph on
-Feedforward,
-\emph default
- donde la primera capa recibe sus entradas del entorno, se activa y su salida
- sirve como entrada para la siguiente capa.
+Red Neuronal Feedforward, donde la primera capa recibe sus entradas del
+ entorno, se activa y su salida sirve como entrada para la siguiente capa.
  Este proceso se repite hasta alcanzar la capa final (capa de salida).
 \end_layout
 
@@ -3142,14 +2896,8 @@ Redes Neuronales Recurrentes:
 \begin_layout Standard
 Son aquellas redes que contienen conexiones de realimentación.
  En su estructura las redes neuronales recurrentes pueden presentar interconexio
-nes entre neuronas de la misma capa y entre neuronas de capas no consecutivas
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Awchi"
-
-\end_inset
-
-.
+nes entre neuronas de la misma capa y entre neuronas de capas no consecutivas[18
+].
  Como se puede ver en la Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3157,9 +2905,8 @@ reference "fig:Recurrenttopology-1"
 
 \end_inset
 
-, su arquitectura presenta interconexiones mas complejas que las redes 
-\emph on
-feedforward.
+, su arquitectura presenta interconexiones mas complejas que las redes feedforwa
+rd.
 \end_layout
 
 \begin_layout Standard
@@ -3171,7 +2918,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/recurrent.pdf
+	filename /media/epad/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/recurrent.pdf
 	scale 35
 
 \end_inset
@@ -3189,7 +2936,7 @@ name "fig:Recurrenttopology-1"
 
 \end_inset
 
-Red Neuronal Recurrente(RNAR), este tipo de redes resultan ser muy eficientes
+Red Neuronal Recurrente, este tipo de redes resultan ser muy eficientes
  en las tareas de predicción de secuencia, aunque no pueden recordar la
  información relevante para muchos pasos en el pasado.
 \end_layout
@@ -3206,26 +2953,12 @@ Red Neuronal Recurrente(RNAR), este tipo de redes resultan ser muy eficientes
 
 \begin_layout Standard
 Determinar la arquitectura(número de: neuronas, capas; tipo de activación)
- de una RNA es una elección decisiva para obtener un aprendizaje ideal,
- esto depende de la necesidad y la tarea a cumplir en su aplicación
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Sutskever2013"
-
-\end_inset
-
-.
+ de una ANN es una elección decisiva para obtener un aprendizaje ideal,
+ esto depende de la necesidad y la tarea a cumplir en su aplicación[55].
  Un punto crucial es el numero de neuronas por capa, aunque un mayor número
  pueda ser beneficioso, esto puede llevar a problemas de 
 \emph on
-overffiting
-\begin_inset CommandInset citation
-LatexCommand citep
-key "hallac2017toeplitz"
-
-\end_inset
-
-.
+overffiting[28].
  
 \emph default
 Por otra parte, un número muy pequeño de neuronas puede no ser suficiente
@@ -3245,7 +2978,7 @@ key "lcdcampos"
 \begin_layout Standard
 Una red neuronal necesita pasar por un proceso de entrenamiento, esto con
  el fin de producir una salida consistente.
- El entrenamiento de una RNA básicamente es un algoritmo que ajusta los
+ El entrenamiento de una ANN básicamente es un algoritmo que ajusta los
  pesos sinápticos 
 \begin_inset Formula $w_{i1},w_{i2},\ldots w_{im}$
 \end_inset
@@ -3271,7 +3004,7 @@ Entrenamiento Supervisado:
 
 \begin_layout Standard
 Los patrones de entrada contienen salidas deseadas, durante este proceso
- las entradas son presentadas a la RNA y el valor de salida que generan
+ las entradas son presentadas a la ANN y el valor de salida que generan
  es comparado con la salida deseada respectiva, generando así señales de
  error(diferencia entre las dos salidas).
  El algoritmo de entrenamiento ajusta los pesos sinápticos con el objetivo
@@ -3302,12 +3035,8 @@ Los métodos basados ​​en el aprendizaje de refuerzo se consideran una varia
  ajustan los pesos neuronales internos basándose en cualquier información
  cualitativa o cuantitativa adquirida a través de la interacción con el
  sistema (entorno) que se mapea.
- 
-\end_layout
-
-\begin_layout Standard
-El proceso de aprendizaje de una red suele hacerse por ensayo y error, debido
- a que la única respuesta disponible para una entrada dada es si, este fue
+ El proceso de aprendizaje en red suele hacerse por ensayo y error, debido
+ a que la única respuesta disponible para una entrada dada es si este fue
  satisfactorio o insatisfactorio.
  Si es satisfactorio, los pesos y umbrales sinápticos se incrementan gradualment
 e para reforzar (recompensar) esta condición de comportamiento involucrada
@@ -3331,7 +3060,7 @@ key "daSILVA"
 \begin_layout Standard
 Después del entrenamiento de la red neuronal, es presentada a la misma un
  conjunto de patrones que nunca fueron presentadas a la red, si el aprendizaje
- fue bien realizado, la RNA tiene que ser capaz generar una salida correcta
+ fue bien realizado, la ANN tiene que ser capaz generar una salida correcta
  para esos patrones de Test.
  Por lo tanto se dice que una red neuronal tiene una buena capacidad de
  generalización cuando permite hacer un mapeo entrada-salida correcto.
@@ -3339,30 +3068,23 @@ Después del entrenamiento de la red neuronal, es presentada a la misma un
 \end_layout
 
 \begin_layout Standard
-El desempeño de entrenamiento de una RNA también depende de la cantidad
+El desempeño de entrenamiento de una ANN también depende de la cantidad
  de datos disponibles para el entrenamiento, por lo que una cantidad pequeña
  de datos puede comprometer su desempeño.
 \end_layout
 
 \begin_layout Subsection
 Redes Neuronales Recurrentes 
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Redes-Neuronales-Recurrentes"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 La topología de red utilizada en este trabajo es Recurrente.
- Las redes neuronales recurrentes(RNARs) son una subclase de RNAs caracterizada
+ Las redes neuronales recurrentes(RNNs) son una subclase de ANNs caracterizada
  por presentar grafos cíclicos en su estructura.
  Estos ciclos acumulan actividades previas y permiten que la red almacene
  estados internos.
  Estos estados evitan la necesidad de alimentar la red con el historial
- de entradas y salidas anteriores como la Red Neuronal con Retardo de Tiempo
+ de entradas y salidas anteriores como la Red Neural con Retardo de Tiempo
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3373,7 +3095,7 @@ key "Kuna2015"
 .
  Y puede utilizar las secuencias de entrada para realizar tareas temporales
  como previsión.
- La salida de una RNAR se puede describir mediante:
+ La salida RNN se puede describir mediante:
 \end_layout
 
 \begin_layout Standard
@@ -3393,7 +3115,7 @@ reference "fig:elmanandwilliam"
 \end_inset
 
  b) y a) muestran los dos tipos de modelos recurrentes tradicionales de
- RNA, la red recurrente Elman 
+ ANN, la red recurrente Elman 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Elman90findingstructure"
@@ -3423,7 +3145,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/RNNewilliamandelman-ES.pdf
+	filename /media/epad/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNewilliamandelman-ES.pdf
 	lyxscale 30
 	scale 13
 
@@ -3462,15 +3184,7 @@ Entrenamiento de una Red Neuronal Recurrente
 
 \begin_layout Standard
 Un método de entrenamiento ampliamente usado es el algoritmo estándar de
- Backpropagation(BP
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "BP"
-description "BackPropagation\\\\"
-
-\end_inset
-
-) 
+ Backpropagation(BP) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Rumelhart:1986:PDP:104279"
@@ -3608,12 +3322,12 @@ En la práctica el algoritmo
 BP
 \series default
  estándar no es adecuado para redes con ciclos en su estructura.
- Sin embargo, podemos aplicar algunos artificios y ver una RNAR como una
+ Sin embargo, podemos aplicar algunos artificios y ver una RNN como una
  red 
 \emph on
 feedforward,
 \emph default
- desplegándola en el tiempo como se muestra en la Figura 
+ desplegando una RNN en el tiempo como se muestra en la Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:unfold"
@@ -3621,13 +3335,9 @@ reference "fig:unfold"
 \end_inset
 
 .
- La 
-\series bold
-RNAR
-\series default
- se interpreta como una red en capas que mantiene los mismos pesos a reutilizar,
- asumimos el retardo de tiempo de 1 en cada conexión para crear una red
- 
+ La RNN se interpreta como una red en capas que mantiene los mismos pesos
+ a reutilizar, asumimos el retardo de tiempo de 1 en cada conexión para
+ crear una red 
 \emph on
 feedforward 
 \emph default
@@ -3686,7 +3396,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/RNNunfoldprocess-ES.pdf
+	filename /media/epad/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/RNNunfoldprocess-ES.pdf
 	lyxscale 30
 	scale 15
 
@@ -3738,7 +3448,7 @@ BPTT
 Real-Time Recurrent Learning
 \series bold
 \emph default
-(CW-RNAR)
+(CW-RNN)
 \series default
 , que divide la capa oculta en 
 \begin_inset Formula $M$
@@ -3788,7 +3498,7 @@ key "doya1992bifurcations"
 
 \begin_layout Standard
 Recientemente, con el fin de abordar las dificultades para entrenar redes
- RNAR, un modelo de cálculo de 
+ RNN antes menciondas, un modelo de cálculo de 
 \begin_inset Quotes sld
 \end_inset
 
@@ -3812,15 +3522,9 @@ Echo State Network
 ESN)
 \series default
 .
- Básicamente ESN es una forma inteligente de entrenar a una RN
-\series bold
-AR
-\series default
- donde, un "reservorio" de unidades ocultas están escasamente(
-\emph on
-esparsa
-\emph default
-) conectados entre sí y las entradas están conectadas a este 
+ Básicamente ESN es una forma inteligente de entrenar a una RNN donde, un
+ "reservorio" de unidades ocultas están escasamente(esparsa) conectados
+ entre sí y las entradas están conectadas a este 
 \begin_inset Quotes sld
 \end_inset
 
@@ -3845,9 +3549,9 @@ al cual pertenece el modelo
 \series bold
  ESN, 
 \series default
-describiendo como logra manejar la complejidad de entrenar redes RN
+describiendo como logra manejar la complejidad de entrenar redes RNN
 \series bold
-AR.
+.
  
 \end_layout
 
@@ -3870,11 +3574,7 @@ name "sec:Reservoir-Computing-y"
 
 \begin_layout Standard
 El aprendizaje de máquina fue dominado en buena parte de su historia por
- los modelos 
-\emph on
-feedforward
-\emph default
- y las redes bayesianas.
+ los modelos feedforward y las redes bayesianas.
  Sin embargo, cuando se trata de una dinámica temporal intrínseca, es necesario
  realizar una adaptación, una simplificación o una elección de modelo específico
  de modo que el tiempo se represente de alguna manera esos modelos no-temporales.
@@ -3886,7 +3586,7 @@ key "Waibel"
 
 \end_inset
 
- y redes neuronales recurrentes(RNAR)
+ y redes neuronales recurrentes(RNN)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Millea2014"
@@ -3907,17 +3607,17 @@ key "Hochreiter"
 
 \begin_layout Standard
 En general los más poderosos han demostrado ser las redes neuronales recurrentes
-(RNAR), aún cuando posean un tipo de problema diferente, a saber, como su
+(RNN), aún cuando posean un tipo de problema diferente, a saber, como su
  enfoque de aprendizaje.
- Hasta hace poco, el entrenamiento de RNAR se realizaba mediante retro-propagaci
-ón(
+ Hasta hace poco, el entrenamiento de RNN se realizaba mediante retro-propagació
+n(
 \series bold
 BPTT
 \series default
 ).
  Sin embargo, además del hecho de que este proceso es muy lento, no siempre
  garantiza una buena solución, debido al problema de la desaparición del
- gradiente (
+ gradiente(
 \emph on
 Vanishing gradient problem
 \emph default
@@ -4006,11 +3706,8 @@ Liquid State Machines(LSM)
 \end_layout
 
 \begin_layout Standard
-Son un tipo de 
-\series bold
-RNAR
-\series default
- que forman parte del paradigma de 
+Son un tipo de redes neuronales recurrentes que forman parte del paradigma
+ de 
 \emph on
 Reservoir Computing
 \emph default
@@ -4057,7 +3754,7 @@ key "Legenstein"
 \begin_layout Subsection
 Redes
 \emph on
- Echo State(RNAR-esn)
+ Echo State(ESN)
 \end_layout
 
 \begin_layout Standard
@@ -4114,7 +3811,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../figures/ESN_simple.pdf
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/ESN_simple.pdf
 	lyxscale 300
 	scale 150
 
@@ -4167,8 +3864,8 @@ key "Jaeger2001a"
 \end_layout
 
 \begin_layout Standard
-A primera vista puede parecer sorprendente que una RNAR con conexiones aleatoria
-s pueda ser efectiva, pero los parámetros aleatorios han sido exitosos en
+A primera vista puede parecer sorprendente que una RNN con conexiones aleatorias
+ pueda ser efectiva, pero los parámetros aleatorios han sido exitosos en
  varios dominios.
  Por ejemplo, se han utilizado proyecciones aleatorias en el aprendizaje
  mecánico y la reducción de la dimensionalidad 
@@ -4193,9 +3890,9 @@ key "Jarret,Saxe_551"
 \end_layout
 
 \begin_layout Standard
-Aunque ESN no resuelve el problema de entrenar RNAR en su totalidad, su
- funcionamiento impresionante sugiere que una inicialización basada en ESN
- podría ser acertada.
+Aunque ESN no resuelve el problema de entrenar RNN en su totalidad, su funcionam
+iento impresionante sugiere que una inicialización basada en ESN podría
+ ser acertada.
  Esto es confirmado por los resultados de 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -4216,9 +3913,9 @@ Entrenamiento De Una Red ESN
 
 \begin_layout Standard
 El paradigma RC evita las deficiencias de entrenamiento (gradiente descendente)
- en RNAR, creando una RNAR aleatoria que permanece sin cambios durante todo
+ en RNN, creando una RNN aleatoria que permanece sin cambios durante todo
  el entrenamiento.
- Esta RNAR se llama 
+ Esta RNN se llama 
 \begin_inset Quotes sld
 \end_inset
 
@@ -4235,7 +3932,7 @@ reference "fig:RC_VS_RNN_training"
 
 \end_inset
 
- contrasta gráficamente los métodos previos de entrenamiento RNAR con el
+ contrasta gráficamente los métodos previos de entrenamiento RNN con el
  enfoque ESN.
 \end_layout
 
@@ -4329,8 +4026,7 @@ Donde
 \begin_inset Formula $(tanh)$
 \end_inset
 
- y la función de identidad para la neurona de salida.
- En el algoritmo 
+ y la función de identidad para la neurona de salida.En el algoritmo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alg:training_ESN"
@@ -4482,21 +4178,13 @@ name "alg:training_ESN"
 \end_inset
 
 Algoritmo estándar de entrenamiento de una red ESN, los estados se recogen
- en una matriz 
-\begin_inset Formula $M$
-\end_inset
-
- que tiene en cada fila el vector de estado 
+ en una matriz M que tiene en cada fila el vector de estado 
 \begin_inset Formula $x(t)$
 \end_inset
 
  y en cada columna las neuronas del reservorio.
- Por lo tanto, 
-\begin_inset Formula $M$
-\end_inset
-
- es una matriz de: dimensión de ejemplos(filas) por la dimensión del reservorio(
-columnas).
+ Por lo tanto, M es una matriz de: dimensión de ejemplos(filas) por la dimensión
+ del reservorio(columnas).
  
 \end_layout
 
@@ -4535,9 +4223,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename ../figures/trainingESN.pdf
+	filename /home/edson/Documents/tesis/thesisUNSA/thesisUNSA/articlesandthesis/figures/trainingESN.pdf
 
 \end_inset
 
@@ -4554,7 +4241,7 @@ name "fig:RC_VS_RNN_training"
 
 \end_inset
 
-A) Los métodos tradicionales de entrenamiento de RNAR basados en gradientes,
+A) Los métodos tradicionales de entrenamiento de RNN basados en gradientes,
  estos adaptan todos los pesos de conexión (flechas sombreadas), incluidos
  los pesos de entrada para el Reservorio, conexiones internas y del Reservorio
  para salida.
@@ -5026,7 +4713,7 @@ Este capítulo presentó un resumen de los fundamentos teóricos de los modelos
 \emph on
 reservoir computing
 \emph default
- como alternativa de entrenamiento de RNARs.
+ como alternativa de entrenamiento de RNNs.
  El próximo capítulo presenta el estado del arte para el modelo propuesto
  en esta tesis, que consiste en un proceso de mapeo sistemático sobre la
  literatura.

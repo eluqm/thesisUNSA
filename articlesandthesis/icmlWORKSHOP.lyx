@@ -1,0 +1,1233 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\begin_preamble
+% for subfigures/subtables
+\usepackage[caption=false,font=footnotesize]{subfig}
+\end_preamble
+\options conference,onecolumn,11pt
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\float_placement tbh
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_title "Your Title"
+\pdf_author "Your Name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is a template \SpecialChar LyX
+ file for conference articles of conferences organized
+ by the Institute of Electrical and Electronics Engineers (IEEE).
+ For IEEE journal articles, see the template file 
+\emph on
+IEEEtran-Journal.lyx
+\emph default
+.
+ For general info see 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.lyx.org/Examples/IEEE
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It is important that you use the correct document class options for your
+ document..
+ These are explained in the IEEEtran documentation: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://mirror.ctan.org/macros/latex/contrib/IEEEtran/IEEEtran_HOWTO.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+GAF-CNN-LSTM for Multivariate Time-Series Images Forecasting 
+\end_layout
+
+\begin_layout Author
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+for more than 3
+\begin_inset space ~
+\end_inset
+
+affiliations use this way: 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Author Name
+status open
+
+\begin_layout Plain Layout
+Edson
+\begin_inset space ~
+\end_inset
+
+F
+\begin_inset space ~
+\end_inset
+
+Luque
+\begin_inset space ~
+\end_inset
+
+Mamani
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+, Cristian Lopez del Alamo
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Author Affiliation
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+Sao Paulo University-Brasil
+\begin_inset Newline newline
+\end_inset
+
+Email: edluquem@usp.br
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Author Affiliation
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+University La Salle -Peru
+\begin_inset Newline newline
+\end_inset
+
+Email: clopez@ulasalle.edu.pe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Forecasting multivariate time series is challenging for a whole host of
+ reasons not limited to problem features such as having multiple input variables
+, time series preparation, and the need to perform the same type of prediction
+ for multiple physical sites.
+ Although the literature on time series forecasting is focused on 1D signals.
+ We use the Gramian Angular Fields (GAFs) to encode time-series into 2D
+ texture images, later take advantage of the deep CNN-LSTM architecture
+ where LSTM use a CNN as a front end.
+ Thus, we propose a novel unified framework for forecasting multivariate
+ time series using a way to encode time series as images.
+ Preliminary experimental results on the UEA multivariate time series forecastin
+g archive, demonstrate competitive forecast accuracy (RMSE and MAPE) of
+ the proposed approach, compared to the existing deep approaches as LSTM,
+ CRNN, 1D-MTCNN.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Keywords: CNN, Multivariate Time-Series, Forecasting, Images.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Generating predictions about the future is called extrapolation in the classical
+ statistical handling of time series data.
+ A time-series is a sequence of data points which has a natural temporal
+ ordering.
+ Many important real-world problems deal with time-series prediction.
+ Biomedical signals (e.g.
+ EEG and ECG), financial data (e.g.
+ currency exchange rates), industrial devices (e.g.
+ sensors and laser excitation), and weather are examples of application
+ domains with time-series nature.
+ Modern fields focus on these topics and refer to it as time series forecasting.
+ Forecasting involves taking models fit on historical data and using them
+ to predict future observations.
+ An important distinction in forecasting is that the future is completely
+ unavailable and must only be estimated from what has already happened.
+\end_layout
+
+\begin_layout Standard
+In Forecasting, while multivariate models are convenient in modeling interesting
+ interdependencies and achieve a better (not worse) fit within a given sample,
+ it is often found that univariate methods outperform multivariate methods
+ out of sample.
+ one may name as possible reasons: a)Multivariate models have more parameters
+ than univariate ones.
+ Every additional parameter is an unknown quantity and has to be estimated.
+ b) It is difficult to generalize nonlinear procedures to the multivariate
+ case.
+ Generally, multivariate models must have a simpler structure than univariate
+ ones, to overcome the additional complexity that is imposed by being multivaria
+te.
+\end_layout
+
+\begin_layout Standard
+Besides, the Deep Learning high recognition rate is largely fueled by its
+ success in computer vision and speech recognition 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "deng2014deep"
+literal "false"
+
+\end_inset
+
+.
+ One successful deep learning architecture used in computer vision is convolutio
+nal neural networks (CNN) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lecun1998gradient"
+literal "false"
+
+\end_inset
+
+.
+ CNN exploits translational invariance by extracting features through receptive
+ fields.
+ However, when it comes to time series, building predictive models can be
+ gruesome (Recurrent Neural Networks LSTM are difficult to train, research
+ is less applicable, and no pre-trained models exist, CRCNN can be inconvenient).
+ In order to alleviate these problems, and inspired by recent successes
+ of techniques in computer vision, we consider the problem of forecasting
+ multivariate time series encoding them as images to allow machines to visually
+ learn nonlinear structures and patterns.
+ Both feature learning (CNN) and sequential (LSTM) parts are unfied in one
+ model and are learned jointly.
+ Therefore, their performances are mutually enhanced.
+ Multiple layers of diﬀerent processing units (e.g.
+ convolution, pooling, sigmoid/hyperbolic tangent squashing, rectiﬁer and
+ normalization) are responsible for learn (represent) a hierarchy of features
+ from low-level to high-level.
+\end_layout
+
+\begin_layout Standard
+To the best of our knowledge, based on the related works 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hatami2018classification,laptev2017time,pang2017robust,wang2015encoding,wang2015imaging,xingjian2015convolutional,yang2015deep,zheng2014time"
+literal "false"
+
+\end_inset
+
+, this is the first study that combines GAF encoding, CNN and LSTM in a
+ unified framework to enable accurate forecasting in multivariate time series.
+ The diﬀerence between related works and our framework is that they used
+ a traditional forecasting and classification framework, with hand-crafted
+ features and separated feature extraction and forecasting steps for univariate
+ time series.
+ While our proposed, automatically learns the texture features that are
+ useful for the LSTM layer, avoiding preprocessing steps on multivariate
+ time series forecasting.
+ The GAF representation (polar coordinates) preserves absolute temporal
+ relations.
+ 
+\end_layout
+
+\begin_layout Section
+Methodology
+\end_layout
+
+\begin_layout Subsection
+Imaging Time Series
+\end_layout
+
+\begin_layout Standard
+Based on previous work "[]", we first use one framework for encoding time
+ series as images.
+ A Gramian Angular Field (GAF), in which we represent time series in a polar
+ coordinate system instead of the typical Cartesian coordinates.
+ In the Gramian matrix, each element is actually the cosine of the summation
+ of angles.
+ Given an univariate time series 
+\begin_inset Formula $X=\{x_{1},x_{2},...,x_{n}\}$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ real-valued observations, we rescale 
+\begin_inset Formula $X$
+\end_inset
+
+ so that all values fall in the interval 
+\begin_inset Formula $[−1,1]$
+\end_inset
+
+.
+ Thus we can represent the rescaled time series 
+\begin_inset Formula $\overline{X}$
+\end_inset
+
+ in polar coordinates by encoding the value as the angular cosine and the
+ time stamp as the radius with the equation below: 
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\begin{equation}
+GAF_{matrix}\left\{ \begin{array}{cccc}
+\cos(\phi_{1}+\phi_{1}) & \cos(\phi_{1}+\phi_{2}) & ... & \cos(\phi_{1}+\phi_{n})\\
+\cos(\phi_{2}+\phi_{1}) & \cos(\phi_{2}+\phi_{2}) & ... & \cos(\phi_{2}+\phi_{n})\\
+\vdots & \vdots & \ddots & \vdots\\
+\cos(\phi_{n}+\phi_{1}) & \cos(\phi_{n}+\phi_{2}) & ... & \cos(\phi_{n}+\phi_{n})
+\end{array}\right\} ,\begin{cases}
+\phi= & \arccos(\overline{x}_{i}),-1\leq\overline{x}_{i}\leq1,\overline{x}_{i}\in\overline{X}\\
+r= & \frac{t_{i}}{N},t_{i}\in\mathbb{N}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+GAF-CNN-LSTM Network
+\end_layout
+
+\begin_layout Standard
+After transforming the rescaled time series into the polar coordinate system.
+ We propose a "CRNN" that utilizes a combination of Convolutional Neural
+ Networks (CNNs) and Long short-term memory (LSTM) to enable 1-step ahead
+ forecasting for multivariate time series.
+ CNNs are used successfully for classifying images by learning the features
+ and patterns of the images.
+ LSMT are able to capture dependencies of a sequence of values, thus being
+ good at forecasting future values.
+ This motivates us to first use CNNs to extract distinctive features of
+ time series images, and then to apply LSTM to predict near future values
+ of the target value.
+ We call this model GAF-CNN-LSTM, which is presented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/edson/Pictures/model1.2ICML.pdf
+	lyxscale 20
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:model"
+
+\end_inset
+
+GAF-CNN-LSTM model, where inputs are multi-channel images (each variable
+ represent one channel in multivariate time series context).
+ Finally, we used a TimeDistributed approach in order to applying the same
+ layer or layers multiple times, providing a sequence of “image interpretations”
+ or “image features” to the LSTM model to work on.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Preliminary Results
+\end_layout
+
+\begin_layout Standard
+In order to evaluate the performance of the proposed framework, the UEA
+ multivariate archive is used
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bagnall2018uea"
+literal "false"
+
+\end_inset
+
+.
+ We used both root mean square error (RMSE) and mean absolute percentage
+ error (MAPE) to evaluate forecast accuracy in 4 data sets.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\size tiny
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+RMSE and MAPE, 4 UEA multivariate data sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\size tiny
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+LSMT
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+CRNN
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hatami2018classification"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1D-MTCNN
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+GAFCNNLSTM
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+Dataset
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+RSME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+MAPE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+RSME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+MAPE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+RSME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+MAPE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+RSME
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+MAPE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+MotorImagery
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.312
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+14.582
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.086
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+11.331
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.069
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+11.397
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+0.894
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+7.894
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+EigenWorms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+0.741
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+9.178
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+0.945
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+8.256
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+0.845
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+8.569
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+0.736
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+8.984
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+EthanolConcentration
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.215
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+12.366
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.645
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+14.125
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.365
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+13.429
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+1.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+12.015
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+StandWalkJump
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+0.915
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+10.694
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+10.697
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+1.059
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+11.991
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+0.997
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+10.894
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+We propose a deep learning model, GAF-CNN-LSTM, to enable accurate multivariate
+ time series forecasting.
+ Experiments on 4 real world data sets show promising results.
+ In the future, it is of interest to verify the proposed models on time
+ series from different domains such as metereological time series and to
+ study the scalability of the proposed models for large time series data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "refs"
+options "IEEEtran"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

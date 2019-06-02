@@ -116,8 +116,7 @@ Style is ornate.
 \end_layout
 
 \begin_layout Title
-Modelo Estocástico Basado En Echo State Network ESN, para la predicción
- de caudales de rios 
+Stochastic Model Based on Echo State Network ESN for time series forecasting
 \begin_inset Argument 1
 status open
 
@@ -141,15 +140,11 @@ optional, use only with long titles
 \end_layout
 
 \begin_layout Author
-:Edson Francisco Luque Mamani 
+Edson Luque 
 \begin_inset Newline newline
 \end_inset
 
-
-\end_layout
-
-\begin_layout Institute
-Universidad Nacional San Agustín
+email:edluquem@usp.br
 \end_layout
 
 \begin_layout Date
@@ -174,7 +169,7 @@ Not really informative to the audience, more for people (including yourself)
 status open
 
 \begin_layout Plain Layout
-CFP 2017
+CFP 2019
 \begin_inset Note Note
 status collapsed
 
@@ -873,12 +868,7 @@ Ahora, aunque los modelos numéricos utilizados por el IMD son de vanguardia,
  UU., Su capacidad de pronóstico sigue siendo débil.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -894,6 +884,14 @@ onslide<4->
 Por lo tanto cada vez es más la necesidad de modelos eficientes y efectivos
  en la generación de escenarios de predicción basados en variables hidrológicas.
  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -937,7 +935,7 @@ g forcing), parameters, model structure and evaluation data, e.g., discharge
 status open
 
 \begin_layout Plain Layout
-Modelos de predicción
+Modelos de pronóstico
 \end_layout
 
 \end_inset
@@ -949,7 +947,14 @@ Modelos de predicción
 \begin_layout Standard
 
 \series bold
-Modelos lineales : 
+\begin_inset Quotes eld
+\end_inset
+
+Modelos lineales
+\begin_inset Quotes erd
+\end_inset
+
+ : 
 \end_layout
 
 \begin_layout Itemize
@@ -1013,7 +1018,14 @@ Pronóstico es el proceso de estimación en situaciones de incertidumbre.
 \begin_layout Standard
 
 \series bold
-Modelos no-lineales: 
+\begin_inset Quotes eld
+\end_inset
+
+Modelos no-lineales
+\begin_inset Quotes erd
+\end_inset
+
+: 
 \begin_inset Note Note
 status open
 
@@ -1048,6 +1060,39 @@ In statistics, nonlinear regression is a form of regression analysis in
 By contrast, Generalized Linear Models generally have a nonlinear relationship
  between response and predictors, but the link-transformed mean response
  (the linear predictor, η ) is linear in the parameters.
+\end_layout
+
+\begin_layout Plain Layout
+Several forecasting methods have recently been developed to forecast future
+ observations of time series especially of economic nature, such as inflation,
+ stock market returns and stock indices.
+ The difficulty of forecasting economic time series is the complex interactions
+ between factors affecting the market and the unknown random processes such
+ as unprecedented news or changes in other factors (Clement and Hendry,
+ 2002).
+ Well-known models based on the autoregressive integrated moving average
+ (ARIMA) time series models were commonly used.
+ The parameters of the ARIMA models are usually estimated by the method
+ of least squares or the maximum likelihood estimation method.
+ However, ordinary least squares method requires imposing, strict assumptions
+ on the model specifications during the estimation of the parameters to
+ achieve meaningful results (Box et al., 1994) and thus it is inefficient
+ to use with complex or nonlinear models.
+ Since most economic relations are usually non-linear in either parameter
+ and can be nonstationary, nonlinear least squares method is the most commonly
+ used method to estimate the parameters in non-linear economic models.
+ The Artificial Neural Networks (ANN) is an alternative method that can
+ be used for forecasting in such non-linear time series and can overcome
+ the problems of non- linearity and nonstationarity.
+ The use of ANN has been rapidly increasing because of their ability to
+ form complex non-linear systems for forecasting based on sample data.
+ Applications of ANN received a great attention in recent years because
+ of their enormous storage capacity and their capabilities of learning and
+ prediction.
+ In particular, ANN has been applied in economic forecasting to predict
+ stock markets indicators in line with economic growth in various countries
+ in the past few years (Trippi and Turban; 1996).
+ 
 \end_layout
 
 \end_inset
@@ -1120,7 +1165,17 @@ status open
 \begin_layout Plain Layout
 que debido a su estructura de conexiones cíclicas permite un modelado más
  parsimonioso de propiedades dinámicas.
- 
+ Gradual weight updates during the training proce- dure may drive recurrent
+ networks through bifurcations where gradient information becomes useless
+ (Doya, 1992).
+ – Weight updates can be computationally expensive and many updates may
+ be necessary.
+ – Relationships over long-range memory are hard to learn, because the necessary
+ gradient information expo- nentially dissolves over time (Bengio et al.,
+ 1994).
+ – Training algorithms require skill and experience to ap- ply, since their
+ complexity requires a number of global control settings that are not easily
+ optimised.
 \end_layout
 
 \end_inset
@@ -1246,38 +1301,6 @@ paradigma típico de redes neuronales recurrentes (RNN) –> poderosa herramient
 \end_layout
 
 \end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-¿Puede ser considerada como alternativa válida un modelo de generación de
- escenarios para predicción de variables hidrológicas basado en Redes Neuronales
- Recurrentes, usando métodos como 
-\series bold
-ESN
-\series default
- para reducir la complejidad en su construcción?.
-\end_layout
-
 \end_deeper
 \begin_layout Subsection
 Objetivos
@@ -1967,7 +1990,7 @@ un espacio de todas las hipótesis posibles.
 \end_layout
 
 \begin_layout Section
-Procesos Estocásticos
+Procesos Estocásticos y Series Temporales
 \end_layout
 
 \begin_layout Standard
@@ -1982,61 +2005,7 @@ Procesos Estocásticos
 status open
 
 \begin_layout Plain Layout
-Procesos Estocásticos
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<1->
-\end_layout
-
-\end_inset
-
-Todas las trayectorias posibles que se pueden observar de un fenómeno.
- 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<2->
-\end_layout
-
-\end_inset
-
-Cada trayectoria se denomina serie de tiempo.
- Por lo tanto, l
-\series bold
-as series temporales se consideran una realización del proceso estocástico.
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-
+Procesos Estocásticos y Series temporales
 \end_layout
 
 \end_inset
@@ -2053,7 +2022,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/edson/Desktop/ESP.png
+	filename figures/Selection_016.png
 	scale 30
 
 \end_inset
@@ -2065,8 +2034,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-La figura muestra 10 realizaciones de la serie de lluvias en una zona X,
- durante los 12 meses del año.
+10 realizaciones de la serie de lluvias en una zona X, durante los 12 meses
+ del año.
  Tenemos 10 valores de 12 variables aleatorias, una para cada mes, y la
  trayectoria de los 12 valores en un año dado representa una realización
  del proceso estocástico.
@@ -2077,12 +2046,81 @@ La figura muestra 10 realizaciones de la serie de lluvias en una zona X,
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<1->
+\end_layout
+
+\end_inset
+
+Todas las trayectorias posibles que se pueden observar de un fenómeno.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<2->
+\end_layout
+
+\end_inset
+
+Cada trayectoria se denomina serie de tiempo -> l
+\series bold
+as series temporales se consideran una realización del proceso estocástico.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
 \begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Frame
 
 \end_layout
 
@@ -2322,6 +2360,166 @@ Método de Backpropagation a través del tiempo(BPTT).
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Vanishing/exploding gradients
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/Selection_019.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<1->
+\end_layout
+
+\end_inset
+
+
+\color blue
+ 
+\begin_inset Formula $g(Z)=Z$
+\end_inset
+
+, 
+\begin_inset Formula $b^{[L]}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<2->
+\end_layout
+
+\end_inset
+
+
+\color blue
+
+\begin_inset Formula $\widehat{Y}=W^{[L]}W^{[L-1]}W^{[L-2]}......W^{[3]}W^{[2]}W^{[1]}X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<3->
+\end_layout
+
+\end_inset
+
+
+\color blue
+
+\begin_inset Formula $Z^{[1]}=W^{[1]}X=a^{[1]}=g(Z^{[1]})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<4->
+\end_layout
+
+\end_inset
+
+
+\color blue
+
+\begin_inset Formula $a^{[2]}=g(Z^{[2]})=g(W^{[2]}a^{1})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<5->
+\end_layout
+
+\end_inset
+
+
+\color blue
+
+\begin_inset Formula $W^{[l]}=\left[\begin{array}{cc}
+0.5 & 0\\
+0 & 0.5
+\end{array}\right]\Rightarrow\widehat{Y}=W^{[L]}\left[\begin{array}{cc}
+0.5 & 0\\
+0 & 0.5
+\end{array}\right]^{[L-1]}X\approx0.5^{L-1}X\approx0.5^{L}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
 \begin_layout Frame
 
 \end_layout
@@ -3886,6 +4084,10 @@ literal "true"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -3969,7 +4171,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -3990,7 +4192,7 @@ status open
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -3999,7 +4201,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/orth_vs_sparse.pdf
+	filename figures/orth_vs_sparse.pdf
 	lyxscale 40
 	scale 20
 
@@ -4038,7 +4240,16 @@ esparsa
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4050,7 +4261,7 @@ esparsa
 status open
 
 \begin_layout Plain Layout
-configuración de experimento
+Configuración de Experimento
 \end_layout
 
 \end_inset
@@ -4060,11 +4271,15 @@ configuración de experimento
 
 \begin_deeper
 \begin_layout Itemize
-numero experimentos: 16 
+Numero experimentos: 16 
 \end_layout
 
 \begin_layout Itemize
-valor de conectividad : <0 a 1> en incrementos de 0,01 
+valor de conectividad : 
+\begin_inset Formula $<0,1>$
+\end_inset
+
+ en incrementos de 0,01 
 \end_layout
 
 \begin_layout Itemize
@@ -4082,7 +4297,7 @@ RNAR-echo
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4103,7 +4318,7 @@ status open
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -4112,7 +4327,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/orth_prob_plot.pdf
+	filename figures/orth_prob_plot.pdf
 	scale 65
 
 \end_inset
@@ -4153,7 +4368,7 @@ RNAR-echo
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4174,7 +4389,7 @@ status open
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -4183,7 +4398,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/esparse_prob_plot.pdf
+	filename figures/esparse_prob_plot.pdf
 	scale 65
 
 \end_inset
@@ -4224,7 +4439,7 @@ esparsa
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4245,7 +4460,7 @@ Prueba t
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -4288,7 +4503,7 @@ A continuación, se realizó una prueba
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -4309,7 +4524,7 @@ status open
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -4608,7 +4823,7 @@ RNAR-echo.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
@@ -4652,6 +4867,11 @@ esparsa
 \emph default
  aleatoria para nuestros siguientes experimentos.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4741,86 +4961,86 @@ status open
 \align center
 
 \size tiny
-\color black
+\lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="6">
+<lyxtabular version="3" rows="9" columns="6">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="2.6cm">
-<column alignment="center" valignment="top" width="2.6cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 ID
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 Mopex ID
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
-Cuenca
+\lang english
+River
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
-Área(km2)
+\lang english
+Area(km2)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
-Media Anual Caudal(mm/s)
+\lang english
+Mean Discharge (mm/s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 Coef.
- Asimetría
+ Skewness
 \end_layout
 
 \end_inset
@@ -4833,7 +5053,7 @@ Coef.
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 A
 \end_layout
 
@@ -4845,7 +5065,7 @@ A
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 12413000
 \end_layout
 
@@ -4857,7 +5077,7 @@ A
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 East Fork White
 \end_layout
 
@@ -4869,7 +5089,7 @@ East Fork White
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 4421
 \end_layout
 
@@ -4881,7 +5101,7 @@ East Fork White
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 376
 \end_layout
 
@@ -4893,7 +5113,7 @@ East Fork White
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 1.857748 
 \end_layout
 
@@ -4901,73 +5121,73 @@ East Fork White
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 B
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 01541500
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 Clearfield Creek
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 2170
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 179
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 0.78
 \end_layout
 
@@ -4975,73 +5195,73 @@ Clearfield Creek
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 C
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 03054500
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 Tygart Valley
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 2372
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 745
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 0.858691 
 \end_layout
 
@@ -5049,74 +5269,370 @@ Tygart Valley
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 D
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 01541000
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 Bluestone
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 1020
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 421
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size tiny
-\color black
+\lang english
 1.65 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+02143000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+Henry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+1950
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+326
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+0.75
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+14359000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+Rogue
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+2356
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+206
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+0.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+06191500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+Yellowstone
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+1245
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+403
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+0.858
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+H
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+7363500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+Saline
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+1256
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+360
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size tiny
+\lang english
+0.8623
 \end_layout
 
 \end_inset
@@ -5247,7 +5763,7 @@ status open
 
 \end_inset
 
-Los registros históricos de 4 cuencas se dividieron en períodos de aprendizaje
+Los registros históricos de 8 cuencas se dividieron en períodos de aprendizaje
  (1979-1996) y prueba (1997-2000).
  
 \end_layout
@@ -5279,10 +5795,6 @@ status open
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 \begin_inset Float figure
 placement h
 wide false
@@ -5292,7 +5804,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/trainingMOPEXcolormap.pdf
+	filename figures/trainingMOPEXcolormap8-EN.pdf
 	scale 40
 
 \end_inset
@@ -5313,15 +5825,10 @@ name "fig:Performance-de-entrenamiento"
 Mapas de calor que representan el NRMSE promediado en 10 repeticiones, en
  un rango de valores como: el tamaño del reservorio (eje x) y el radio espectral
  (eje y).
- Corresponde a las 4 cuencas de MOPEX(East Fork White, Clearfield, Tygart
- Valley, Bluestone).
+ Corresponde a las 8 cuencas de MOPEX(East Fork White, Clearfield, Tygart
+ Valley, Bluestone...).
  Los tonos más claros representan un alto NRMSE, los tonos más oscuros un
  bajo NRMSE.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -5364,18 +5871,24 @@ status open
 
 \begin_layout Plain Layout
 \align center
+
+\size scriptsize
+\lang english
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Propiedades de Reservorio
+
+\size scriptsize
+\lang english
+Reservoir Properties
 \end_layout
 
 \end_inset
@@ -5389,36 +5902,45 @@ Propiedades de Reservorio
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-ID Cuencas (MOPEX)
+
+\size scriptsize
+\lang english
+ID Basin(MOPEX)
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tamaño de Reservorio
+
+\size scriptsize
+\lang english
+Reservoir Size 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Radio Espectral
+
+\size scriptsize
+\lang english
+Spectral Radius
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5429,28 +5951,37 @@ Radio Espectral
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 14
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 0.7
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 A
 \end_layout
 
@@ -5458,28 +5989,37 @@ A
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 16
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 0.9
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 B
 \end_layout
 
@@ -5487,28 +6027,37 @@ B
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 24
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 0.9
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 C
 \end_layout
 
@@ -5516,29 +6065,190 @@ C
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 15
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 0.9
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
+\lang english
 D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+E
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+0.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+G
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+0.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\lang english
+H
 \end_layout
 
 \end_inset
@@ -5645,7 +6355,7 @@ tomando en cuenta 3 horizontes de planeamiento divididos en etapas mensuales.
 \end_layout
 
 \begin_layout Itemize
-100 escenarios de 12, 24 y 36 meses para cada una de las 4 cuencas MOPEX.
+100 escenarios de 12, 24 y 36 meses para cada una de las 8 cuencas MOPEX.
  
 \end_layout
 
@@ -5831,7 +6541,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/edson/Pictures/pvalues.pdf
+	filename /home/edson/Documents/edson/edson/Pictures/pvalues.pdf
 	lyxscale 50
 	scale 20
 
@@ -5923,7 +6633,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/12413000 _tmean.pdf
+	filename /home/edson/Documents/edson/edson/Documents/12413000 _tmean.pdf
 	scale 25
 
 \end_inset
@@ -5938,7 +6648,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/03054500 _levene.pdf
+	filename /home/edson/Documents/edson/edson/Documents/03054500 _levene.pdf
 	scale 25
 
 \end_inset
@@ -6070,7 +6780,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/01541500 _tmean.pdf
+	filename /home/edson/Documents/edson/edson/Documents/01541500 _tmean.pdf
 	scale 25
 
 \end_inset
@@ -6085,7 +6795,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/01541500 _levene.pdf
+	filename /home/edson/Documents/edson/edson/Documents/01541500 _levene.pdf
 	scale 25
 
 \end_inset
@@ -6217,7 +6927,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/03054500 _tmean.pdf
+	filename /home/edson/Documents/edson/edson/Documents/03054500 _tmean.pdf
 	scale 25
 
 \end_inset
@@ -6232,7 +6942,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/03054500 _levene.pdf
+	filename /home/edson/Documents/edson/edson/Documents/03054500 _levene.pdf
 	scale 25
 
 \end_inset
@@ -6364,7 +7074,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/01541000 _tmean.pdf
+	filename /home/edson/Documents/edson/edson/Documents/01541000 _tmean.pdf
 	scale 25
 
 \end_inset
@@ -6379,7 +7089,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/edson/Documents/01541000 _levene.pdf
+	filename /home/edson/Documents/edson/edson/Documents/01541000 _levene.pdf
 	scale 25
 
 \end_inset
@@ -6617,7 +7327,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_ESN75_sint3.pdf
+	filename figures/12413000_ESN75_sint3.pdf
 	scale 25
 
 \end_inset
@@ -6634,7 +7344,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_ESN75_means.pdf
+	filename figures/12413000_ESN75_means.pdf
 	scale 25
 
 \end_inset
@@ -6665,7 +7375,7 @@ PEN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_PEN75_sint.pdf
+	filename figures/12413000_PEN75_sint.pdf
 	scale 25
 
 \end_inset
@@ -6682,7 +7392,7 @@ PEN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_PEN75_means.pdf
+	filename figures/12413000_PEN75_means.pdf
 	scale 25
 
 \end_inset
@@ -6834,7 +7544,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_ESN75_sint3.pdf
+	filename figures/12413000_ESN75_sint3.pdf
 	scale 25
 
 \end_inset
@@ -6851,7 +7561,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_ESN75_means.pdf
+	filename figures/12413000_ESN75_means.pdf
 	scale 25
 
 \end_inset
@@ -6882,7 +7592,7 @@ Thomas-F
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_TF75_sint.pdf
+	filename figures/12413000_TF75_sint.pdf
 	scale 25
 
 \end_inset
@@ -6899,7 +7609,7 @@ Thomas-F
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/12413000_TF75_means.pdf
+	filename figures/12413000_TF75_means.pdf
 	scale 25
 
 \end_inset
@@ -11367,6 +12077,10 @@ end{algorithm}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
@@ -11428,7 +12142,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11448,7 +12162,7 @@ Análisis de Adherencia
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11469,7 +12183,7 @@ status open
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -11604,7 +12318,7 @@ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11616,7 +12330,7 @@ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -11751,7 +12465,7 @@ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11763,7 +12477,7 @@ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -11898,7 +12612,7 @@ Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11918,7 +12632,7 @@ Análisis Visual
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -11930,7 +12644,7 @@ Análisis Visual
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -12141,7 +12855,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12153,7 +12867,7 @@ literal "true"
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -12364,7 +13078,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12376,7 +13090,7 @@ literal "true"
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -12582,7 +13296,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12594,7 +13308,7 @@ literal "true"
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -12800,7 +13514,7 @@ literal "true"
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12857,7 +13571,7 @@ TSM
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12883,7 +13597,7 @@ Entonces el valor esperado de los caudales para nuestro modelo se reescribe
  como :
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \align left
 \begin_inset Formula 
 \[
@@ -12896,7 +13610,7 @@ Entonces el valor esperado de los caudales para nuestro modelo se reescribe
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12916,7 +13630,7 @@ Inspección Visual de los Escenarios
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -12928,7 +13642,7 @@ Inspección Visual de los Escenarios
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -13041,7 +13755,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/Panie_ESN75_2.0_sint.pdf
+	filename figures/Panie_ESN75_2.0_sint.pdf
 	scale 25
 
 \end_inset
@@ -13058,7 +13772,7 @@ MEESN
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/Panie_ESN75_2.0_means.pdf
+	filename figures/Panie_ESN75_2.0_means.pdf
 	scale 25
 
 \end_inset
@@ -13118,7 +13832,7 @@ MEESN+TSM
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/Panie_ESN75_exoSST_2.0_sint.pdf
+	filename figures/Panie_ESN75_exoSST_2.0_sint.pdf
 	scale 25
 
 \end_inset
@@ -13135,7 +13849,7 @@ MEESN+TSM
 
 \size tiny
 \begin_inset Graphics
-	filename /media/edson/1a2a6ed2-2887-4387-8226-f76497f34156/opt/thesis/thesisUNSA/articlesandthesis/figures/Panie_ESN75_exoSST_2.0_means.pdf
+	filename figures/Panie_ESN75_exoSST_2.0_means.pdf
 	scale 25
 
 \end_inset
@@ -13216,7 +13930,7 @@ MEESN+TSM
 \end_layout
 
 \end_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Separator parbreak
 \end_inset
 
@@ -13228,7 +13942,7 @@ MEESN+TSM
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -13517,6 +14231,11 @@ MEESN+TSM
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conclusiones
 \end_layout
@@ -13617,51 +14336,14 @@ feedforward
  
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator parbreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Publicaciones Generadas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Itemize
-Se presenta las diferentes publicaciones logradas en el transcurso de esta
- investigación.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-E.
- F.
- L.
- Mamani and J.
- A.
- Q.
- Herrera, "Stochastic generation and forecasting of monthly hydrometeorological
- data based on non-traditional neural network," 2017 XLIII Latin American
- Computer Conference (CLEI), Córdoba, Argentina, 2017, doi: 10.1109/CLEI.2017.82263
-87 
+PARA MÁS INFORMACIÓN 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
 
-http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8226387&isnumber=8226362
+http://repositorio.unsa.edu.pe/handle/UNSA/6091
 \end_layout
 
 \end_inset
@@ -13670,7 +14352,10 @@ http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8226387&isnumber=8226362
 \end_layout
 
 \end_deeper
-\end_deeper
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex

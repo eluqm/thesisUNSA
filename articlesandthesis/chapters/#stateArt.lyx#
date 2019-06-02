@@ -833,16 +833,7 @@ key "en81012228"
 \end_inset
 
  presenta un sistema híbrido para predicción de variables hidrológicas,
- por otra parte, es correcto mencionar algunos trabajos no publicados que
- sirvieron de base para realizar esta investigación como el trabajo de 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "herrera2013modelo"
-
-\end_inset
-
-, en el cual se utiliza un sistema en base a razonamiento basado en casos
- y un componente aleatorio.
+ .
  Nuestra propuesta 
 \series bold
 MEESN

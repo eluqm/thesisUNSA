@@ -80,13 +80,13 @@ reference "chap:Introducción"
 \end_inset
 
 , el principal objetivo de esta tesis fue la elaboración de un nuevo modelo
- de proceso estocástico denominado 
+ de proceso estocástico (
 \series bold
 MEESN
 \series default
-, que pueda aplicarse en una gama de problemas envolviendo fenómenos de
- comportamiento no lineales con características periódicas de sus propiedades,
- como las series temporales hidrológicas.
+), no lineal, que pueda aplicarse en una gama de problemas envolviendo fenómenos
+ de comportamiento no lineales con características periódicas de sus propiedades
+, como las series temporales hidrológicas.
 \end_layout
 
 \begin_layout Itemize
@@ -121,10 +121,10 @@ ventana
 \begin_inset Quotes frd
 \end_inset
 
- del ambiente de la serie o de una compleja formulación teórica sobre su
- comportamiento, para ser aplicadas en una serie temporal, porque todas
- las características de la serie son aprendidas a través de ejemplos (aprendizaj
-e supervisado).
+ del ambiente de la serie o de una compleja formulación teórica o de suposicione
+s sobre el comportamiento de la serie para ser aplicadas en una serie temporal,
+ porque todas las características de la serie son aprendidas a través de
+ ejemplos de de la serie.
  
 \end_layout
 
@@ -139,26 +139,30 @@ s (p.ejemplo inversión de prevención etc), entre otros.
 \begin_layout Itemize
 El nuevo modelo 
 \series bold
-MEESN
+S-ESN
 \series default
  propone una herramienta alternativa para la generación de caudales mensuales.
  Este modelo presenta un tipo de red recurrente denominado 
 \series bold
 Echo State Network (ESN
 \series default
-), que poseen una topología altamente inter-enlazada y recurrente, inicializada
+), que poseen una topología altamente interenlazada y recurrente, inicializada
  de manera aleatoria.
  
 \series bold
 ESN
 \series default
- tiene dos interesantes propiedades; la primera es que sólo se entrena la
- ultima capa, la segunda es
+ tiene dos interesantes propiedades; el primero es que sólo se entrena la
+ ultima capa, el segundo es que 
 \series bold
- 
+y
 \series default
-gracias a su memoria interna, que es el resultado de las conexiones recurrentes,
- no es necesario incrustar señales de entrada anteriores(meses anteriores).
+a que
+\series bold
+ ESN 
+\series default
+ha incorporado memoria interna, que es el resultado de las conexiones recurrente
+s, no es necesario incrustar señales de entrada anteriores(meses anteriores).
  A primera vista puede parecer sorprendente que una red neuronal recurrente
  con conexiones aleatorias pueda ser efectiva, pero los parámetros aleatorios
  han sido exitosos en varios dominios 
@@ -179,7 +183,7 @@ ESN
 \end_layout
 
 \begin_layout Itemize
-Los casos de estudio de esta tesis, aplicaron a la generación y pronóstico
+Los casos de estudio de esta tesis, se aplicaron a la generación y pronóstico
  de series temporales basados en variables hidrológicas(Caudales, Precipitación)
 , para 2 casos : el primero en el contexto internacional de las series temporale
 s de 
@@ -202,14 +206,14 @@ reference "chap:Experimentos"
 
 , se experimentó en primer lugar con varias estructuras del modelo 
 \series bold
-MEESN, 
+S-ESN, 
 \series default
 con el objetivo de analizar las propiedades de conectividad y su impacto
  en el desempeño de las 
 \series bold
 Redes 
 \emph on
-Echo State,
+Echo State
 \emph default
  
 \series default
@@ -239,7 +243,7 @@ key "Koryakin201235"
 \end_layout
 
 \begin_layout Itemize
-Una vez determinado el tipo de matriz de conectividad, se generaron 100
+Una vez determinada el tipo de matriz de conectividad, se generaron 100
  escenarios sintéticos con un horizonte de 36 meses, tanto para las series
  de 
 \series bold
@@ -255,11 +259,8 @@ CHILI
  los escenarios son estadísticamente similares a las series históricas.
  Los resultados del análisis de Adherencia aplicada a los escenarios(caudal)
  generados por nuestro modelo en las estaciones de la cuenca del Chilli
- y MOPEX, mostraron una buena adherencia, con los 
-\begin_inset Formula $p$
-\end_inset
-
--valores por encima del nivel de significancia.
+ y MOPEX, mostraron una buena adherencia, con los p-valores por encima del
+ nivel de significancia.
  Los escenarios lograron reproducir el primer y segundo momento de la serie
  histórica.
 \end_layout
@@ -268,7 +269,7 @@ CHILI
 En la inspección visual de los escenarios generados, se observó que nuestro
  modelo en su versión original
 \series bold
- MEESN 
+ S-ESN 
 \series default
 ajustado para las estaciones de la cuenca del Chili, no presenta un rendimiento
  de predicción muy bueno en algunas estaciones como el Frayle y Aguada blanca,
@@ -289,16 +290,16 @@ reference "chap:Experimentos"
 
 , se utilizó dos versiones del modelo 
 \series bold
-MEESN, 
+S-ESN, 
 \series default
 donde se incorpora una variable exógena como la temperatura superficial
  del mar (TSM), que es una de las variables físicas que mejor indica la
  variación temporal del ciclo El Niño, dicho fenómeno influye dramáticamente
- en el clima en todo el Perú, por lo cual es ampliamente usada para estudiar
+ en el clima en todo el Peru, por lo cual es ampliamente usada para estudiar
  la variabilidad a diferentes escalas de tiempo en el Océano Pacífico.
  Los resultados obtenidos por el modelo re-formulado
 \series bold
- MEESN+(TSM),
+ S-ESN+(TSM),
 \series default
  donde agregamos una variable exógena, mejora de manera significativa los
  resultados obtenidos por su versión original.
@@ -323,17 +324,13 @@ nos aleja parcialmente de la denominación de
 \series bold
 caja negra, 
 \series default
-denominación inherente a los modelos de RNAs.
+denominación inherente a las modelos RNAs 
 \end_layout
 
 \begin_layout Itemize
 Finalmente, se puede usar el nuevo modelo 
 \series bold
-MEESN y 
-\series default
-su modificación
-\series bold
- MEESN+TSM
+S-ESN y su modificación S-ESN+TSM
 \series default
  como complemento en las tareas de análisis de escenarios junto a los modelos
  tradicionales, el modelo se destaca por la habilidad de incluir características
@@ -344,12 +341,8 @@ su modificación
  de políticas de consumo de agua para mejorar la disponibilidad del recurso
  hídrico, ajustando el impacto del evento sobre el área vulnerable correspondien
 te).
- Nuestro modelo puede ser considerado como una alternativa válida a los
- modelos basados en redes neuronales 
-\emph on
-feedforward
-\emph default
- y recurrentes tradicionales.
+ Nuestro modelo puede ser considerado como una alternativa válida a las
+ redes neuronales feedforward y recurrentes tradicionales.
  
 \end_layout
 
@@ -368,9 +361,9 @@ clustering,
 \end_layout
 
 \begin_layout Itemize
-Al re-formular nuestro modelo, agregando una variable exógena, asumimos
- que la relación entre los caudales y la TSM es abordada por medio de una
- regresión lineal simple.
+Al reformular nuestro modelo, agregando una variable exógena, asumimos que
+ la relación entre los caudales y la TSM es abordada por medio de una regresión
+ lineal simple.
  La limitación de este enfoque es que se asume linealidad entre estas variables
  lo que no necesariamente es cierto, pero si es válido como una primera
  aproximación.
@@ -384,7 +377,7 @@ Trabajos Futuros
 \begin_layout Itemize
 En cuanto al modelo Proceso Estocástico 
 \series bold
-MEESN
+S-ESN
 \series default
 , se pretende utilizarlo en la generación de escenarios de otros tipos de
  series temporales, ya que se trata un modelo genérico de proceso estocástico.
@@ -395,7 +388,7 @@ MEESN
 Otro trabajo futuro consiste en utilizar otra topología de red neuronal
  artificial para el componente determinista del domino 
 \series bold
-MEESN
+S-ESN
 \series default
 , como por ejemplo las redes de creencia profunda (BNN).
 \end_layout
@@ -413,7 +406,7 @@ key "hallac2017toeplitz"
 \end_inset
 
 ; se cree que se mejoraría en la generación de escenario con eventos tan
- extremos como los ocasionados por el fenómeno del Niño
+ extremos como los ocasionados por el fenómeno del NiÑo
 \end_layout
 
 \begin_layout Subsection
